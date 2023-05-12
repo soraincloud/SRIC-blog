@@ -1,9 +1,9 @@
 <template>
     <el-row>
         <el-col :span="2"></el-col>
-        <el-col :span="4"></el-col>
-        <el-col :span="12"></el-col>
-        <el-col :span="4">
+        <el-col :span="5"></el-col>
+        <el-col :span="10"></el-col>
+        <el-col :span="5">
             <aside-message/>
         </el-col>
         <el-col :span="2"></el-col>
