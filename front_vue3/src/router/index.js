@@ -3,7 +3,18 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = 
 [
   {
-
+    name: "AppBody",
+    path: '/AppBody',
+    component: () => import('@/components/AppBody'),
+    redirect: '/index',
+    children:
+    [
+      {
+        name: "AppIndex",
+        path: '/index',
+        component: () => import('@/components/Home/AppIndex'),
+      }
+    ]
   }
 ]
 
