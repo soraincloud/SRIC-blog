@@ -3,12 +3,13 @@
 -->
 
 <template>
-    <el-card class="AsideMessage-el-card-style">
+<div @mouseover="mouseOver" @mouseleave="mouseLeave">
+    <el-card class="AsideMessage-el-card-style" :style="active">
         <div class="AsideMessage-message-div-style">
             <el-avatar :src="SRICAvater" class="AsideMessage-el-avater-style" fit="scale-down"></el-avatar>
             <div class="AsideMessage-name-div-style">
                 <span>soraincloud</span>
-                <el-tag checked size="small" class="AsideMessage-el-tag-style" type="danger" effect="dark">homo</el-tag>
+                <el-tag checked size="small" class="AsideMessage-el-tag-style" type="danger" effect="dark">neko</el-tag>
             </div>
             <el-divider class="AsideMessage-el-divider-style">
                 <el-icon class="AsideMessage-divider-icon-style" size="20px"><StarFilled/></el-icon>
@@ -18,12 +19,15 @@
             <link-card></link-card>
         </div>
     </el-card>
+</div>
 </template>
 
 <script>
 import LinkCard from '@/components/common/LinkCard'
 import { StarFilled } from '@element-plus/icons-vue'
+import { useDark } from '@vueuse/core'
 
+const isDark = useDark()
 export default
 {
     name: 'AsideMessage',
@@ -31,10 +35,30 @@ export default
     data()
     {
         return{
-            SRICAvater: require('@/assets/images/logo/SRIC-Avatar.jpg')
+            SRICAvater: require('@/assets/images/logo/SRIC-Avatar.jpg'),
+            active: ''
+        }
+    },
+    methods:
+    {
+        mouseOver()
+        {
+            if(isDark.value == true)
+            {
+                this.active = 'background: rgba(0,0,0,0.8)'
+            }
+            else
+            {
+                this.active = 'background: rgba(255,255,255,0.8)'
+            }
+        },
+        mouseLeave()
+        {
+            this.active = ''
         }
     }
 }
+
 </script>
 
 <style>
@@ -43,6 +67,7 @@ export default
     width: 100%;
     height: 100%;
     margin-top: 10px;
+    margin-left: 10px;
     background: rgba(255,255,255,0.64);
 }
 

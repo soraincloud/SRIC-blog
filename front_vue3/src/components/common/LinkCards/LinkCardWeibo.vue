@@ -9,7 +9,7 @@
 
     <div class="LinkCard-text-style">
         (ﾉ*･ω･)ﾉ
-        <a href="https://twitter.com/@so_ra_in_cloud" target="blank">
+        <a href="https://weibo.com/u/7836024763" target="blank">
         <el-button color="#fdf66d" size="small" class="LinkCard-link-button-style">
             传送门
             <el-icon class="LinkCard-icon-style" size="18px"><Connection/></el-icon>
