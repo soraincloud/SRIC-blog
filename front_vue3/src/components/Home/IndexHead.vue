@@ -5,7 +5,7 @@
 -->
 
 <template>
-<div @mouseover="mouseOver" @mouseleave="mouseLeave">
+<div @mouseover="mouseOver" @mouseleave="mouseLeave" class="IndexHeadWarmaGood">
     <el-card class="common-el-card-style" :style="active">
         <h1 class="IndexHead-text-style">SRIC 's BLOG</h1>
         <el-divider class="IndexHead-el-divider-style" />
@@ -33,7 +33,7 @@ export default
         {
             if(isDark.value == true)
             {
-                this.active = 'background: rgba(0,0,0,0.8)'
+                this.active = 'background: rgba(0,0,0,0.8);'
             }
             else
             {
@@ -50,9 +50,19 @@ export default
 
 
 <style>
+.el-card__body
+{
+    background: url("@/assets/images/background/warma-lie.png"),rgba(255,255,255,0);
+    background-size: 64px 64px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    bottom: 10px;
+    right: 10px;
+}
+
 .common-el-card-style
 {
-    width: 100%;
+    height: 100%;
     margin-top: 10px;
     background: rgba(255,255,255,0.64);
 }
