@@ -1,25 +1,27 @@
 <template>
     <el-row>
-        <el-col :span="2"></el-col>
+        <el-col :span="1"></el-col>
         <el-col :span="5"></el-col>
-        <el-col :span="10">
+        <el-col :span="12">
             <index-head/>
+            <index-used/>
         </el-col>
         <el-col :span="5">
             <aside-message/>
         </el-col>
-        <el-col :span="2"></el-col>
+        <el-col :span="1"></el-col>
     </el-row>
 </template>
 
 <script>
-import AsideMessage from "@/components/common/AsideMessage"
-import IndexHead from "@/components/Home/IndexHead"
+import AsideMessage from '@/components/common/AsideMessage'
+import IndexHead from '@/components/Home/IndexHead'
+import IndexUsed from '@/components/Home/IndexUsed'
 
 export default
 {
     name: 'AppIndex',
-    components: { AsideMessage,IndexHead }
+    components: { AsideMessage,IndexHead,IndexUsed }
 }
 </script>
 

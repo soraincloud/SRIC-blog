@@ -6,10 +6,11 @@
 
 <template>
 <div @mouseover="mouseOver" @mouseleave="mouseLeave" class="IndexHeadWarmaGood">
-    <el-card class="common-el-card-style" :style="active">
-        <h1 class="IndexHead-text-style">SRIC 's BLOG</h1>
-        <el-divider class="IndexHead-el-divider-style" />
-        <span class="IndexHead-text-style">114514.1919810</span>
+    <el-card class="common-with-back-el-card-style" :style="active">
+        <h1 class="common-text-style">SRIC 's BLOG</h1>
+        <el-divider class="common-el-divider-style" />
+        <div class="common-text-style">欢迎来到我的博客 ! ( ＾∀＾)/</div>
+        <div class="common-text-style">或许会有很多有意思的东西, 现在就开始吧 !</div>
     </el-card>
 </div>
 </template>
@@ -33,11 +34,11 @@ export default
         {
             if(isDark.value == true)
             {
-                this.active = 'background: rgba(0,0,0,0.8);'
+                this.active = 'background: rgba(0,0,0,0.85);'
             }
             else
             {
-                this.active = 'background: rgba(255,255,255,0.8)'
+                this.active = 'background: rgba(255,255,255,0.85)'
             }
         },
         mouseLeave()
@@ -50,40 +51,47 @@ export default
 
 
 <style>
-.el-card__body
+.IndexHeadWarmaGood
 {
-    background: url("@/assets/images/background/warma-lie.png"),rgba(255,255,255,0);
-    background-size: 64px 64px;
+    background: url("@/assets/images/background/warma-good.png"),rgba(255,255,255,0);
+    background-size: 192px 108px;
     background-repeat: no-repeat;
-    background-position: right bottom;
-    bottom: 10px;
-    right: 10px;
+    background-position: right 32px bottom;
 }
 
-.common-el-card-style
+.common-with-back-el-card-style .el-card__body
+{
+    background: url("@/assets/images/background/warma-lie.png"),rgba(255,255,255,0);
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.common-with-back-el-card-style
 {
     height: 100%;
     margin-top: 10px;
     background: rgba(255,255,255,0.64);
 }
 
-.IndexHead-text-style
+.common-text-style
 {
     color: #666666;
+    font-weight: bold;
 }
 
-.IndexHead-el-divider-style
+.common-el-divider-style
 {
     background-color: #888888;
     padding-top: 1px;
 }
 
-html.dark .common-el-card-style
+html.dark .common-with-back-el-card-style
 {
     background: rgba(0,0,0,0.64);
 }
 
-html.dark .IndexHead-text-style
+html.dark .common-text-style
 {
     color: #ffffff;
 }
