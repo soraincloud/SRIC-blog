@@ -1,13 +1,23 @@
+<!--
+- 使用 window.onresize 检测页面发生变化
+- 使用 window.innerHeight 获取当前页面高度
+-->
+
 <template>
     <el-row>
         <el-col :span="1"></el-col>
         <el-col :span="5"></el-col>
         <el-col :span="12">
-            <index-head/>
-            <index-used/>
+            <el-scrollbar :height="indexHeight">
+                <index-head/>
+                <index-used/>
+                <index-about/>
+            </el-scrollbar>
         </el-col>
         <el-col :span="5">
-            <aside-message/>
+            <el-scrollbar :height="asideHeight">
+                <aside-message/>
+            </el-scrollbar>
         </el-col>
         <el-col :span="1"></el-col>
     </el-row>
@@ -17,11 +27,27 @@
 import AsideMessage from '@/components/common/AsideMessage'
 import IndexHead from '@/components/Home/IndexHead'
 import IndexUsed from '@/components/Home/IndexUsed'
+import IndexAbout from '@/components/Home/IndexAbout'
 
 export default
 {
     name: 'AppIndex',
-    components: { AsideMessage,IndexHead,IndexUsed }
+    components: { AsideMessage,IndexHead,IndexUsed,IndexAbout },
+    data()
+    {
+        return{
+            indexHeight: (window.innerHeight - 70) + 'px',
+            asideHeight: (window.innerHeight - 70) + 'px'
+        }
+    },
+    mounted()
+    {
+        window.onresize = () => 
+        {
+            this.indexHeight = (window.innerHeight - 70) + 'px'
+            this.asideHeight = (window.innerHeight - 70) + 'px'
+        }
+    }
 }
 </script>
 

@@ -5,14 +5,14 @@
 -->
 
 <template>
-<div @mouseover="mouseOver" @mouseleave="mouseLeave" class="IndexHeadWarmaGood">
-    <el-card class="common-with-back-el-card-style" :style="active">
-        <h1 class="common-text-style">SRIC 's BLOG</h1>
-        <el-divider class="common-el-divider-style" />
-        <div class="common-text-style">欢迎来到我的博客 ! ( ＾∀＾)/</div>
-        <div class="common-text-style">或许会有很多有意思的东西, 现在就开始吧 !</div>
-    </el-card>
-</div>
+    <div @mouseover="mouseOver" @mouseleave="mouseLeave" class="IndexHeadWarmaGood">
+        <el-card class="common-with-back-el-card-style" :style="active">
+            <h1 class="common-text-style">SRIC 's BLOG</h1>
+            <el-divider class="common-el-divider-style" />
+            <div class="common-text-style">欢迎来到我的博客 ! ( ＾∀＾)/</div>
+            <div class="common-text-style">或许会有很多有意思的东西, 现在就开始吧 !</div>
+        </el-card>
+    </div>
 </template>
 
 <script>
@@ -78,6 +78,7 @@ export default
 {
     color: #666666;
     font-weight: bold;
+    margin: 5px auto;
 }
 
 .common-el-divider-style

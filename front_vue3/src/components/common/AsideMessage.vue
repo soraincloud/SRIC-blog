@@ -3,23 +3,23 @@
 -->
 
 <template>
-<div @mouseover="mouseOver" @mouseleave="mouseLeave">
-    <el-card class="AsideMessage-el-card-style" :style="active">
-        <div class="AsideMessage-message-div-style">
-            <el-avatar :src="SRICAvater" class="AsideMessage-el-avater-style" fit="scale-down"></el-avatar>
-            <div class="AsideMessage-name-div-style">
-                <span>soraincloud</span>
-                <el-tag checked size="small" class="AsideMessage-el-tag-style" type="danger" effect="dark">neko</el-tag>
+    <div @mouseover="mouseOver" @mouseleave="mouseLeave">
+        <el-card class="AsideMessage-el-card-style" :style="active">
+            <div class="AsideMessage-message-div-style">
+                <el-avatar :src="SRICAvater" class="AsideMessage-el-avater-style" fit="scale-down"></el-avatar>
+                <div class="AsideMessage-name-div-style">
+                    <span>soraincloud</span>
+                    <el-tag checked size="small" class="AsideMessage-el-tag-style" type="danger" effect="dark">neko</el-tag>
+                </div>
+                <el-divider class="AsideMessage-el-divider-style">
+                    <el-icon class="AsideMessage-divider-icon-style" size="20px"><StarFilled/></el-icon>
+                </el-divider>
             </div>
-            <el-divider class="AsideMessage-el-divider-style">
-                <el-icon class="AsideMessage-divider-icon-style" size="20px"><StarFilled/></el-icon>
-            </el-divider>
-        </div>
-        <div>
-            <link-card></link-card>
-        </div>
-    </el-card>
-</div>
+            <div>
+                <link-card></link-card>
+            </div>
+        </el-card>
+    </div>
 </template>
 
 <script>
@@ -64,7 +64,7 @@ export default
 <style>
 .AsideMessage-el-card-style
 {
-    width: 100%;
+    width: 95%;
     height: 100%;
     margin-top: 10px;
     margin-left: 10px;
