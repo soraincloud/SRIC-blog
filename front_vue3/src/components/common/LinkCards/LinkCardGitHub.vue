@@ -75,6 +75,7 @@ export default
 {
     color: #ffffff;
     margin-left: 5px;
+    margin-top: 5px;
 }
 
 .LinkCard-icon-style

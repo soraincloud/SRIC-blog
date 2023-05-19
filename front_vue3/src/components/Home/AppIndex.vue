@@ -12,6 +12,7 @@
                 <index-head/>
                 <index-used/>
                 <index-about/>
+                <index-time/>
             </el-scrollbar>
         </el-col>
         <el-col :span="5">
@@ -28,11 +29,12 @@ import AsideMessage from '@/components/common/AsideMessage'
 import IndexHead from '@/components/Home/IndexHead'
 import IndexUsed from '@/components/Home/IndexUsed'
 import IndexAbout from '@/components/Home/IndexAbout'
+import IndexTime from '@/components/Home/IndexTime'
 
 export default
 {
     name: 'AppIndex',
-    components: { AsideMessage,IndexHead,IndexUsed,IndexAbout },
+    components: { AsideMessage,IndexHead,IndexUsed,IndexAbout,IndexTime },
     data()
     {
         return{

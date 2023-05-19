@@ -1,5 +1,5 @@
 <template>
-    <div @mouseover="mouseOver" @mouseleave="mouseLeave">
+    <div @mouseover="mouseOver" @mouseleave="mouseLeave" class="IndexAbout-outside-div-style">
         <el-card class="common-with-back-el-card-style" :style="active">
             <h1 class="common-text-style">关于</h1>
             <el-divider class="common-el-divider-style" />
@@ -48,3 +48,13 @@ export default
     }
 }
 </script>
+
+<style>
+.IndexAbout-outside-div-style .el-card
+{
+    background: url("@/assets/images/background/warma-yeah.png"),rgba(255,255,255,0.64);
+    background-size: 192px 108px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+</style>
