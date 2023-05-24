@@ -125,6 +125,11 @@ html.dark .NavMenu-el-icon-style
     color: #ffffff;
 }
 
+html.dark .NavMenu-float-text-style
+{
+    color: #ffffff;
+}
+
 .el-affix
 {
     height: 0;
