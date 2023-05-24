@@ -28,6 +28,9 @@
             </el-button>
         </el-tooltip>
     </el-menu>
+    <el-affix :offset="pageHeight">
+        <div class="NavMenu-float-text-style">copyright © soraincloud all rights reserved</div>
+    </el-affix>
 </template>
 
 <script>
@@ -37,32 +40,40 @@ import { Sunny } from '@element-plus/icons-vue'
 const isDark = useDark()
 export default
 {
-  name: 'NavMenu',
-  components: { Sunny },
-  data ()
-  {
-    return {
-        SRICNavLogo: require('@/assets/images/logo/SRIC-NavLogo.png'),
-        navList:
-        [
-            {name: '/index', navItem: '首页'},
-            {name: '/note', navItem: '笔记'},
-            {name: '/resources', navItem: '资源'},
-        ]
-    }
-  },
-  methods:
-  {
-    switchThemes() 
+    name: 'NavMenu',
+    components: { Sunny },
+    data ()
     {
-      const toggleDark = useToggle(isDark)
-      toggleDark()
+        return {
+            SRICNavLogo: require('@/assets/images/logo/SRIC-NavLogo.png'),
+            navList:
+            [
+                {name: '/index', navItem: '首页'},
+                {name: '/note', navItem: '笔记'},
+                {name: '/resources', navItem: '资源'},
+            ],
+            pageHeight: (window.innerHeight - 32)
+        }
+    },
+    methods:
+    {
+        switchThemes() 
+        {
+        const toggleDark = useToggle(isDark)
+        toggleDark()
+        }
+    },
+    mounted()
+    {
+        window.onresize = () => 
+        {
+            this.pageHeight = (window.innerHeight - 32)
+        }
     }
-  }
 }
 </script>
 
-<style scoped>
+<style>
 .NavMenu-SRIC-Navlogo-style
 {
     height: 50px;
@@ -92,6 +103,13 @@ export default
     color: #000000;
 }
 
+.NavMenu-float-text-style
+{
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    font-weight: bold;
+}
+
 html.dark .el-menu
 {
     background-color: rgba(0,0,0,0.64);
@@ -105,5 +123,10 @@ html.dark .NavMenu-menu-text-style
 html.dark .NavMenu-el-icon-style
 {
     color: #ffffff;
+}
+
+.el-affix
+{
+    height: 0;
 }
 </style>
