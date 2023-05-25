@@ -28,9 +28,9 @@
             </el-button>
         </el-tooltip>
     </el-menu>
-    <el-affix :offset="pageHeight">
-        <div class="NavMenu-float-text-style">copyright © soraincloud all rights reserved</div>
-    </el-affix>
+    <div class="NavMenu-float-div-style" :style="place">
+        <span>copyright © soraincloud all rights reserved</span>
+    </div>
 </template>
 
 <script>
@@ -49,10 +49,11 @@ export default
             navList:
             [
                 {name: '/index', navItem: '首页'},
-                {name: '/note', navItem: '笔记'},
+                {name: '/notes', navItem: '笔记'},
                 {name: '/resources', navItem: '资源'},
             ],
-            pageHeight: (window.innerHeight - 32)
+            pageHeight: (window.innerHeight - 32),
+            place: "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px"
         }
     },
     methods:
@@ -65,10 +66,9 @@ export default
     },
     mounted()
     {
-        window.onresize = () => 
-        {
-            this.pageHeight = (window.innerHeight - 32)
-        }
+        window.addEventListener('resize',() =>
+            this.place = "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px"
+        )
     }
 }
 </script>
@@ -106,8 +106,16 @@ export default
 .NavMenu-float-text-style
 {
     color: rgba(0, 0, 0, 0.5);
-    text-align: center;
     font-weight: bold;
+    text-align: center;
+}
+
+.NavMenu-float-div-style
+{
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    position: absolute;
+    z-index: 100;
 }
 
 html.dark .el-menu

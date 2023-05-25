@@ -6,7 +6,9 @@
 <template>
     <el-row>
         <el-col :span="1"></el-col>
-        <el-col :span="5"></el-col>
+        <el-col :span="5">
+            <index-aside/>
+        </el-col>
         <el-col :span="12">
             <el-scrollbar :height="indexHeight">
                 <index-head/>
@@ -30,11 +32,12 @@ import IndexHead from '@/components/Home/IndexHead'
 import IndexUsed from '@/components/Home/IndexUsed'
 import IndexAbout from '@/components/Home/IndexAbout'
 import IndexTime from '@/components/Home/IndexTime'
+import IndexAside from '@/components/Home/IndexAside'
 
 export default
 {
     name: 'AppIndex',
-    components: { AsideMessage,IndexHead,IndexUsed,IndexAbout,IndexTime },
+    components: { AsideMessage,IndexHead,IndexUsed,IndexAbout,IndexTime,IndexAside },
     data()
     {
         return{

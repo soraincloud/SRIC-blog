@@ -13,6 +13,11 @@ const routes =
         name: "AppIndex",
         path: '/index',
         component: () => import('@/components/Home/AppIndex'),
+      },
+      {
+        name: 'NotesIndex',
+        path: '/notes',
+        component: () => import('@/components/notes/NotesIndex'),
       }
     ]
   }
