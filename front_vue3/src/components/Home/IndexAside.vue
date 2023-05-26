@@ -8,6 +8,8 @@
 - 子传父
 在子组件中定义一个带有语句 this.$emit('键名', "值"); 方法
 父组件通过 @键="要改变的参数值=$event" 接收参数
+
+- 使用 style[a,b] 可以绑定多个 style 值
 -->
 
 <template>
@@ -20,7 +22,7 @@
             :key="i"
             shadow="never"
             class="IndexAside-item-card-style"
-            :style="item.borders"
+            :style="[item.borders,item.backgrounds]"
             @mouseover="over(i)"
             @mouseleave="leave(i)"
             @click="jump(i)"
@@ -47,21 +49,24 @@ export default
                 {
                     content: "SRIC 's BLOG",
                     borders: 'border-color: rgba(255,255,255,0);',
+                    backgrounds: '',
                 },
                 {
                     content: "技术采用",
                     borders: 'border-color: rgba(255,255,255,0);',
+                    backgrounds: '',
 
                 },
                 {
                     content: "关于",
                     borders: 'border-color: rgba(255,255,255,0);',
+                    backgrounds: '',
 
                 },
                 {
                     content: "近期活动",
                     borders: 'border-color: rgba(255,255,255,0);',
-
+                    backgrounds: '',
                 },
             ]
         }
@@ -96,12 +101,20 @@ export default
         },
         leave(i)
         {
-            console.log()
             this.catalogs[i].borders = 'border-color: rgba(255,255,255,0);'
         },
         jump(i)
         {
+            this.changeBackground(i)
             window.location.href = "#appindex-card-" + i
+        },
+        changeBackground(i)
+        {
+            for(var j = 0;j < this.catalogs.length;j++)
+            {
+                this.catalogs[j].backgrounds = ''
+            }
+            this.catalogs[i].backgrounds = 'background: #ffcccc'
         }
     }
 }
