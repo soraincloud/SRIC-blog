@@ -11,10 +11,10 @@
         </el-col>
         <el-col :span="12">
             <el-scrollbar :height="indexHeight">
-                <index-head/>
-                <index-used/>
-                <index-about/>
-                <index-time/>
+                <index-head id="appindex-card-0" />
+                <index-used id="appindex-card-1" />
+                <index-about id="appindex-card-2" />
+                <index-time id="appindex-card-3" />
             </el-scrollbar>
         </el-col>
         <el-col :span="5">

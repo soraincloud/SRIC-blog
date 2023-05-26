@@ -10,8 +10,8 @@
                 :timestamp="item.timestmap"
                 :type="item.type"
                 :color="item.color"
-                :hollow="true"
-                :size="large"
+                hollow="true"
+                size="large"
                 class="IndexTime-timeline-item-style"
                 >
                 {{item.content}}
