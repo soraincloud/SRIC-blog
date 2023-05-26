@@ -114,7 +114,7 @@ export default
             {
                 this.catalogs[j].backgrounds = ''
             }
-            this.catalogs[i].backgrounds = 'background: #ffcccc'
+            this.catalogs[i].backgrounds = 'background: rgba(252,204,204,0.64);'
         }
     }
 }
