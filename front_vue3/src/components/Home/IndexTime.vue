@@ -32,22 +32,12 @@ export default
     {
         return{
             active: '',
-            timeline:
-            [
-                {
-                    content:'创建这个博客',
-                    timestmap:'2023.5.24',
-                    type:'danger',
-                    color:'white'
-                },
-                {
-                    content:'创建这个博客',
-                    timestmap:'2023.5.24',
-                    type:'danger',
-                    color:'white'
-                }
-            ]
+            timeline:[]
         }
+    },
+    mounted:function()
+    {
+        this.loadIndexTime()
     },
     methods:
     {
@@ -65,6 +55,16 @@ export default
         mouseLeave()
         {
             this.active = ''
+        },
+        loadIndexTime()
+        {
+            var _this = this
+            this.$axios.get('/indexTimeList').then(resp => {
+                if (resp && resp.status === 200)
+                {
+                    _this.timeline = resp.data
+                }
+            })
         }
     }
 }
