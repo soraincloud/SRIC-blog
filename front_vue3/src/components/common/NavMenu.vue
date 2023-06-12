@@ -54,7 +54,7 @@ export default
                 {name: '/resources', navItem: '资源'},
             ],
             pageHeight: (window.innerHeight - 32),
-            place: "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px"
+            place: "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px;"
         }
     },
     methods:
@@ -104,13 +104,6 @@ export default
     color: #000000;
 }
 
-.NavMenu-float-text-style
-{
-    color: rgba(0, 0, 0, 0.5);
-    font-weight: bold;
-    text-align: center;
-}
-
 .NavMenu-float-div-style
 {
     color: rgba(0, 0, 0, 0.5);
@@ -134,7 +127,7 @@ html.dark .NavMenu-el-icon-style
     color: #ffffff;
 }
 
-html.dark .NavMenu-float-text-style
+html.dark .NavMenu-float-div-style
 {
     color: #ffffff;
 }
