@@ -19,4 +19,10 @@ public class notesServiceImpl implements notesService
     {
         return mapper.GetAllNotes();
     }
+
+    @Override
+    public List<notes> GetNotesByCategory(String category)
+    {
+        return mapper.GetNotesByCategory(category);
+    }
 }

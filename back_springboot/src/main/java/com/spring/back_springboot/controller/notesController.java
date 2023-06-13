@@ -3,10 +3,7 @@ package com.spring.back_springboot.controller;
 import com.spring.back_springboot.pojo.notes;
 import com.spring.back_springboot.services.service.notesService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,5 +19,12 @@ public class notesController
     public List<notes> GetAllNotes()
     {
         return service.GetAllNotes();
+    }
+
+    @CrossOrigin
+    @GetMapping("/notesListByCategory")
+    public List<notes> GetNotesByCategory(String category) throws Exception
+    {
+        return service.GetNotesByCategory(category);
     }
 }

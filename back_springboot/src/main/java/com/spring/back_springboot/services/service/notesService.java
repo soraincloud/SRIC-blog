@@ -7,4 +7,5 @@ import java.util.List;
 public interface notesService
 {
     List<notes> GetAllNotes();
+    List<notes> GetNotesByCategory(String category);
 }
