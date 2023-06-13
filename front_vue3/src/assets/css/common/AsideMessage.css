@@ -33,6 +33,7 @@
 
 .AsideMessage-el-divider-style
 {
+    border: 0px;
     background-color: #aaaaaa;
     padding-top: 1px;
 }

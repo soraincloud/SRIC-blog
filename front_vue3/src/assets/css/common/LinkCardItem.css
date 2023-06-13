@@ -52,6 +52,7 @@ html.dark .LinkCard-text-style
 
 .LinkCardGitHub-el-divider-style
 {
+    border: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: #6dc781;
@@ -66,6 +67,7 @@ html.dark .LinkCard-text-style
 
 .LinkCardTwitter-el-divider-style
 {
+    border: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: #23ade5;
@@ -80,6 +82,7 @@ html.dark .LinkCard-text-style
 
 .LinkCardBilibili-el-divider-style
 {
+    border: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: #fb7299;
@@ -94,6 +97,7 @@ html.dark .LinkCard-text-style
 
 .LinkCardWeibo-el-divider-style
 {
+    border: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: #fdf66d;
@@ -108,6 +112,7 @@ html.dark .LinkCard-text-style
 
 .LinkCardTencentqq-el-divider-style
 {
+    border: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: #d81e06;

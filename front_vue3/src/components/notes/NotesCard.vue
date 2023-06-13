@@ -25,19 +25,7 @@ export default
     data()
     {
         return{
-            notes:
-            [
-                {
-                    id: 1,
-                    title: "some text",
-                    description: "some descrition",
-                },
-                {
-                    id: 2,
-                    title: "some text",
-                    description: "some descrition",
-                }
-            ]
+            notes:[]
         }
     },
     methods:
@@ -57,7 +45,21 @@ export default
         {
             this.notes[i].backgrounds = ""
         },
-    }
+        loadNotes()
+        {
+            var _this = this
+            this.$axios.get('/notesList').then(resp => {
+            if (resp && resp.status === 200)
+            {
+                _this.notes = resp.data
+            }
+          })
+        }
+    },
+    mounted:function()
+    {
+        this.loadNotes()
+    },
 }
 </script>
 

@@ -1,0 +1,55 @@
+.NotesAside-el-card-style
+{
+    height: 100%;
+    margin-top: 10px;
+    margin-right: 10px;
+    background: rgba(255,255,255,0.64);
+}
+
+.NotesAside-el-card-style .el-card__body
+{
+    background: url("@/assets/images/background/playgames-lie-light.png"),rgba(255,255,255,0);
+    background-size: 138px 145px;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.NotesAside-item-card-style
+{
+    background: rgba(255,255,255,0);
+    border: solid;
+    color: #666666;
+    margin-bottom: 10px;
+}
+
+.NotesAside-item-card-style .el-card__body
+{
+    background: rgba(255,255,255,0);
+    padding: 10px;
+}
+
+html.dark .NotesAside-el-card-style
+{
+    background: rgba(0,0,0,0.64);
+}
+
+html.dark .NotesAside-el-card-style .el-card__body
+{
+    background: url("@/assets/images/background/playgames-lie-night.png"),rgba(255,255,255,0);
+    background-size: 138px 145px;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+html.dark .NotesAside-item-card-style
+{
+    background: rgba(255,255,255,0);
+    border: solid;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+html.dark .NotesAside-item-card-style .el-card__body
+{
+    background: rgba(255,255,255,0);
+}
