@@ -21,10 +21,19 @@
         <div class="NavMenu-right-div-style" />
         <el-tooltip
         effect="light"
+        content="放烟花吗"
+        placement="bottom"
+        >
+            <el-button @click="switchFire()" circle size="large" class="NavMenu-el-button-style">
+                <el-icon class="NavMenu-el-icon-style" size="20px"><Star/></el-icon>
+            </el-button>
+        </el-tooltip>
+        <el-tooltip
+        effect="light"
         content="切换模式"
         placement="bottom"
         >
-            <el-button @click="switchThemes()" circle size="large" class="NavMenu-el-button-style">
+            <el-button @click="switchThemes()" circle size="large" class="NavMenu-el-button-style" style="margin-right: 30px">
                 <el-icon class="NavMenu-el-icon-style" size="20px"><Sunny/></el-icon>
             </el-button>
         </el-tooltip>
@@ -36,13 +45,13 @@
 
 <script>
 import { useDark, useToggle } from '@vueuse/core'
-import { Sunny } from '@element-plus/icons-vue'
+import { Sunny,Star } from '@element-plus/icons-vue'
 
 const isDark = useDark()
 export default
 {
     name: 'NavMenu',
-    components: { Sunny },
+    components: { Sunny,Star },
     data ()
     {
         return {
@@ -63,9 +72,13 @@ export default
     {
         switchThemes() 
         {
-        const toggleDark = useToggle(isDark)
-        toggleDark()
+            const toggleDark = useToggle(isDark)
+            toggleDark()
         },
+        switchFire()
+        {
+            this.$emit('dochangefire')
+        }
     },
     mounted()
     {
