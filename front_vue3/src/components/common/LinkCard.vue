@@ -58,14 +58,5 @@ export default
 </script>
 
 <style>
-.el-tabs__item
-{
-  padding-left: 5px;
-}
-
-.LinkCard-el-tabs-svg-style
-{
-  height: 32px;
-  width: 32px;
-}
+  @import '@/assets/css/common/LinkCard.css'
 </style>

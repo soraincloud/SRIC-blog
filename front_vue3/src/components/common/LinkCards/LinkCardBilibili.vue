@@ -35,17 +35,5 @@ export default
 
 
 <style>
-.LinkCardBilibili-span-text-style
-{
-    font-weight: bold;
-    color: #fb7299;
-}
-
-.LinkCardBilibili-el-divider-style
-{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #fb7299;
-    padding-top: 1px;
-}
+    @import '@/assets/css/common/LinkCardItem.css'
 </style>

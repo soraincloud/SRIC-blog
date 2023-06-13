@@ -1,0 +1,115 @@
+.LinkCard-el-avatar-style
+{
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.LinkCard-name-text-style
+{
+    font-size: 15px;
+    font-weight: bold;
+    color: #666666;
+    margin-left: 5px;
+}
+
+.LinkCard-text-style
+{
+    font-size: 15px;
+    font-weight: bold;
+    color: #666666;
+    margin-left: 5px;
+}
+
+.LinkCard-link-button-style
+{
+    color: #ffffff;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.LinkCard-icon-style
+{
+    margin-left: 5px;
+}
+
+html.dark .LinkCard-name-text-style
+{
+    color: #ffffff;
+}
+
+html.dark .LinkCard-text-style
+{
+    color: #ffffff;
+}
+
+
+
+.LinkCardGitHub-span-text-style
+{
+    font-weight: bold;
+    color: #6dc781;
+}
+
+.LinkCardGitHub-el-divider-style
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #6dc781;
+    padding-top: 1px;
+}
+
+.LinkCardTwitter-span-text-style
+{
+    font-weight: bold;
+    color: #23ade5;
+}
+
+.LinkCardTwitter-el-divider-style
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #23ade5;
+    padding-top: 1px;
+}
+
+.LinkCardBilibili-span-text-style
+{
+    font-weight: bold;
+    color: #fb7299;
+}
+
+.LinkCardBilibili-el-divider-style
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #fb7299;
+    padding-top: 1px;
+}
+
+.LinkCardWeibo-span-text-style
+{
+    font-weight: bold;
+    color: #fdf66d;
+}
+
+.LinkCardWeibo-el-divider-style
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #fdf66d;
+    padding-top: 1px;
+}
+
+.LinkCardTencentqq-span-text-style
+{
+    font-weight: bold;
+    color: #d81e06;
+}
+
+.LinkCardTencentqq-el-divider-style
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #d81e06;
+    padding-top: 1px;
+}

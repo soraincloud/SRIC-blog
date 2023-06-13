@@ -35,17 +35,5 @@ export default
 
 
 <style>
-.LinkCardTwitter-span-text-style
-{
-    font-weight: bold;
-    color: #23ade5;
-}
-
-.LinkCardTwitter-el-divider-style
-{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #23ade5;
-    padding-top: 1px;
-}
+    @import '@/assets/css/common/LinkCardItem.css'
 </style>

@@ -52,17 +52,5 @@ export default
 
 
 <style>
-.LinkCardTencentqq-span-text-style
-{
-    font-weight: bold;
-    color: #d81e06;
-}
-
-.LinkCardTencentqq-el-divider-style
-{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #d81e06;
-    padding-top: 1px;
-}
+    @import '@/assets/css/common/LinkCardItem.css'
 </style>

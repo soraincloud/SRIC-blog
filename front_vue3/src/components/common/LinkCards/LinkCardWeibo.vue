@@ -35,17 +35,5 @@ export default
 
 
 <style>
-.LinkCardWeibo-span-text-style
-{
-    font-weight: bold;
-    color: #fdf66d;
-}
-
-.LinkCardWeibo-el-divider-style
-{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #fdf66d;
-    padding-top: 1px;
-}
+    @import '@/assets/css/common/LinkCardItem.css'
 </style>

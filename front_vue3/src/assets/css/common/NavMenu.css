@@ -1,0 +1,61 @@
+.NavMenu-SRIC-Navlogo-style
+{
+    height: 50px;
+    margin: 5px 10px 5px 10px;
+}
+
+.NavMenu-right-div-style
+{
+    flex-grow: 1;
+}
+
+.NavMenu-menu-text-style
+{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.NavMenu-el-button-style
+{
+    margin-top: 10px;
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+.NavMenu-el-icon-style
+{
+    color: #000000;
+}
+
+.NavMenu-float-div-style
+{
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    position: absolute;
+    z-index: 100;
+}
+
+html.dark .el-menu
+{
+    background-color: rgba(0,0,0,0.64);
+}
+
+html.dark .NavMenu-menu-text-style
+{
+    color: #ffffff;
+}
+
+html.dark .NavMenu-el-icon-style
+{
+    color: #ffffff;
+}
+
+html.dark .NavMenu-float-div-style
+{
+    color: #ffffff;
+}
+
+.el-affix
+{
+    height: 0;
+}
