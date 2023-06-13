@@ -17,7 +17,7 @@
     :default-active="'/index'"
     >
         <el-image :src="SRICNavLogo" class="NavMenu-SRIC-Navlogo-style"></el-image>
-        <el-menu-item v-for="(item,i) in navList" :index="item.name" :key="i" class="NavMenu-menu-text-style">{{ item.navItem }}</el-menu-item>
+        <el-menu-item v-for="(item,i) in navList" :index="item.name" :key="i" class="NavMenu-menu-text-style" :default-active="this.$route.name">{{ item.navItem }}</el-menu-item>
         <div class="NavMenu-right-div-style" />
         <el-tooltip
         effect="light"
@@ -49,9 +49,11 @@ export default
             SRICNavLogo: require('@/assets/images/logo/SRIC-NavLogo.png'),
             navList:
             [
-                {name: '/index', navItem: '首页'},
-                {name: '/notes', navItem: '笔记'},
-                {name: '/resources', navItem: '资源'},
+                {name: 'index', navItem: '首页'},
+                {name: 'notes', navItem: '笔记'},
+                {name: 'resources', navItem: '资源'},
+                {name: 'forun', navItem: '论坛'},
+                {name: 'document', navItem: '个人'},
             ],
             pageHeight: (window.innerHeight - 32),
             place: "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px;"
@@ -63,14 +65,14 @@ export default
         {
         const toggleDark = useToggle(isDark)
         toggleDark()
-        }
+        },
     },
     mounted()
     {
         window.addEventListener('resize',() =>
             this.place = "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px"
         )
-    }
+    },
 }
 </script>
 
