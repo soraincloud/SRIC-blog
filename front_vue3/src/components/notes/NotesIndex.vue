@@ -3,7 +3,9 @@
         <el-col :span="1"></el-col>
         <el-col :span="5"></el-col>
         <el-col :span="12">
-            <notes-card/>
+            <el-scrollbar :height="indexHeight">
+                <notes-card/>
+            </el-scrollbar>
         </el-col>
         <el-col :span="5">
             <el-scrollbar :height="asideHeight">
@@ -25,6 +27,7 @@ export default
     data()
     {
         return{
+            indexHeight: (window.innerHeight - 70) + 'px',
             asideHeight: (window.innerHeight - 70) + 'px',
         }
     },
@@ -32,6 +35,7 @@ export default
     {
         window.onresize = () => 
         {
+            this.indexHeight = (window.innerHeight - 70) + 'px'
             this.asideHeight = (window.innerHeight - 70) + 'px'
         }
     },

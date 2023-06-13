@@ -71,8 +71,6 @@ export default
 </script>
 
 <style scoped>
-.IndexTime-timeline-item-style
-{
-    font-weight: bold;
-}
+    @import '@/assets/css/common.css';
+    @import '@/assets/css/Home/IndexTime.css';
 </style>

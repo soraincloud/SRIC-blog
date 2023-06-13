@@ -51,54 +51,6 @@ export default
 
 
 <style>
-.IndexHeadWarmaGood
-{
-    background: url("@/assets/images/background/warma-good.png"),rgba(255,255,255,0);
-    background-size: 192px 108px;
-    background-repeat: no-repeat;
-    background-position: right 32px bottom;
-}
-
-.common-with-back-el-card-style .el-card__body
-{
-    background: url("@/assets/images/background/warma-lie.png"),rgba(255,255,255,0);
-    background-size: 100px 100px;
-    background-repeat: no-repeat;
-    background-position: right top;
-}
-
-.common-with-back-el-card-style
-{
-    height: 100%;
-    margin-top: 10px;
-    background: rgba(255,255,255,0.64);
-}
-
-.common-text-style
-{
-    color: #666666;
-    font-weight: bold;
-    margin: 5px auto;
-}
-
-.common-el-divider-style
-{
-    background-color: #888888;
-    padding-top: 1px;
-}
-
-html.dark .common-with-back-el-card-style
-{
-    background: rgba(0,0,0,0.64);
-}
-
-html.dark .common-text-style
-{
-    color: #ffffff;
-}
-
-html.dark .IndexHead-el-divider-style
-{
-    background-color: #ffffff;
-}
+    @import '@/assets/css/common.css';
+    @import '@/assets/css/Home/IndexHead.css';
 </style>

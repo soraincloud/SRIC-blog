@@ -77,5 +77,5 @@ export default
 </script>
 
 <style scope>
-    @import '@/assets/css/common/NavMenu.css'
+    @import '@/assets/css/common/NavMenu.css';
 </style>

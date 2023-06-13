@@ -15,17 +15,5 @@ export default
 </script>
 
 <style>
-body
-{
-  margin: 0;
-}
-
-#AppBody-background-style
-{
-  height: 100%;
-  width: 100%;
-  background: url("@/assets/images/background/AppBody-background.png");
-  background-size: cover;
-  position: fixed;
-}
+  @import '@/assets/css/AppBody.css';
 </style>

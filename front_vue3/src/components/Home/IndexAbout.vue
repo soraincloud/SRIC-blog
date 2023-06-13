@@ -50,27 +50,6 @@ export default
 </script>
 
 <style>
-.IndexAbout-outside-div-style .el-card
-{
-    background: url("@/assets/images/background/warma-yeah.png"),rgba(255,255,255,0.64);
-    background-size: 192px 108px;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-}
-
-.IndexAbout-outside-div-style
-{
-    background: url("@/assets/images/background/warma-yeah.png"),rgba(255,255,255,0);
-    background-size: 192px 108px;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-}
-
-html.dark .IndexAbout-outside-div-style .el-card
-{
-    background: url("@/assets/images/background/warma-yeah.png"),rgba(0,0,0,0.64);
-    background-size: 192px 108px;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-}
+    @import '@/assets/css/common.css';
+    @import '@/assets/css/Home/IndexAbout.css';
 </style>

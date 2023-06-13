@@ -35,5 +35,5 @@ export default
 
 
 <style>
-    @import '@/assets/css/common/LinkCardItem.css'
+    @import '@/assets/css/common/LinkCardItem.css';
 </style>

@@ -62,5 +62,5 @@ export default
 </script>
 
 <style>
-    @import '@/assets/css/common/AsideMessage.css'
+    @import '@/assets/css/common/AsideMessage.css';
 </style>

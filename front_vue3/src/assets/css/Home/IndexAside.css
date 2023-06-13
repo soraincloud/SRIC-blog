@@ -1,0 +1,51 @@
+.IndexAside-el-card-style
+{
+    height: 100%;
+    margin-top: 10px;
+    margin-right: 10px;
+    background: rgba(255,255,255,0.64);
+}
+
+.IndexAside-el-card-style .el-card__body
+{
+    background: url("@/assets/images/background/muli-black.png"),rgba(255,255,255,0);
+    background-size: 200px 120px;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+.IndexAside-item-card-style
+{
+    background: rgba(255,255,255,0);
+    border: solid;
+}
+
+.IndexAside-item-card-style .el-card__body
+{
+    background: rgba(255,255,255,0);
+    padding: 10px;
+}
+
+html.dark .IndexAside-el-card-style
+{
+    background: rgba(0,0,0,0.64);
+}
+
+html.dark .IndexAside-el-card-style .el-card__body
+{
+    background: url("@/assets/images/background/muli-white.png"),rgba(255,255,255,0);
+    background-size: 200px 120px;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+html.dark .IndexAside-item-card-style
+{
+    border-color: white;
+}
+
+html.dark .IndexAside-item-card-style .el-card__body
+{
+    background: rgba(255,255,255,0);
+    padding: 10px;
+}

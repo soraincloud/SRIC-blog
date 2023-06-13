@@ -58,5 +58,5 @@ export default
 </script>
 
 <style>
-  @import '@/assets/css/common/LinkCard.css'
+  @import '@/assets/css/common/LinkCard.css';
 </style>

@@ -1,8 +1,11 @@
 <template>
-    <el-card v-for="item in notes" :key="item.id" class="notes-with-back-el-card-style">
-        <h1>{{item.title}}</h1>
-        <p>{{item.description}}</p>
-    </el-card>
+    <div>
+        <el-card v-for="item in notes" :key="item.id" class="common-with-back-el-card-style">
+            <h1 class="common-text-style">{{item.title}}</h1>
+            <el-divider class="common-el-divider-style" />
+            <p class="common-text-style">{{item.description}}</p>
+        </el-card>
+    </div>
 </template>
 
 <script>
@@ -32,9 +35,5 @@ export default
 </script>
 
 <style scoped>
-.notes-with-back-el-card-style
-{
-    margin-top: 10px;
-    background: rgba(255,255,255,0.64);
-}
+    @import '@/assets/css/common.css';
 </style>
