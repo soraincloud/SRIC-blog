@@ -56,7 +56,6 @@ export default
         {
             var _this = this
             var categoryNeed = this.$refs.getCategory.categoryNeed
-            console.log(categoryNeed)
             this.$axios
             .get('/notesListByCategory',{ params:{ category: categoryNeed } })
             .then(resp => 

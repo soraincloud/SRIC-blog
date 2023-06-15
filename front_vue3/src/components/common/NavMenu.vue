@@ -62,9 +62,8 @@ export default
                 {name: 'notes', navItem: '笔记'},
                 {name: 'resources', navItem: '资源'},
                 {name: 'forun', navItem: '论坛'},
-                {name: 'document', navItem: '个人'},
+                {name: 'personal', navItem: '个人'},
             ],
-            pageHeight: (window.innerHeight - 32),
             place: "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px;"
         }
     },

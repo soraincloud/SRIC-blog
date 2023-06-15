@@ -24,13 +24,13 @@
 
 <script>
 import { useDark } from '@vueuse/core'
-import { Menu,QuestionFilled } from '@element-plus/icons-vue'
+import { Menu,QuestionFilled,Opportunity } from '@element-plus/icons-vue'
 
 const isDark = useDark()
 export default
 {
     name: 'NotesAside',
-    components: { Menu,QuestionFilled },
+    components: { Menu,QuestionFilled,Opportunity },
     data()
     {
         return{
@@ -47,7 +47,7 @@ export default
                 },
                 {
                     content: "算法",
-                    icon: "QuestionFilled",
+                    icon: "Opportunity",
                 },
             ],
             categoryNeed: ''

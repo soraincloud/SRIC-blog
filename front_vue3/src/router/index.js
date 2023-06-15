@@ -24,6 +24,11 @@ const routes =
         path: '/resources',
         component: () => import('@/components/resources/ResourcesIndex'),
       },
+      {
+        name: 'Personal',
+        path: '/Personal',
+        component: () => import('@/components/personal/PersonalIndex'),
+      },
     ]
   }
 ]
