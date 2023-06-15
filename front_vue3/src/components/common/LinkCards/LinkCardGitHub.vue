@@ -10,7 +10,7 @@
     <div class="LinkCard-text-style">
         (ﾉ*･ω･)ﾉ
         <a href="https://github.com/soraincloud" target="blank">
-        <el-button color="#6dc781" size="small" class="LinkCard-link-button-style">
+        <el-button color="#32ea3e" size="small" class="LinkCard-link-button-style">
             传送门
             <el-icon class="LinkCard-icon-style" size="18px"><Connection/></el-icon>
         </el-button>
@@ -27,7 +27,7 @@ export default
     data()
     {
         return{
-            MarkGitHub: require('@/assets/images/logo/mark-6dc781.png')
+            MarkGitHub: require('@/assets/images/logo/mark-32ea3e.png')
         }
     }
 }

@@ -3,17 +3,17 @@
         <el-col :span="1"></el-col>
         <el-col :span="5">
             <el-scrollbar :height="categoryHeight">
-                <notes-aside/>
+                <notes-aside ref="getCategory" @loadAllNotesFormAside="loadAllNotes" @loadNotesFromAside="loadNotesByCategory" />
             </el-scrollbar>
         </el-col>
         <el-col :span="12">
             <el-scrollbar :height="indexHeight">
-                <notes-card/>
+                <notes-card ref="loadAllNotesToCard" />
             </el-scrollbar>
         </el-col>
         <el-col :span="5">
             <el-scrollbar :height="asideHeight">
-                <aside-message/>
+                <aside-message />
             </el-scrollbar>
         </el-col>
         <el-col :span="1"></el-col>
@@ -46,5 +46,27 @@ export default
             this.categoryHeight = (window.innerHeight - 70) + 'px'
         }
     },
+    methods:
+    {
+        loadAllNotes()
+        {
+            this.$refs.loadAllNotesToCard.loadNotes()
+        },
+        loadNotesByCategory()
+        {
+            var _this = this
+            var categoryNeed = this.$refs.getCategory.categoryNeed
+            console.log(categoryNeed)
+            this.$axios
+            .get('/notesListByCategory',{ params:{ category: categoryNeed } })
+            .then(resp => 
+            {
+                if (resp && resp.status === 200)
+                {
+                    _this.$refs.loadAllNotesToCard.notes = resp.data
+                }
+            })
+        }
+    }
 }
 </script>

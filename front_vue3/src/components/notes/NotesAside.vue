@@ -11,6 +11,7 @@
             :style="item.backgrounds"
             @mouseover="over(i)"
             @mouseleave="leave(i)"
+            @click="choose(i)"
             >
             <el-icon size="20px" style="float:right">
                 <component :is="item.icon"></component>
@@ -43,8 +44,13 @@ export default
                 {
                     content: "未分类",
                     icon: "QuestionFilled",
-                }
-            ]
+                },
+                {
+                    content: "算法",
+                    icon: "QuestionFilled",
+                },
+            ],
+            categoryNeed: ''
         }
     },
     methods:
@@ -79,6 +85,18 @@ export default
         {
             this.category[i].backgrounds = ''
         },
+        choose(i)
+        {
+            if(i == 0)
+            {
+                this.$emit('loadAllNotesFormAside')
+            }
+            else
+            {
+                this.categoryNeed = i
+                this.$emit('loadNotesFromAside')
+            }
+        }
     }
 }
 </script>

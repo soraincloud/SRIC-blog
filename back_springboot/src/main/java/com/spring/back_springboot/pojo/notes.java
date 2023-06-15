@@ -10,4 +10,5 @@ public class notes
     private String description;
     private String category;
     private String md;
+    private int visited;
 }

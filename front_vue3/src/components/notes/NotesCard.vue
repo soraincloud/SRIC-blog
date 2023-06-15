@@ -9,6 +9,10 @@
         @mouseleave="leave(i)"
         >
             <h1 class="common-text-style">{{item.title}}</h1>
+            <div>
+                <el-icon size="10px" class="NotesCard-el-icon-style"><Histogram/></el-icon>
+                <span class="NotesCard-tag-text-style">访问量：{{item.visited}}</span>
+            </div>
             <el-divider class="common-el-divider-style" />
             <p class="common-text-style">{{item.description}}</p>
         </el-card>
@@ -17,11 +21,13 @@
 
 <script>
 import { useDark } from '@vueuse/core'
+import { Histogram } from '@element-plus/icons-vue'
 
 const isDark = useDark()
 export default
 {
     name:'NotesCard',
+    components: { Histogram },
     data()
     {
         return{
@@ -48,12 +54,15 @@ export default
         loadNotes()
         {
             var _this = this
-            this.$axios.get('/notesList').then(resp => {
-            if (resp && resp.status === 200)
+            this.$axios
+            .get('/notesList')
+            .then(resp => 
             {
-                _this.notes = resp.data
-            }
-          })
+                if (resp && resp.status === 200)
+                {
+                    _this.notes = resp.data
+                }
+            })
         }
     },
     mounted:function()
@@ -65,4 +74,5 @@ export default
 
 <style scoped>
     @import '@/assets/css/common.css';
+    @import '@/assets/css/notes/NotesCard.css';
 </style>

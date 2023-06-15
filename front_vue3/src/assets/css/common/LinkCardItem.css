@@ -47,7 +47,7 @@ html.dark .LinkCard-text-style
 .LinkCardGitHub-span-text-style
 {
     font-weight: bold;
-    color: #6dc781;
+    color: #32ea3e;
 }
 
 .LinkCardGitHub-el-divider-style
@@ -55,7 +55,7 @@ html.dark .LinkCard-text-style
     border: 0px;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #6dc781;
+    background-color: #32ea3e;
     padding-top: 1px;
 }
 
