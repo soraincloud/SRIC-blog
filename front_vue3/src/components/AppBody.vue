@@ -1,6 +1,6 @@
 <template>
   <body id="AppBody-background-style" :style="fire">
-    <nav-menu @dochangefire="changeFire" @doChangeFilter="changeFilter" />
+    <nav-menu @dochangefire="changeFire" @doChangeFilter="changeFilter" ref="changeProgress" />
     <div class="AppBody-allBody-div-style" :style="filter">
       <router-view/>
     </div>
@@ -52,6 +52,7 @@ export default
         filterNumber += 3
       }
       this.filter = "backdrop-filter: blur(" + filterNumber + "px)"
+      this.$refs.changeProgress.progressData = filterNumber / 3 * 33
     },
   }
 }

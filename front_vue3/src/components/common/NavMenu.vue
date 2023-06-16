@@ -24,6 +24,10 @@
         content="背景模糊"
         placement="bottom"
         >
+            <template #content>
+                <el-progress type="circle" :percentage="progressData" status="success" width="50" />
+                <p class="NavMenu-progress-p-style">背景模糊</p>
+            </template>
             <el-button @click="switchFilter()" circle size="large" class="NavMenu-el-button-style">
                 <el-icon class="NavMenu-el-icon-style" size="20px"><Open/></el-icon>
             </el-button>
@@ -74,6 +78,7 @@ export default
                 {name: 'personal', navItem: '个人'},
             ],
             place: "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px;",
+            progressData: 0,
         }
     },
     methods:

@@ -20,6 +20,15 @@
     margin-top: 10px;
 }
 
+.NavMenu-progress-p-style
+{
+    text-align: center;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 5px;
+    font-weight: bold;
+}
+
 .NavMenu-el-icon-style
 {
     color: #000000;
