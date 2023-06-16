@@ -21,6 +21,15 @@
         <div class="NavMenu-right-div-style" />
         <el-tooltip
         effect="light"
+        content="背景模糊"
+        placement="bottom"
+        >
+            <el-button @click="switchFilter()" circle size="large" class="NavMenu-el-button-style">
+                <el-icon class="NavMenu-el-icon-style" size="20px"><Open/></el-icon>
+            </el-button>
+        </el-tooltip>
+        <el-tooltip
+        effect="light"
         content="放烟花吗"
         placement="bottom"
         >
@@ -45,13 +54,13 @@
 
 <script>
 import { useDark, useToggle } from '@vueuse/core'
-import { Sunny,Star } from '@element-plus/icons-vue'
+import { Sunny,Star,Open } from '@element-plus/icons-vue'
 
 const isDark = useDark()
 export default
 {
     name: 'NavMenu',
-    components: { Sunny,Star },
+    components: { Sunny,Star,Open },
     data ()
     {
         return {
@@ -64,7 +73,7 @@ export default
                 {name: 'forun', navItem: '论坛'},
                 {name: 'personal', navItem: '个人'},
             ],
-            place: "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px;"
+            place: "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px;",
         }
     },
     methods:
@@ -77,7 +86,11 @@ export default
         switchFire()
         {
             this.$emit('dochangefire')
-        }
+        },
+        switchFilter()
+        {
+            this.$emit('doChangeFilter')
+        },
     },
     mounted()
     {

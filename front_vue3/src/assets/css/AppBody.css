@@ -10,3 +10,10 @@ body
   background-size: cover;
   position: fixed;
 }
+
+.AppBody-allBody-div-style
+{
+  width: 100%;
+  height: 100%;
+  
+}
