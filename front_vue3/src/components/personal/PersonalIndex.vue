@@ -53,6 +53,14 @@ export default
             this.paddingTop = "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
         )
     },
+    created()
+    {
+        var userId = localStorage.getItem('userId')
+        if(userId != null)
+        {
+            console.log(userId)
+        }
+    },
 }
 </script>
 
