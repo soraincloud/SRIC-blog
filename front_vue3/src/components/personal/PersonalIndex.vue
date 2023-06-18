@@ -1,4 +1,29 @@
 <template>
+    <div class="PersonalIndex-affix-div-style">
+        <el-affix>
+            <el-button 
+            color="#ff6666" 
+            class="PersonalIndex-affix-button-style" 
+            plain>
+            <el-icon class="PersonalIndex-affix-icon-style"><User/></el-icon>
+            登录
+            </el-button>
+            <el-button 
+            color="#ff6666" 
+            class="PersonalIndex-affix-button-style" 
+            plain>
+            <el-icon class="PersonalIndex-affix-icon-style"><EditPen/></el-icon>
+            注册
+            </el-button>
+            <el-button 
+            color="#ff6666" 
+            class="PersonalIndex-affix-button-style" 
+            plain>
+            <el-icon class="PersonalIndex-affix-icon-style"><Operation/></el-icon>
+            选项
+            </el-button>
+        </el-affix>
+    </div>
     <div class="PersonalIndex-avater-div-style" :style="paddingTop">
         <el-avatar :src="require('@/assets/images/logo/' + avatar)" :size="150" fit="scale-down"></el-avatar>
         <p class="PersonalIndex-name-style">{{ username }}</p>
@@ -17,11 +42,13 @@
 </template>
 
 <script>
+import { User,EditPen,Operation } from '@element-plus/icons-vue'
 var userId
 
 export default
 {
     name: 'RersonalIndex',
+    components: { User,EditPen,Operation },
     data()
     {
         return{
