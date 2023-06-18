@@ -70,6 +70,15 @@ export default
                     _this.username = resp.data.username
                 }
             })
+            this.$axios
+            .get('/getTagByUid',{ params:{ uid: userId } })
+            .then(resp => 
+            {
+                if (resp && resp.status === 200)
+                {
+                    _this.tags = resp.data
+                }
+            })
         }
     },
 }
