@@ -2,6 +2,8 @@
     <div class="PersonalIndex-affix-div-style">
         <el-affix>
             <el-button 
+            v-if="userId == null"
+            @click="switchLogin"
             color="#ff6666" 
             class="PersonalIndex-affix-button-style" 
             plain>
@@ -9,6 +11,7 @@
             登录
             </el-button>
             <el-button 
+            v-if="userId == null"
             color="#ff6666" 
             class="PersonalIndex-affix-button-style" 
             plain>
@@ -16,6 +19,7 @@
             注册
             </el-button>
             <el-button 
+            v-if="userId != null"
             color="#ff6666" 
             class="PersonalIndex-affix-button-style" 
             plain>
@@ -74,6 +78,13 @@ export default
                 },
             ],
             mark: "因为没有登录所以没有个人介绍哦,快去登录,然后写一个吧  ･ω･ )"
+        }
+    },
+    methods:
+    {
+        switchLogin()
+        {
+            this.$router.push('/Login')
         }
     },
     mounted()

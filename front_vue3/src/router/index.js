@@ -10,7 +10,7 @@ const routes =
     children:
     [
       {
-        name: "AppIndex",
+        name: 'AppIndex',
         path: '/index',
         component: () => import('@/components/Home/AppIndex'),
       },
@@ -29,6 +29,11 @@ const routes =
         path: '/Personal',
         component: () => import('@/components/personal/PersonalIndex'),
       },
+      {
+        name: 'Login',
+        path: '/Login',
+        component: () => import('@/components/personal/LoginPage'),
+      }
     ]
   }
 ]
