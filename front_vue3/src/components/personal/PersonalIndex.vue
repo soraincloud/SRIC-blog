@@ -1,6 +1,6 @@
 <template>
     <div class="PersonalIndex-avater-div-style" :style="paddingTop">
-        <el-avatar :src="avatar" :size="150" fit="scale-down"></el-avatar>
+        <el-avatar :src="require('@/assets/images/logo/' + avatar)" :size="150" fit="scale-down"></el-avatar>
         <p class="PersonalIndex-name-style">{{ username }}</p>
         <el-tag
         v-for="(item,i) in tags"
@@ -17,13 +17,15 @@
 </template>
 
 <script>
+var userId
+
 export default
 {
     name: 'RersonalIndex',
     data()
     {
         return{
-            avatar: require('@/assets/images/logo/head-main.png'),
+            avatar: 'head-main.png',
             username: '没登陆所以没昵称哦',
             paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
             tags: 
@@ -55,10 +57,19 @@ export default
     },
     created()
     {
-        var userId = localStorage.getItem('userId')
+        userId = localStorage.getItem('userId')
         if(userId != null)
         {
-            console.log(userId)
+            var _this = this
+            this.$axios
+            .get('/getUserById',{ params:{ id: userId} })
+            .then(resp =>
+            {
+                if (resp && resp.status === 200)
+                {
+                    _this.username = resp.data.username
+                }
+            })
         }
     },
 }
