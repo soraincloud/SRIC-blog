@@ -22,8 +22,18 @@
                                 </el-input>
                             </el-form-item>
                             <el-form-item>
-                                <el-button size="small" class="LoginPage-submit-button-style" style="margin-left:40px" type="danger" plain>登录</el-button>
-                                <el-button size="small" class="LoginPage-submit-button-style" type="danger" plain>忘记密码</el-button>
+                                <el-button 
+                                @click="login"
+                                size="small" 
+                                class="LoginPage-submit-button-style" 
+                                style="margin-left:40px" 
+                                type="danger" 
+                                plain>登录</el-button>
+                                <el-button 
+                                size="small" 
+                                class="LoginPage-submit-button-style" 
+                                type="danger" 
+                                plain>忘记密码</el-button>
                             </el-form-item>
                         </el-form>
                     </div>
@@ -71,6 +81,31 @@ export default
         mouseLeave()
         {
             this.active = ''
+        },
+        login()
+        {
+            var _this = this
+            this.$axios
+            .post('/login',{ username: this.form.username,password: this.form.password })
+            .then(resp =>
+            {
+                if(resp.data.code == 200)
+                {
+                    this.$message.success({message: '登录成功 欢迎回来喵 ~',})
+                }
+                else if(resp.data.code == 400)
+                {
+                    this.$message.error({message: '密码错误 戳啦 戳啦 戳啦 awa',})
+                }
+                else if(resp.data.code == 401)
+                {
+                    this.$message.warning({message: '查无此人 是不是账户填错了 qwq',})
+                }
+                else
+                {
+                    this.$message.error({message: 'error 你是不是乱改东西了(凶)',})
+                }
+            })
         },
     },
     mounted()

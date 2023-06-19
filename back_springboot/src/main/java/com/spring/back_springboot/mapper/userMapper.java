@@ -10,4 +10,7 @@ public interface userMapper
 {
     @Select(value="SELECT * FROM USER WHERE ID = #{id}")
     user GetUserById(@Param(value = "id") int id);
+
+    @Select(value="SELECT * FROM USER WHERE USERNAME = #{username}")
+    user GetUserByName(@Param(value = "username") String username);
 }
