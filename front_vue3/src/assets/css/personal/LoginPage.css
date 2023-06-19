@@ -24,12 +24,16 @@
     text-align: center;
     color:#ff8888;
     text-shadow: 0 0 15px #000000;
-    margin-bottom: 35px;
 }
 
 .el-input__wrapper.is-focus
 {
     box-shadow: 0 0 0 1px #ffcccc;
+}
+
+.LoginPage-submit-button-style
+{
+    box-shadow: 0 0 0 1px #000000;
 }
 
 html.dark .LoginPage-el-card-style

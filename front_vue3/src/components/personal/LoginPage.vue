@@ -21,6 +21,10 @@
                                     </template>
                                 </el-input>
                             </el-form-item>
+                            <el-form-item>
+                                <el-button size="small" class="LoginPage-submit-button-style" style="margin-left:40px" type="danger" plain>登录</el-button>
+                                <el-button size="small" class="LoginPage-submit-button-style" type="danger" plain>忘记密码</el-button>
+                            </el-form-item>
                         </el-form>
                     </div>
                 </el-card>
@@ -42,7 +46,7 @@ export default
     data()
     {
         return{
-            paddingTop: "padding-top:" + ((window.innerHeight - 300) / 2) + "px;",
+            paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
             form:
             {
                 username: '',
@@ -68,7 +72,13 @@ export default
         {
             this.active = ''
         },
-    }
+    },
+    mounted()
+    {
+        window.addEventListener('resize',() =>
+            this.paddingTop = "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
+        )
+    },
 }
 </script>
 
