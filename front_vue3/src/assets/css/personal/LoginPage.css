@@ -5,10 +5,31 @@
     background: rgba(255,255,255,0.64);
 }
 
+.LoginPage-el-card-style .el-card__body
+{
+    background: url("@/assets/images/background/warma-question.png"),rgba(255,255,255,0);
+    background-size: 300px 270px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+.LoginPage-inside-div-style
+{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
 .LoginPage-title-style
 {
     text-align: center;
     color:#ff8888;
+    text-shadow: 0 0 15px #000000;
+    margin-bottom: 35px;
+}
+
+.el-input__wrapper.is-focus
+{
+    box-shadow: 0 0 0 1px #ffcccc;
 }
 
 html.dark .LoginPage-el-card-style

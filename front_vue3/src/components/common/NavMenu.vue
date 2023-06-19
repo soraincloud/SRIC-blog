@@ -29,7 +29,7 @@
                 <p class="NavMenu-progress-p-style">背景模糊</p>
             </template>
             <el-button @click="switchFilter()" circle size="large" class="NavMenu-el-button-style">
-                <el-icon class="NavMenu-el-icon-style" size="20px"><Open/></el-icon>
+                <el-icon class="is-loading NavMenu-el-icon-style" size="20px"><Open/></el-icon>
             </el-button>
         </el-tooltip>
         <el-tooltip
@@ -38,7 +38,7 @@
         placement="bottom"
         >
             <el-button @click="switchFire()" circle size="large" class="NavMenu-el-button-style">
-                <el-icon class="NavMenu-el-icon-style" size="20px"><Star/></el-icon>
+                <el-icon class="is-loading NavMenu-el-icon-style" size="20px"><Star/></el-icon>
             </el-button>
         </el-tooltip>
         <el-tooltip
@@ -47,7 +47,7 @@
         placement="bottom"
         >
             <el-button @click="switchThemes()" circle size="large" class="NavMenu-el-button-style" style="margin-right: 30px">
-                <el-icon class="NavMenu-el-icon-style" size="20px"><Sunny/></el-icon>
+                <el-icon class="is-loading NavMenu-el-icon-style" size="20px"><Sunny/></el-icon>
             </el-button>
         </el-tooltip>
     </el-menu>
