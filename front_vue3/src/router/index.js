@@ -33,7 +33,12 @@ const routes =
         name: 'Login',
         path: '/Login',
         component: () => import('@/components/personal/LoginPage'),
-      }
+      },
+      {
+        name: 'Setting',
+        path: '/Setting',
+        component: () => import('@/components/personal/SettingPage'),
+      },
     ]
   }
 ]

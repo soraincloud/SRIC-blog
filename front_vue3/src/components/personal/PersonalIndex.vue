@@ -20,6 +20,7 @@
             </el-button>
             <el-button 
             v-if="userId != null"
+            @click="switchSetting"
             color="#ff6666" 
             class="PersonalIndex-affix-button-style" 
             plain>
@@ -68,7 +69,11 @@ export default
         switchLogin()
         {
             this.$router.push('/Login')
-        }
+        },
+        switchSetting()
+        {
+            this.$router.push('/Setting')
+        },
     },
     mounted()
     {
