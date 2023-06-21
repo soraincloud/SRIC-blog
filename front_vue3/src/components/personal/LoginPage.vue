@@ -92,6 +92,8 @@ export default
                 if(resp.data.code == 200)
                 {
                     this.$message.success({message: '登录成功 欢迎回来喵 ~',})
+                    localStorage.setItem('userId',resp.data.id)
+                    this.$router.push('/Personal')
                 }
                 else if(resp.data.code == 400)
                 {

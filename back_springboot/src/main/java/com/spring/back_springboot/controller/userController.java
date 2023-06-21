@@ -33,7 +33,7 @@ public class userController
         {
             if(u.getPassword().equals(user.getPassword()))
             {
-                return new login(200,user.getId());
+                return new login(200,u.getId());
             }
             else
             {

@@ -40,3 +40,8 @@ html.dark .LoginPage-el-card-style
 {
     background: rgba(0,0,0,0.64);
 }
+
+html.dark .el-input__wrapper
+{
+    background-color: #000000;
+}
