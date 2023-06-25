@@ -1,0 +1,27 @@
+.el-input__wrapper.is-focus
+{
+    box-shadow: 0 0 0 1px #ffcccc;
+}
+
+.el-input-group__append
+{
+    box-shadow: 0 0 0 1px #ffcccc;
+}
+
+.SettingPage-input-div-style
+{
+    margin-top: 20px;
+}
+
+.SettingPage-input-button-style
+{
+    width: 100%;
+    background-color: rgba(255,255,255,0.64);
+    font-weight: bold;
+    color: #ff6666;
+}
+
+html.dark .SettingPage-input-button-style
+{
+    background-color: rgba(0,0,0,0.64);
+}
