@@ -55,15 +55,15 @@
                     <div class="SettingPage-input-div-style">
                         <el-row>
                             <el-col :span="6">
-                                <el-button class="SettingPage-input-button-style" type="danger">返回</el-button>
+                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchBack">返回</el-button>
                             </el-col>
                             <el-col :span="3"></el-col>
                             <el-col :span="6">
-                                <el-button class="SettingPage-input-button-style" type="danger">更改密码</el-button>
+                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchChange">账户安全</el-button>
                             </el-col>
                             <el-col :span="3"></el-col>
                             <el-col :span="6">
-                                <el-button class="SettingPage-input-button-style" type="danger">退出登录</el-button>
+                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchQuit">退出登录</el-button>
                             </el-col>
                         </el-row>
                     </div>
@@ -72,6 +72,32 @@
         </el-col>
         <el-col :span="2"></el-col>
     </el-row>
+
+    <el-dialog
+        v-model="dialogVisible"
+        title="真的吗?"
+        width="30%"
+        style="font-weight:bold;"
+        :before-close="handleClose"
+        >
+        <span>真的要退出登录吗?</span>
+        <template #footer>
+        <span class="dialog-footer">
+            <el-row>
+                <el-col :span="10">
+                    <el-button class="SettingPage-input-button-style" type="danger" @click="dialogVisible = false">不</el-button>
+                </el-col>
+                <el-col :span="4"></el-col>
+                <el-col :span="10">
+                    <el-button class="SettingPage-input-button-style" type="danger" @click="quiting">是的</el-button>
+                </el-col>
+            </el-row>
+            
+
+        </span>
+        </template>
+    </el-dialog>
+
 </template>
 
 <script>
@@ -90,11 +116,25 @@ export default
             mark: '',
             userId: localStorage.getItem('userId'),
             paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
+            dialogVisible: false,
         }
     },
     methods:
     {
-
+        switchBack()
+        {
+            this.$router.push('/Personal')
+        },
+        switchQuit()
+        {
+            this.dialogVisible = true
+        },
+        quiting()
+        {
+            localStorage.removeItem('userId')
+            this.$router.push('/Personal')
+            this.$message.success({message: '退出登录啦',})
+        }
     },
     mounted()
     {

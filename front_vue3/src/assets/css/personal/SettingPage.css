@@ -16,12 +16,12 @@
 .SettingPage-input-button-style
 {
     width: 100%;
-    background-color: rgba(255,255,255,0.64);
+    background-color: rgba(255,255,255,0.85);
     font-weight: bold;
     color: #ff6666;
 }
 
 html.dark .SettingPage-input-button-style
 {
-    background-color: rgba(0,0,0,0.64);
+    background-color: rgba(0,0,0,0.85);
 }
