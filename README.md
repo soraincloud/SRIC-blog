@@ -43,7 +43,7 @@ you may need to download **mysql**
 
 set your name and password of **mysql**
 
-and set them in **application.properties**,like
+and set them in **application.properties** right in back_springboot,like
 
 ```
 spring.datasource.url=jdbc:mysql://localhost:3306/sric-blog?characterEncoding=UTF-8
