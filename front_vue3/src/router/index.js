@@ -10,34 +10,39 @@ const routes =
     children:
     [
       {
-        name: 'AppIndex',
+        name: 'index',
         path: '/index',
         component: () => import('@/components/Home/AppIndex'),
       },
       {
-        name: 'NotesIndex',
+        name: 'notes',
         path: '/notes',
         component: () => import('@/components/notes/NotesIndex'),
       },
       {
-        name: 'Resources',
+        name: 'resources',
         path: '/resources',
         component: () => import('@/components/resources/ResourcesIndex'),
       },
       {
-        name: 'Personal',
-        path: '/Personal',
+        name: 'personal',
+        path: '/personal',
         component: () => import('@/components/personal/PersonalIndex'),
       },
       {
-        name: 'Login',
-        path: '/Login',
+        name: 'login',
+        path: '/login',
         component: () => import('@/components/personal/LoginPage'),
       },
       {
-        name: 'Setting',
-        path: '/Setting',
+        name: 'setting',
+        path: '/setting',
         component: () => import('@/components/personal/SettingPage'),
+      },
+      {
+        name: 'signup',
+        path: '/signup',
+        component: () => import('@/components/personal/SignupPage'),
       },
     ]
   }

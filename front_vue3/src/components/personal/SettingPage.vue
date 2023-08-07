@@ -31,7 +31,7 @@
                         >
                         <template #append>
                             <el-button>
-                                提交
+                                确定
                             </el-button>
                         </template>
                         </el-input>
@@ -47,7 +47,7 @@
                         >
                         <template #append>
                             <el-button>
-                                提交
+                                确定
                             </el-button>
                         </template>
                         </el-input>

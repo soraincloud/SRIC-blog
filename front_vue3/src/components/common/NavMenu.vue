@@ -12,12 +12,12 @@
     mode="horizontal"
     background-color="rgba(255,255,255,0.64)"
     text-color="#222"
-    active-text-color="#66ccff"
+    active-text-color="#ff7f7f"
     :ellipsis="false"
-    :default-active="'/index'"
+    :default-active="defaultActive"
     >
         <el-image :src="SRICNavLogo" class="NavMenu-SRIC-Navlogo-style"></el-image>
-        <el-menu-item v-for="(item,i) in navList" :index="item.name" :key="i" class="NavMenu-menu-text-style" :default-active="this.$route.name">{{ item.navItem }}</el-menu-item>
+        <el-menu-item v-for="(item,i) in navList" :index="item.name" :key="i" class="NavMenu-menu-text-style">{{ item.navItem }}</el-menu-item>
         <div class="NavMenu-right-div-style" />
         <el-tooltip
         effect="light"
@@ -79,6 +79,7 @@ export default
             ],
             place: "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px;",
             progressData: 0,
+            defaultActive: '',
         }
     },
     methods:
@@ -103,6 +104,10 @@ export default
             this.place = "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px"
         )
     },
+    created()
+    {
+        this.defaultActive = this.$route.name;
+    }
 }
 </script>
 

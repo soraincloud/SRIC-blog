@@ -59,7 +59,8 @@ export default
         loadIndexTime()
         {
             var _this = this
-            this.$axios.get('/indexTimeList').then(resp => {
+            this.$axios.get('/indexTimeList').then(resp => 
+            {
                 if (resp && resp.status === 200)
                 {
                     _this.timeline = resp.data
