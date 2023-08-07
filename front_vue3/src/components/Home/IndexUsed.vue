@@ -18,42 +18,8 @@
 </template>
 
 <script>
-import UsedCardVue from '@/components/Home/UsedCard/UsedCardVue'
-import UsedCardSpringboot from '@/components/Home/UsedCard/UsedCardSpringboot'
-import UsedCardMysql from '@/components/Home/UsedCard/UsedCardMysql'
-import UsedCardElement from '@/components/Home/UsedCard/UsedCardElement'
-import { useDark } from '@vueuse/core'
-
-const isDark = useDark()
-export default
-{
-    name: 'IndexUsed',
-    components: { UsedCardVue,UsedCardSpringboot,UsedCardMysql,UsedCardElement },
-    data()
-    {
-        return{
-            active: ''
-        }
-    },
-    methods:
-    {
-        mouseEnter()
-        {
-            if(isDark.value == true)
-            {
-                this.active = 'background: rgba(0,0,0,0.85);'
-            }
-            else
-            {
-                this.active = 'background: rgba(255,255,255,0.85)'
-            }
-        },
-        mouseLeave()
-        {
-            this.active = ''
-        }
-    }
-}
+    import indexused from "@/assets/js/home/IndexUsed.js"
+    export default indexused
 </script>
 
 <style>

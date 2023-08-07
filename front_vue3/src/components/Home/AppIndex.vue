@@ -27,42 +27,10 @@
 </template>
 
 <script>
-import AsideMessage from '@/components/common/AsideMessage'
-import IndexHead from '@/components/Home/IndexHead'
-import IndexUsed from '@/components/Home/IndexUsed'
-import IndexAbout from '@/components/Home/IndexAbout'
-import IndexTime from '@/components/Home/IndexTime'
-import IndexAside from '@/components/Home/IndexAside'
-
-export default
-{
-    name: 'AppIndex',
-    components: { AsideMessage,IndexHead,IndexUsed,IndexAbout,IndexTime,IndexAside },
-    data()
-    {
-        return{
-            indexHeight: (window.innerHeight - 70) + 'px',
-            asideHeight: (window.innerHeight - 70) + 'px',
-        }
-    },
-    mounted()
-    {
-        window.onresize = () => 
-        {
-            this.indexHeight = (window.innerHeight - 70) + 'px'
-            this.asideHeight = (window.innerHeight - 70) + 'px'
-        }
-    },
-    methods:
-    {
-        over(i)
-        {
-            this.$refs.aside.changeBackground(i)
-        }
-    }
-}
+    import appindex from "@/assets/js/home/AppIndex.js"
+    export default appindex
 </script>
 
 <style>
-    @import '@/assets/css/Home/AppIndex.css';
+    @import '@/assets/css/home/AppIndex.css';
 </style>

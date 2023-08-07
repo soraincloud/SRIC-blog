@@ -19,18 +19,8 @@
 </template>
 
 <script>
-import { Connection } from '@element-plus/icons-vue'
-export default
-{
-    name: 'LinkCardBilibili',
-    components: { Connection },
-    data()
-    {
-        return{
-            MarkBilibili: require('@/assets/images/logo/mark-fb7299.png')
-        }
-    }
-}
+    import linkcardbilibili from "@/assets/js/common/LinkCards/LinkCardBilibili.js"
+    export default linkcardbilibili
 </script>
 
 

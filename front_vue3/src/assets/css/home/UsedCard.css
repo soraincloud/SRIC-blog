@@ -1,0 +1,12 @@
+.Used-common-el-card-style .el-card__body
+{
+    padding: 0;
+    background: rgba(255,255,255,0);
+}
+
+.Used-common-el-card-style
+{
+    background: rgba(255,255,255,0);
+    margin-left: 5px;
+    margin-right: 5px;
+}

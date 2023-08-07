@@ -12,7 +12,7 @@ const routes =
       {
         name: 'index',
         path: '/index',
-        component: () => import('@/components/Home/AppIndex'),
+        component: () => import('@/components/home/AppIndex'),
       },
       {
         name: 'notes',

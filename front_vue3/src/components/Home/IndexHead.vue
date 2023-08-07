@@ -16,41 +16,12 @@
 </template>
 
 <script>
-import { useDark } from '@vueuse/core'
-
-const isDark = useDark()
-export default
-{
-    name: 'IndexHead',
-    data()
-    {
-        return{
-            active: ''
-        }
-    },
-    methods:
-    {
-        mouseOver()
-        {
-            if(isDark.value == true)
-            {
-                this.active = 'background: rgba(0,0,0,0.85);'
-            }
-            else
-            {
-                this.active = 'background: rgba(255,255,255,0.85)'
-            }
-        },
-        mouseLeave()
-        {
-            this.active = ''
-        }
-    }
-}
+    import indexhead from "@/assets/js/home/IndexHead.js"
+    export default indexhead
 </script>
 
 
 <style>
     @import '@/assets/css/common.css';
-    @import '@/assets/css/Home/IndexHead.css';
+    @import '@/assets/css/home/IndexHead.css';
 </style>
