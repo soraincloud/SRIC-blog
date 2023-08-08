@@ -24,7 +24,15 @@
 {
     text-align: center;
     margin: 0;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    font-size: 5px;
+    font-weight: bold;
+}
+
+.NavMenu-tooltip-p-style
+{
+    text-align: center;
+    margin: 0;
     font-size: 5px;
     font-weight: bold;
 }

@@ -1,5 +1,7 @@
 import { useDark } from '@vueuse/core'
+import i18n from '@/language'
 
+const { t } = i18n.global
 const isDark = useDark()
 export default
 {
@@ -79,6 +81,15 @@ export default
                 this.catalogs[j].backgrounds = ''
             }
             this.catalogs[i].backgrounds = 'background: rgba(252,204,204,0.64);'
+        }
+    },
+    watch:
+    {
+        '$i18n.locale'(newValue)
+        {
+            this.catalogs[1].content = t('indexaside.used')
+            this.catalogs[2].content = t('indexaside.about')
+            this.catalogs[3].content = t('indexaside.time')
         }
     }
 }

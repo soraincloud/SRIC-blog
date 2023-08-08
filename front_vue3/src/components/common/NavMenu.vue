@@ -41,7 +41,7 @@
         >
             <template #content>
                 <el-progress type="circle" :percentage="progressData" status="success" width="50" />
-                <p class="NavMenu-progress-p-style">背景模糊</p>
+                <p class="NavMenu-progress-p-style">{{  $t('menu.back')  }}</p>
             </template>
             <el-button @click="switchFilter()" circle size="large" class="NavMenu-el-button-style">
                 <el-icon class="is-loading NavMenu-el-icon-style" size="20px"><Open/></el-icon>
@@ -49,18 +49,22 @@
         </el-tooltip>
         <el-tooltip
         effect="light"
-        content="放烟花吗"
         placement="bottom"
         >
+            <template #content>
+                <p class="NavMenu-tooltip-p-style">{{  $t('menu.fire')  }}</p>
+            </template>
             <el-button @click="switchFire()" circle size="large" class="NavMenu-el-button-style">
                 <el-icon class="is-loading NavMenu-el-icon-style" size="20px"><Star/></el-icon>
             </el-button>
         </el-tooltip>
         <el-tooltip
         effect="light"
-        content="切换模式"
         placement="bottom"
         >
+            <template #content>
+                <p class="NavMenu-tooltip-p-style">{{  $t('menu.mode')  }}</p>
+            </template>
             <el-button @click="switchThemes()" circle size="large" class="NavMenu-el-button-style" style="margin-right: 30px">
                 <el-icon class="is-loading NavMenu-el-icon-style" size="20px"><Sunny/></el-icon>
             </el-button>

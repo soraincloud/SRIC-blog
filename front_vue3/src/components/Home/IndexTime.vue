@@ -1,7 +1,7 @@
 <template>
     <div @mouseover="mouseOver" @mouseleave="mouseLeave">
         <el-card class="common-with-back-el-card-style" :style="active">
-            <h1 class="common-text-style">最近活动</h1>
+            <h1 class="common-text-style">{{  $t('indexaside.time')  }}</h1>
             <el-divider class="common-el-divider-style" />
             <el-timeline>
                 <el-timeline-item

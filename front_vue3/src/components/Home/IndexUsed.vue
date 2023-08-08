@@ -5,7 +5,7 @@
 <template>
     <div @mouseenter="mouseEnter" @mouseleave="mouseLeave">
         <el-card class="common-with-back-el-card-style" :style="active">
-            <h1 class="common-text-style">技术采用</h1>
+            <h1 class="common-text-style">{{  $t('indexaside.used')  }}</h1>
             <el-divider class="common-el-divider-style" />
             <el-row>
                 <el-col :span="6"><used-card-vue/></el-col>

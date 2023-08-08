@@ -52,7 +52,15 @@ export default
             {
                 this.$i18n.locale = 'en'
             }
+            else if(lang == 2)
+            {
+                this.$i18n.locale = 'warma'
+            }
             this.navList[0].navItem = t('menu.index')
+            this.navList[1].navItem = t('menu.note')
+            this.navList[2].navItem = t('menu.resource')
+            this.navList[3].navItem = t('menu.forun')
+            this.navList[4].navItem = t('menu.personal')
         },
     },
     mounted()
