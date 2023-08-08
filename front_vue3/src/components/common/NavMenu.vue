@@ -21,6 +21,21 @@
         <div class="NavMenu-right-div-style" />
         <el-tooltip
         effect="light"
+        placement="bottom"
+        >
+            <template #content>
+                <el-radio-group v-model="language" @change="changeLanguage()">
+                    <el-radio label="0">简体中文</el-radio>
+                    <el-radio label="1">english</el-radio>
+                    <el-radio label="2">warma</el-radio>
+                </el-radio-group>
+            </template>
+            <el-button circle size="large" class="NavMenu-el-button-style">
+                <el-icon class="NavMenu-el-icon-style" size="20px"><Management/></el-icon>
+            </el-button>
+        </el-tooltip>
+        <el-tooltip
+        effect="light"
         content="背景模糊"
         placement="bottom"
         >

@@ -66,3 +66,21 @@ html.dark .NavMenu-float-div-style
 {
     height: 0;
 }
+
+.el-radio__input.is-checked + .el-radio__label 
+{
+    color: #ff7f7f !important;
+}
+
+.el-radio__input.is-checked .el-radio__inner 
+{
+    background: #ff7f7f !important;
+    border-color: #ff7f7f !important;
+}
+
+.el-radio-group
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}

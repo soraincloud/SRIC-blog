@@ -8,6 +8,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
+import i18n from './language'
 
 axios.defaults.baseURL = 'http://localhost:8443/api'
 
@@ -18,5 +19,6 @@ app.use(VueAxios, axios)
 app.use(store)
 app.use(router)
 app.use(ElementPlus)
+app.use(i18n)
 
 app.mount('#app')
