@@ -4,7 +4,7 @@
     <el-avatar :src="MarkTencentqq" class="LinkCard-el-avatar-style" fit="scale-down"></el-avatar>
     <div class="LinkCard-name-text-style">@SRIC-offical</div>
     <el-divider class="LinkCardTencentqq-el-divider-style"></el-divider>
-    <div class="LinkCard-text-style">这里是我的QQ,如果你想联系我的话,就快来加我的账号吧 ~ </div>
+    <div class="LinkCard-text-style">{{ $t('linkcard.tencent') }}</div>
     <div class="LinkCard-text-style">ID : 3355905055</div>
     <el-divider class="LinkCardTencentqq-el-divider-style"></el-divider>
 

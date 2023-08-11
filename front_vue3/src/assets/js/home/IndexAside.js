@@ -81,7 +81,13 @@ export default
                 this.catalogs[j].backgrounds = ''
             }
             this.catalogs[i].backgrounds = 'background: rgba(252,204,204,0.64);'
-        }
+        },
+    },
+    created()
+    {
+        this.catalogs[1].content = t('indexaside.used')
+        this.catalogs[2].content = t('indexaside.about')
+        this.catalogs[3].content = t('indexaside.time')
     },
     watch:
     {
@@ -91,5 +97,5 @@ export default
             this.catalogs[2].content = t('indexaside.about')
             this.catalogs[3].content = t('indexaside.time')
         }
-    }
+    },
 }

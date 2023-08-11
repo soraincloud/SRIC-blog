@@ -18,7 +18,7 @@
 <template>
     <div @mouseover="mouseOver" @mouseleave="mouseLeave">
         <el-card class="IndexAside-el-card-style" :style="active">
-            <h2 class="common-text-style" style="margin-top:40px">目录</h2>
+            <h2 class="common-text-style" style="margin-top:40px">{{ $t('indexaside.menu') }}</h2>
             <el-divider class="common-el-divider-style" />
             <el-card
             v-for="(item,i) in catalogs"

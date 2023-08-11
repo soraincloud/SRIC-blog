@@ -4,7 +4,7 @@
     <el-avatar :src="MarkBilibili" class="LinkCard-el-avatar-style" fit="scale-down"></el-avatar>
     <div class="LinkCard-name-text-style">@SRIC-offical</div>
     <el-divider class="LinkCardBilibili-el-divider-style"></el-divider>
-    <div class="LinkCard-text-style">这里是我的B站账号,或许你可以看到我在这里更新一些视频 ?</div>
+    <div class="LinkCard-text-style">{{ $t('linkcard.bilibili') }}</div>
     <el-divider class="LinkCardBilibili-el-divider-style"></el-divider>
 
     <div class="LinkCard-text-style">

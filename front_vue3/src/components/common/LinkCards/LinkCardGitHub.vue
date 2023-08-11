@@ -4,7 +4,7 @@
     <el-avatar :src="MarkGitHub" class="LinkCard-el-avatar-style" fit="scale-down"></el-avatar>
     <div class="LinkCard-name-text-style">@soraincloud</div>
     <el-divider class="LinkCardGitHub-el-divider-style"></el-divider>
-    <div class="LinkCard-text-style">你可以在这里看到我的代码,虽然不一定好使,但是或许会有帮助</div>
+    <div class="LinkCard-text-style">{{ $t('linkcard.github') }}</div>
     <el-divider class="LinkCardGitHub-el-divider-style"></el-divider>
 
     <div class="LinkCard-text-style">

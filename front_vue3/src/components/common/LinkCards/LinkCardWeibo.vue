@@ -4,7 +4,7 @@
     <el-avatar :src="MarkWeibo" class="LinkCard-el-avatar-style" fit="scale-down"></el-avatar>
     <div class="LinkCard-name-text-style">@so_ra_in_cloud</div>
     <el-divider class="LinkCardWeibo-el-divider-style"></el-divider>
-    <div class="LinkCard-text-style">这里是我的微博,没准上面会有一些日常什么的,可以来瞅瞅 ~</div>
+    <div class="LinkCard-text-style">{{ $t('linkcard.weibo') }}</div>
     <el-divider class="LinkCardWeibo-el-divider-style"></el-divider>
 
     <div class="LinkCard-text-style">

@@ -13,6 +13,7 @@ export default
     },
     indexaside:
     {
+        menu: 'menu',
         used: 'Technology adoption',
         about: 'about',
         time: 'update',
@@ -32,5 +33,13 @@ export default
         about5: 'this place is just for showing some interesting things',
         about6: 'new things will come right in navMenu',
         about7: 'just have fun ~ (>▽',
+    },
+    linkcard:
+    {
+        bilibili: 'this is my bilibili account,maybe you can see me update some videos here ?',
+        github: 'you can see my code here,though it may not work well,maybe they could help,perhaps...',
+        tencent: 'this is my QQ,if you want to have contact with me,just come and add my account ~ ',
+        twetter: 'maybe my twetter (X) could have some update ? you could come and have a look,if you are sure about it ...',
+        weibo: 'this is my weibo,maybe there will be some daily marks on it,you could come and see some ~ ',
     },
 }

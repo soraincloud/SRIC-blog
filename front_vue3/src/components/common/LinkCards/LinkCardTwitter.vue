@@ -4,7 +4,7 @@
     <el-avatar :src="MarkTwitter" class="LinkCard-el-avatar-style" fit="scale-down"></el-avatar>
     <div class="LinkCard-name-text-style">@so_ra_in_cloud</div>
     <el-divider class="LinkCardTwitter-el-divider-style"></el-divider>
-    <div class="LinkCard-text-style">或许我的推特上会发点什么照片之类的 ? 可以看看喔,如果你确定的话 ...</div>
+    <div class="LinkCard-text-style">{{ $t('linkcard.twetter') }}</div>
     <el-divider class="LinkCardTwitter-el-divider-style"></el-divider>
 
     <div class="LinkCard-text-style">
