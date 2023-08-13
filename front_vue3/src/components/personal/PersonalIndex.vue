@@ -8,7 +8,7 @@
             class="PersonalIndex-affix-button-style" 
             plain>
             <el-icon class="PersonalIndex-affix-icon-style"><User/></el-icon>
-            登录
+            {{ $t('login.login') }}
             </el-button>
             <el-button 
             v-if="userId == null"
@@ -17,7 +17,7 @@
             class="PersonalIndex-affix-button-style" 
             plain>
             <el-icon class="PersonalIndex-affix-icon-style"><EditPen/></el-icon>
-            注册
+            {{ $t('login.signup') }}
             </el-button>
             <el-button 
             v-if="userId != null"
@@ -26,7 +26,7 @@
             class="PersonalIndex-affix-button-style" 
             plain>
             <el-icon class="PersonalIndex-affix-icon-style"><Operation/></el-icon>
-            选项
+            {{ $t('login.operation') }}
             </el-button>
         </el-affix>
     </div>

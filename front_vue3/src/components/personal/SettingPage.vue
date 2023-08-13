@@ -24,14 +24,14 @@
                         <el-input
                         v-model="usernameInput"
                         maxlength="20"
-                        placeholder="更改用户名"
+                        :placeholder="usernameHoder"
                         type="text"
                         class="SettingPage-el-input-style"
                         clearable
                         >
                         <template #append>
                             <el-button>
-                                确定
+                                {{ $t('login.submit') }}
                             </el-button>
                         </template>
                         </el-input>
@@ -40,14 +40,14 @@
                         <el-input
                         v-model="markInput"
                         maxlength="50"
-                        placeholder="更改个人资料"
+                        :placeholder="messageHoder"
                         type="text"
                         class="SettingPage-el-input-style"
                         clearable
                         >
                         <template #append>
                             <el-button>
-                                确定
+                                {{ $t('login.submit') }}
                             </el-button>
                         </template>
                         </el-input>
@@ -55,15 +55,15 @@
                     <div class="SettingPage-input-div-style">
                         <el-row>
                             <el-col :span="6">
-                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchBack">返回</el-button>
+                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchBack">{{ $t('login.back') }}</el-button>
                             </el-col>
                             <el-col :span="3"></el-col>
                             <el-col :span="6">
-                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchChange">账户安全</el-button>
+                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchChange">{{ $t('login.safety') }}</el-button>
                             </el-col>
                             <el-col :span="3"></el-col>
                             <el-col :span="6">
-                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchQuit">退出登录</el-button>
+                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchQuit">{{ $t('login.quit') }}</el-button>
                             </el-col>
                         </el-row>
                     </div>
@@ -75,21 +75,21 @@
 
     <el-dialog
         v-model="dialogVisible"
-        title="真的吗?"
+        title="o.0?"
         width="30%"
         style="font-weight:bold;"
         :before-close="handleClose"
         >
-        <span>真的要退出登录吗?</span>
+        <span>{{ $t('login.reallyquit') }}</span>
         <template #footer>
         <span class="dialog-footer">
             <el-row>
                 <el-col :span="10">
-                    <el-button class="SettingPage-input-button-style" type="danger" @click="dialogVisible = false">不</el-button>
+                    <el-button class="SettingPage-input-button-style" type="danger" @click="dialogVisible = false">{{ $t('login.no') }}</el-button>
                 </el-col>
                 <el-col :span="4"></el-col>
                 <el-col :span="10">
-                    <el-button class="SettingPage-input-button-style" type="danger" @click="quiting">是的</el-button>
+                    <el-button class="SettingPage-input-button-style" type="danger" @click="quiting">{{ $t('login.yes') }}</el-button>
                 </el-col>
             </el-row>
             

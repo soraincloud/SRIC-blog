@@ -42,4 +42,40 @@ export default
         twetter: 'maybe my twetter (X) could have some update ? you could come and have a look,if you are sure about it ...',
         weibo: 'this is my weibo,maybe there will be some daily marks on it,you could come and see some ~ ',
     },
+    notes:
+    {
+        head: 'category',
+        all: 'all',
+        none: 'uncategorized',
+        algorithm: 'algorithm',
+    },
+    login:
+    {
+        login: 'login',
+        signup: 'sign up',
+        operation: 'operation',
+        submit: 'submit',
+        back: 'back',
+        safety: 'safety',
+        quit: 'quit',
+        yes: 'yes',
+        no: 'no',
+        reallyquit: 'really want to quit?',
+        logins: 'LOGIN',
+        username: 'username',
+        password: 'password',
+        forget: 'forget pass',
+        mark1: 'you are not signed in',
+        mark2: 'you are not signed in yet,just press the login buttom,then ?  ･ω･ )',
+        usernamehoder: 'change username',
+        messagehoder: 'change personal message',
+    },
+    loginmessage:
+    {
+        success: 'success, welcome back ~',
+        wrong: 'wrong password !!! awa',
+        none: 'wrong username !!! qwq',
+        error: 'error, are you changed the posting code ? (wdf)',
+        quit: 'success, so who are you ?',
+    },
 }

@@ -1,6 +1,8 @@
 import { useDark } from '@vueuse/core'
 import { Menu,QuestionFilled,Opportunity } from '@element-plus/icons-vue'
+import i18n from '@/language'
 
+const { t } = i18n.global
 const isDark = useDark()
 export default
 {
@@ -72,5 +74,20 @@ export default
                 this.$emit('loadNotesFromAside')
             }
         }
-    }
+    },
+    created()
+    {
+        this.category[0].content = t('notes.all')
+        this.category[1].content = t('notes.none')
+        this.category[2].content = t('notes.algorithm')
+    },
+    watch:
+    {
+        '$i18n.locale'(newValue)
+        {
+            this.category[0].content = t('notes.all')
+            this.category[1].content = t('notes.none')
+            this.category[2].content = t('notes.algorithm')
+        }
+    },
 }

@@ -1,7 +1,7 @@
 <template>
     <div @mouseover="mouseOver" @mouseleave="mouseLeave">
         <el-card class="NotesAside-el-card-style" :style="active">
-            <h1 class="common-text-style" style="margin-top: 64px">分类</h1>
+            <h1 class="common-text-style" style="margin-top: 64px">{{ $t('notes.head') }}</h1>
             <el-divider class="common-el-divider-style" />
             <el-card
             v-for="(item,i) in category"

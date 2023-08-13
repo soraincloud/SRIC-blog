@@ -5,16 +5,22 @@
             <div :style="paddingTop" @mouseover="mouseOver" @mouseleave="mouseLeave">
                 <el-card class="LoginPage-el-card-style" :style="active">
                     <div class="LoginPage-inside-div-style">
-                        <h1 class="LoginPage-title-style">登 录</h1>
+                        <h1 class="LoginPage-title-style">{{ $t('login.logins') }}</h1>
                         <el-form>
-                            <el-form-item label="账户">
+                            <el-form-item>
+                                <template v-slot:label>
+                                    {{ $t('login.username') }}
+                                </template>
                                 <el-input v-model="form.username">
                                     <template #prefix>
                                         <el-icon><User /></el-icon>
                                     </template>
                                 </el-input>
                             </el-form-item>
-                            <el-form-item label="密码">
+                            <el-form-item>
+                                <template v-slot:label>
+                                    {{ $t('login.password') }}
+                                </template>
                                 <el-input v-model="form.password" type="password" show-password>
                                     <template #prefix>
                                         <el-icon><Lock /></el-icon>
@@ -28,12 +34,12 @@
                                 class="LoginPage-submit-button-style" 
                                 style="margin-left:40px" 
                                 type="danger" 
-                                plain>登录</el-button>
+                                plain>{{ $t('login.login') }}</el-button>
                                 <el-button 
                                 size="small" 
                                 class="LoginPage-submit-button-style" 
                                 type="danger" 
-                                plain>忘记密码</el-button>
+                                plain>{{ $t('login.forget') }}</el-button>
                             </el-form-item>
                         </el-form>
                     </div>

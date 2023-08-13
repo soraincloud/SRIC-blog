@@ -42,4 +42,40 @@ export default
         twetter: '或许沃的推特(X)上会发点什么留样之类的 ? 可以康康喔,儒果你雀订的划 ...',
         weibo: '这里是沃的围脖,煤准上面慧有一些日尝什么的,可以赖咻咻 ~ ',
     },
+    notes:
+    {
+        head: '类类',
+        all: '所有',
+        none: '没类类',
+        algorithm: '计法',
+    },
+    login:
+    {
+        login: '录上',
+        signup: '录有',
+        operation: '选一下',
+        submit: '定了',
+        back: '回反',
+        safety: '录名安全',
+        quit: '退出录上',
+        yes: '是嘞',
+        no: '不嘞',
+        reallyquit: '帧的要退出录上吗?',
+        logins: '录 上',
+        username: '人户',
+        password: '密钥',
+        forget: '忘记密钥',
+        mark1: '没录上所以没逆撑哦',
+        mark2: '因为梅有录上所以没有人户介绍哦,快去录上,然后写一个吧  ･ω･ )',
+        usernamehoder: '改改人户名',
+        messagehoder: '改改人人资料',
+    },
+    loginmessage:
+    {
+        success: '录上城攻 欢迎回来喵 ~',
+        wrong: '密钥错误 物 雾 勿 务 awa',
+        none: '查无此人 是不是沃沃名填错了 qwq',
+        error: 'error 你系不系乱改西东了(凶)',
+        quit: '退退录上啦 ~',
+    },
 }

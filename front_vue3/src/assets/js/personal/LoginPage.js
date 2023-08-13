@@ -1,6 +1,8 @@
 import { User,Lock } from '@element-plus/icons-vue'
 import { useDark } from '@vueuse/core'
+import i18n from '@/language'
 
+const { t } = i18n.global
 const isDark = useDark()
 export default
 {
@@ -44,21 +46,21 @@ export default
             {
                 if(resp.data.code == 200)
                 {
-                    this.$message.success({message: '登录成功 欢迎回来喵 ~',})
+                    this.$message.success({message: t('loginmessage.success'),})
                     localStorage.setItem('userId',resp.data.id)
                     this.$router.push('/Personal')
                 }
                 else if(resp.data.code == 400)
                 {
-                    this.$message.error({message: '密码错误 戳啦 戳啦 戳啦 awa',})
+                    this.$message.error({message: t('loginmessage.wrong'),})
                 }
                 else if(resp.data.code == 401)
                 {
-                    this.$message.warning({message: '查无此人 是不是账户填错了 qwq',})
+                    this.$message.warning({message: t('loginmessage.none'),})
                 }
                 else
                 {
-                    this.$message.error({message: 'error 你是不是乱改东西了(凶)',})
+                    this.$message.error({message: t('loginmessage.error'),})
                 }
             })
         },

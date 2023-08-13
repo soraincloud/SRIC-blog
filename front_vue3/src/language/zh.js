@@ -42,4 +42,40 @@ export default
         twetter: '或许我的推特(X)上会发点什么照片之类的 ? 可以看看喔,如果你确定的话 ...',
         weibo: '这里是我的微博,没准上面会有一些日常什么的,可以来瞅瞅 ~ ',
     },
+    notes:
+    {
+        head: '分类',
+        all: '全部',
+        none: '未分类',
+        algorithm: '算法',
+    },
+    login:
+    {
+        login: '登录',
+        signup: '注册',
+        operation: '选项',
+        submit: '确定',
+        back: '返回',
+        safety: '账户安全',
+        quit: '退出登录',
+        yes: '是的',
+        no: '不',
+        reallyquit: '真的要退出登录吗?',
+        logins: '登 录',
+        username: '用户',
+        password: '密码',
+        forget: '忘记密码',
+        mark1: '没登录所以没昵称哦',
+        mark2: '因为没有登录所以没有个人介绍哦,快去登录,然后写一个吧  ･ω･ )',
+        usernamehoder: '更改用户名',
+        messagehoder: '更改个人资料',
+    },
+    loginmessage:
+    {
+        success: '登录成功 欢迎回来喵 ~',
+        wrong: '密码错误 戳啦 戳啦 戳啦 awa',
+        none: '查无此人 是不是账户填错了 qwq',
+        error: 'error 你是不是乱改东西了(凶)',
+        quit: '退出登录啦 ~',
+    },
 }

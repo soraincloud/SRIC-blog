@@ -1,5 +1,7 @@
 import { User,EditPen,Operation } from '@element-plus/icons-vue'
+import i18n from '@/language'
 
+const { t } = i18n.global
 export default
 {
     name: 'RersonalIndex',
@@ -14,6 +16,8 @@ export default
             userId: localStorage.getItem('userId'),
             paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
             dialogVisible: false,
+            usernameHoder: '',
+            messageHoder: '',
         }
     },
     methods:
@@ -30,7 +34,7 @@ export default
         {
             localStorage.removeItem('userId')
             this.$router.push('/Personal')
-            this.$message.success({message: '退出登录啦',})
+            this.$message.success({message: t('loginmessage.quit'),})
         }
     },
     mounted()
@@ -64,5 +68,15 @@ export default
                 }
             })
         }
-    }
+        this.usernameHoder = t('login.usernamehoder')
+        this.messageHoder = t('login.messagehoder')
+    },
+    watch:
+    {
+        '$i18n.locale'(newValue)
+        {
+            this.usernameHoder = t('login.usernamehoder')
+            this.messageHoder = t('login.messagehoder')
+        }
+    },
 }

@@ -1,5 +1,7 @@
 import { User,EditPen,Operation } from '@element-plus/icons-vue'
+import i18n from '@/language'
 
+const { t } = i18n.global
 export default
 {
     name: 'RersonalIndex',
@@ -63,8 +65,8 @@ export default
         }
         else
         {
-            this.username = '没登陆所以没昵称哦'
-            this.mark = "因为没有登录所以没有个人介绍哦,快去登录,然后写一个吧  ･ω･ )"
+            this.username = t('login.mark1')
+            this.mark = t('login.mark2')
             this.tags = 
             [
                 {
@@ -83,6 +85,14 @@ export default
                     content: "www",
                 },
             ]
+        }
+    },
+    watch:
+    {
+        '$i18n.locale'(newValue)
+        {
+            this.username = t('login.mark1')
+            this.mark = t('login.mark2')
         }
     },
 }
