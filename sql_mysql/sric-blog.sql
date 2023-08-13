@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 16/06/2023 17:53:36
+ Date: 13/08/2023 19:47:13
 */
 
 SET NAMES utf8mb4;
@@ -24,16 +24,21 @@ DROP TABLE IF EXISTS `indextime`;
 CREATE TABLE `indextime`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `timestmap` datetime NULL DEFAULT NULL,
+  `timestmap` date NULL DEFAULT NULL,
   `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `color` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of indextime
 -- ----------------------------
-INSERT INTO `indextime` VALUES (1, 'create', '2023-06-12 14:17:56', 'danger', 'white');
+INSERT INTO `indextime` VALUES (1, 'create', '2023-06-12', 'danger', 'white');
+INSERT INTO `indextime` VALUES (2, 'add more pages', '2023-07-13', 'danger', 'white');
+INSERT INTO `indextime` VALUES (3, 'pack css', '2023-07-13', 'danger', 'white');
+INSERT INTO `indextime` VALUES (4, 'add personal page', '2023-07-16', 'danger', 'white');
+INSERT INTO `indextime` VALUES (5, 'add login', '2023-07-19', 'danger', 'white');
+INSERT INTO `indextime` VALUES (6, 'pack js', '2023-08-07', 'danger', 'white');
 
 -- ----------------------------
 -- Table structure for notes
