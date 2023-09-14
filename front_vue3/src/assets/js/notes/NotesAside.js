@@ -51,7 +51,7 @@ export default
         {
             if(isDark.value == true)
             {
-                this.category[i].backgrounds = "background: #ffcccc"
+                this.category[i].backgrounds = "background: #ff7f7f"
             }
             else
             {

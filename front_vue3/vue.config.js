@@ -16,6 +16,7 @@ module.exports = defineConfig({
       {
         target: 'http://localhost:8443',  // 目标代理服务器地址
         changeOrigin: true,                          // 允许跨域
+        ws: false,
         pathRewrite:{"^/api":''}
       },
     },

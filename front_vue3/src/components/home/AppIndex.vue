@@ -4,13 +4,14 @@
 -->
 
 <template>
+    <el-image class="AppIndex-backTop-image-style" :src="backTop" @click="backToTop()" :style="bottomData"></el-image>
     <el-row>
         <el-col :span="1"></el-col>
         <el-col :span="5">
             <index-aside ref="aside" />
         </el-col>
         <el-col :span="12">
-            <el-scrollbar :height="indexHeight">
+            <el-scrollbar @scroll="handleScroll($event)" ref="indexScroll" :height="indexHeight">
                 <index-head id="appindex-card-0" @mouseover="over(0)" />
                 <index-used id="appindex-card-1" @mouseover="over(1)" />
                 <index-about id="appindex-card-2" @mouseover="over(2)" />

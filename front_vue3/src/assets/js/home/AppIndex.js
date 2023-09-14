@@ -5,6 +5,8 @@ import IndexAbout from '@/components/home/IndexAbout'
 import IndexTime from '@/components/home/IndexTime'
 import IndexAside from '@/components/home/IndexAside'
 
+let isMore = 0;
+
 export default
 {
     name: 'AppIndex',
@@ -12,8 +14,11 @@ export default
     data()
     {
         return{
+            backTop: require('@/assets/images/background/backTop.png'),
             indexHeight: (window.innerHeight - 70) + 'px',
             asideHeight: (window.innerHeight - 70) + 'px',
+            data: 0,
+            bottomData: 'bottom: ' + (window.innerHeight + 100) + 'px',
         }
     },
     mounted()
@@ -29,6 +34,25 @@ export default
         over(i)
         {
             this.$refs.aside.changeBackground(i)
-        }
+        },
+        backToTop()
+        {
+            this.$refs.indexScroll.scrollTo({top: 0, behavior: 'smooth'})
+            this.bottomData = 'bottom: ' + (window.innerHeight + 100) + 'px'
+        },
+        handleScroll(e)
+        {
+            this.data = e.scrollTop
+            if(this.data > 300 && isMore == 0)
+            {
+                this.bottomData = 'bottom: 75px'
+                isMore = 1
+            }
+            if(this.data < 300)
+            {
+                this.bottomData = 'bottom: ' + (window.innerHeight + 100) + 'px'
+                isMore = 0;
+            }
+        },
     }
 }

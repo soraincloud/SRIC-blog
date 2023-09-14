@@ -1,4 +1,5 @@
 <template>
+<el-image class="NotesIndex-backTop-image-style" :src="backTop" @click="backToTop()" :style="bottomData"></el-image>
     <el-row>
         <el-col :span="1"></el-col>
         <el-col :span="5">
@@ -7,7 +8,7 @@
             </el-scrollbar>
         </el-col>
         <el-col :span="12">
-            <el-scrollbar :height="indexHeight">
+            <el-scrollbar  @scroll="handleScroll($event)" ref="indexScroll" :height="indexHeight">
                 <notes-card ref="loadAllNotesToCard" />
             </el-scrollbar>
         </el-col>
@@ -24,3 +25,7 @@
     import notesindex from "@/assets/js/notes/NotesIndex.js"
     export default notesindex
 </script>
+
+<style>
+    @import '@/assets/css/notes/NotesIndex.css';
+</style>

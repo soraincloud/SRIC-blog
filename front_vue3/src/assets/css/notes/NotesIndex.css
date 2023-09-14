@@ -1,0 +1,9 @@
+.NotesIndex-backTop-image-style
+{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    right: 10px;
+    z-index: 99;
+    transition: 0.5s bottom ease;
+}

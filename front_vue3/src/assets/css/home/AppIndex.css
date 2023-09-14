@@ -13,3 +13,21 @@
     bottom: 0;
     left: 0;
 }
+
+.AppIndex-backTop-image-style
+{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    right: 10px;
+    z-index: 99;
+    transition: 0.5s bottom ease;
+}
+
+.AppIndex-tooltip-p-style
+{
+    text-align: center;
+    margin: 0;
+    font-size: 5px;
+    font-weight: bold;
+}
