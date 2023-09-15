@@ -78,4 +78,8 @@ export default
         error: 'error 你是不是乱改东西了(凶)',
         quit: '退出登录啦 ~',
     },
+    setting:
+    {
+        changesuccess: '修改完成',
+    },
 }

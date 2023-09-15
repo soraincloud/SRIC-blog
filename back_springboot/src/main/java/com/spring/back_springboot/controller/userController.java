@@ -41,4 +41,12 @@ public class userController
             }
         }
     }
+
+    @CrossOrigin
+    @PostMapping("/updateNameById")
+    public int UpdateNameById(@RequestBody user user)
+    {
+        service.UpdateNameById(user.getUsername(),user.getId());
+        return 0;
+    }
 }

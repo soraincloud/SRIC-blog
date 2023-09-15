@@ -78,4 +78,8 @@ export default
         error: 'error 你系不系乱改西东了(凶)',
         quit: '退退录上啦 ~',
     },
+    setting:
+    {
+        changesuccess: '改改终了',
+    },
 }

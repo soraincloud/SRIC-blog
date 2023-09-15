@@ -23,4 +23,10 @@ public class userServiceImpl implements userService
     {
         return mapper.GetUserByName(username);
     }
+
+    @Override
+    public int UpdateNameById(String username,int id)
+    {
+        return mapper.UpdateNameById(username,id);
+    }
 }

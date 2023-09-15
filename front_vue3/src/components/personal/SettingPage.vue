@@ -29,11 +29,11 @@
                         class="SettingPage-el-input-style"
                         clearable
                         >
-                        <template #append>
-                            <el-button>
-                                {{ $t('login.submit') }}
-                            </el-button>
-                        </template>
+                            <template #append>
+                                <el-button @click="clickUsernameSubmit">
+                                    {{ $t('login.submit') }}
+                                </el-button>
+                            </template>
                         </el-input>
                     </div>
                     <div class="SettingPage-input-div-style">
@@ -45,11 +45,11 @@
                         class="SettingPage-el-input-style"
                         clearable
                         >
-                        <template #append>
-                            <el-button>
-                                {{ $t('login.submit') }}
-                            </el-button>
-                        </template>
+                            <template #append>
+                                <el-button @click="clickMessageSubmit">
+                                    {{ $t('login.submit') }}
+                                </el-button>
+                            </template>
                         </el-input>
                     </div>
                     <div class="SettingPage-input-div-style">
@@ -59,7 +59,7 @@
                             </el-col>
                             <el-col :span="3"></el-col>
                             <el-col :span="6">
-                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchChange">{{ $t('login.safety') }}</el-button>
+                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchSafety">{{ $t('login.safety') }}</el-button>
                             </el-col>
                             <el-col :span="3"></el-col>
                             <el-col :span="6">
@@ -92,8 +92,6 @@
                     <el-button class="SettingPage-input-button-style" type="danger" @click="quiting">{{ $t('login.yes') }}</el-button>
                 </el-col>
             </el-row>
-            
-
         </span>
         </template>
     </el-dialog>

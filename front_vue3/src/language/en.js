@@ -78,4 +78,8 @@ export default
         error: 'error, are you changed the posting code ? (wdf)',
         quit: 'success, so who are you ?',
     },
+    setting:
+    {
+        changesuccess: 'success',
+    },
 }

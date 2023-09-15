@@ -18,6 +18,8 @@ export default
             dialogVisible: false,
             usernameHoder: '',
             messageHoder: '',
+            usernameInput: '',
+            markInput: '',
         }
     },
     methods:
@@ -35,6 +37,14 @@ export default
             localStorage.removeItem('userId')
             this.$router.push('/Personal')
             this.$message.success({message: t('loginmessage.quit'),})
+        },
+        clickUsernameSubmit()
+        {
+            var _this = this
+            this.$axios
+            .post('/updateNameById',{ username: this.usernameInput,id: this.userId })
+            this.username = this.usernameInput
+            this.$message.success({message: t('setting.changesuccess'),})
         }
     },
     mounted()
