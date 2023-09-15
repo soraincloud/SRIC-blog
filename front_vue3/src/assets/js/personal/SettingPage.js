@@ -16,6 +16,8 @@ export default
             userId: localStorage.getItem('userId'),
             paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
             dialogVisible: false,
+            submitDialogVisible: false,
+            submitDialog: '',
             usernameHoder: '',
             messageHoder: '',
             usernameInput: '',
@@ -40,12 +42,60 @@ export default
         },
         clickUsernameSubmit()
         {
+            this.submitDialogVisible = true
+            this.submitDialog = 0
+            if(this.usernameInput == '')
+            {
+                this.$message.error({message: t('setting.notNull'),})
+                this.submitDialogVisible = false
+                this.submitDialog = ''
+            }
+        },
+        clickMessageSubmit()
+        {
+            this.submitDialogVisible = true
+            this.submitDialog = 1;
+        },
+        cancelChange()
+        {
+            this.submitDialogVisible = false
+            this.submitDialog = ''
+        },
+        submitChange()
+        {
             var _this = this
-            this.$axios
-            .post('/updateNameById',{ username: this.usernameInput,id: this.userId })
-            this.username = this.usernameInput
-            this.$message.success({message: t('setting.changesuccess'),})
-        }
+            if(this.submitDialog == 0)
+            {
+                this.$axios
+                .post('/updateNameById',{ username: this.usernameInput,id: this.userId })
+                .then(resp =>
+                {
+                    console.log(resp.data.code)
+                    if(resp.data.code == 200)
+                    {
+                        console.log('success')
+                        this.username = this.usernameInput
+                        this.$message.success({message: t('setting.changesuccess'),})
+                        this.usernameInput = ''
+                    }
+                    if(resp.data.code == 400)
+                    {
+                        console.log('fail')
+                        this.$message.warning({message: t('setting.failChange'),})
+                    }
+                })
+            }
+            if(this.submitDialog == 1)
+            {
+                this.$axios
+                .post('/updateMarkById',{ mark: this.markInput,id: this.userId })
+                this.mark = this.markInput
+                this.$message.success({message: t('setting.changesuccess'),})
+                this.markInput = ''
+            }
+            this.submitDialog = ''
+            this.submitDialogVisible = false
+        },
     },
     mounted()
     {

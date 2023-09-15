@@ -81,5 +81,8 @@ export default
     setting:
     {
         changesuccess: '修改完成',
+        reallyChange: '真的要修改吗?',
+        notNull: '名字不能是空空的！',
+        failChange: '已经有人叫这个啦！',
     },
 }

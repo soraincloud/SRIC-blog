@@ -1,6 +1,7 @@
 package com.spring.back_springboot.controller;
 
 import com.spring.back_springboot.pojo.user;
+import com.spring.back_springboot.result.code;
 import com.spring.back_springboot.result.login;
 import com.spring.back_springboot.services.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,9 +45,22 @@ public class userController
 
     @CrossOrigin
     @PostMapping("/updateNameById")
-    public int UpdateNameById(@RequestBody user user)
+    public code UpdateNameById(@RequestBody user user)
     {
+        user getUser = service.GetUserByName(user.getUsername());
+        if(getUser != null)
+        {
+            return new code(400);
+        }
         service.UpdateNameById(user.getUsername(),user.getId());
-        return 0;
+        return new code(200);
+    }
+
+    @CrossOrigin
+    @PostMapping("/updateMarkById")
+    public code UpdateMarkById(@RequestBody user user)
+    {
+        service.UpdateMarkById(user.getMark(),user.getId());
+        return new code(200);
     }
 }

@@ -81,5 +81,8 @@ export default
     setting:
     {
         changesuccess: '改改终了',
+        reallyChange: '帧的要改换嘛?',
+        notNull: '名名不能是空空滴！',
+        failChange: '已然有沃叫这个辣！',
     },
 }

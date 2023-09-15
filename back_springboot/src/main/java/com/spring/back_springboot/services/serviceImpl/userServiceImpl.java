@@ -25,8 +25,14 @@ public class userServiceImpl implements userService
     }
 
     @Override
-    public int UpdateNameById(String username,int id)
+    public void UpdateNameById(String username, int id)
     {
-        return mapper.UpdateNameById(username,id);
+        mapper.UpdateNameById(username,id);
+    }
+
+    @Override
+    public void UpdateMarkById(String mark,int id)
+    {
+        mapper.UpdateMarkById(mark,id);
     }
 }

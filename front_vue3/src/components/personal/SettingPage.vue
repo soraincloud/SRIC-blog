@@ -96,6 +96,29 @@
         </template>
     </el-dialog>
 
+        <el-dialog
+        v-model="submitDialogVisible"
+        title="o.0?"
+        width="30%"
+        style="font-weight:bold;"
+        :before-close="handleClose"
+        >
+        <span>{{ $t('setting.reallyChange') }}</span>
+        <template #footer>
+        <span class="dialog-footer">
+            <el-row>
+                <el-col :span="10">
+                    <el-button class="SettingPage-input-button-style" type="danger" @click="cancelChange">{{ $t('login.no') }}</el-button>
+                </el-col>
+                <el-col :span="4"></el-col>
+                <el-col :span="10">
+                    <el-button class="SettingPage-input-button-style" type="danger" @click="submitChange">{{ $t('login.yes') }}</el-button>
+                </el-col>
+            </el-row>
+        </span>
+        </template>
+    </el-dialog>
+
 </template>
 
 <script>
