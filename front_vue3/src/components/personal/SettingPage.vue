@@ -78,7 +78,6 @@
         title="o.0?"
         width="30%"
         style="font-weight:bold;"
-        :before-close="handleClose"
         >
         <span>{{ $t('login.reallyquit') }}</span>
         <template #footer>
@@ -101,7 +100,6 @@
         title="o.0?"
         width="30%"
         style="font-weight:bold;"
-        :before-close="handleClose"
         >
         <span>{{ $t('setting.reallyChange') }}</span>
         <template #footer>

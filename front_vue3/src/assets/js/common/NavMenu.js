@@ -8,6 +8,7 @@ export default
 {
     name: 'NavMenu',
     components: { Sunny,Star,Open,Management },
+    emits: ['dochangefire','doChangeFilter'],//提前声明emit 消除警告
     data ()
     {
         return {

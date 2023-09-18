@@ -1,4 +1,4 @@
-import { createI18n } from 'vue-i18n'
+import { createI18n } from 'vue-i18n/index.mjs'
 
 import zh from '@/language/zh.js'
 import en from '@/language/en.js'
