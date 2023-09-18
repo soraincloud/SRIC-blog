@@ -44,6 +44,11 @@ const routes =
         path: '/signup',
         component: () => import('@/components/personal/SignupPage'),
       },
+      {
+        name: 'safety',
+        path: '/safety',
+        component: () => import('@/components/personal/SafetyPage'),
+      },
     ]
   }
 ]

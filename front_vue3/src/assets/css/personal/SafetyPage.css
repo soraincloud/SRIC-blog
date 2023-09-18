@@ -1,0 +1,9 @@
+.SafetyPage-image-anger-style
+{
+    height: 512px;
+    width: 512px;
+    position: absolute;
+    left: 0px;
+    bottom: 64px;
+    z-index: 99;
+}

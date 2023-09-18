@@ -30,6 +30,10 @@ export default
         {
             this.$router.push('/Personal')
         },
+        switchSafety()
+        {
+            this.$router.push('/safety')
+        },
         switchQuit()
         {
             this.dialogVisible = true
