@@ -20,22 +20,21 @@
         <el-col :span="10">
             <div :style="paddingTop">
                 <el-card class="LoginPage-el-card-style">
-                    <div style="margin-top:64px;">
-                        <el-input
-                        v-model="usernameInput"
-                        maxlength="20"
-                        :placeholder="usernameHoder"
-                        type="text"
-                        class="SettingPage-el-input-style"
-                        clearable
-                        >
-                            <template #append>
-                                <el-button @click="clickUsernameSubmit">
-                                    {{ $t('login.submit') }}
-                                </el-button>
-                            </template>
-                        </el-input>
-                    </div>
+                    <h1 class="SettingPage-setting-title-style">{{ $t('setting.settingTitle') }}</h1>
+                    <el-input
+                    v-model="usernameInput"
+                    maxlength="20"
+                    :placeholder="usernameHoder"
+                    type="text"
+                    class="SettingPage-el-input-style"
+                    clearable
+                    >
+                        <template #append>
+                            <el-button @click="clickUsernameSubmit">
+                                {{ $t('login.submit') }}
+                            </el-button>
+                        </template>
+                    </el-input>
                     <div class="SettingPage-input-div-style">
                         <el-input
                         v-model="markInput"

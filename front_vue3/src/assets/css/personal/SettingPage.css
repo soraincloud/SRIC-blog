@@ -21,6 +21,11 @@
     color: #ff6666;
 }
 
+.SettingPage-setting-title-style
+{
+    color: #ff6666;
+}
+
 html.dark .SettingPage-input-button-style
 {
     background-color: rgba(0,0,0,0.85);

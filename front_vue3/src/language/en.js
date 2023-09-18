@@ -84,5 +84,6 @@ export default
         reallyChange: 'really want to change?',
         notNull: 'your name could not been null!',
         failChange: 'the name has been used!',
+        settingTitle: 'SETTING',
     },
 }
