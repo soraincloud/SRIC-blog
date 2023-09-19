@@ -11,13 +11,13 @@ export default
             phoneBackground: 'background: rgba(252,204,204,0);',
             mailBorder: 'border-color: rgba(255,255,255,0);',
             mailBackground: 'background: rgba(252,204,204,0);',
-            paddingTop: "padding-top:" + ((window.innerHeight - 457) / 2) + "px;",
+            paddingTop: "padding-top:" + ((window.innerHeight - 500) / 2) + "px;",
         }
     },
     mounted()
     {
         window.addEventListener('resize',() =>
-            this.paddingTop = "padding-top:" + ((window.innerHeight - 457) / 2) + "px;",
+            this.paddingTop = "padding-top:" + ((window.innerHeight - 500) / 2) + "px;",
         )
     },
     methods:
