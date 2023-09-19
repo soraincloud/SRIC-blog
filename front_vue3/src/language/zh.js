@@ -85,5 +85,11 @@ export default
         notNull: '名字不能是空空的！',
         failChange: '已经有人叫这个啦！',
         settingTitle: '设 置',
+        safetyTitle: '安 全',
+        password: '密码',
+        mail: '邮箱',
+        phone: '手机号',
+        change: '修改',
+        passwordShow: '密码夺少？ 快自己想想 qwq',
     },
 }

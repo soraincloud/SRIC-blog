@@ -24,9 +24,19 @@
 .SettingPage-setting-title-style
 {
     color: #ff6666;
+    margin-left: 50px;
+    font-weight: bolder;
+    font-size: 36px;
+    -webkit-text-stroke: 1px #000000;
+
 }
 
 html.dark .SettingPage-input-button-style
 {
     background-color: rgba(0,0,0,0.85);
+}
+
+html.dark .SettingPage-setting-title-style
+{
+    -webkit-text-stroke: 1px #ffffff;
 }

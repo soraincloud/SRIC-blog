@@ -5,5 +5,57 @@
     position: absolute;
     left: 0px;
     bottom: 64px;
-    z-index: 99;
+}
+
+.SafetyPage-inside-card-style
+{
+    background: rgba(255,255,255,0);
+    border: solid;
+}
+
+.SafetyPage-inside-card-style .el-card__body
+{
+    background: rgba(255,255,255,0) !important;
+    padding-top: 0px;
+    padding-bottom: 10px;
+}
+
+.SafetyPage-outside-card-style
+{
+    height: 100%;
+    background: rgba(255,255,255,0.64);
+}
+
+.SafetyPage-outside-card-style .el-card__body
+{
+    background: url("@/assets/images/background/yiyu.png"),rgba(255,255,255,0);
+    background-size: 300px 270px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.SafetyPage-h3-style
+{
+    margin-left: 10px;
+    font-weight: bolder;
+}
+
+.SafetyPage-button-style
+{
+    width: 100%;
+    background-color: rgba(255,255,255,0.85);
+    font-weight: bold;
+    color: #ff6666;
+}
+
+html.dark .SafetyPage-outside-card-style
+{
+    background-color: rgba(0,0,0,0.85);
+}
+
+html.dark .SafetyPage-button-style
+{
+    background-color: rgba(0,0,0,0.85);
 }

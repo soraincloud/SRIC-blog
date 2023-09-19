@@ -18,7 +18,10 @@ public class userController
     @GetMapping("/getUserById")
     public user GetUserById(int id)
     {
-        return service.GetUserById(id);
+        user u = service.GetUserById(id);
+        u.setPassword("");
+        //不发送密码到前端 预留一个空的参数 或许可以用这个参数做一个身份验证 不然前端修改参数status就能发送管理员请求辣
+        return u;
     }
 
     @CrossOrigin

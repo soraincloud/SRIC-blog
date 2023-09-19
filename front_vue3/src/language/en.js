@@ -85,5 +85,10 @@ export default
         notNull: 'your name could not been null!',
         failChange: 'the name has been used!',
         settingTitle: 'SETTING',
+        safetyTitle: 'SAFETY',
+        password: 'password',
+        mail: 'e-mail',
+        phone: 'phonenumber',
+        change: 'change',
     },
 }

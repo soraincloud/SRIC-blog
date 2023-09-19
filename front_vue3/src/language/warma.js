@@ -85,5 +85,10 @@ export default
         notNull: '名名不能是空空滴！',
         failChange: '已然有沃叫这个辣！',
         settingTitle: '设 设',
+        safetyTitle: '安 啦',
+        password: '码码',
+        mail: '寄盒',
+        phone: '传话码',
+        change: '改改',
     },
 }
