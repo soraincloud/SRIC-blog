@@ -10,9 +10,9 @@ export default
     {
         return{
             avatar: 'head-main.png',
-            username: '',
-            tags: '',
-            mark: '',
+            username: this.$store.getters.getUsername,
+            tags: this.$store.getters.getTags,
+            mark: this.$store.getters.getMark,
             userId: localStorage.getItem('userId'),
             paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
             dialogVisible: false,
@@ -111,26 +111,30 @@ export default
     {
         if(this.userId != null)
         {
-            var _this = this
-            this.$axios
-            .get('/getUserById',{ params:{ id: this.userId} })
-            .then(resp =>
+            if(this.$store.getters.getStatus == '') //#优化 在没有经过 personalIndex 获取用户信息时才进行请求
             {
-                if (resp && resp.status === 200)
+                console.log('res')
+                var _this = this
+                this.$axios
+                .get('/getUserById',{ params:{ id: this.userId} })
+                .then(resp =>
                 {
-                    _this.username = resp.data.username
-                    _this.mark = resp.data.mark
-                }
-            })
-            this.$axios
-            .get('/getTagByUid',{ params:{ uid: this.userId } })
-            .then(resp => 
-            {
-                if (resp && resp.status === 200)
+                    if (resp && resp.status === 200)
+                    {
+                        _this.username = resp.data.username
+                        _this.mark = resp.data.mark
+                    }
+                })
+                this.$axios
+                .get('/getTagByUid',{ params:{ uid: this.userId } })
+                .then(resp => 
                 {
-                    _this.tags = resp.data
-                }
-            })
+                    if (resp && resp.status === 200)
+                    {
+                        _this.tags = resp.data
+                    }
+                })
+            }
         }
         this.usernameHoder = t('login.usernamehoder')
         this.messageHoder = t('login.messagehoder')

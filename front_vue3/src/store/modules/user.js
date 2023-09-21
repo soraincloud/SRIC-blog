@@ -8,6 +8,7 @@ export default
         phonenumber: '',
         email: '',
         tags:[],
+        status: '',
     },
     getters:
     {
@@ -35,6 +36,10 @@ export default
         {
             return state.tags;
         },
+        getStatus(state)
+        {
+            return state.status;
+        },
     },
     mutations:
     {
@@ -61,6 +66,10 @@ export default
         setTags(state,tags)
         {
             state.tags = tags;
+        },
+        setStatus(state,status)
+        {
+            state.status = status;
         },
     },
 }

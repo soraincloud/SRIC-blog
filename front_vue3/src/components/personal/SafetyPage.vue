@@ -27,7 +27,7 @@
                                 <el-button
                                     class="SafetyPage-button-style"
                                     type="danger"
-                                    >1145</el-button
+                                    >{{ $t('setting.change') }}</el-button
                                 >
                             </el-col>
                         </el-row>
@@ -42,13 +42,13 @@
                         <h3>{{ $t("setting.phone") }}</h3>
                         <el-row>
                             <el-col :span="18">
-                                <div>{{ $t("setting.passwordShow") }}</div>
+                                <div>{{ phoneNumber }}</div>
                             </el-col>
                             <el-col :span="6">
                                 <el-button
                                     class="SafetyPage-button-style"
                                     type="danger"
-                                    >1145</el-button
+                                    >{{ $t('setting.change') }}</el-button
                                 >
                             </el-col>
                         </el-row>
@@ -63,13 +63,13 @@
                         <h3>{{ $t("setting.mail") }}</h3>
                         <el-row>
                             <el-col :span="18">
-                                <div>{{ $t("setting.passwordShow") }}</div>
+                                <div>{{ mail }}</div>
                             </el-col>
                             <el-col :span="6">
                                 <el-button
                                     class="SafetyPage-button-style"
                                     type="danger"
-                                    >1145</el-button
+                                    >{{ $t('setting.change') }}</el-button
                                 >
                             </el-col>
                         </el-row>

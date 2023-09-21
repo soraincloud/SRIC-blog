@@ -51,6 +51,12 @@ export default
                 {
                     _this.username = resp.data.username
                     _this.mark = resp.data.mark
+                    _this.$store.commit('setUsername',resp.data.username)
+                    _this.$store.commit('setPassword',resp.data.password)
+                    _this.$store.commit('setMark',resp.data.mark)
+                    _this.$store.commit('setPhonenumber',resp.data.phonenumber)
+                    _this.$store.commit('setEmail',resp.data.email)
+                    _this.$store.commit('setStatus',resp.data.status)
                 }
             })
             this.$axios
@@ -60,6 +66,7 @@ export default
                 if (resp && resp.status === 200)
                 {
                     _this.tags = resp.data
+                    _this.$store.commit('setTags',resp.data)
                 }
             })
         }

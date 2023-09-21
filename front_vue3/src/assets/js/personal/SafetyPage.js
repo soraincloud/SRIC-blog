@@ -12,6 +12,9 @@ export default
             mailBorder: 'border-color: rgba(255,255,255,0);',
             mailBackground: 'background: rgba(252,204,204,0);',
             paddingTop: "padding-top:" + ((window.innerHeight - 500) / 2) + "px;",
+            phoneNumber: this.$store.getters.getPhonenumber,
+            mail: this.$store.getters.getEmail,
+            userId: localStorage.getItem('userId'),
         }
     },
     mounted()
@@ -52,5 +55,22 @@ export default
             this.mailBorder = 'border-color: rgba(255,255,255,0);'
             this.mailBackground = 'background: rgba(252,204,204,0);'  
         },
+    },
+    created()
+    {
+        if(this.$store.getters.getStatus == '') //#优化 在没有经过 personalIndex 获取用户信息时才进行请求
+        {
+            var _this = this
+            this.$axios
+            .get('/getUserById',{ params:{ id: this.userId} })
+            .then(resp =>
+            {
+                if (resp && resp.status === 200)
+                {
+                    _this.phoneNumber = resp.data.phonenumber
+                    _this.mail = resp.data.email
+                }
+            })
+        }
     }
 }

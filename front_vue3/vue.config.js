@@ -1,11 +1,11 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
-  lintOnSave:false,
+  lintOnSave: false,
   publicPath: '/',
   outputDir: 'dist',
-  assetsDir:"statics",
-  productionSourceMap: process.env.NODE_ENV !== 'production'? false : true,
+  assetsDir: "statics",
+  productionSourceMap: process.env.NODE_ENV !== 'production' ? false : true,
   /* webpack-dev-server 相关配置 */
   devServer:
   {
@@ -16,15 +16,14 @@ module.exports = defineConfig({
       {
         target: 'http://localhost:8443',  // 目标代理服务器地址
         changeOrigin: true,                          // 允许跨域
-        ws: false,
-        pathRewrite:{"^/api":''}
+        pathRewrite: { "^/api": '' }
       },
     },
-    port:8080
+    port: 8080
   },
-  pwa: 
+  pwa:
   {
-    iconPaths: 
+    iconPaths:
     {
       favicon32: 'favicon.ico',
       favicon16: 'favicon.ico',
