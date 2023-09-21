@@ -15,6 +15,7 @@ export default
             phoneNumber: this.$store.getters.getPhonenumber,
             mail: this.$store.getters.getEmail,
             userId: localStorage.getItem('userId'),
+            leftData: 'left: -500px',
         }
     },
     mounted()
@@ -72,5 +73,6 @@ export default
                 }
             })
         }
-    }
+        setTimeout( () => { this.leftData = 'left: -0px' },100)
+    },
 }

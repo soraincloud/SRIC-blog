@@ -1,5 +1,5 @@
 <template>
-    <el-image class="SafetyPage-image-anger-style" :src="anger"></el-image>
+    <el-image class="SafetyPage-image-anger-style" :src="anger" :style="leftData" @click="clickS"></el-image>
     <el-row>
         <el-col :span="10"></el-col>
         <el-col :span="12">

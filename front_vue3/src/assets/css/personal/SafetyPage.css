@@ -3,8 +3,9 @@
     height: 512px;
     width: 512px;
     position: absolute;
-    left: 0px;
+    left: -500px;
     bottom: 64px;
+    transition: 0.5s left;
 }
 
 .SafetyPage-inside-card-style
