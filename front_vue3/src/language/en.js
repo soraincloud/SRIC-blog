@@ -90,5 +90,8 @@ export default
         mail: 'e-mail',
         phone: 'phonenumber',
         change: 'change',
+        changePassword: 'change',
+        changePhone: 'bind',
+        changeMail: 'bind',
     },
 }

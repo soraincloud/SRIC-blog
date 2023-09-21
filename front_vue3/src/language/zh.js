@@ -91,5 +91,8 @@ export default
         phone: '手机号',
         change: '修改',
         passwordShow: '密码夺少？ 快自己想想 qwq',
+        changePassword: '改密码',
+        changePhone: '绑手机',
+        changeMail: '绑邮箱',
     },
 }

@@ -90,5 +90,8 @@ export default
         mail: '寄盒',
         phone: '传话码',
         change: '改改',
+        changePassword: '换码码',
+        changePhone: '订圣剑',
+        changeMail: '订发盒',
     },
 }

@@ -113,7 +113,6 @@ export default
         {
             if(this.$store.getters.getStatus == '') //#优化 在没有经过 personalIndex 获取用户信息时才进行请求
             {
-                console.log('res')
                 var _this = this
                 this.$axios
                 .get('/getUserById',{ params:{ id: this.userId} })
