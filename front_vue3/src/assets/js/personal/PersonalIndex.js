@@ -100,6 +100,11 @@ export default
         {
             this.username = t('login.mark1')
             this.mark = t('login.mark2')
+            if(this.userId != null)
+            {
+                this.username = this.$store.getters.getUsername
+                this.mark = this.$store.getters.getMark
+            }
         }
     },
 }
