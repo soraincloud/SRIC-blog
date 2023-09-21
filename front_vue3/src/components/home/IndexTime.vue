@@ -10,7 +10,7 @@
                 :timestamp="item.timestmap"
                 :type="item.type"
                 :color="item.color"
-                hollow="true"
+                :hollow="true"
                 size="large"
                 class="IndexTime-timeline-item-style"
                 >

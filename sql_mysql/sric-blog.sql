@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 13/08/2023 19:47:13
+ Date: 21/09/2023 15:47:54
 */
 
 SET NAMES utf8mb4;
@@ -28,7 +28,7 @@ CREATE TABLE `indextime`  (
   `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `color` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of indextime
@@ -39,6 +39,10 @@ INSERT INTO `indextime` VALUES (3, 'pack css', '2023-07-13', 'danger', 'white');
 INSERT INTO `indextime` VALUES (4, 'add personal page', '2023-07-16', 'danger', 'white');
 INSERT INTO `indextime` VALUES (5, 'add login', '2023-07-19', 'danger', 'white');
 INSERT INTO `indextime` VALUES (6, 'pack js', '2023-08-07', 'danger', 'white');
+INSERT INTO `indextime` VALUES (7, 'add language change', '2023-08-13', 'danger', 'white');
+INSERT INTO `indextime` VALUES (8, 'add back to top button', '2023-09-14', 'danger', 'white');
+INSERT INTO `indextime` VALUES (9, 'add change name and mark', '2023-09-15', 'danger', 'white');
+INSERT INTO `indextime` VALUES (10, 'add safety page', '2023-09-19', 'danger', 'white');
 
 -- ----------------------------
 -- Table structure for notes
@@ -52,7 +56,7 @@ CREATE TABLE `notes`  (
   `md` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL.md',
   `visited` int(12) UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of notes
@@ -61,6 +65,9 @@ INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 0);
 INSERT INTO `notes` VALUES (2, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 0);
 INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 2, 'NULL.md', 0);
 INSERT INTO `notes` VALUES (4, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 0);
+INSERT INTO `notes` VALUES (5, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 0);
+INSERT INTO `notes` VALUES (6, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 0);
+INSERT INTO `notes` VALUES (7, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 0);
 
 -- ----------------------------
 -- Table structure for tag
@@ -101,7 +108,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'SRIC', 'soraincloud', '11451419198', '114514@qq.com', 'this is soraincloud speaking ~', 1);
-INSERT INTO `user` VALUES (2, 'homo', 'homo', NULL, NULL, 'NULL', 0);
+INSERT INTO `user` VALUES (1, 'SRIC', 'soraincloud', '11451419198', '114514@qq.com', 'soraincloud here', 1);
+INSERT INTO `user` VALUES (2, 'homo', 'homo', NULL, NULL, '114514', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
