@@ -1,6 +1,9 @@
+import { ArrowLeftBold } from '@element-plus/icons-vue'
+
 export default
 {
     name:'SafetyPage',
+    components: { ArrowLeftBold },
     data()
     {
         return{
@@ -55,6 +58,10 @@ export default
         {
             this.mailBorder = 'border-color: rgba(255,255,255,0);'
             this.mailBackground = 'background: rgba(252,204,204,0);'  
+        },
+        clickBack()
+        {
+            this.$router.push('/setting')
         },
     },
     created()

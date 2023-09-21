@@ -51,6 +51,22 @@
     color: #ff6666;
 }
 
+.SafetyPage-back-button-style
+{
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color: rgba(255,255,255,0.64);
+    font-weight: bold;
+    color: #ff6666;
+    position: absolute;
+    z-index: 99;
+}
+
+.SafetyPage-back-icon-style
+{
+    margin-right: 10px;
+}
+
 html.dark .SafetyPage-outside-card-style
 {
     background-color: rgba(0,0,0,0.85);
@@ -59,4 +75,9 @@ html.dark .SafetyPage-outside-card-style
 html.dark .SafetyPage-button-style
 {
     background-color: rgba(0,0,0,0.85);
+}
+
+html.dark .SafetyPage-back-button-style
+{
+    background-color: rgba(0,0,0,0.64);
 }

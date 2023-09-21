@@ -1,5 +1,18 @@
 <template>
-    <el-image class="SafetyPage-image-anger-style" :src="anger" :style="leftData" @click="clickS"></el-image>
+    <el-image
+        class="SafetyPage-image-anger-style"
+        :src="anger"
+        :style="leftData"
+    ></el-image>
+    <el-button
+        @click="clickBack"
+        color="#ff6666"
+        class="SafetyPage-back-button-style"
+        plain
+    >
+        <el-icon class="SafetyPage-back-icon-style"><ArrowLeftBold /></el-icon>
+        {{ $t("setting.back") }}
+    </el-button>
     <el-row>
         <el-col :span="10"></el-col>
         <el-col :span="12">
@@ -27,7 +40,9 @@
                                 <el-button
                                     class="SafetyPage-button-style"
                                     type="danger"
-                                    >{{ $t('setting.changePassword') }}</el-button
+                                    >{{
+                                        $t("setting.changePassword")
+                                    }}</el-button
                                 >
                             </el-col>
                         </el-row>
@@ -48,7 +63,7 @@
                                 <el-button
                                     class="SafetyPage-button-style"
                                     type="danger"
-                                    >{{ $t('setting.changePhone') }}</el-button
+                                    >{{ $t("setting.changePhone") }}</el-button
                                 >
                             </el-col>
                         </el-row>
@@ -69,7 +84,7 @@
                                 <el-button
                                     class="SafetyPage-button-style"
                                     type="danger"
-                                    >{{ $t('setting.changeMail') }}</el-button
+                                    >{{ $t("setting.changeMail") }}</el-button
                                 >
                             </el-col>
                         </el-row>

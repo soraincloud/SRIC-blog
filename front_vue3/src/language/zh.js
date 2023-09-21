@@ -94,5 +94,6 @@ export default
         changePassword: '改密码',
         changePhone: '绑手机',
         changeMail: '绑邮箱',
+        back: '返回',
     },
 }

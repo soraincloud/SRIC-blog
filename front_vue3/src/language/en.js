@@ -93,5 +93,6 @@ export default
         changePassword: 'change',
         changePhone: 'bind',
         changeMail: 'bind',
+        back: 'back',
     },
 }

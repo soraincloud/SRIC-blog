@@ -93,5 +93,6 @@ export default
         changePassword: '换码码',
         changePhone: '订圣剑',
         changeMail: '订发盒',
+        back: '退饭',
     },
 }
