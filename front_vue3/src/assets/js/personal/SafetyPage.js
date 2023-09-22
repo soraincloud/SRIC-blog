@@ -61,7 +61,8 @@ export default
         },
         clickBack()
         {
-            this.$router.push('/setting')
+            this.leftData = 'left: -1000px'
+            setTimeout( () => { this.$router.push('/Setting') },256)//延迟跳转 播放动画
         },
     },
     created()

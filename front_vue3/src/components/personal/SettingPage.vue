@@ -1,4 +1,9 @@
 <template>
+    <el-image
+        class="SettingPage-image-anger-style"
+        :src="gameWarma"
+        :style="bottomData"
+    ></el-image>
     <el-row>
         <el-col :span="12">
             <div class="PersonalIndex-avater-div-style" :style="paddingTop">

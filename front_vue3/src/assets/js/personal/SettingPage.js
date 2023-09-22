@@ -9,6 +9,7 @@ export default
     data()
     {
         return{
+            gameWarma: require('@/assets/images/background/gameWarma.png'),
             avatar: 'head-main.png',
             username: this.$store.getters.getUsername,
             tags: this.$store.getters.getTags,
@@ -22,17 +23,20 @@ export default
             messageHoder: '',
             usernameInput: '',
             markInput: '',
+            bottomData: 'bottom: -256px',
         }
     },
     methods:
     {
         switchBack()
         {
-            this.$router.push('/Personal')
+            this.bottomData = 'bottom: -500px'
+            setTimeout( () => { this.$router.push('/Personal') },256)//延迟跳转 播放动画
         },
         switchSafety()
         {
-            this.$router.push('/safety')
+            this.bottomData = 'bottom: -500px'
+            setTimeout( () => { this.$router.push('/Safety') },256)//延迟跳转 播放动画
         },
         switchQuit()
         {
@@ -137,6 +141,7 @@ export default
         }
         this.usernameHoder = t('login.usernamehoder')
         this.messageHoder = t('login.messagehoder')
+        setTimeout( () => { this.bottomData = 'bottom: 60px' },100)
     },
     watch:
     {

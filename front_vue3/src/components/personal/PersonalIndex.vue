@@ -1,4 +1,9 @@
 <template>
+    <el-image
+        class="PersonalIndex-image-anger-style"
+        :src="game"
+        :style="leftData"
+    ></el-image>
     <div class="PersonalIndex-affix-div-style">
         <el-affix>
             <el-button 

@@ -9,27 +9,32 @@ export default
     data()
     {
         return{
+            game: require('@/assets/images/background/game.png'),
             avatar: 'head-main.png',
             username: '',
             paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
             tags: [],
             mark: "",
             userId: localStorage.getItem('userId'),
+            leftData: 'left: -256px',
         }
     },
     methods:
     {
         switchLogin()
         {
-            this.$router.push('/Login')
+            this.leftData = 'left: -500px'
+            setTimeout( () => { this.$router.push('/Login') },256)//延迟跳转 播放动画
         },
         switchSetting()
         {
-            this.$router.push('/Setting')
+            this.leftData = 'left: -500px'
+            setTimeout( () => { this.$router.push('/Setting') },256)//延迟跳转 播放动画
         },
         switchSignup()
         {
-            this.$router.push('/Signup')
+            this.leftData = 'left: -500px'
+            setTimeout( () => { this.$router.push('/Signup') },256)//延迟跳转 播放动画
         },
     },
     mounted()
@@ -93,6 +98,7 @@ export default
                 },
             ]
         }
+        setTimeout( () => { this.leftData = 'left: -0px' },100)
     },
     watch:
     {
