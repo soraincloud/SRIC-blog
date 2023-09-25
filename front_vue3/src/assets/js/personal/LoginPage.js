@@ -1,4 +1,4 @@
-import { User,Lock } from '@element-plus/icons-vue'
+import { User,Lock,ArrowLeftBold } from '@element-plus/icons-vue'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -7,7 +7,7 @@ const isDark = useDark()
 export default
 {
     name: 'LoginPage',
-    components: { User,Lock },
+    components: { User,Lock,ArrowLeftBold },
     data()
     {
         return{
@@ -64,6 +64,10 @@ export default
                 }
             })
         },
+        clickBack()
+        {
+            this.$router.push('/Personal')
+        }
     },
     mounted()
     {

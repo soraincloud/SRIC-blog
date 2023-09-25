@@ -1,4 +1,13 @@
 <template>
+    <el-button
+        @click="clickBack"
+        color="#ff6666"
+        class="SafetyPage-back-button-style"
+        plain
+    >
+        <el-icon class="SafetyPage-back-icon-style"><ArrowLeftBold /></el-icon>
+        {{ $t("setting.back") }}
+    </el-button>
     <el-row>
         <el-col :span="8"></el-col>
         <el-col :span="8">
@@ -58,4 +67,5 @@
 
 <style>
     @import '@/assets/css/personal/LoginPage.css';
+    @import '@/assets/css/personal/SafetyPage.css';
 </style>
