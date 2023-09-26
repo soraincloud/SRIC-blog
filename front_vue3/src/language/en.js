@@ -69,6 +69,9 @@ export default
         mark2: 'you are not signed in yet,just press the login buttom,then ?  ･ω･ )',
         usernamehoder: 'change username',
         messagehoder: 'change personal message',
+        bindMail: 'need to bind e-mail !',
+        bind: 'bind',
+        cancel: 'cancel',
     },
     loginmessage:
     {

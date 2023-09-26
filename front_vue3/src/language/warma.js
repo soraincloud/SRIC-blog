@@ -69,6 +69,9 @@ export default
         mark2: '因为梅有录上所以没有人户介绍哦,快去录上,然后写一个吧  ･ω･ )',
         usernamehoder: '改改人户名',
         messagehoder: '改改人人资料',
+        bindMail: '需得梆梆送箱 !',
+        bind: '梆梆',
+        cancel: '消消',
     },
     loginmessage:
     {

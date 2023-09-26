@@ -7,17 +7,21 @@
     <el-row>
         <el-col :span="12">
             <div class="PersonalIndex-avater-div-style" :style="paddingTop">
-                <el-avatar :src="require('@/assets/images/logo/' + avatar)" :size="150" fit="scale-down"></el-avatar>
+                <el-avatar
+                    :src="require('@/assets/images/logo/' + avatar)"
+                    :size="150"
+                    fit="scale-down"
+                ></el-avatar>
                 <p class="PersonalIndex-name-style">{{ username }}</p>
                 <el-tag
-                v-for="(item,i) in tags"
-                :key="i"
-                effect="light"
-                type="danger"
-                size="small"
-                class="PersonalIndex-el-tag-style"
+                    v-for="(item, i) in tags"
+                    :key="i"
+                    effect="light"
+                    type="danger"
+                    size="small"
+                    class="PersonalIndex-el-tag-style"
                 >
-                {{ item.content }}
+                    {{ item.content }}
                 </el-tag>
                 <p class="PersonalIndex-mark-style">{{ mark }}</p>
             </div>
@@ -25,33 +29,35 @@
         <el-col :span="10">
             <div :style="paddingTop">
                 <el-card class="LoginPage-el-card-style">
-                    <h1 class="SettingPage-setting-title-style">{{ $t('setting.settingTitle') }}</h1>
+                    <h1 class="SettingPage-setting-title-style">
+                        {{ $t("setting.settingTitle") }}
+                    </h1>
                     <el-input
-                    v-model="usernameInput"
-                    maxlength="20"
-                    :placeholder="usernameHoder"
-                    type="text"
-                    class="SettingPage-el-input-style"
-                    clearable
+                        v-model="usernameInput"
+                        maxlength="20"
+                        :placeholder="usernameHoder"
+                        type="text"
+                        class="SettingPage-el-input-style"
+                        clearable
                     >
                         <template #append>
                             <el-button @click="clickUsernameSubmit">
-                                {{ $t('login.submit') }}
+                                {{ $t("login.submit") }}
                             </el-button>
                         </template>
                     </el-input>
                     <div class="SettingPage-input-div-style">
                         <el-input
-                        v-model="markInput"
-                        maxlength="50"
-                        :placeholder="messageHoder"
-                        type="text"
-                        class="SettingPage-el-input-style"
-                        clearable
+                            v-model="markInput"
+                            maxlength="50"
+                            :placeholder="messageHoder"
+                            type="text"
+                            class="SettingPage-el-input-style"
+                            clearable
                         >
                             <template #append>
                                 <el-button @click="clickMessageSubmit">
-                                    {{ $t('login.submit') }}
+                                    {{ $t("login.submit") }}
                                 </el-button>
                             </template>
                         </el-input>
@@ -59,15 +65,30 @@
                     <div class="SettingPage-input-div-style">
                         <el-row>
                             <el-col :span="6">
-                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchBack">{{ $t('login.back') }}</el-button>
+                                <el-button
+                                    class="SettingPage-input-button-style"
+                                    type="danger"
+                                    @click="switchBack"
+                                    >{{ $t("login.back") }}</el-button
+                                >
                             </el-col>
                             <el-col :span="3"></el-col>
                             <el-col :span="6">
-                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchSafety">{{ $t('login.safety') }}</el-button>
+                                <el-button
+                                    class="SettingPage-input-button-style"
+                                    type="danger"
+                                    @click="switchSafety"
+                                    >{{ $t("login.safety") }}</el-button
+                                >
                             </el-col>
                             <el-col :span="3"></el-col>
                             <el-col :span="6">
-                                <el-button class="SettingPage-input-button-style" type="danger" @click="switchQuit">{{ $t('login.quit') }}</el-button>
+                                <el-button
+                                    class="SettingPage-input-button-style"
+                                    type="danger"
+                                    @click="switchQuit"
+                                    >{{ $t("login.quit") }}</el-button
+                                >
                             </el-col>
                         </el-row>
                     </div>
@@ -81,55 +102,74 @@
         v-model="dialogVisible"
         title="o.0?"
         width="30%"
-        style="font-weight:bold;"
-        >
-        <span>{{ $t('login.reallyquit') }}</span>
+        style="font-weight: bold"
+    >
+        <span>{{ $t("login.reallyquit") }}</span>
         <template #footer>
-        <span class="dialog-footer">
-            <el-row>
-                <el-col :span="10">
-                    <el-button class="SettingPage-input-button-style" type="danger" @click="dialogVisible = false">{{ $t('login.no') }}</el-button>
-                </el-col>
-                <el-col :span="4"></el-col>
-                <el-col :span="10">
-                    <el-button class="SettingPage-input-button-style" type="danger" @click="quiting">{{ $t('login.yes') }}</el-button>
-                </el-col>
-            </el-row>
-        </span>
+            <span class="dialog-footer">
+                <el-row>
+                    <el-col :span="10">
+                        <el-button
+                            class="SettingPage-input-button-style"
+                            type="danger"
+                            @click="dialogVisible = false"
+                            >{{ $t("login.no") }}</el-button
+                        >
+                    </el-col>
+                    <el-col :span="4"></el-col>
+                    <el-col :span="10">
+                        <el-button
+                            class="SettingPage-input-button-style"
+                            type="danger"
+                            @click="quiting"
+                            >{{ $t("login.yes") }}</el-button
+                        >
+                    </el-col>
+                </el-row>
+            </span>
         </template>
     </el-dialog>
 
-        <el-dialog
+    <el-dialog
         v-model="submitDialogVisible"
         title="o.0?"
         width="30%"
-        style="font-weight:bold;"
-        >
-        <span>{{ $t('setting.reallyChange') }}</span>
+        style="font-weight: bold"
+    >
+        <span>{{ $t("setting.reallyChange") }}</span>
         <template #footer>
-        <span class="dialog-footer">
-            <el-row>
-                <el-col :span="10">
-                    <el-button class="SettingPage-input-button-style" type="danger" @click="cancelChange">{{ $t('login.no') }}</el-button>
-                </el-col>
-                <el-col :span="4"></el-col>
-                <el-col :span="10">
-                    <el-button class="SettingPage-input-button-style" type="danger" @click="submitChange">{{ $t('login.yes') }}</el-button>
-                </el-col>
-            </el-row>
-        </span>
+            <span class="dialog-footer">
+                <el-row>
+                    <el-col :span="10">
+                        <el-button
+                            class="SettingPage-input-button-style"
+                            type="danger"
+                            @click="cancelChange"
+                            >{{ $t("login.no") }}</el-button
+                        >
+                    </el-col>
+                    <el-col :span="4"></el-col>
+                    <el-col :span="10">
+                        <el-button
+                            class="SettingPage-input-button-style"
+                            type="danger"
+                            @click="submitChange"
+                            >{{ $t("login.yes") }}</el-button
+                        >
+                    </el-col>
+                </el-row>
+            </span>
         </template>
     </el-dialog>
-
 </template>
 
 <script>
-    import settingpage from "@/assets/js/personal/SettingPage.js"
-    export default settingpage
+import settingpage from "@/assets/js/personal/SettingPage.js";
+export default settingpage;
 </script>
 
 <style scoped>
-    @import '@/assets/css/personal/PersonalIndex.css';
-    @import '@/assets/css/personal/LoginPage.css';
-    @import '@/assets/css/personal/SettingPage.css';
+@import "@/assets/css/personal/PersonalIndex.css";
+@import "@/assets/css/personal/LoginPage.css";
+@import "@/assets/css/personal/SettingPage.css";
 </style>

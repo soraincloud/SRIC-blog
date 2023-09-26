@@ -1,4 +1,18 @@
 <template>
+    <el-image
+        class="SignupPage-image-anger-style"
+        :src="angel"
+        :style="bottomData"
+    ></el-image>
+    <el-button
+        @click="clickBack"
+        color="#ff6666"
+        class="SafetyPage-back-button-style"
+        plain
+    >
+        <el-icon class="SafetyPage-back-icon-style"><ArrowLeftBold /></el-icon>
+        {{ $t("setting.back") }}
+    </el-button>
     <el-row>
         <el-col :span="12"></el-col>
         <el-col :span="8">
@@ -41,8 +55,9 @@
                                     class="SettingPage-input-button-style"
                                     type="danger"
                                     @click="switchSubmit"
-                                    >{{ $t("login.signup") }}</el-button
                                 >
+                                    {{ $t("login.signup") }}
+                                </el-button>
                             </el-col>
                             <el-col :span="2"></el-col>
                         </el-row>
@@ -52,6 +67,64 @@
         </el-col>
         <el-col :span="4"></el-col>
     </el-row>
+
+    <el-dialog
+        v-model="submitDialogVisible"
+        title="o.0?"
+        width="30%"
+        style="font-weight: bold"
+    >
+        <span>{{ $t("login.bindMail") }}</span>
+        <div class="SignupPage-input-div-style">
+            <el-input
+                v-model="mailInput"
+                :placeholder="messageHoder"
+                type="text"
+                class="SettingPage-el-input-style"
+                clearable
+            >
+            </el-input>
+        </div>
+        <div class="SignupPage-input-div-style">
+            <el-input
+                v-model="codeInput"
+                :placeholder="messageHoder"
+                type="text"
+                class="SettingPage-el-input-style"
+                clearable
+            >
+                <template #append>
+                    <el-button @click="clickSendCode">
+                        {{ $t("login.submit") }}
+                    </el-button>
+                </template>
+            </el-input>
+        </div>
+
+        <template #footer>
+            <span class="dialog-footer">
+                <el-row>
+                    <el-col :span="10">
+                        <el-button
+                            class="SettingPage-input-button-style"
+                            type="danger"
+                            @click="cancelSign"
+                            >{{ $t("login.cancel") }}</el-button
+                        >
+                    </el-col>
+                    <el-col :span="4"></el-col>
+                    <el-col :span="10">
+                        <el-button
+                            class="SettingPage-input-button-style"
+                            type="danger"
+                            @click="submitSign"
+                            >{{ $t("login.bind") }}</el-button
+                        >
+                    </el-col>
+                </el-row>
+            </span>
+        </template>
+    </el-dialog>
 </template>
 
 <script>
@@ -63,4 +136,5 @@ export default signuppage;
 @import "@/assets/css/personal/LoginPage.css";
 @import "@/assets/css/personal/SafetyPage.css";
 @import "@/assets/css/personal/SettingPage.css";
+@import "@/assets/css/personal/SignupPage.css";
 </style>

@@ -1,0 +1,12 @@
+.SignupPage-input-div-style
+{
+    margin-top: 10px;
+}
+
+.SignupPage-image-anger-style
+{
+    width: 300px;
+    position: absolute;
+    left: 64px;
+    transition: 0.5s bottom;
+}

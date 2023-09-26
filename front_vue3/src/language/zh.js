@@ -69,6 +69,9 @@ export default
         mark2: '因为没有登录所以没有个人介绍哦,快去登录,然后写一个吧  ･ω･ )',
         usernamehoder: '更改用户名',
         messagehoder: '更改个人资料',
+        bindMail: '需要绑定邮箱 !',
+        bind: '绑定',
+        cancel: '取消',
     },
     loginmessage:
     {
