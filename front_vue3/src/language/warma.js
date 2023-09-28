@@ -49,6 +49,8 @@ export default
         all: '所有',
         none: '没类类',
         algorithm: '计法',
+        front: '前面',
+        back: '后面',
     },
     login:
     {

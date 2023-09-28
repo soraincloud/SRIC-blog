@@ -49,6 +49,8 @@ export default
         all: '全部',
         none: '未分类',
         algorithm: '算法',
+        front: '前端',
+        back: '后端',
     },
     login:
     {

@@ -49,6 +49,8 @@ export default
         all: 'all',
         none: 'uncategorized',
         algorithm: 'algorithm',
+        front: 'front',
+        back: 'back',
     },
     login:
     {

@@ -1,5 +1,5 @@
 import { useDark } from '@vueuse/core'
-import { Menu,QuestionFilled,Opportunity } from '@element-plus/icons-vue'
+import { Menu,QuestionFilled,Opportunity,Platform,Histogram } from '@element-plus/icons-vue'
 import i18n from '@/language'
 
 const { t } = i18n.global
@@ -7,7 +7,7 @@ const isDark = useDark()
 export default
 {
     name: 'NotesAside',
-    components: { Menu,QuestionFilled,Opportunity },
+    components: { Menu,QuestionFilled,Opportunity,Platform,Histogram },
     data()
     {
         return{
@@ -25,6 +25,14 @@ export default
                 {
                     content: "算法",
                     icon: "Opportunity",
+                },
+                {
+                    content: "前端",
+                    icon: "Platform",
+                },
+                {
+                    content: "后端",
+                    icon: "Histogram",
                 },
             ],
             categoryNeed: ''
@@ -80,6 +88,8 @@ export default
         this.category[0].content = t('notes.all')
         this.category[1].content = t('notes.none')
         this.category[2].content = t('notes.algorithm')
+        this.category[3].content = t('notes.front')
+        this.category[4].content = t('notes.back')
     },
     watch:
     {
@@ -88,6 +98,8 @@ export default
             this.category[0].content = t('notes.all')
             this.category[1].content = t('notes.none')
             this.category[2].content = t('notes.algorithm')
+            this.category[3].content = t('notes.front')
+            this.category[4].content = t('notes.back')
         }
     },
 }
