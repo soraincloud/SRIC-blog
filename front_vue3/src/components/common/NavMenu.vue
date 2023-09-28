@@ -40,7 +40,7 @@
         placement="bottom"
         >
             <template #content>
-                <el-progress type="circle" :percentage="progressData" status="success" width="50" />
+                <el-progress type="circle" :percentage="progressData" status="success" :width="64" />
                 <p class="NavMenu-progress-p-style">{{  $t('menu.back')  }}</p>
             </template>
             <el-button @click="switchFilter()" circle size="large" class="NavMenu-el-button-style">
