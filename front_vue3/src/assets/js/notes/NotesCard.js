@@ -29,6 +29,11 @@ export default
         {
             this.notes[i].backgrounds = ""
         },
+        clickCard(i)
+        {
+            localStorage.setItem('noteId',this.notes[i].id)
+            this.$router.push('/notesShow')
+        },
         loadNotes()
         {
             var _this = this

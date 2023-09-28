@@ -31,5 +31,18 @@ module.exports = defineConfig({
       maskIcon: 'favicon.ico',
       msTileImage: 'favicon.ico'
     }
+  },
+  configureWebpack:
+  {
+    module:
+    {
+      rules:
+      [
+        {
+          test: /.md$/,
+          use: ["text-loader"]
+        }
+      ]
+    }
   }
 })

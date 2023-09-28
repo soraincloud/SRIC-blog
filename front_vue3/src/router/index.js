@@ -20,6 +20,11 @@ const routes =
         component: () => import('@/components/notes/NotesIndex'),
       },
       {
+        name: 'notesShow',
+        path: '/notesShow',
+        component: () => import('@/components/notes/NotesShow'),
+      },
+      {
         name: 'resources',
         path: '/resources',
         component: () => import('@/components/resources/ResourcesIndex'),

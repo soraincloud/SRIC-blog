@@ -44,6 +44,7 @@ export default
     },
     notes:
     {
+        note: 'note',
         head: 'category',
         all: 'all',
         none: 'uncategorized',

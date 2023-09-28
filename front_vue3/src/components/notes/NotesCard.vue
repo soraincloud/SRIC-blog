@@ -7,6 +7,7 @@
         :style="[item.backgrounds]"
         @mouseover="over(i)"
         @mouseleave="leave(i)"
+        @click="clickCard(i)"
         >
             <h1 class="common-text-style">{{item.title}}</h1>
             <div>

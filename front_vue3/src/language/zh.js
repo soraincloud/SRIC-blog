@@ -44,6 +44,7 @@ export default
     },
     notes:
     {
+        note: '笔记',
         head: '分类',
         all: '全部',
         none: '未分类',

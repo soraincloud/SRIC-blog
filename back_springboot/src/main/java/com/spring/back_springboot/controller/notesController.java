@@ -27,4 +27,11 @@ public class notesController
     {
         return service.GetNotesByCategory(category);
     }
+
+    @CrossOrigin
+    @GetMapping("/getNoteById")
+    public notes GetNoteById(int id)
+    {
+        return service.GetNoteById(id);
+    }
 }

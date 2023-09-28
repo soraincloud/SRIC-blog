@@ -15,4 +15,7 @@ public interface notesMapper
 
     @Select(value = "SELECT * FROM notes WHERE category = #{category}")
     List<notes> GetNotesByCategory(@Param(value = "category") String category);
+
+    @Select(value = "SELECT * FROM notes WHERE id = #{id}")
+    notes GetNoteById(@Param(value = "id")int id);
 }
