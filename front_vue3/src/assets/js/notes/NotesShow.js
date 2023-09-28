@@ -3,6 +3,8 @@ import { useDark } from '@vueuse/core'
 
 const isDark = useDark()
 
+let isMore = 0;
+
 export default
 {
     name: 'NotesShow',
@@ -18,7 +20,10 @@ export default
             noteTitle: '',
             noteDescription: '',
             noteVisited: '',
-            markdownText: require('@/assets/md/C001-二叉树.md')
+            markdownText: require('@/assets/md/NULL.md'),
+            backTop: require('@/assets/images/background/backTop.png'),
+            data: 0,
+            bottomData: 'bottom: ' + (window.innerHeight + 100) + 'px',
         }
     },
     methods:
@@ -53,6 +58,25 @@ export default
         {
             this.describeBackgrounds = ''
         },
+        backToTop()
+        {
+            this.$refs.indexScroll.scrollTo({top: 0, behavior: 'smooth'})
+            this.bottomData = 'bottom: ' + (window.innerHeight + 100) + 'px'
+        },
+        handleScroll(e)
+        {
+            this.data = e.scrollTop
+            if(this.data > 300 && isMore == 0)
+            {
+                this.bottomData = 'bottom: 75px'
+                isMore = 1
+            }
+            if(this.data < 300)
+            {
+                this.bottomData = 'bottom: ' + (window.innerHeight + 100) + 'px'
+                isMore = 0;
+            }
+        },
     },
     mounted()
     {
@@ -70,12 +94,11 @@ export default
         .get('/getNoteById',{ params:{ id: localStorage.getItem('noteId') } })
         .then(resp =>
             {
-                console.log(resp.data.title)
                 _this.noteTitle = resp.data.title
                 _this.noteDescription = resp.data.description
                 _this.noteVisited = resp.data.visited
+                this.markdownText = require('@/assets/md/' + resp.data.md)
             }
         )
-        console.log(this.markdownText)
     },
 }

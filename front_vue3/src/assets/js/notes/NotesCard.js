@@ -32,6 +32,7 @@ export default
         clickCard(i)
         {
             localStorage.setItem('noteId',this.notes[i].id)
+            localStorage.setItem('noteMd',this.notes[i].md)
             this.$router.push('/notesShow')
         },
         loadNotes()

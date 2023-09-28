@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@kangc/v-md-editor": "^2.3.17",
     "@vueuse/core": "^10.1.2",
     "axios": "^1.4.0",
     "core-js": "^3.8.3",

@@ -1,0 +1,20 @@
+.v-md-editor
+{
+    background: rgba(255,255,255,0);
+}
+
+.v-md-pre-wrapper
+{
+    background-color: rgba(255,255,255,0.85) !important;
+    border-radius: 10px;
+}
+
+.github-markdown-body h1
+{
+    border-bottom: 0;
+}
+
+.github-markdown-body h2
+{
+    border-bottom: 0;
+}
