@@ -1,6 +1,6 @@
 import NavMenu from '@/components/common/NavMenu'
-import nightImage from '@/assets/images/background/night.jpg'
-import lightImage from '@/assets/images/background/night-withlight.jpg'
+import nightImage from '@/assets/webp/background/night.webp'
+import lightImage from '@/assets/webp/background/night-withlight.webp'
 let fireNow = 0;
 let filterNumber = 0;
 

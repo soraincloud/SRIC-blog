@@ -4,6 +4,7 @@ export default
     {
         username: '',
         password: '',
+        avatar: '',
         mark: '',
         phonenumber: '',
         email: '',
@@ -19,6 +20,10 @@ export default
         getPassword(state)
         {
             return state.password;
+        },
+        getAvatar(state)
+        {
+            return state.avatar;
         },
         getMark(state)
         {
@@ -50,6 +55,10 @@ export default
         setPassword(state,password)
         {
             state.password = password;
+        },
+        setAvatar(state,avatar)
+        {
+            state.avatar = avatar;
         },
         setMark(state,mark)
         {

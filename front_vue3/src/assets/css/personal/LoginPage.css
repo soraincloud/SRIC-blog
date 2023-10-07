@@ -7,7 +7,7 @@
 
 .LoginPage-el-card-style .el-card__body
 {
-    background: url("@/assets/images/background/warma-question.png"),rgba(255,255,255,0);
+    background: url("@/assets/webp/background/warma-question.webp"),rgba(255,255,255,0);
     background-size: 300px 270px;
     background-repeat: no-repeat;
     background-position: right bottom;

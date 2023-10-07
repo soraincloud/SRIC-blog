@@ -6,7 +6,7 @@ export default
     data()
     {
         return{
-            MarkTwitter: require('@/assets/images/logo/mark-23ade5.png')
+            MarkTwitter: require('@/assets/webp/logo/mark-23ade5.webp')
         }
     }
 }

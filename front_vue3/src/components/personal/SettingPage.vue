@@ -8,7 +8,7 @@
         <el-col :span="12">
             <div class="PersonalIndex-avater-div-style" :style="paddingTop">
                 <el-avatar
-                    :src="require('@/assets/images/logo/' + avatar)"
+                    :src="require('@/assets/webp/avatar/' + avatar)"
                     :size="150"
                     fit="scale-down"
                 ></el-avatar>

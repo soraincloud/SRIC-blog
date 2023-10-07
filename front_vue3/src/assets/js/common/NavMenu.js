@@ -12,7 +12,7 @@ export default
     data ()
     {
         return {
-            SRICNavLogo: require('@/assets/images/logo/SRIC-NavLogo.png'),
+            SRICNavLogo: require('@/assets/webp/logo/SRIC-NavLogo.webp'),
             navList:
             [
                 {name: 'index', navItem: '首页'},

@@ -9,8 +9,8 @@ export default
     data()
     {
         return{
-            gameWarma: require('@/assets/images/background/gameWarma.png'),
-            avatar: 'head-main.png',
+            gameWarma: require('@/assets/webp/background/gameWarma.webp'),
+            avatar: 'head-main.webp',
             username: this.$store.getters.getUsername,
             tags: this.$store.getters.getTags,
             mark: this.$store.getters.getMark,
@@ -125,6 +125,7 @@ export default
                     if (resp && resp.status === 200)
                     {
                         _this.username = resp.data.username
+                        _this.avatar = resp.data.avatar
                         _this.mark = resp.data.mark
                     }
                 })
@@ -137,6 +138,10 @@ export default
                         _this.tags = resp.data
                     }
                 })
+            }
+            else
+            {
+                this.avatar = this.$store.getters.getAvatar
             }
         }
         this.usernameHoder = t('login.usernamehoder')

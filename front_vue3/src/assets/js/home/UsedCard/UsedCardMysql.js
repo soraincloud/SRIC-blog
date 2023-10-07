@@ -8,7 +8,7 @@ export default
     {
         return{
             active: '',
-            MysqlLogo: require('@/assets/images/logo/logo-mysql.png')
+            MysqlLogo: require('@/assets/webp/logo/logo-mysql.webp')
         }
     },
     methods:

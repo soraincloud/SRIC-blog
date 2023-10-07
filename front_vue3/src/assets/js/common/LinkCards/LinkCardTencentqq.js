@@ -7,7 +7,7 @@ export default
     data()
     {
         return{
-            MarkTencentqq: require('@/assets/images/logo/mark-d81e06.png')
+            MarkTencentqq: require('@/assets/webp/logo/mark-d81e06.webp')
         }
     },
     methods:

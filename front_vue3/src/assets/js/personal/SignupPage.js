@@ -7,7 +7,7 @@ export default
     data()
     {
         return{
-            angel: require('@/assets/images/background/angel.png'),
+            angel: require('@/assets/webp/background/angel.webp'),
             paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
             form:
             {

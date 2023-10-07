@@ -8,7 +8,7 @@
 
 .IndexAside-el-card-style .el-card__body
 {
-    background: url("@/assets/images/background/muli-black.png"),rgba(255,255,255,0);
+    background: url("@/assets/webp/background/muli-black.webp"),rgba(255,255,255,0);
     background-size: 200px 120px;
     background-repeat: no-repeat;
     background-position: right top;
@@ -33,7 +33,7 @@ html.dark .IndexAside-el-card-style
 
 html.dark .IndexAside-el-card-style .el-card__body
 {
-    background: url("@/assets/images/background/muli-white.png"),rgba(255,255,255,0);
+    background: url("@/assets/webp/background/muli-white.webp"),rgba(255,255,255,0);
     background-size: 200px 120px;
     background-repeat: no-repeat;
     background-position: right top;

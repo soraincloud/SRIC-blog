@@ -10,7 +10,7 @@ export default
     data()
     {
         return{
-            SRICAvater: require('@/assets/images/logo/SRIC-Avatar.jpg'),
+            SRICAvater: require('@/assets/webp/logo/SRIC-Avatar.webp'),
             active: ''
         }
     },

@@ -1,6 +1,6 @@
 .common-with-back-el-card-style .el-card__body
 {
-    background: url("@/assets/images/background/warma-lie.png"),rgba(255,255,255,0);
+    background: url("@/assets/webp/background/warma-lie.webp"),rgba(255,255,255,0);
     background-size: 100px 100px;
     background-repeat: no-repeat;
     background-position: right top;

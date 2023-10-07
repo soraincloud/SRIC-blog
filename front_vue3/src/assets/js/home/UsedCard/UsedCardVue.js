@@ -8,7 +8,7 @@ export default
     {
         return{
             active: '',
-            VueLogo: require('@/assets/images/logo/logo-vue.png')
+            VueLogo: require('@/assets/webp/logo/logo-vue.webp')
         }
     },
     methods:

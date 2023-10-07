@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 28/09/2023 16:20:36
+ Date: 07/10/2023 09:35:03
 */
 
 SET NAMES utf8mb4;
@@ -99,6 +99,7 @@ CREATE TABLE `user`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'head-main.webp',
   `phonenumber` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `mark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL',
@@ -109,7 +110,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'SRIC', 'soraincloud', '11451419198', '114514@qq.com', 'soraincloud here', 1);
-INSERT INTO `user` VALUES (2, 'homo', 'homo', NULL, NULL, '114514', 0);
+INSERT INTO `user` VALUES (1, 'SRIC', 'soraincloud', 'head-main.webp', '11451419198', '114514@qq.com', 'soraincloud here', 1);
+INSERT INTO `user` VALUES (2, 'homo', 'homo', 'head-main.webp', NULL, NULL, '114514', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -9,8 +9,8 @@ export default
     data()
     {
         return{
-            game: require('@/assets/images/background/game.png'),
-            avatar: 'head-main.png',
+            game: require('@/assets/webp/background/game.webp'),
+            avatar: 'head-main.webp',
             username: '',
             paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
             tags: [],
@@ -55,9 +55,11 @@ export default
                 if (resp && resp.status === 200)
                 {
                     _this.username = resp.data.username
+                    _this.avatar = resp.data.avatar
                     _this.mark = resp.data.mark
                     _this.$store.commit('setUsername',resp.data.username)
                     _this.$store.commit('setPassword',resp.data.password)
+                    _this.$store.commit('setAvatar',resp.data.avatar)
                     _this.$store.commit('setMark',resp.data.mark)
                     _this.$store.commit('setPhonenumber',resp.data.phonenumber)
                     _this.$store.commit('setEmail',resp.data.email)

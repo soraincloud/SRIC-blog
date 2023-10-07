@@ -6,7 +6,7 @@ export default
     data()
     {
         return{
-            MarkWeibo: require('@/assets/images/logo/mark-fdf66d.png')
+            MarkWeibo: require('@/assets/webp/logo/mark-fdf66d.webp')
         }
     }
 }

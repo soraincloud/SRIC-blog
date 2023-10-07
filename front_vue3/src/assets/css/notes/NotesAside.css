@@ -8,7 +8,7 @@
 
 .NotesAside-el-card-style .el-card__body
 {
-    background: url("@/assets/images/background/playgames-lie-light.png"),rgba(255,255,255,0);
+    background: url("@/assets/webp/background/playgames-lie-light.webp"),rgba(255,255,255,0);
     background-size: 138px 145px;
     background-repeat: no-repeat;
     background-position: right top;
@@ -35,7 +35,7 @@ html.dark .NotesAside-el-card-style
 
 html.dark .NotesAside-el-card-style .el-card__body
 {
-    background: url("@/assets/images/background/playgames-lie-night.png"),rgba(255,255,255,0);
+    background: url("@/assets/webp/background/playgames-lie-night.webp"),rgba(255,255,255,0);
     background-size: 138px 145px;
     background-repeat: no-repeat;
     background-position: right top;

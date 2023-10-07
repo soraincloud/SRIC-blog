@@ -8,7 +8,7 @@ export default
     {
         return{
             active: '',
-            SpringbootLogo: require('@/assets/images/logo/logo-springboot.png')
+            SpringbootLogo: require('@/assets/webp/logo/logo-springboot.webp')
         }
     },
     methods:

@@ -8,7 +8,7 @@ export default
     {
         return{
             active: '',
-            ElementLogo: require('@/assets/images/logo/logo-element.png')
+            ElementLogo: require('@/assets/webp/logo/logo-element.webp')
         }
     },
     methods:

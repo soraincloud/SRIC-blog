@@ -21,7 +21,7 @@ export default
             noteDescription: '',
             noteVisited: '',
             markdownText: require('@/assets/md/NULL.md'),
-            backTop: require('@/assets/images/background/backTop.png'),
+            backTop: require('@/assets/webp/background/backTop.webp'),
             data: 0,
             bottomData: 'bottom: ' + (window.innerHeight + 100) + 'px',
         }

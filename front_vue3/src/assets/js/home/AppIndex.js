@@ -14,7 +14,7 @@ export default
     data()
     {
         return{
-            backTop: require('@/assets/images/background/backTop.png'),
+            backTop: require('@/assets/webp/background/backTop.webp'),
             indexHeight: (window.innerHeight - 70) + 'px',
             asideHeight: (window.innerHeight - 70) + 'px',
             data: 0,

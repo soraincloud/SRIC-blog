@@ -6,7 +6,7 @@ export default
     data()
     {
         return{
-            MarkBilibili: require('@/assets/images/logo/mark-fb7299.png')
+            MarkBilibili: require('@/assets/webp/logo/mark-fb7299.webp')
         }
     }
 }

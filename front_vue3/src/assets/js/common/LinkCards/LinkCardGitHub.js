@@ -6,7 +6,7 @@ export default
     data()
     {
         return{
-            MarkGitHub: require('@/assets/images/logo/mark-32ea3e.png')
+            MarkGitHub: require('@/assets/webp/logo/mark-32ea3e.webp')
         }
     }
 }

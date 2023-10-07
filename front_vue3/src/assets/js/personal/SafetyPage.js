@@ -7,7 +7,7 @@ export default
     data()
     {
         return{
-            anger: require('@/assets/images/background/anger.png'),
+            anger: require('@/assets/webp/background/anger.webp'),
             passwordBorder: 'border-color: rgba(255,255,255,0);',
             passwordBackground: 'background: rgba(252,204,204,0);',
             phoneBorder: 'border-color: rgba(255,255,255,0);',
@@ -18,7 +18,7 @@ export default
             phoneNumber: this.$store.getters.getPhonenumber,
             mail: this.$store.getters.getEmail,
             userId: localStorage.getItem('userId'),
-            leftData: 'left: -500px',
+            leftData: 'left: -512px',
         }
     },
     mounted()

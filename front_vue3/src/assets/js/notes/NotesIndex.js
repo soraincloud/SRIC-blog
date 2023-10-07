@@ -14,7 +14,7 @@ export default
             indexHeight: (window.innerHeight - 70) + 'px',
             asideHeight: (window.innerHeight - 70) + 'px',
             categoryHeight: (window.innerHeight - 70) + 'px',
-            backTop: require('@/assets/images/background/backTop.png'),
+            backTop: require('@/assets/webp/background/backTop.webp'),
             data: 0,
             bottomData: 'bottom: ' + (window.innerHeight + 100) + 'px',
         }

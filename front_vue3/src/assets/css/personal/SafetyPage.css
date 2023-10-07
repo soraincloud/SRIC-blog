@@ -3,7 +3,6 @@
     height: 512px;
     width: 512px;
     position: absolute;
-    left: -500px;
     bottom: 64px;
     transition: 0.5s left;
 }
@@ -29,7 +28,7 @@
 
 .SafetyPage-outside-card-style .el-card__body
 {
-    background: url("@/assets/images/background/yiyu.png"),rgba(255,255,255,0);
+    background: url("@/assets/webp/background/yiyu.webp"),rgba(255,255,255,0);
     background-size: 300px 270px;
     background-repeat: no-repeat;
     background-position: right bottom;
