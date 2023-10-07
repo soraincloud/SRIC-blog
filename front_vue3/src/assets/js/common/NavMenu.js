@@ -20,6 +20,7 @@ export default
                 {name: 'resources', navItem: '资源'},
                 {name: 'forun', navItem: '论坛'},
                 {name: 'personal', navItem: '个人'},
+                {name: 'function', navItem: '功能'},
             ],
             place: "top:" + (window.innerHeight - 32) + "px;left:" + (window.innerWidth/2 - 173) + "px;",
             progressData: 0,
@@ -62,6 +63,7 @@ export default
             this.navList[2].navItem = t('menu.resource')
             this.navList[3].navItem = t('menu.forun')
             this.navList[4].navItem = t('menu.personal')
+            this.navList[5].navItem = t('menu.functions')
         },
     },
     mounted()

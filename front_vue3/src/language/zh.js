@@ -7,6 +7,7 @@ export default
         resource: '资源',
         forun: '论坛',
         personal: '个人',
+        functions: '功能',
         back: '背景模糊',
         fire: '放烟花吗',
         mode: '切换模式',
@@ -101,5 +102,9 @@ export default
         changePhone: '绑手机',
         changeMail: '绑邮箱',
         back: '返回',
+    },
+    functions:
+    {
+        head: '沃玛 换头功能',
     },
 }

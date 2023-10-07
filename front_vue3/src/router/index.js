@@ -54,6 +54,11 @@ const routes =
         path: '/safety',
         component: () => import('@/components/personal/SafetyPage'),
       },
+      {
+        name: 'function',
+        path: '/function',
+        component: () => import('@/components/function/FunctionIndex'),
+      },
     ]
   }
 ]

@@ -7,6 +7,7 @@ export default
         resource: '材源',
         forun: '话地',
         personal: '私页',
+        functions: '其能',
         back: '看不清底',
         fire: '放火炸嘛',
         mode: '换个面样',
@@ -100,5 +101,9 @@ export default
         changePhone: '订圣剑',
         changeMail: '订发盒',
         back: '退饭',
+    },
+    functions:
+    {
+        head: '蛙蟆 变脑其能 _(≧∇≦」∠)_',
     },
 }

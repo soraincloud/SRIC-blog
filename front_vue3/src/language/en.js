@@ -7,6 +7,7 @@ export default
         resource: 'RESOURCES',
         forun: 'FORUN',
         personal: 'PERSONAL',
+        functions: 'FUNCTION',
         back: 'blur',
         fire: 'want firework?',
         mode: 'change mode',
@@ -100,5 +101,9 @@ export default
         changePhone: 'bind',
         changeMail: 'bind',
         back: 'back',
+    },
+    functions:
+    {
+        head: 'WARMA CHANGE HAIR _(≧∇≦」∠)_',
     },
 }

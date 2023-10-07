@@ -16,7 +16,7 @@ export default
             tags: [],
             mark: "",
             userId: localStorage.getItem('userId'),
-            leftData: 'left: -256px',
+            leftData: 'left: -400px',
         }
     },
     methods:
@@ -100,7 +100,7 @@ export default
                 },
             ]
         }
-        setTimeout( () => { this.leftData = 'left: -0px' },100)
+        setTimeout( () => { this.leftData = 'left: 0px' },100)
     },
     watch:
     {
