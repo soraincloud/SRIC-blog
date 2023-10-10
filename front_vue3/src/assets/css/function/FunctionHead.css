@@ -69,3 +69,9 @@
     border-color: white;
     box-sizing: border-box;
 }
+
+.el-carousel 
+{
+    --el-carousel-indicator-width: 10px;
+    --el-carousel-indicator-padding-horizontal: 2px;
+}
