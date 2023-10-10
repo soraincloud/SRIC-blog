@@ -48,7 +48,27 @@ export default
                 {
                     webp: 'head-shi.webp',
                     text: 'mua fa 辫 + 诗岸式辫子',
-                }
+                },
+                {
+                    webp: 'head-yuan.webp',
+                    text: 'mua fa 辫 + 有点危险的双马尾',
+                },
+                {
+                    webp: 'head-double.webp',
+                    text: 'mua fa 辫 + 低双马尾',
+                },
+                {
+                    webp: 'head-danger.webp',
+                    text: 'mua fa 辫 + 非常危险的发型',
+                },
+                {
+                    webp: 'head-veryshort.webp',
+                    text: 'mua fa 辫 + 超短发',
+                },
+                {
+                    webp: 'head-none.webp',
+                    text: '不 要 头 发',
+                },
             ],
         }
     },
@@ -104,6 +124,26 @@ export default
                 else if(e == 7)
                 {
                     this.head = 'head-shi.webp'
+                }
+                else if(e == 8)
+                {
+                    this.head = 'head-yuan.webp'
+                }
+                else if(e == 9)
+                {
+                    this.head = 'head-double.webp'
+                }
+                else if(e == 10)
+                {
+                    this.head = 'head-danger.webp'
+                }
+                else if(e == 11)
+                {
+                    this.head = 'head-veryshort.webp'
+                }
+                else if(e == 12)
+                {
+                    this.head = 'head-none.webp'
                 }
             },500)
             //判断向上还是向下 离开屏幕
