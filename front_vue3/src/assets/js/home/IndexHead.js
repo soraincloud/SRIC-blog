@@ -7,7 +7,7 @@ export default
     data()
     {
         return{
-            active: ''
+            active: '',
         }
     },
     methods:

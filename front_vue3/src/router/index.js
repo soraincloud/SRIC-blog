@@ -59,6 +59,11 @@ const routes =
         path: '/function',
         component: () => import('@/components/function/FunctionIndex'),
       },
+      {
+        name: 'functionHead',
+        path: '/functionHead',
+        component: () => import('@/components/function/FunctionHead'),
+      },
     ]
   }
 ]

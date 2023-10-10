@@ -1,3 +1,8 @@
+.el-menu
+{
+    z-index: 99;
+}
+
 .NavMenu-SRIC-Navlogo-style
 {
     height: 50px;
