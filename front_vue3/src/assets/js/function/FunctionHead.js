@@ -19,12 +19,16 @@ export default
             [
                 {
                     webp: 'head-front.webp',
-                    text: '只有前面的 mua fa 辨',
+                    text: '只有前面的 mua fa 辫',
                 },
                 {
                     webp: 'head-four.webp',
-                    text: '有四条 mua fa 辨',
+                    text: '有四条 mua fa 辫',
                 },
+                {
+                    webp: 'head-short.webp',
+                    text: 'mua fa 辫 + 短发'
+                }
             ],
         }
     },
@@ -32,6 +36,7 @@ export default
     {
         carouselChange(e) 
         {
+            //判断向上还是向下 先把脑袋挡住
             if(divPlace == 0)
             {
                 this.divTop1 = 'top:' + 0 + "px;"
@@ -46,7 +51,7 @@ export default
                 setTimeout( () => { this.divTop3 = 'top:' + 0 + "px;" },200)
                 setTimeout( () => { this.divTop4 = 'top:' + 0 + "px;" },300)
             }
-
+            //挡住的过程中改变脑袋的图片
             setTimeout( () => {
                 if (e == 0) 
                 {
@@ -57,7 +62,7 @@ export default
                     this.head = 'head-four.webp'
                 }
             },500)
-
+            //判断向上还是向下 离开屏幕
             if(divPlace == 0)
             {
                 setTimeout( () => { this.divTop1 = 'top:' + window.innerHeight + "px;" },500)
