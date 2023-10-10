@@ -4,7 +4,41 @@
     width: 512px;
     position: absolute;
     transition: 0.5s top ease;
-    transition: 0.5s opacity ease;
+}
+
+.FunctionHead-head-div1-style
+{
+    background-color: #ff7f7f;
+    width: 128px;
+    position: absolute;
+    transition: 0.5s top ease;
+}
+
+.FunctionHead-head-div2-style
+{
+    background-color: #ff8f8f;
+    width: 128px;
+    position: absolute;
+    left: 128px;
+    transition: 0.5s top ease;
+}
+
+.FunctionHead-head-div3-style
+{
+    background-color: #ff9f9f;
+    width: 128px;
+    position: absolute;
+    left: 256px;
+    transition: 0.5s top ease;
+}
+
+.FunctionHead-head-div4-style
+{
+    background-color: #ffafaf;
+    width: 128px;
+    position: absolute;
+    left: 384px;
+    transition: 0.5s top ease;
 }
 
 .FunctionHead-carousel-style

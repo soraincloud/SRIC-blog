@@ -4,6 +4,10 @@
         class="FunctionHead-head-image-style"
         :style="[imageTop,opacity]"
     ></el-image>
+    <div class="FunctionHead-head-div1-style" :style="[ divHeight,divTop1 ]"></div>
+    <div class="FunctionHead-head-div2-style" :style="[ divHeight,divTop2 ]"></div>
+    <div class="FunctionHead-head-div3-style" :style="[ divHeight,divTop3 ]"></div>
+    <div class="FunctionHead-head-div4-style" :style="[ divHeight,divTop4 ]"></div>
     <el-row>
         <el-col :span="12"></el-col>
         <el-col :span="9">
