@@ -60,18 +60,18 @@ export default
 
             if(divPlace == 0)
             {
-                setTimeout( () => { this.divTop1 = 'top:' + window.innerHeight + "px;" },400)
-                setTimeout( () => { this.divTop2 = 'top:' + window.innerHeight + "px;" },500)
-                setTimeout( () => { this.divTop3 = 'top:' + window.innerHeight + "px;" },600)
-                setTimeout( () => { this.divTop4 = 'top:' + window.innerHeight + "px;" },700)
+                setTimeout( () => { this.divTop1 = 'top:' + window.innerHeight + "px;" },500)
+                setTimeout( () => { this.divTop2 = 'top:' + window.innerHeight + "px;" },600)
+                setTimeout( () => { this.divTop3 = 'top:' + window.innerHeight + "px;" },700)
+                setTimeout( () => { this.divTop4 = 'top:' + window.innerHeight + "px;" },800)
                 divPlace = 1
             }
             else
             {
-                setTimeout( () => { this.divTop1 = 'top:' + (-(window.innerHeight) - 100) + "px;" },400)
-                setTimeout( () => { this.divTop2 = 'top:' + (-(window.innerHeight) - 100) + "px;" },500)
-                setTimeout( () => { this.divTop3 = 'top:' + (-(window.innerHeight) - 100) + "px;" },600)
-                setTimeout( () => { this.divTop4 = 'top:' + (-(window.innerHeight) - 100) + "px;" },700)
+                setTimeout( () => { this.divTop1 = 'top:' + (-(window.innerHeight) - 100) + "px;" },500)
+                setTimeout( () => { this.divTop2 = 'top:' + (-(window.innerHeight) - 100) + "px;" },600)
+                setTimeout( () => { this.divTop3 = 'top:' + (-(window.innerHeight) - 100) + "px;" },700)
+                setTimeout( () => { this.divTop4 = 'top:' + (-(window.innerHeight) - 100) + "px;" },800)
                 divPlace = 0
             }
         }
