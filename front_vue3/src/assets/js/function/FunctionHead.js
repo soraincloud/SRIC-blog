@@ -1,8 +1,10 @@
+import { ArrowLeftBold } from '@element-plus/icons-vue'
 let divPlace = 0;
 
 export default
 {
     name: 'FunctionHead',
+    components: { ArrowLeftBold },
     data() 
     {
         return {
@@ -74,6 +76,12 @@ export default
     },
     methods:
     {
+        clickBack()
+        {
+            this.imageTop = 'top:' + (window.innerHeight + 512) + "px;"
+            this.carouselTop = 'top:' + (-512) + "px;"
+            setTimeout( () => { this.$router.push('/function') },200)
+        },
         carouselChange(e) 
         {
             //判断向上还是向下 先把脑袋挡住
