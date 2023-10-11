@@ -1,6 +1,7 @@
 import { User,Lock,ArrowLeftBold } from '@element-plus/icons-vue'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
+import md5 from "js-md5";
 
 const { t } = i18n.global
 const isDark = useDark()
@@ -41,7 +42,7 @@ export default
         {
             var _this = this
             this.$axios
-            .post('/login',{ username: this.form.username,password: this.form.password })
+            .post('/login',{ username: this.form.username,password: md5( this.form.username + this.form.password) })
             .then(resp =>
             {
                 if(resp.data.code == 200)

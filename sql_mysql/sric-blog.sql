@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 07/10/2023 09:35:03
+ Date: 11/10/2023 11:29:57
 */
 
 SET NAMES utf8mb4;
@@ -110,7 +110,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'SRIC', 'soraincloud', 'head-main.webp', '11451419198', '114514@qq.com', 'soraincloud here', 1);
-INSERT INTO `user` VALUES (2, 'homo', 'homo', 'head-main.webp', NULL, NULL, '114514', 0);
+INSERT INTO `user` VALUES (1, 'SRIC', 'abe4618871b8413bdfb1777f1db128b6', 'head-main.webp', '11451419198', '114514@qq.com', 'soraincloud here', 1);
+INSERT INTO `user` VALUES (2, 'homo', '46cdf9fce44f17b47ef33cd4d9bd99f4', 'head-main.webp', NULL, NULL, '114514', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
