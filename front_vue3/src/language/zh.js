@@ -5,7 +5,7 @@ export default
         index: '首页',
         note: '笔记',
         resource: '资源',
-        forun: '论坛',
+        forum: '论坛',
         personal: '个人',
         functions: '功能',
         back: '背景模糊',

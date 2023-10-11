@@ -5,7 +5,7 @@ export default
         index: '初见页',
         note: '记纸',
         resource: '材源',
-        forun: '话地',
+        forum: '话地',
         personal: '私页',
         functions: '其能',
         back: '看不清底',

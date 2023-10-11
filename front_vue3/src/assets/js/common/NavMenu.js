@@ -18,7 +18,7 @@ export default
                 {name: 'index', navItem: '首页'},
                 {name: 'notes', navItem: '笔记'},
                 {name: 'resources', navItem: '资源'},
-                {name: 'forun', navItem: '论坛'},
+                {name: 'forum', navItem: '论坛'},
                 {name: 'personal', navItem: '个人'},
                 {name: 'function', navItem: '功能'},
             ],
@@ -61,7 +61,7 @@ export default
             this.navList[0].navItem = t('menu.index')
             this.navList[1].navItem = t('menu.note')
             this.navList[2].navItem = t('menu.resource')
-            this.navList[3].navItem = t('menu.forun')
+            this.navList[3].navItem = t('menu.forum')
             this.navList[4].navItem = t('menu.personal')
             this.navList[5].navItem = t('menu.functions')
         },

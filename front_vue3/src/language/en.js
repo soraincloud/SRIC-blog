@@ -5,7 +5,7 @@ export default
         index: 'HOME',
         note: 'NOTES',
         resource: 'RESOURCES',
-        forun: 'FORUN',
+        forum: 'FORUN',
         personal: 'PERSONAL',
         functions: 'FUNCTION',
         back: 'blur',
