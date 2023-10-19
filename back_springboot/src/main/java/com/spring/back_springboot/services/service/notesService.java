@@ -9,4 +9,5 @@ public interface notesService
     List<notes> GetAllNotes();
     List<notes> GetNotesByCategory(String category);
     notes GetNoteById(int id);
+    void addNoteVisit(int id);
 }

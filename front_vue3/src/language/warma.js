@@ -45,6 +45,7 @@ export default
     },
     notes:
     {
+        visit:'访访多:',
         note: '记记',
         head: '类类',
         all: '所有',

@@ -4,6 +4,7 @@ import com.spring.back_springboot.pojo.notes;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -18,4 +19,7 @@ public interface notesMapper
 
     @Select(value = "SELECT * FROM notes WHERE id = #{id}")
     notes GetNoteById(@Param(value = "id")int id);
+
+    @Update(value = "UPDATE NOTES SET VISITED = VISITED + 1 WHERE id = #{id}")
+    void addNoteVisit(@Param(value = "id")int id);
 }

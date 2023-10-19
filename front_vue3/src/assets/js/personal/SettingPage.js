@@ -121,7 +121,7 @@ export default
             if(this.$store.getters.getStatus == '') //#优化 在没有经过 personalIndex 获取用户信息时才进行请求
             {
                 var _this = this
-                getUserById({ id: this.userId}).then(function(resp){
+                getUserById({ id: this.userId }).then(function(resp){
                     if (resp && resp.status === 200)
                     {
                         _this.username = resp.data.username

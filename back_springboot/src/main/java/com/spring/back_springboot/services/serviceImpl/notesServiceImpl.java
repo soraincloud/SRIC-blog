@@ -31,4 +31,7 @@ public class notesServiceImpl implements notesService
     {
         return mapper.GetNoteById(id);
     }
+
+    @Override
+    public void addNoteVisit(int id) { mapper.addNoteVisit(id); }
 }

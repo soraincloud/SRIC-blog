@@ -15,6 +15,7 @@
                     </h1>
                     <el-divider class="common-el-divider-style" />
                     <h1>{{ noteTitle }}</h1>
+                    <h5>{{ $t("notes.visit") }} {{ noteVisited }}</h5>
                     <h3>{{ noteDescription }}</h3>
                 </el-card>
             </el-scrollbar>

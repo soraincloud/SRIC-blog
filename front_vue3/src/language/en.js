@@ -45,6 +45,7 @@ export default
     },
     notes:
     {
+        visit:'visited:',
         note: 'note',
         head: 'category',
         all: 'all',

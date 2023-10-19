@@ -32,6 +32,7 @@ public class notesController
     @GetMapping("/notes/getNoteById")
     public notes GetNoteById(int id)
     {
+        service.addNoteVisit(id);
         return service.GetNoteById(id);
     }
 }
