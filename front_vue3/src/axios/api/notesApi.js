@@ -2,12 +2,12 @@ import { get,post } from "@/axios/axios"
 
 export function getNotesList(params)
 {
-    return get('/notes/notesList',params)
+    return get('/notes/getNotesList',params)
 }
 
-export function getListByCategory(params)
+export function getNoteListByCategory(params)
 {
-    return get('/notes/notesListByCategory',params)
+    return get('/notes/getNoteListByCategory',params)
 }
 
 export function getNoteById(params)

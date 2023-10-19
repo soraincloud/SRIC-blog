@@ -15,14 +15,14 @@ public class notesController
     notesService service;
 
     @CrossOrigin
-    @GetMapping("/notes/notesList")
+    @GetMapping("/notes/getNotesList")
     public List<notes> GetAllNotes()
     {
         return service.GetAllNotes();
     }
 
     @CrossOrigin
-    @GetMapping("/notes/notesListByCategory")
+    @GetMapping("/notes/getNoteListByCategory")
     public List<notes> GetNotesByCategory(String category) throws Exception
     {
         return service.GetNotesByCategory(category);

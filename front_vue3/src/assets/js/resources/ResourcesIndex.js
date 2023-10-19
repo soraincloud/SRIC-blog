@@ -1,14 +1,14 @@
 import AsideMessage from '@/components/common/AsideMessage'
-import NotesCard from '@/components/notes/NotesCard'
-import NotesAside from '@/components/notes/NotesAside'
-import { getNoteListByCategory } from '@/axios/api/notesApi'
+import ResourcesCard from '@/components/resources/ResourcesCard'
+import ResourcesAside from '@/components/resources/ResourcesAside'
+import { getResourcesListByCategory } from '@/axios/api/resourcesApi'
 
 let isMore = 0;
 
 export default
 {
-    name:'NotesIndex',
-    components: { AsideMessage,NotesCard,NotesAside },
+    name:'ResourcesIndex',
+    components: { AsideMessage,ResourcesCard,ResourcesAside },
     data()
     {
         return{
@@ -31,18 +31,18 @@ export default
     },
     methods:
     {
-        loadAllNotes()
+        loadAllResources()
         {
-            this.$refs.loadAllNotesToCard.loadNotes()
+            this.$refs.loadAllResourcesToCard.loadResources()
         },
-        loadNotesByCategory()
+        loadResourcesByCategory()
         {
             var _this = this
             var categoryNeed = this.$refs.getCategory.categoryNeed
-            getNoteListByCategory({ category: categoryNeed }).then(function(resp){
+            getResourcesListByCategory({ category: categoryNeed }).then(function(resp){
                 if (resp && resp.status === 200)
                 {
-                    _this.$refs.loadAllNotesToCard.notes = resp.data
+                    _this.$refs.loadAllResourcesToCard.resources = resp.data
                 }
             })
         },
