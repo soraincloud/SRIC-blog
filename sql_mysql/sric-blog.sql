@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 11/10/2023 11:29:57
+ Date: 19/10/2023 20:08:36
 */
 
 SET NAMES utf8mb4;
@@ -56,19 +56,41 @@ CREATE TABLE `notes`  (
   `md` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL.md',
   `visited` int(12) UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of notes
 -- ----------------------------
-INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 0);
-INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 4, 'SPRING001.md', 0);
+INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 3);
+INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 4, 'SPRING001.md', 4);
 INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 2, 'C001.md', 0);
 INSERT INTO `notes` VALUES (4, 'vue3项目的创建', '@vuecli对vue3项目的创建与依赖的引入', 3, 'VUE001.md', 0);
 INSERT INTO `notes` VALUES (5, 'vue-axios', 'VUE中前后端数据传输axios', 3, 'VUE002.md', 0);
 INSERT INTO `notes` VALUES (6, 'vue-router', 'VUE中的路由vue-router', 3, 'VUE003.md', 0);
 INSERT INTO `notes` VALUES (7, 'VUE传值', 'VUE中组件间的传值与VUEX', 3, 'VUE004.md', 0);
 INSERT INTO `notes` VALUES (8, 'VUE动画效果', 'VUE中的简单动画效果', 3, 'VUE005.md', 0);
+INSERT INTO `notes` VALUES (9, '红烧肉', '简易的红烧肉 做法', 5, 'COOK001.md', 0);
+INSERT INTO `notes` VALUES (10, '番茄牛腩', '不加水的番茄牛腩 怎么做', 5, 'COOK002.md', 0);
+
+-- ----------------------------
+-- Table structure for resources
+-- ----------------------------
+DROP TABLE IF EXISTS `resources`;
+CREATE TABLE `resources`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL TYTLE',
+  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NO DESCRIPTION',
+  `category` int(10) UNSIGNED NOT NULL DEFAULT 1,
+  `file` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL',
+  `visited` int(12) UNSIGNED NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of resources
+-- ----------------------------
+INSERT INTO `resources` VALUES (1, '222', 'NO DESCRIPTION', 2, 'NULL', 0);
+INSERT INTO `resources` VALUES (2, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL', 0);
 
 -- ----------------------------
 -- Table structure for tag
