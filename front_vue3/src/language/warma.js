@@ -52,6 +52,7 @@ export default
         algorithm: '计法',
         front: '前面',
         back: '后面',
+        cook: '饭饭',
     },
     login:
     {

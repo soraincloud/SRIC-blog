@@ -52,6 +52,7 @@ export default
         algorithm: 'algorithm',
         front: 'front',
         back: 'back',
+        cook: 'cook',
     },
     login:
     {

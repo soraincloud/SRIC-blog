@@ -52,6 +52,7 @@ export default
         algorithm: '算法',
         front: '前端',
         back: '后端',
+        cook: '做饭',
     },
     login:
     {
