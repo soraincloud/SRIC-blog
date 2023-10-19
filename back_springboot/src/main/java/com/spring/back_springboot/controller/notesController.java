@@ -15,21 +15,21 @@ public class notesController
     notesService service;
 
     @CrossOrigin
-    @GetMapping("/notesList")
+    @GetMapping("/notes/notesList")
     public List<notes> GetAllNotes()
     {
         return service.GetAllNotes();
     }
 
     @CrossOrigin
-    @GetMapping("/notesListByCategory")
+    @GetMapping("/notes/notesListByCategory")
     public List<notes> GetNotesByCategory(String category) throws Exception
     {
         return service.GetNotesByCategory(category);
     }
 
     @CrossOrigin
-    @GetMapping("/getNoteById")
+    @GetMapping("/notes/getNoteById")
     public notes GetNoteById(int id)
     {
         return service.GetNoteById(id);

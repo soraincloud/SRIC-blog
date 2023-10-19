@@ -1,5 +1,6 @@
 import { User,EditPen,Operation } from '@element-plus/icons-vue'
 import i18n from '@/language'
+import { getTagByUid,getUserById } from '@/axios/api/userApi'
 
 const { t } = i18n.global
 export default
@@ -48,10 +49,7 @@ export default
         if(this.userId != null)
         {
             var _this = this
-            this.$axios
-            .get('/getUserById',{ params:{ id: this.userId} })
-            .then(resp =>
-            {
+            getUserById({ id: this.userId}).then(function(resp){
                 if (resp && resp.status === 200)
                 {
                     _this.username = resp.data.username
@@ -66,10 +64,7 @@ export default
                     _this.$store.commit('setStatus',resp.data.status)
                 }
             })
-            this.$axios
-            .get('/getTagByUid',{ params:{ uid: this.userId } })
-            .then(resp => 
-            {
+            getTagByUid({ uid: this.userId }).then(function(resp){
                 if (resp && resp.status === 200)
                 {
                     _this.tags = resp.data

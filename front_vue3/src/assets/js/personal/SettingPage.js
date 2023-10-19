@@ -1,5 +1,6 @@
 import { User,EditPen,Operation } from '@element-plus/icons-vue'
 import i18n from '@/language'
+import { getTagByUid,updateNameById,updateMarkById,getUserById } from '@/axios/api/userApi'
 
 const { t } = i18n.global
 export default
@@ -74,32 +75,34 @@ export default
             var _this = this
             if(this.submitDialog == 0)
             {
-                this.$axios
-                .post('/updateNameById',{ username: this.usernameInput,id: this.userId })
-                .then(resp =>
-                {
+                updateNameById({ username: this.usernameInput,id: this.userId }).then(function(resp){
                     console.log(resp.data.code)
                     if(resp.data.code == 200)
                     {
-                        console.log('success')
-                        this.username = this.usernameInput
-                        this.$message.success({message: t('setting.changesuccess'),})
-                        this.usernameInput = ''
+                        _this.username = _this.usernameInput
+                        _this.$message.success({message: t('setting.changesuccess'),})
+                        _this.usernameInput = ''
                     }
                     if(resp.data.code == 400)
                     {
-                        console.log('fail')
-                        this.$message.warning({message: t('setting.failChange'),})
+                        _this.$message.warning({message: t('setting.failChange'),})
                     }
                 })
             }
             if(this.submitDialog == 1)
             {
-                this.$axios
-                .post('/updateMarkById',{ mark: this.markInput,id: this.userId })
-                this.mark = this.markInput
-                this.$message.success({message: t('setting.changesuccess'),})
-                this.markInput = ''
+                updateMarkById({ mark: this.markInput,id: this.userId }).then(function(resp){
+                    if(resp.data.code == 200)
+                    {
+                        _this.mark = _this.markInput
+                        _this.$message.success({message: t('setting.changesuccess'),})
+                        _this.markInput = ''
+                    }
+                    if(resp.data.code == 400)
+                    {
+                        _this.$message.warning({message: t('setting.failChange'),})
+                    }
+                })
             }
             this.submitDialog = ''
             this.submitDialogVisible = false
@@ -118,10 +121,7 @@ export default
             if(this.$store.getters.getStatus == '') //#优化 在没有经过 personalIndex 获取用户信息时才进行请求
             {
                 var _this = this
-                this.$axios
-                .get('/getUserById',{ params:{ id: this.userId} })
-                .then(resp =>
-                {
+                getUserById({ id: this.userId}).then(function(resp){
                     if (resp && resp.status === 200)
                     {
                         _this.username = resp.data.username
@@ -129,10 +129,7 @@ export default
                         _this.mark = resp.data.mark
                     }
                 })
-                this.$axios
-                .get('/getTagByUid',{ params:{ uid: this.userId } })
-                .then(resp => 
-                {
+                getTagByUid({ uid: this.userId }).then(function(resp){
                     if (resp && resp.status === 200)
                     {
                         _this.tags = resp.data

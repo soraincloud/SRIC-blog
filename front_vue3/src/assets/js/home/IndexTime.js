@@ -1,4 +1,5 @@
 import { useDark } from '@vueuse/core'
+import { getIndexTimeList } from "@/axios/api/homeApi"
 
 const isDark = useDark()
 export default
@@ -35,13 +36,12 @@ export default
         loadIndexTime()
         {
             var _this = this
-            this.$axios.get('/indexTimeList').then(resp => 
-            {
+            getIndexTimeList().then(function(resp){
                 if (resp && resp.status === 200)
                 {
                     _this.timeline = resp.data
                 }
             })
-        }
+        },
     }
 }

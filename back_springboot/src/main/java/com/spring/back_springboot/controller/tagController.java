@@ -18,7 +18,7 @@ public class tagController
     tagService service;
 
     @CrossOrigin
-    @GetMapping("/getTagByUid")
+    @GetMapping("/user/getTagByUid")
     public List<tag> GetTagById(int uid)
     {
         return service.GetTagByUid(uid);

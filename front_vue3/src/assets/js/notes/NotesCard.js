@@ -1,5 +1,6 @@
 import { useDark } from '@vueuse/core'
 import { Histogram } from '@element-plus/icons-vue'
+import { getNotesList } from '@/axios/api/notesApi'
 
 const isDark = useDark()
 export default
@@ -38,16 +39,13 @@ export default
         loadNotes()
         {
             var _this = this
-            this.$axios
-            .get('/notesList')
-            .then(resp => 
-            {
+            getNotesList().then(function(resp){
                 if (resp && resp.status === 200)
                 {
                     _this.notes = resp.data
                 }
             })
-        }
+        },
     },
     mounted:function()
     {

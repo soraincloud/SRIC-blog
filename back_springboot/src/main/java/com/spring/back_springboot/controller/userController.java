@@ -15,7 +15,7 @@ public class userController
     userService service;
 
     @CrossOrigin
-    @GetMapping("/getUserById")
+    @GetMapping("/user/getUserById")
     public user GetUserById(int id)
     {
         user u = service.GetUserById(id);
@@ -25,7 +25,7 @@ public class userController
     }
 
     @CrossOrigin
-    @PostMapping("/login")
+    @PostMapping("/user/login")
     public login login(@RequestBody user user)
     {
         user u = service.GetUserByName(user.getUsername());
@@ -47,7 +47,7 @@ public class userController
     }
 
     @CrossOrigin
-    @PostMapping("/updateNameById")
+    @PostMapping("/user/updateNameById")
     public code UpdateNameById(@RequestBody user user)
     {
         user getUser = service.GetUserByName(user.getUsername());
@@ -60,7 +60,7 @@ public class userController
     }
 
     @CrossOrigin
-    @PostMapping("/updateMarkById")
+    @PostMapping("/user/updateMarkById")
     public code UpdateMarkById(@RequestBody user user)
     {
         service.UpdateMarkById(user.getMark(),user.getId());

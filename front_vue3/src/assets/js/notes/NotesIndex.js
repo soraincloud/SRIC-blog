@@ -1,6 +1,7 @@
 import AsideMessage from '@/components/common/AsideMessage'
 import NotesCard from '@/components/notes/NotesCard'
 import NotesAside from '@/components/notes/NotesAside'
+import { getListByCategory } from '@/axios/api/notesApi'
 
 let isMore = 0;
 
@@ -38,10 +39,7 @@ export default
         {
             var _this = this
             var categoryNeed = this.$refs.getCategory.categoryNeed
-            this.$axios
-            .get('/notesListByCategory',{ params:{ category: categoryNeed } })
-            .then(resp => 
-            {
+            getListByCategory({ category: categoryNeed }).then(function(resp){
                 if (resp && resp.status === 200)
                 {
                     _this.$refs.loadAllNotesToCard.notes = resp.data

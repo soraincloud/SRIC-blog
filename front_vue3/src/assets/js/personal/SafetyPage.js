@@ -1,4 +1,5 @@
 import { ArrowLeftBold } from '@element-plus/icons-vue'
+import { getUserById } from '@/axios/api/userApi'
 
 export default
 {
@@ -70,10 +71,7 @@ export default
         if(this.$store.getters.getStatus == '') //#优化 在没有经过 personalIndex 获取用户信息时才进行请求
         {
             var _this = this
-            this.$axios
-            .get('/getUserById',{ params:{ id: this.userId} })
-            .then(resp =>
-            {
+            getUserById({ id: this.userId}).then(function(resp){
                 if (resp && resp.status === 200)
                 {
                     _this.phoneNumber = resp.data.phonenumber

@@ -1,5 +1,6 @@
 import AsideMessage from '@/components/common/AsideMessage'
 import { useDark } from '@vueuse/core'
+import { getNoteById } from '@/axios/api/notesApi'
 
 const isDark = useDark()
 
@@ -90,15 +91,11 @@ export default
     created()
     {
         var _this = this
-        this.$axios
-        .get('/getNoteById',{ params:{ id: localStorage.getItem('noteId') } })
-        .then(resp =>
-            {
-                _this.noteTitle = resp.data.title
-                _this.noteDescription = resp.data.description
-                _this.noteVisited = resp.data.visited
-                this.markdownText = require('@/assets/md/' + resp.data.md)
-            }
-        )
+        getNoteById({ id: localStorage.getItem('noteId') }).then(function(resp){
+            _this.noteTitle = resp.data.title
+            _this.noteDescription = resp.data.description
+            _this.noteVisited = resp.data.visited
+            _this.markdownText = require('@/assets/md/' + resp.data.md)
+        })
     },
 }

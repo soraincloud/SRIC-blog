@@ -1,7 +1,8 @@
 import { User,Lock,ArrowLeftBold } from '@element-plus/icons-vue'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
-import md5 from "js-md5";
+import md5 from "js-md5"
+import { login } from '@/axios/api/userApi'
 
 const { t } = i18n.global
 const isDark = useDark()
@@ -41,27 +42,24 @@ export default
         login()
         {
             var _this = this
-            this.$axios
-            .post('/login',{ username: this.form.username,password: md5( this.form.username + this.form.password) })
-            .then(resp =>
-            {
+            login({ username: this.form.username,password: md5( this.form.username + this.form.password) }).then(function(resp){
                 if(resp.data.code == 200)
                 {
-                    this.$message.success({message: t('loginmessage.success'),})
+                    _this.$message.success({message: t('loginmessage.success'),})
                     localStorage.setItem('userId',resp.data.id)
-                    this.$router.push('/Personal')
+                    _this.$router.push('/Personal')
                 }
                 else if(resp.data.code == 400)
                 {
-                    this.$message.error({message: t('loginmessage.wrong'),})
+                    _this.$message.error({message: t('loginmessage.wrong'),})
                 }
                 else if(resp.data.code == 401)
                 {
-                    this.$message.warning({message: t('loginmessage.none'),})
+                    _this.$message.warning({message: t('loginmessage.none'),})
                 }
                 else
                 {
-                    this.$message.error({message: t('loginmessage.error'),})
+                    _this.$message.error({message: t('loginmessage.error'),})
                 }
             })
         },
