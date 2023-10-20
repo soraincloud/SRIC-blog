@@ -1,9 +1,6 @@
-import { User,Lock,ArrowLeftBold } from '@element-plus/icons-vue'
-
 export default
 {
     name: 'SignupPage',
-    components: { User,Lock,ArrowLeftBold },
     data()
     {
         return{

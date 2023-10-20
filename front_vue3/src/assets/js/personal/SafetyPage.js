@@ -1,10 +1,8 @@
-import { ArrowLeftBold } from '@element-plus/icons-vue'
 import { getUserById } from '@/axios/api/userApi'
 
 export default
 {
     name:'SafetyPage',
-    components: { ArrowLeftBold },
     data()
     {
         return{

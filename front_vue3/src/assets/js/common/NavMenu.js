@@ -1,5 +1,4 @@
 import { useDark, useToggle } from '@vueuse/core'
-import { Sunny,Star,Open,Management } from '@element-plus/icons-vue'
 import i18n from '@/language'
 
 const { t } = i18n.global
@@ -7,7 +6,6 @@ const isDark = useDark()
 export default
 {
     name: 'NavMenu',
-    components: { Sunny,Star,Open,Management },
     emits: ['dochangefire','doChangeFilter'],//提前声明emit 消除警告
     data ()
     {

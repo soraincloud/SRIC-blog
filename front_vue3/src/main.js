@@ -9,6 +9,7 @@ import VueAxios from 'vue-axios'
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import i18n from './language'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 //md编辑器v-md-editor引入
 import VMdEditor from '@kangc/v-md-editor';
@@ -32,5 +33,10 @@ app.use(router)
 app.use(ElementPlus)
 app.use(i18n)
 app.use(VMdEditor)
+
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) 
+{
+  app.component(key, component)
+}
 
 app.mount('#app')

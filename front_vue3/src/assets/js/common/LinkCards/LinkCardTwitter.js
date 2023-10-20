@@ -1,8 +1,6 @@
-import { Connection } from '@element-plus/icons-vue'
 export default
 {
     name: 'LinkCardTwitter',
-    components: { Connection },
     data()
     {
         return{

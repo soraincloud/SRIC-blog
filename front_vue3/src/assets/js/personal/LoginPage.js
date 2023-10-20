@@ -1,4 +1,3 @@
-import { User,Lock,ArrowLeftBold } from '@element-plus/icons-vue'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 import md5 from "js-md5"
@@ -9,7 +8,6 @@ const isDark = useDark()
 export default
 {
     name: 'LoginPage',
-    components: { User,Lock,ArrowLeftBold },
     data()
     {
         return{

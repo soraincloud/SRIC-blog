@@ -1,9 +1,7 @@
 import useClipboard from 'vue-clipboard3'
-import { Edit } from '@element-plus/icons-vue'
 export default
 {
     name: 'LinkCardTencentqq',
-    components: { Edit },
     data()
     {
         return{

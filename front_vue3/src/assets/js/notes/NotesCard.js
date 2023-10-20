@@ -1,12 +1,10 @@
 import { useDark } from '@vueuse/core'
-import { Histogram } from '@element-plus/icons-vue'
 import { getNotesList,addNoteVisit } from '@/axios/api/notesApi'
 
 const isDark = useDark()
 export default
 {
     name:'NotesCard',
-    components: { Histogram },
     data()
     {
         return{

@@ -1,5 +1,4 @@
 import { useDark } from '@vueuse/core'
-import { Menu } from '@element-plus/icons-vue'
 import i18n from '@/language'
 
 const { t } = i18n.global
@@ -7,7 +6,6 @@ const isDark = useDark()
 export default
 {
     name: 'ResourcesAside',
-    components: { Menu },
     data()
     {
         return{

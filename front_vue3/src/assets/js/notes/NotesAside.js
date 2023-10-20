@@ -1,5 +1,4 @@
 import { useDark } from '@vueuse/core'
-import { Menu,QuestionFilled,Opportunity,Platform,Histogram,KnifeFork } from '@element-plus/icons-vue'
 import i18n from '@/language'
 
 const { t } = i18n.global
@@ -7,7 +6,6 @@ const isDark = useDark()
 export default
 {
     name: 'NotesAside',
-    components: { Menu,QuestionFilled,Opportunity,Platform,Histogram,KnifeFork },
     data()
     {
         return{

@@ -1,12 +1,11 @@
 import LinkCard from '@/components/common/LinkCard'
-import { StarFilled } from '@element-plus/icons-vue'
 import { useDark } from '@vueuse/core'
 
 const isDark = useDark()
 export default
 {
     name: 'AsideMessage',
-    components: { StarFilled,LinkCard },
+    components: { LinkCard },
     data()
     {
         return{

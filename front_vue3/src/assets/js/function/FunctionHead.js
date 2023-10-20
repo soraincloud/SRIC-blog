@@ -1,10 +1,8 @@
-import { ArrowLeftBold } from '@element-plus/icons-vue'
 let divPlace = 0;
 
 export default
 {
     name: 'FunctionHead',
-    components: { ArrowLeftBold },
     data() 
     {
         return {

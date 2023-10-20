@@ -1,12 +1,10 @@
 import { useDark } from '@vueuse/core'
-import { Histogram } from '@element-plus/icons-vue'
 import { getResourcesList } from '@/axios/api/resourcesApi'
 
 const isDark = useDark()
 export default
 {
     name:'ResourcesCard',
-    components: { Histogram },
     data()
     {
         return{

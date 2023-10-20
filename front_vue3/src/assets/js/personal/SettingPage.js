@@ -1,4 +1,3 @@
-import { User,EditPen,Operation } from '@element-plus/icons-vue'
 import i18n from '@/language'
 import { getTagByUid,updateNameById,updateMarkById,getUserById } from '@/axios/api/userApi'
 
@@ -6,7 +5,6 @@ const { t } = i18n.global
 export default
 {
     name: 'RersonalIndex',
-    components: { User,EditPen,Operation },
     data()
     {
         return{
