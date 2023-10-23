@@ -25,9 +25,9 @@
         >
             <template #content>
                 <el-radio-group v-model="language" @change="changeLanguage()">
-                    <el-radio label="0">简体中文</el-radio>
-                    <el-radio label="1">english</el-radio>
-                    <el-radio label="2">warma</el-radio>
+                    <el-radio class="NavMenu-el-readio" label="0">简体中文</el-radio>
+                    <el-radio class="NavMenu-el-readio" label="1">english</el-radio>
+                    <el-radio class="NavMenu-el-readio" label="2">warma</el-radio>
                 </el-radio-group>
             </template>
             <el-button circle size="large" class="NavMenu-el-button-style">
@@ -36,12 +36,11 @@
         </el-tooltip>
         <el-tooltip
         effect="light"
-        content="背景模糊"
         placement="bottom"
         >
             <template #content>
                 <el-progress type="circle" :percentage="progressData" status="success" :width="64" />
-                <p class="NavMenu-progress-p-style">{{  $t('menu.back')  }}</p>
+                <p class="NavMenu-tooltip-p-style">{{  $t('menu.back')  }}</p>
             </template>
             <el-button @click="switchFilter()" circle size="large" class="NavMenu-el-button-style">
                 <el-icon class="is-loading NavMenu-el-icon-style" size="20px"><Open/></el-icon>
