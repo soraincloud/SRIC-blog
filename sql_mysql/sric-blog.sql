@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 19/10/2023 20:08:36
+ Date: 23/10/2023 15:43:33
 */
 
 SET NAMES utf8mb4;
@@ -62,7 +62,7 @@ CREATE TABLE `notes`  (
 -- Records of notes
 -- ----------------------------
 INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 3);
-INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 4, 'SPRING001.md', 4);
+INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 4, 'SPRING001.md', 6);
 INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 2, 'C001.md', 0);
 INSERT INTO `notes` VALUES (4, 'vue3项目的创建', '@vuecli对vue3项目的创建与依赖的引入', 3, 'VUE001.md', 0);
 INSERT INTO `notes` VALUES (5, 'vue-axios', 'VUE中前后端数据传输axios', 3, 'VUE002.md', 0);
@@ -91,6 +91,25 @@ CREATE TABLE `resources`  (
 -- ----------------------------
 INSERT INTO `resources` VALUES (1, '222', 'NO DESCRIPTION', 2, 'NULL', 0);
 INSERT INTO `resources` VALUES (2, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL', 0);
+
+-- ----------------------------
+-- Table structure for resources-category
+-- ----------------------------
+DROP TABLE IF EXISTS `resources-category`;
+CREATE TABLE `resources-category`  (
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `category` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'Menu',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of resources-category
+-- ----------------------------
+INSERT INTO `resources-category` VALUES (0, '全部', 'HelpFilled');
+INSERT INTO `resources-category` VALUES (1, '未分类', 'QuestionFilled');
+INSERT INTO `resources-category` VALUES (2, '222', 'Menu');
+INSERT INTO `resources-category` VALUES (3, '333', 'Menu');
 
 -- ----------------------------
 -- Table structure for tag
