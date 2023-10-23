@@ -1,5 +1,6 @@
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
+import { getAllResourcesCategory } from '@/axios/api/resourcesApi'
 
 const { t } = i18n.global
 const isDark = useDark()
@@ -18,10 +19,6 @@ export default
                 },
                 {
                     content: "未分类",
-                    icon: "Menu",
-                },
-                {
-                    content: "类2",
                     icon: "Menu",
                 },
             ],
@@ -62,26 +59,33 @@ export default
         },
         choose(i)
         {
-            if(i == 0)
+            if(this.category[i].id == 0)
             {
                 this.$emit('loadAllResourcesFormAside')
             }
             else
             {
-                this.categoryNeed = i
+                this.categoryNeed = this.category[i].id
                 this.$emit('loadResourcesFromAside')
             }
         }
     },
     created()
     {
-        this.category[0].content = t('notes.all')
+        var _this = this
+        getAllResourcesCategory().then(function(resp){
+            if (resp && resp.status === 200)
+            {
+                _this.category = resp.data
+            }
+        })
     },
     watch:
     {
         '$i18n.locale'(newValue)
         {
-            this.category[0].content = t('notes.all')
+            this.category[0].category = t('notes.all')
+            this.category[1].category = t('notes.none')
         }
     },
 }

@@ -1,6 +1,7 @@
 package com.spring.back_springboot.mapper;
 
 import com.spring.back_springboot.pojo.resources;
+import com.spring.back_springboot.pojo.resourcesCategory;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -22,4 +23,7 @@ public interface resourcesMapper
 
     @Update(value = "UPDATE resources SET VISITED = VISITED + 1 WHERE id = #{id}")
     void addResourceVisit(@Param(value = "id")int id);
+
+    @Select(value = "SELECT * FROM `resources-category`")
+    List<resourcesCategory> getAllResourcesCategory();
 }

@@ -16,7 +16,7 @@
             <el-icon size="20px" style="float:right">
                 <component :is="item.icon"></component>
             </el-icon>
-            {{item.content}}
+            {{item.category}}
             </el-card>
         </el-card>
     </div>

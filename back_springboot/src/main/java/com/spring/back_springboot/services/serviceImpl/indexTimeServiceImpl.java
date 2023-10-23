@@ -13,7 +13,7 @@ public class indexTimeServiceImpl implements indexTimeService
 {
     @Autowired
     indexTimeMapper mapper;
-
+    
     @Override
     public List<indexTime> GetAllIndexTime()
     {

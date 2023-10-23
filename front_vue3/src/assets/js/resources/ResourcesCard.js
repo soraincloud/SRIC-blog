@@ -31,7 +31,7 @@ export default
         clickCard(i)
         {
             localStorage.setItem('resourcesId',this.resources[i].id)
-            localStorage.setItem('resourcesMd',this.resources[i].md)
+            localStorage.setItem('resourcesFile',this.resources[i].file)
             this.$router.push('/resourcesShow')
         },
         loadResources()
