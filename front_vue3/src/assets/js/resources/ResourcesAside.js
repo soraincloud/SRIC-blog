@@ -14,11 +14,13 @@ export default
             category:
             [
                 {
-                    content: "全部",
+                    id: 0,
+                    category: "全部",
                     icon: "Menu",
                 },
                 {
-                    content: "未分类",
+                    id: -1,
+                    category: "未分类",
                     icon: "Menu",
                 },
             ],
@@ -76,7 +78,10 @@ export default
         getAllResourcesCategory().then(function(resp){
             if (resp && resp.status === 200)
             {
-                _this.category = resp.data
+                for(let i = 0;i < resp.data.length;i++)
+                {
+                    _this.category.push(resp.data[i])
+                }
             }
         })
     },
