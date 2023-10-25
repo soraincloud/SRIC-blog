@@ -11,4 +11,5 @@ public class resources
     private String category;
     private String file;
     private int visited;
+    private String tag;
 }

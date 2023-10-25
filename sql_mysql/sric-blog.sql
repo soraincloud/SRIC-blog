@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 25/10/2023 10:37:59
+ Date: 25/10/2023 11:09:39
 */
 
 SET NAMES utf8mb4;
@@ -83,14 +83,15 @@ CREATE TABLE `resources`  (
   `category` int(10) NOT NULL DEFAULT 1,
   `file` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL',
   `visited` int(12) UNSIGNED NOT NULL DEFAULT 0,
+  `tag` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of resources
 -- ----------------------------
-INSERT INTO `resources` VALUES (1, '2', 'NO DESCRIPTION', 2, 'NULL', 0);
-INSERT INTO `resources` VALUES (2, 'NULL TYTLE', 'NO DESCRIPTION', -1, 'NULL', 0);
+INSERT INTO `resources` VALUES (1, '2', 'NO DESCRIPTION', 2, 'NULL', 0, 'markdown');
+INSERT INTO `resources` VALUES (2, 'NULL TYTLE', 'NO DESCRIPTION', -1, 'NULL', 0, 'NULL');
 
 -- ----------------------------
 -- Table structure for resources-category
@@ -106,8 +107,8 @@ CREATE TABLE `resources-category`  (
 -- ----------------------------
 -- Records of resources-category
 -- ----------------------------
-INSERT INTO `resources-category` VALUES (1, '11', 'Menu');
-INSERT INTO `resources-category` VALUES (2, '22', 'Menu');
+INSERT INTO `resources-category` VALUES (1, 'markdown', 'Menu');
+INSERT INTO `resources-category` VALUES (2, 'png', 'Menu');
 
 -- ----------------------------
 -- Table structure for tag

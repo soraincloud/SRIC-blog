@@ -9,13 +9,12 @@
         @mouseleave="leave(i)"
         @click="clickCard(i)"
         >
-            <h1 class="common-text-style">{{item.title}}</h1>
+            <h1 class="common-text-style">{{ item.title }}</h1>
             <div>
+                <el-tag checked size="small" class="ResourcesCard-el-tag-style" type="success" effect="dark">{{ item.tag }}</el-tag>
                 <el-icon size="10px" class="NotesCard-el-icon-style"><Histogram/></el-icon>
-                <span class="NotesCard-tag-text-style">{{ $t("notes.visit") }} {{item.visited}}</span>
+                <span class="NotesCard-tag-text-style">{{ $t("notes.visit") }} {{ item.visited }}</span>
             </div>
-            <el-divider class="common-el-divider-style" />
-            <p class="common-text-style">{{item.description}}</p>
         </el-card>
     </div>
 </template>
@@ -28,4 +27,5 @@
 <style scoped>
     @import '@/assets/css/common.css';
     @import '@/assets/css/notes/NotesCard.css';
+    @import '@/assets/css/resources/ResourcesCard.css';
 </style>

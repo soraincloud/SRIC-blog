@@ -9,3 +9,13 @@
     font-size: 10px;
     color: #333333;
 }
+
+html.dark .NotesCard-el-icon-style
+{
+    color: white;
+}
+
+html.dark .NotesCard-tag-text-style
+{
+    color: white;
+}
