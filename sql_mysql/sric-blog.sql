@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 25/10/2023 11:09:39
+ Date: 25/10/2023 13:45:09
 */
 
 SET NAMES utf8mb4;
@@ -80,18 +80,27 @@ CREATE TABLE `resources`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL TYTLE',
   `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NO DESCRIPTION',
-  `category` int(10) NOT NULL DEFAULT 1,
+  `category` int(10) NOT NULL DEFAULT -1,
   `file` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL',
   `visited` int(12) UNSIGNED NOT NULL DEFAULT 0,
   `tag` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of resources
 -- ----------------------------
-INSERT INTO `resources` VALUES (1, '2', 'NO DESCRIPTION', 2, 'NULL', 0, 'markdown');
+INSERT INTO `resources` VALUES (1, 'C001.md', '二叉树文档的md文件', 1, '/md/C001.md', 0, 'markdown');
 INSERT INTO `resources` VALUES (2, 'NULL TYTLE', 'NO DESCRIPTION', -1, 'NULL', 0, 'NULL');
+INSERT INTO `resources` VALUES (3, 'COOK001.md', '红烧肉文档的md文件', 1, '/md/COOK001.md', 0, 'markdown');
+INSERT INTO `resources` VALUES (4, 'COOK002.md', '番茄牛腩文档的md文件', 1, '/md/COOK002.md', 0, 'markdown');
+INSERT INTO `resources` VALUES (5, 'NULL.md', '为未分类的笔记提供默认显示的md文件', -1, '/md/NULL.md', 0, 'NULL');
+INSERT INTO `resources` VALUES (6, 'SPRING001.md', '后端四层架构文档的md文件', 1, '/md/SPRING001.md', 0, 'markdown');
+INSERT INTO `resources` VALUES (7, 'VUE001.md', 'vue3项目的创建文档的md文件', 1, '/md/VUE001.md', 0, 'markdown');
+INSERT INTO `resources` VALUES (8, 'VUE002.md', 'vue-axios文档的md文件', 1, '/md/VUE002.md', 0, 'markdown');
+INSERT INTO `resources` VALUES (9, 'VUE003.md', 'vue-router文档的md文件', 1, '/md/VUE003.md', 0, 'markdown');
+INSERT INTO `resources` VALUES (10, 'VUE004.md', 'VUE传值文档的md文件', 1, '/md/VUE004.md', 0, 'markdown');
+INSERT INTO `resources` VALUES (11, 'VUE005.md', 'VUE动画效果文档的md文件', 1, '/md/VUE005.md', 0, 'markdown');
 
 -- ----------------------------
 -- Table structure for resources-category
