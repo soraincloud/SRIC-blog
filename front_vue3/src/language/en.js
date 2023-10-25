@@ -108,4 +108,9 @@ export default
     {
         head: 'WARMA CHANGE HAIR _(≧∇≦」∠)_',
     },
+    copy:
+    {
+        success: 'copy success',
+        error: 'copy failed',
+    },
 }

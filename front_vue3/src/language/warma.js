@@ -108,4 +108,9 @@ export default
     {
         head: '蛙蟆 变脑其能 _(≧∇≦」∠)_',
     },
+    copy:
+    {
+        success: '拷文成了',
+        error: '拷文败了,可或是看看器不支持 ?',
+    },
 }

@@ -10,7 +10,7 @@
 
     <div class="LinkCard-text-style">
         (ﾉ*･ω･)ﾉ
-        <el-button color="#d81e06" size="small" class="LinkCard-link-button-style" @click="copy">
+        <el-button color="#d81e06" size="small" class="LinkCard-link-button-style" @click="copy" data-clipboard-text="2868771361">
             点我复制
             <el-icon class="LinkCard-icon-style" size="18px"><Edit/></el-icon>
         </el-button>

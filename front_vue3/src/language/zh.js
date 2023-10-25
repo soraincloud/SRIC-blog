@@ -109,4 +109,9 @@ export default
     {
         head: '沃玛 换头功能',
     },
+    copy:
+    {
+        success: '复制成功',
+        error: '复制失败,可能是浏览器不支持 ?',
+    },
 }
