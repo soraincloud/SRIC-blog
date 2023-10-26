@@ -78,13 +78,13 @@ html.dark .NavMenu-float-div-style
 
 .el-radio__input.is-checked + .el-radio__label 
 {
-    color: #ff7f7f !important;
+    color: #ff5f5f !important;
 }
 
 .el-radio__input.is-checked .el-radio__inner 
 {
-    background: #ff7f7f !important;
-    border-color: #ff7f7f !important;
+    background: #ff5f5f !important;
+    border-color: #ff5f5f !important;
 }
 
 .el-radio-group

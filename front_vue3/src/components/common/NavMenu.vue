@@ -12,7 +12,7 @@
     mode="horizontal"
     background-color="rgba(255,255,255,0.64)"
     text-color="#222"
-    active-text-color="#ff7f7f"
+    active-text-color="#ff5f5f"
     :ellipsis="false"
     :default-active="defaultActive"
     >

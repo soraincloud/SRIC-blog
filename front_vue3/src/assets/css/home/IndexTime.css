@@ -5,5 +5,12 @@
 
 .el-loading-spinner .path
 {
-    stroke: #ff7f7f;
+    stroke: #ff5f5f;
+}
+
+.el-loading-spinner .el-loading-text
+{
+    color: #ff5f5f;
+    font-weight: bold;
+    font-size: 20px;
 }
