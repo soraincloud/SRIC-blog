@@ -11,6 +11,7 @@ export default
     {
         return{
             active: '',
+            top:'top:' + (window.innerHeight) + 'px',
             category:
             [
                 {
@@ -81,6 +82,7 @@ export default
                     _this.category.push(resp.data[i])
                 }
         })
+        setTimeout( () => { this.top = 'top: 10px' },100)
     },
     watch:
     {

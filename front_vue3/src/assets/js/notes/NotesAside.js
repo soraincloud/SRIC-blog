@@ -10,6 +10,7 @@ export default
     {
         return{
             active: '',
+            top: 'top:' + (window.innerHeight) + 'px',
             category:
             [
                 {
@@ -93,6 +94,7 @@ export default
         this.category[3].content = t('notes.front')
         this.category[4].content = t('notes.back')
         this.category[5].content = t('notes.cook')
+        setTimeout( () => { this.top = 'top: 10px' },100)
     },
     watch:
     {

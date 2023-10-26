@@ -19,6 +19,7 @@ export default
             asideHeight: (window.innerHeight - 70) + 'px',
             data: 0,
             bottomData: 'bottom: ' + (window.innerHeight + 100) + 'px',
+            top:'top:' + (window.innerHeight) + 'px',
         }
     },
     mounted()
@@ -54,5 +55,9 @@ export default
                 isMore = 0;
             }
         },
-    }
+    },
+    created()
+    {
+        setTimeout( () => { this.top = 'top: 0px' },300)
+    },
 }

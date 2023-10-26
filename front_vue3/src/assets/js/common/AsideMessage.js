@@ -10,7 +10,8 @@ export default
     {
         return{
             SRICAvater: require('@/assets/webp/logo/SRIC-Avatar.webp'),
-            active: ''
+            active: '',
+            top: 'top:' + (window.innerHeight) + 'px',
         }
     },
     methods:
@@ -29,6 +30,10 @@ export default
         mouseLeave()
         {
             this.active = ''
-        }
-    }
+        },
+    },
+    created()
+    {
+        setTimeout( () => { this.top = 'top: 10px' },400)
+    },
 }

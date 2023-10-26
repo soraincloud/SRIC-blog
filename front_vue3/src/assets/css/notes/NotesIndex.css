@@ -7,3 +7,9 @@
     z-index: 99;
     transition: 0.5s bottom ease;
 }
+
+.NotesIndex-middle-div-style
+{
+    position: relative;
+    transition: 0.5s top;
+}
