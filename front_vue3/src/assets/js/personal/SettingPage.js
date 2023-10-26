@@ -74,7 +74,6 @@ export default
             if(this.submitDialog == 0)
             {
                 updateNameById({ username: this.usernameInput,id: this.userId }).then(function(resp){
-                    console.log(resp.data.code)
                     if(resp.data.code == 200)
                     {
                         _this.username = _this.usernameInput
@@ -95,10 +94,6 @@ export default
                         _this.mark = _this.markInput
                         _this.$message.success({message: t('setting.changesuccess'),})
                         _this.markInput = ''
-                    }
-                    if(resp.data.code == 400)
-                    {
-                        _this.$message.warning({message: t('setting.failChange'),})
                     }
                 })
             }

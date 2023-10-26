@@ -70,11 +70,8 @@ export default
         {
             var _this = this
             getUserById({ id: this.userId}).then(function(resp){
-                if (resp && resp.status === 200)
-                {
                     _this.phoneNumber = resp.data.phonenumber
                     _this.mail = resp.data.email
-                }
             })
         }
         setTimeout( () => { this.leftData = 'left: -0px' },100)

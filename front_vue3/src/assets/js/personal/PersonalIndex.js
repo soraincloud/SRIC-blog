@@ -48,8 +48,6 @@ export default
         {
             var _this = this
             getUserById({ id: this.userId}).then(function(resp){
-                if (resp && resp.status === 200)
-                {
                     _this.username = resp.data.username
                     _this.avatar = resp.data.avatar
                     _this.mark = resp.data.mark
@@ -60,14 +58,10 @@ export default
                     _this.$store.commit('setPhonenumber',resp.data.phonenumber)
                     _this.$store.commit('setEmail',resp.data.email)
                     _this.$store.commit('setStatus',resp.data.status)
-                }
             })
             getTagByUid({ uid: this.userId }).then(function(resp){
-                if (resp && resp.status === 200)
-                {
                     _this.tags = resp.data
                     _this.$store.commit('setTags',resp.data)
-                }
             })
         }
         else

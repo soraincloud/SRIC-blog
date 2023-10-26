@@ -37,10 +37,7 @@ export default
         {
             var _this = this
             getIndexTimeList().then(function(resp){
-                if (resp && resp.status === 200)
-                {
-                    _this.timeline = resp.data
-                }
+                _this.timeline = resp.data
             })
         },
     }

@@ -23,3 +23,14 @@ export function post(url,params)
         header:{ 'Content-Type':'application/json' }
     })
 }
+
+axios.interceptors.response.use(resp => {
+    if(resp.status == 200)
+    {
+        return Promise.resolve(resp)
+    }
+    else
+    {
+        return Promise.reject(resp.data.code)
+    }
+})

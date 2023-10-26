@@ -40,10 +40,7 @@ export default
             var _this = this
             var categoryNeed = this.$refs.getCategory.categoryNeed
             getNoteListByCategory({ category: categoryNeed }).then(function(resp){
-                if (resp && resp.status === 200)
-                {
-                    _this.$refs.loadAllNotesToCard.notes = resp.data
-                }
+                _this.$refs.loadAllNotesToCard.notes = resp.data
             })
         },
         backToTop()

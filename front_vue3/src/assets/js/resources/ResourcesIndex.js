@@ -40,10 +40,7 @@ export default
             var _this = this
             var categoryNeed = this.$refs.getCategory.categoryNeed
             getResourcesListByCategory({ category: categoryNeed }).then(function(resp){
-                if (resp && resp.status === 200)
-                {
                     _this.$refs.loadAllResourcesToCard.resources = resp.data
-                }
             })
         },
         backToTop()

@@ -38,10 +38,7 @@ export default
         {
             var _this = this
             getNotesList().then(function(resp){
-                if (resp && resp.status === 200)
-                {
-                    _this.notes = resp.data
-                }
+                _this.notes = resp.data
             })
         },
     },

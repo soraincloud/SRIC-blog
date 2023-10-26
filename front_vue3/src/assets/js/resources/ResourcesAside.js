@@ -76,13 +76,10 @@ export default
     {
         var _this = this
         getAllResourcesCategory().then(function(resp){
-            if (resp && resp.status === 200)
-            {
                 for(let i = 0;i < resp.data.length;i++)
                 {
                     _this.category.push(resp.data[i])
                 }
-            }
         })
     },
     watch:

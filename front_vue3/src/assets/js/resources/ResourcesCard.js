@@ -38,10 +38,7 @@ export default
         {
             var _this = this
             getResourcesList().then(function(resp){
-                if (resp && resp.status === 200)
-                {
                     _this.resources = resp.data
-                }
             })
         },
     },
