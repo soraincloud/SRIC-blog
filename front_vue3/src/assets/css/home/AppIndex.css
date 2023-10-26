@@ -24,12 +24,6 @@
     transition: 0.5s bottom ease;
 }
 
-.AppIndex-middle-div-style
-{
-    position: relative;
-    transition: 0.5s top;
-}
-
 .AppIndex-tooltip-p-style
 {
     text-align: center;

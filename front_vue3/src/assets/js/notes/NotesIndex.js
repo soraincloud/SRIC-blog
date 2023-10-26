@@ -18,7 +18,6 @@ export default
             backTop: require('@/assets/webp/background/backTop.webp'),
             data: 0,
             bottomData: 'bottom: ' + (window.innerHeight + 100) + 'px',
-            top:'top:' + (window.innerHeight) + 'px',
         }
     },
     mounted()
@@ -63,9 +62,5 @@ export default
                 isMore = 0;
             }
         },
-    },
-    created()
-    {
-        setTimeout( () => { this.top = 'top: 0px' },300)
-    },
+    }
 }

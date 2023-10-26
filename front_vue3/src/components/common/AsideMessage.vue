@@ -4,7 +4,7 @@
 
 <template>
     <div @mouseover="mouseOver" @mouseleave="mouseLeave">
-        <el-card class="AsideMessage-el-card-style" :style="[active,top]">
+        <el-card class="AsideMessage-el-card-style" :style="active">
             <div class="AsideMessage-message-div-style">
                 <el-avatar :src="SRICAvater" class="AsideMessage-el-avater-style" fit="scale-down"></el-avatar>
                 <div class="AsideMessage-name-div-style">

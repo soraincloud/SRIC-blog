@@ -1,30 +1,15 @@
 <template>
-    <el-image
-        class="NotesIndex-backTop-image-style"
-        :src="backTop"
-        @click="backToTop()"
-        :style="bottomData"
-    ></el-image>
+<el-image class="NotesIndex-backTop-image-style" :src="backTop" @click="backToTop()" :style="bottomData"></el-image>
     <el-row>
         <el-col :span="1"></el-col>
         <el-col :span="5">
             <el-scrollbar :height="categoryHeight">
-                <notes-aside
-                    ref="getCategory"
-                    @loadAllNotesFormAside="loadAllNotes"
-                    @loadNotesFromAside="loadNotesByCategory"
-                />
+                <notes-aside ref="getCategory" @loadAllNotesFormAside="loadAllNotes" @loadNotesFromAside="loadNotesByCategory" />
             </el-scrollbar>
         </el-col>
         <el-col :span="12">
-            <el-scrollbar
-                @scroll="handleScroll($event)"
-                ref="indexScroll"
-                :height="indexHeight"
-            >
-                <div class="NotesIndex-middle-div-style" :style="top">
-                    <notes-card ref="loadAllNotesToCard" />
-                </div>
+            <el-scrollbar  @scroll="handleScroll($event)" ref="indexScroll" :height="indexHeight">
+                <notes-card ref="loadAllNotesToCard" />
             </el-scrollbar>
         </el-col>
         <el-col :span="5">
@@ -37,10 +22,10 @@
 </template>
 
 <script>
-import notesindex from "@/assets/js/notes/NotesIndex.js";
-export default notesindex;
+    import notesindex from "@/assets/js/notes/NotesIndex.js"
+    export default notesindex
 </script>
 
 <style>
-@import "@/assets/css/notes/NotesIndex.css";
+    @import '@/assets/css/notes/NotesIndex.css';
 </style>

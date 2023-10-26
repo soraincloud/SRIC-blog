@@ -10,7 +10,6 @@ export default
     {
         return{
             active: '',
-            top:'top:' + (window.innerHeight) + 'px',
             catalogs:
             [
                 {
@@ -89,7 +88,6 @@ export default
         this.catalogs[1].content = t('indexaside.used')
         this.catalogs[2].content = t('indexaside.about')
         this.catalogs[3].content = t('indexaside.time')
-        setTimeout( () => { this.top = 'top: 10px' },100)
     },
     watch:
     {
