@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 25/10/2023 13:45:09
+ Date: 26/10/2023 10:24:27
 */
 
 SET NAMES utf8mb4;
@@ -28,21 +28,32 @@ CREATE TABLE `indextime`  (
   `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `color` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of indextime
 -- ----------------------------
 INSERT INTO `indextime` VALUES (1, 'create', '2023-06-12', 'danger', 'white');
-INSERT INTO `indextime` VALUES (2, 'add more pages', '2023-07-13', 'danger', 'white');
+INSERT INTO `indextime` VALUES (2, 'add more pages', '2023-07-13', 'success', 'white');
 INSERT INTO `indextime` VALUES (3, 'pack css', '2023-07-13', 'danger', 'white');
-INSERT INTO `indextime` VALUES (4, 'add personal page', '2023-07-16', 'danger', 'white');
-INSERT INTO `indextime` VALUES (5, 'add login', '2023-07-19', 'danger', 'white');
+INSERT INTO `indextime` VALUES (4, 'add personal page', '2023-07-16', 'success', 'white');
+INSERT INTO `indextime` VALUES (5, 'add login', '2023-07-19', 'success', 'white');
 INSERT INTO `indextime` VALUES (6, 'pack js', '2023-08-07', 'danger', 'white');
-INSERT INTO `indextime` VALUES (7, 'add language change', '2023-08-13', 'danger', 'white');
-INSERT INTO `indextime` VALUES (8, 'add back to top button', '2023-09-14', 'danger', 'white');
-INSERT INTO `indextime` VALUES (9, 'add change name and mark', '2023-09-15', 'danger', 'white');
-INSERT INTO `indextime` VALUES (10, 'add safety page', '2023-09-19', 'danger', 'white');
+INSERT INTO `indextime` VALUES (7, 'add language change', '2023-08-13', 'success', 'white');
+INSERT INTO `indextime` VALUES (8, 'add back to top button', '2023-09-14', 'success', 'white');
+INSERT INTO `indextime` VALUES (9, 'add change name and mark', '2023-09-15', 'success', 'white');
+INSERT INTO `indextime` VALUES (10, 'add safety page', '2023-09-19', 'success', 'white');
+INSERT INTO `indextime` VALUES (11, 'add some transition', '2023-09-22', 'success', 'white');
+INSERT INTO `indextime` VALUES (12, 'add sign up page', '2023-09-26', 'success', 'white');
+INSERT INTO `indextime` VALUES (13, 'add note show page', '2023-09-28', 'success', 'white');
+INSERT INTO `indextime` VALUES (14, 'change images to webp', '2023-10-07', 'danger', 'white');
+INSERT INTO `indextime` VALUES (15, 'add change head page', '2023-10-10', 'success', 'white');
+INSERT INTO `indextime` VALUES (16, 'add forun page', '2023-10-11', 'success', 'white');
+INSERT INTO `indextime` VALUES (17, 'update README', '2023-10-17', 'warning', 'white');
+INSERT INTO `indextime` VALUES (18, 'Register All Icons', '2023-10-20', 'danger', 'white');
+INSERT INTO `indextime` VALUES (19, 'add resources category', '2023-10-23', 'success', 'white');
+INSERT INTO `indextime` VALUES (20, 'add copy clipboard', '2023-10-24', 'success', 'white');
+INSERT INTO `indextime` VALUES (21, 'use interceptors and promise', '2023-10-25', 'danger', 'white');
 
 -- ----------------------------
 -- Table structure for notes
@@ -61,9 +72,9 @@ CREATE TABLE `notes`  (
 -- ----------------------------
 -- Records of notes
 -- ----------------------------
-INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 3);
+INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 4);
 INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 4, 'SPRING001.md', 6);
-INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 2, 'C001.md', 0);
+INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 2, 'C001.md', 1);
 INSERT INTO `notes` VALUES (4, 'vue3项目的创建', '@vuecli对vue3项目的创建与依赖的引入', 3, 'VUE001.md', 0);
 INSERT INTO `notes` VALUES (5, 'vue-axios', 'VUE中前后端数据传输axios', 3, 'VUE002.md', 0);
 INSERT INTO `notes` VALUES (6, 'vue-router', 'VUE中的路由vue-router', 3, 'VUE003.md', 0);
