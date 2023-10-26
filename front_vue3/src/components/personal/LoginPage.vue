@@ -57,6 +57,7 @@
         </el-col>
         <el-col :span="8"></el-col>
     </el-row>
+    <Vcode :show="isShow" @success="onSuccess" @close="onClose" sliderSize="30" />
 </template>
 
 <script>

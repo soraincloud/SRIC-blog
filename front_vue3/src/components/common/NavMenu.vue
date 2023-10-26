@@ -31,7 +31,7 @@
                 </el-radio-group>
             </template>
             <el-button circle size="large" class="NavMenu-el-button-style">
-                <el-icon class="NavMenu-el-icon-style" size="20px"><Management/></el-icon>
+                <el-icon class="NavMenu-el-icon-style" size="20px"><Collection/></el-icon>
             </el-button>
         </el-tooltip>
         <el-tooltip

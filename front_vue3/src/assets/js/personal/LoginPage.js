@@ -2,12 +2,14 @@ import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 import md5 from "js-md5"
 import { login } from '@/axios/api/userApi'
+import Vcode from 'vue3-puzzle-vcode'
 
 const { t } = i18n.global
 const isDark = useDark()
 export default
 {
     name: 'LoginPage',
+    components:{ Vcode },
     data()
     {
         return{
@@ -18,6 +20,7 @@ export default
                 password: '',
             },
             active: '',
+            isShow: false,
         }
     },
     methods:
@@ -38,6 +41,18 @@ export default
             this.active = ''
         },
         login()
+        {
+            this.isShow = true
+        },
+        clickBack()
+        {
+            this.$router.push('/Personal')
+        },
+        onClose()
+        {
+            this.isShow = false
+        },
+        onSuccess()
         {
             var _this = this
             login({ username: this.form.username,password: md5( this.form.username + this.form.password) }).then(function(resp){
@@ -61,10 +76,6 @@ export default
                 }
             })
         },
-        clickBack()
-        {
-            this.$router.push('/Personal')
-        }
     },
     mounted()
     {

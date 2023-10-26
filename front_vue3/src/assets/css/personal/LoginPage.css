@@ -45,3 +45,39 @@ html.dark .el-input__wrapper
 {
     background-color: #000000;
 }
+
+.vue-auth-box_
+{
+    top: 50%;
+    background: rgba(255,255,255,0.9)
+}
+
+html.dark .vue-auth-box_
+{
+    background: rgba(0,0,0,0.9);
+}
+
+.vue-auth-box_ .auth-control_ .range-box
+{
+    background: #ffffff;
+}
+
+html.dark .vue-auth-box_ .auth-control_ .range-box
+{
+    background: #000000;
+}
+
+.vue-auth-box_ .auth-control_ .range-box .range-slider
+{
+    background: #ff5f5f;
+}
+
+.vue-auth-box_ .auth-control_ .range-box .range-slider .range-btn
+{
+    background-color: #ffffff;
+}
+
+html.dark .vue-auth-box_ .auth-control_ .range-box .range-slider .range-btn
+{
+    background-color: #000000;
+}
