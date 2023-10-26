@@ -2,3 +2,8 @@
 {
     font-weight: bold;
 }
+
+.el-loading-spinner .path
+{
+    stroke: #ff7f7f;
+}

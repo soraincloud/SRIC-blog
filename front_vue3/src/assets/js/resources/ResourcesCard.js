@@ -8,7 +8,8 @@ export default
     data()
     {
         return{
-            resources:[]
+            resources:[],
+            loading: true,
         }
     },
     methods:
@@ -38,7 +39,8 @@ export default
         {
             var _this = this
             getResourcesList().then(function(resp){
-                    _this.resources = resp.data
+                _this.resources = resp.data
+                _this.loading = false
             })
         },
     },

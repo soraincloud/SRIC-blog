@@ -19,3 +19,8 @@ html.dark .NotesCard-tag-text-style
 {
     color: white;
 }
+
+.el-loading-spinner .path
+{
+    stroke: #ff7f7f;
+}

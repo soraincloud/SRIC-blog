@@ -8,7 +8,8 @@ export default
     data()
     {
         return{
-            notes:[]
+            notes:[],
+            loading: true,
         }
     },
     methods:
@@ -39,6 +40,7 @@ export default
             var _this = this
             getNotesList().then(function(resp){
                 _this.notes = resp.data
+                _this.loading = false
             })
         },
     },

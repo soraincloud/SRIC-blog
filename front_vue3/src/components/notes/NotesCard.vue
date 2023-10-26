@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-loading.fullscreen.lock="loading">
         <el-card 
         v-for="(item,i) in notes" 
         :key="i" 

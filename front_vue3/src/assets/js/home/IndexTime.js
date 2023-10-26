@@ -9,7 +9,8 @@ export default
     {
         return{
             active: '',
-            timeline:[]
+            timeline:[],
+            loading: true,
         }
     },
     mounted:function()
@@ -38,6 +39,7 @@ export default
             var _this = this
             getIndexTimeList().then(function(resp){
                 _this.timeline = resp.data
+                _this.loading = false
             })
         },
     }

@@ -1,5 +1,5 @@
 <template>
-    <div @mouseover="mouseOver" @mouseleave="mouseLeave">
+    <div @mouseover="mouseOver" @mouseleave="mouseLeave" v-loading.fullscreen.lock="loading">
         <el-card class="common-with-back-el-card-style" :style="active">
             <h1 class="common-text-style">{{  $t('indexaside.time')  }}</h1>
             <el-divider class="common-el-divider-style" />
