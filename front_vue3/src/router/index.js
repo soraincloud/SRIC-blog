@@ -70,7 +70,21 @@ const routes =
         component: () => import('@/components/function/FunctionHead'),
       },
     ]
-  }
+  },
+  {
+    name: 'manageBody',
+    path: '/manageBody',
+    component: () => import('@/components/manage/ManageBody'),
+    redirect: '/manageIndex',
+    children:
+    [
+      {
+        name: 'manageIndex',
+        path: '/manageIndex',
+        component: () => import('@/components/manage/ManageIndex'),
+      }
+    ]
+  },
 ]
 
 const router = createRouter({

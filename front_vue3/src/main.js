@@ -10,6 +10,7 @@ import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
 import i18n from './language'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import * as echarts from 'echarts';
 
 //md编辑器v-md-editor引入
 import VMdEditor from '@kangc/v-md-editor';
@@ -27,6 +28,7 @@ VMdEditor.use(githubTheme, {
 const app = createApp(App)
 
 app.config.globalProperties.$axios = axios
+app.config.globalProperties.$echarts = echarts;
 app.use(VueAxios, axios)
 app.use(store)
 app.use(router)
