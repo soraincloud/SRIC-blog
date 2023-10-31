@@ -8,6 +8,8 @@ export default
         forum: '论坛',
         personal: '个人',
         functions: '功能',
+        setting: '后台管理',
+        quit: '退出管理',
         back: '背景模糊',
         fire: '放烟花吗',
         mode: '切换模式',

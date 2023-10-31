@@ -15,4 +15,12 @@ body
 {
     height: 100%;
     width: 100%;
+    position: absolute;
+    background: #ffffff;
+    z-index: -1;
+}
+
+html.dark #echarts-background-text
+{
+    background: #333333;
 }

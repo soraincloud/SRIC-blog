@@ -8,6 +8,8 @@ export default
         forum: '话地',
         personal: '私页',
         functions: '其能',
+        setting: '站站管地',
+        quit: '退了管地',
         back: '看不清底',
         fire: '放火炸嘛',
         mode: '换个面样',

@@ -1,6 +1,9 @@
+import ManageBar from '@/components/common/ManageBar'
+
 export default
     {
         name: 'AppBody',
+        components: { ManageBar },
         data() {
             return {
 
@@ -27,13 +30,22 @@ export default
                                     lineDash: [0, 200],
                                     lineDashOffset: 0,
                                     fill: 'transparent',
-                                    stroke: '#ff5f5f',
+                                    stroke: '#ff8f8f',
                                     lineWidth: 1
                                 },
-                                keyframeAnimation: {
-                                    duration: 5000,
-                                    loop: false,
-                                    keyframes: [
+                                keyframeAnimation: 
+                                {
+                                    duration: 20000,
+                                    loop: true,
+                                    keyframes: 
+                                    [
+                                        {
+                                            percent: 0.1,
+                                            style: {
+                                                lineDashOffset: 0,
+                                                lineDash: [0, 200]
+                                            }
+                                        },
                                         {
                                             percent: 0.7,
                                             style: {
@@ -43,18 +55,31 @@ export default
                                             }
                                         },
                                         {
-                                            // Stop for a while.
-                                            percent: 0.8,
+                                            percent: 0.75,
                                             style: {
                                                 fill: 'rgba(255,255,255,0)'
                                             }
                                         },
                                         {
+                                            percent: 0.8,
+                                            style: {
+                                                fill: '#ff8f8f',
+                                            }
+                                        },
+                                        {
+                                            percent: 0.95,
+                                            style: {
+                                                fill: '#ff8f8f',
+                                                stroke: '#ff8f8f',
+                                            }
+                                        },
+                                        {
                                             percent: 1,
                                             style: {
-                                                fill: '#ff5f5f'
+                                                fill: 'rgba(255,255,255,0)',
+                                                stroke: 'rgba(255,255,255,0)',
                                             }
-                                        }
+                                        },
                                     ]
                                 }
                             }
@@ -62,5 +87,5 @@ export default
                     }
                 })
             }
-        }
+        },
     }

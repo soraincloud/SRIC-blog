@@ -8,6 +8,8 @@ export default
         forum: 'FORUN',
         personal: 'PERSONAL',
         functions: 'FUNCTION',
+        setting: 'website setting',
+        quit: 'quit setting',
         back: 'blur',
         fire: 'want firework?',
         mode: 'change mode',

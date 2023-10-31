@@ -63,6 +63,10 @@ export default
             this.navList[4].navItem = t('menu.personal')
             this.navList[5].navItem = t('menu.functions')
         },
+        switchSetting()
+        {
+            this.$router.push('/manageIndex')
+        },
     },
     mounted()
     {

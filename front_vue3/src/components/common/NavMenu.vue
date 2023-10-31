@@ -24,6 +24,17 @@
         placement="bottom"
         >
             <template #content>
+                <p class="NavMenu-tooltip-p-style">{{  $t('menu.setting')  }}</p>
+            </template>
+            <el-button @click="switchSetting()" circle size="large" class="NavMenu-el-button-style">
+                <el-icon class="NavMenu-el-icon-style" size="20px"><Setting/></el-icon>
+            </el-button>
+        </el-tooltip>
+        <el-tooltip
+        effect="light"
+        placement="bottom"
+        >
+            <template #content>
                 <el-radio-group v-model="language" @change="changeLanguage()">
                     <el-radio class="NavMenu-el-readio" label="0">简体中文</el-radio>
                     <el-radio class="NavMenu-el-readio" label="1">english</el-radio>
