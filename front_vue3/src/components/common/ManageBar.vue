@@ -1,7 +1,7 @@
 <template>
     <el-menu
         mode="horizontal"
-        background-color="rgba(0,0,0,0.75)"
+        background-color="rgba(0,0,0,0.8)"
         active-text-color="#ff5f5f"
     >
         <el-image

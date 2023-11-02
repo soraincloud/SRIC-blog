@@ -1,0 +1,21 @@
+.ManageMenu-el-menu:not(.el-menu--collapse) 
+{
+    width: 200px;
+    min-height: 1000px;
+}
+
+.ManageMenu-menu-div .el-menu 
+{
+    background-color: rgba(0,0,0,0.05);
+}
+
+html.dark .ManageMenu-menu-div .el-menu 
+{
+    background-color: rgba(0,0,0,0.32);
+}
+
+.ManageMenu-menu-text-style
+{
+    font-size: 16px;
+    font-weight: bold;
+}

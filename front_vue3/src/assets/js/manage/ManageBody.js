@@ -1,9 +1,10 @@
 import ManageBar from '@/components/common/ManageBar'
+import ManageMenu from '@/components/common/ManageMenu'
 
 export default
     {
         name: 'AppBody',
-        components: { ManageBar },
+        components: { ManageBar,ManageMenu },
         data() {
             return {
 

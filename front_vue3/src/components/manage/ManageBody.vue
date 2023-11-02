@@ -2,6 +2,7 @@
     <body id="ManageBody-body-id">
         <div id="echarts-background-text"></div>
         <manage-bar />
+        <manage-menu />
         <router-view />
     </body>
 </template>

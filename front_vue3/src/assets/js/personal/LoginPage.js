@@ -60,7 +60,6 @@ export default
                 {
                     _this.$message.success({message: t('loginmessage.success'),})
                     localStorage.setItem('tokenValue',resp.data.tokenValue)
-                    console.log(resp.data.tokenValue)
                     _this.$router.push('/Personal')
                 }
                 else if(resp.data.code == 400)
