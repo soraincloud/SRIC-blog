@@ -8,75 +8,111 @@
 
 <template>
     <el-menu
-    router
-    mode="horizontal"
-    background-color="rgba(255,255,255,0.64)"
-    text-color="#222"
-    active-text-color="#ff5f5f"
-    :ellipsis="false"
-    :default-active="defaultActive"
+        router
+        mode="horizontal"
+        background-color="rgba(255,255,255,0.64)"
+        text-color="#222"
+        active-text-color="#ff5f5f"
+        :ellipsis="false"
+        :default-active="defaultActive"
     >
-        <el-image :src="SRICNavLogo" class="NavMenu-SRIC-Navlogo-style"></el-image>
-        <el-menu-item v-for="(item,i) in navList" :index="item.name" :key="i" class="NavMenu-menu-text-style">{{ item.navItem }}</el-menu-item>
+        <el-image
+            :src="SRICNavLogo"
+            class="NavMenu-SRIC-Navlogo-style"
+        ></el-image>
+        <el-menu-item
+            v-for="(item, i) in navList"
+            :index="item.name"
+            :key="i"
+            class="NavMenu-menu-text-style"
+            >{{ item.navItem }}</el-menu-item
+        >
         <div class="NavMenu-right-div-style" />
-        <el-tooltip
-        effect="light"
-        placement="bottom"
-        >
-            <template #content>
-                <p class="NavMenu-tooltip-p-style">{{  $t('menu.setting')  }}</p>
-            </template>
-            <el-button @click="switchSetting()" circle size="large" class="NavMenu-el-button-style">
-                <el-icon class="NavMenu-el-icon-style" size="20px"><Setting/></el-icon>
-            </el-button>
-        </el-tooltip>
-        <el-tooltip
-        effect="light"
-        placement="bottom"
-        >
+        <el-tooltip effect="light" placement="bottom">
             <template #content>
                 <el-radio-group v-model="language" @change="changeLanguage()">
-                    <el-radio class="NavMenu-el-readio" label="0">简体中文</el-radio>
-                    <el-radio class="NavMenu-el-readio" label="1">english</el-radio>
-                    <el-radio class="NavMenu-el-readio" label="2">warma</el-radio>
+                    <el-radio class="NavMenu-el-readio" label="0"
+                        >简体中文</el-radio
+                    >
+                    <el-radio class="NavMenu-el-readio" label="1"
+                        >english</el-radio
+                    >
+                    <el-radio class="NavMenu-el-readio" label="2"
+                        >warma</el-radio
+                    >
                 </el-radio-group>
             </template>
             <el-button circle size="large" class="NavMenu-el-button-style">
-                <el-icon class="NavMenu-el-icon-style" size="20px"><Collection/></el-icon>
+                <el-icon class="NavMenu-el-icon-style" size="20px"
+                    ><Collection
+                /></el-icon>
             </el-button>
         </el-tooltip>
-        <el-tooltip
-        effect="light"
-        placement="bottom"
-        >
+        <el-tooltip effect="light" placement="bottom">
             <template #content>
-                <el-progress type="circle" :percentage="progressData" status="success" :width="64" />
-                <p class="NavMenu-tooltip-p-style">{{  $t('menu.back')  }}</p>
+                <el-progress
+                    type="circle"
+                    :percentage="progressData"
+                    status="success"
+                    :width="64"
+                />
+                <p class="NavMenu-tooltip-p-style">{{ $t("menu.back") }}</p>
             </template>
-            <el-button @click="switchFilter()" circle size="large" class="NavMenu-el-button-style">
-                <el-icon class="is-loading NavMenu-el-icon-style" size="20px"><Open/></el-icon>
+            <el-button
+                @click="switchFilter()"
+                circle
+                size="large"
+                class="NavMenu-el-button-style"
+            >
+                <el-icon class="is-loading NavMenu-el-icon-style" size="20px"
+                    ><Open
+                /></el-icon>
             </el-button>
         </el-tooltip>
-        <el-tooltip
-        effect="light"
-        placement="bottom"
-        >
+        <el-tooltip effect="light" placement="bottom">
             <template #content>
-                <p class="NavMenu-tooltip-p-style">{{  $t('menu.fire')  }}</p>
+                <p class="NavMenu-tooltip-p-style">{{ $t("menu.fire") }}</p>
             </template>
-            <el-button @click="switchFire()" circle size="large" class="NavMenu-el-button-style">
-                <el-icon class="is-loading NavMenu-el-icon-style" size="20px"><Star/></el-icon>
+            <el-button
+                @click="switchFire()"
+                circle
+                size="large"
+                class="NavMenu-el-button-style"
+            >
+                <el-icon class="is-loading NavMenu-el-icon-style" size="20px"
+                    ><Star
+                /></el-icon>
             </el-button>
         </el-tooltip>
-        <el-tooltip
-        effect="light"
-        placement="bottom"
-        >
+        <el-tooltip effect="light" placement="bottom">
             <template #content>
-                <p class="NavMenu-tooltip-p-style">{{  $t('menu.mode')  }}</p>
+                <p class="NavMenu-tooltip-p-style">{{ $t("menu.mode") }}</p>
             </template>
-            <el-button @click="switchThemes()" circle size="large" class="NavMenu-el-button-style" style="margin-right: 30px">
-                <el-icon class="is-loading NavMenu-el-icon-style" size="20px"><Sunny/></el-icon>
+            <el-button
+                @click="switchThemes()"
+                circle
+                size="large"
+                class="NavMenu-el-button-style"
+            >
+                <el-icon class="is-loading NavMenu-el-icon-style" size="20px"
+                    ><Sunny
+                /></el-icon>
+            </el-button>
+        </el-tooltip>
+        <el-tooltip effect="light" placement="bottom">
+            <template #content>
+                <p class="NavMenu-tooltip-p-style">{{ $t("menu.setting") }}</p>
+            </template>
+            <el-button
+                @click="switchSetting()"
+                circle
+                size="large"
+                class="NavMenu-el-button-style"
+                style="margin-right: 30px"
+            >
+                <el-icon class="is-loading NavMenu-el-icon-style" size="20px"
+                    ><Setting
+                /></el-icon>
             </el-button>
         </el-tooltip>
     </el-menu>
@@ -86,10 +122,10 @@
 </template>
 
 <script>
-    import navmenu from "@/assets/js/common/NavMenu.js"
-    export default navmenu
+import navmenu from "@/assets/js/common/NavMenu.js";
+export default navmenu;
 </script>
 
 <style scope>
-    @import '@/assets/css/common/NavMenu.css';
+@import "@/assets/css/common/NavMenu.css";
 </style>
