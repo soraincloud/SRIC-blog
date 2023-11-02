@@ -1,5 +1,6 @@
 package com.spring.back_springboot.controller;
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.spring.back_springboot.pojo.tag;
 import com.spring.back_springboot.services.service.tagService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,10 @@ public class tagController
     tagService service;
 
     @CrossOrigin
-    @GetMapping("/user/getTagByUid")
-    public List<tag> GetTagById(int uid)
+    @GetMapping("/user/getTagByToken")
+    public List<tag> GetTagByToken(String tokenValue)
     {
+        int uid = Integer.parseInt(StpUtil.getLoginIdByToken(tokenValue).toString());
         return service.GetTagByUid(uid);
     }
 }

@@ -1,5 +1,5 @@
 import i18n from '@/language'
-import { getTagByUid,getUserById } from '@/axios/api/userApi'
+import { getTagByToken,getUserByToken } from '@/axios/api/userApi'
 
 const { t } = i18n.global
 export default
@@ -14,7 +14,7 @@ export default
             paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
             tags: [],
             mark: "",
-            userId: localStorage.getItem('userId'),
+            tokenValue: localStorage.getItem('tokenValue'),
             leftData: 'left: -400px',
         }
     },
@@ -44,22 +44,21 @@ export default
     },
     created()
     {
-        if(this.userId != null)
+        if(this.tokenValue != null)
         {
             var _this = this
-            getUserById({ id: this.userId}).then(function(resp){
+            console.log(this.tokenValue)
+            getUserByToken({ tokenValue: this.tokenValue }).then(function(resp){
                     _this.username = resp.data.username
                     _this.avatar = resp.data.avatar
                     _this.mark = resp.data.mark
                     _this.$store.commit('setUsername',resp.data.username)
-                    _this.$store.commit('setPassword',resp.data.password)
                     _this.$store.commit('setAvatar',resp.data.avatar)
                     _this.$store.commit('setMark',resp.data.mark)
-                    _this.$store.commit('setPhonenumber',resp.data.phonenumber)
-                    _this.$store.commit('setEmail',resp.data.email)
                     _this.$store.commit('setStatus',resp.data.status)
+                    console.log(resp.data)
             })
-            getTagByUid({ uid: this.userId }).then(function(resp){
+            getTagByToken({ tokenValue: this.tokenValue }).then(function(resp){
                     _this.tags = resp.data
                     _this.$store.commit('setTags',resp.data)
             })
@@ -95,7 +94,7 @@ export default
         {
             this.username = t('login.mark1')
             this.mark = t('login.mark2')
-            if(this.userId != null)
+            if(this.tokenValue != null)
             {
                 this.username = this.$store.getters.getUsername
                 this.mark = this.$store.getters.getMark

@@ -1,6 +1,8 @@
 package com.spring.back_springboot.controller;
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.spring.back_springboot.pojo.user;
+import com.spring.back_springboot.pojo.userToken;
 import com.spring.back_springboot.result.code;
 import com.spring.back_springboot.result.login;
 import com.spring.back_springboot.services.service.userService;
@@ -15,12 +17,16 @@ public class userController
     userService service;
 
     @CrossOrigin
-    @GetMapping("/user/getUserById")
-    public user GetUserById(int id)
+    @GetMapping("/user/getUserByToken")
+    public user GetUserByToken(String tokenValue)
     {
+        int id = Integer.parseInt(StpUtil.getLoginIdByToken(tokenValue).toString());
         user u = service.GetUserById(id);
+        u.setId(0);
         u.setPassword("");
-        //不发送密码到前端 预留一个空的参数 或许可以用这个参数做一个身份验证 不然前端修改参数status就能发送管理员请求辣
+        u.markPhoneNumber();
+        u.markEmail();
+        //不发送密码 id 电话和邮件
         return u;
     }
 
@@ -28,42 +34,45 @@ public class userController
     @PostMapping("/user/login")
     public login login(@RequestBody user user)
     {
-        user u = service.GetUserByName(user.getUsername());
-        if(u == null)
+        user u = service.GetUserByName(user.getUsername()); //根据用户名查询
+        if(u == null) //用户名不存在
         {
-            return new login(401,0);
+            return new login(401,null);
         }
-        else
+        else //用户名存在
         {
-            if(u.getPassword().equals(user.getPassword()))
+            if(u.getPassword().equals(user.getPassword())) //密码正确
             {
-                return new login(200,u.getId());
+                StpUtil.login(u.getId());
+                return new login(200,StpUtil.getTokenValue());
             }
-            else
+            else //密码错误
             {
-                return new login(400,0);
+                return new login(400,null);
             }
         }
     }
 
     @CrossOrigin
-    @PostMapping("/user/updateNameById")
-    public code UpdateNameById(@RequestBody user user)
+    @PostMapping("/user/updateNameByToken")
+    public code UpdateNameByToken(@RequestBody userToken userToken)
     {
-        user getUser = service.GetUserByName(user.getUsername());
+        user getUser = service.GetUserByName(userToken.getUsername());
         if(getUser != null)
         {
             return new code(400);
         }
-        service.UpdateNameById(user.getUsername(),user.getId());
+        int id = Integer.parseInt(StpUtil.getLoginIdByToken(userToken.getTokenValue()).toString());
+        service.UpdateNameById(userToken.getUsername(),id);
         return new code(200);
     }
 
     @CrossOrigin
-    @PostMapping("/user/updateMarkById")
-    public code UpdateMarkById(@RequestBody user user)
+    @PostMapping("/user/updateMarkByToken")
+    public code UpdateMarkByToken(@RequestBody userToken userToken)
     {
-        service.UpdateMarkById(user.getMark(),user.getId());
+        int id = Integer.parseInt(StpUtil.getLoginIdByToken(userToken.getTokenValue()).toString());
+        service.UpdateMarkById(userToken.getMark(),id);
         return new code(200);
     }
 }

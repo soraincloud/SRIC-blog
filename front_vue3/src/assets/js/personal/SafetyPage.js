@@ -1,4 +1,4 @@
-import { getUserById } from '@/axios/api/userApi'
+import { getUserByToken } from '@/axios/api/userApi'
 
 export default
 {
@@ -16,7 +16,7 @@ export default
             paddingTop: "padding-top:" + ((window.innerHeight - 500) / 2) + "px;",
             phoneNumber: this.$store.getters.getPhonenumber,
             mail: this.$store.getters.getEmail,
-            userId: localStorage.getItem('userId'),
+            tokenValue: localStorage.getItem('tokenValue'),
             leftData: 'left: -512px',
         }
     },
@@ -69,7 +69,7 @@ export default
         if(this.$store.getters.getStatus == '') //#优化 在没有经过 personalIndex 获取用户信息时才进行请求
         {
             var _this = this
-            getUserById({ id: this.userId}).then(function(resp){
+            getUserByToken({ tokenValue: this.tokenValue}).then(function(resp){
                     _this.phoneNumber = resp.data.phonenumber
                     _this.mail = resp.data.email
             })

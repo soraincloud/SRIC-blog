@@ -6,6 +6,6 @@ import lombok.Data;
 public class login
 {
     private int code;
-    private int id;
-    public login(int c,int i){code = c;id = i;}
+    private String tokenValue;
+    public login(int c,String t){code = c;tokenValue = t;}
 }

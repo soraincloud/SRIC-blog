@@ -1,23 +1,23 @@
 import { get,post } from "@/axios/axios"
 
-export function getTagByUid(params)
+export function getTagByToken(params)
 {
-    return get('/user/getTagByUid',params)
+    return get('/user/getTagByToken',params)
 }
 
-export function getUserById(params)
+export function getUserByToken(params)
 {
-    return get('/user/getUserById',params)
+    return get('/user/getUserByToken',params)
 }
 
-export function updateNameById(params)
+export function updateNameByToken(params)
 {
-    return post('/user/updateNameById',params)
+    return post('/user/updateNameByToken',params)
 }
 
-export function updateMarkById(params)
+export function updateMarkByToken(params)
 {
-    return post('/user/updateMarkById',params)
+    return post('/user/updateMarkByToken',params)
 }
 
 export function login(params)

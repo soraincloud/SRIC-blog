@@ -1,5 +1,5 @@
 import i18n from '@/language'
-import { getTagByUid,updateNameById,updateMarkById,getUserById } from '@/axios/api/userApi'
+import { getTagByToken,updateNameByToken,updateMarkByToken,getUserByToken } from '@/axios/api/userApi'
 
 const { t } = i18n.global
 export default
@@ -13,7 +13,7 @@ export default
             username: this.$store.getters.getUsername,
             tags: this.$store.getters.getTags,
             mark: this.$store.getters.getMark,
-            userId: localStorage.getItem('userId'),
+            tokenValue: localStorage.getItem('tokenValue'),
             paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
             dialogVisible: false,
             submitDialogVisible: false,
@@ -43,7 +43,7 @@ export default
         },
         quiting()
         {
-            localStorage.removeItem('userId')
+            localStorage.removeItem('tokenValue')
             this.$router.push('/Personal')
             this.$message.success({message: t('loginmessage.quit'),})
         },
@@ -73,7 +73,7 @@ export default
             var _this = this
             if(this.submitDialog == 0)
             {
-                updateNameById({ username: this.usernameInput,id: this.userId }).then(function(resp){
+                updateNameByToken({ username: this.usernameInput,tokenValue: this.tokenValue }).then(function(resp){
                     if(resp.data.code == 200)
                     {
                         _this.username = _this.usernameInput
@@ -88,13 +88,10 @@ export default
             }
             if(this.submitDialog == 1)
             {
-                updateMarkById({ mark: this.markInput,id: this.userId }).then(function(resp){
-                    if(resp.data.code == 200)
-                    {
-                        _this.mark = _this.markInput
-                        _this.$message.success({message: t('setting.changesuccess'),})
-                        _this.markInput = ''
-                    }
+                updateMarkByToken({ mark: this.markInput,tokenValue: this.tokenValue }).then(function(resp){
+                    _this.mark = _this.markInput
+                    _this.$message.success({message: t('setting.changesuccess'),})
+                    _this.markInput = ''
                 })
             }
             this.submitDialog = ''
@@ -109,12 +106,12 @@ export default
     },
     created()
     {
-        if(this.userId != null)
+        if(this.tokenValue != null)
         {
             if(this.$store.getters.getStatus == '') //#优化 在没有经过 personalIndex 获取用户信息时才进行请求
             {
                 var _this = this
-                getUserById({ id: this.userId }).then(function(resp){
+                getUserByToken({ tokenValue: this.tokenValue }).then(function(resp){
                     if (resp && resp.status === 200)
                     {
                         _this.username = resp.data.username
@@ -122,7 +119,7 @@ export default
                         _this.mark = resp.data.mark
                     }
                 })
-                getTagByUid({ uid: this.userId }).then(function(resp){
+                getTagByToken({ tokenValue: this.tokenValue }).then(function(resp){
                     if (resp && resp.status === 200)
                     {
                         _this.tags = resp.data

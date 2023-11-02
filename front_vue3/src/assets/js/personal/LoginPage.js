@@ -59,7 +59,8 @@ export default
                 if(resp.data.code == 200)
                 {
                     _this.$message.success({message: t('loginmessage.success'),})
-                    localStorage.setItem('userId',resp.data.id)
+                    localStorage.setItem('tokenValue',resp.data.tokenValue)
+                    console.log(resp.data.tokenValue)
                     _this.$router.push('/Personal')
                 }
                 else if(resp.data.code == 400)

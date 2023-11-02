@@ -3,7 +3,6 @@ export default
     state:
     {
         username: '',
-        password: '',
         avatar: '',
         mark: '',
         phonenumber: '',
@@ -16,10 +15,6 @@ export default
         getUsername(state)
         {
             return state.username;
-        },
-        getPassword(state)
-        {
-            return state.password;
         },
         getAvatar(state)
         {
@@ -51,10 +46,6 @@ export default
         setUsername(state,username)
         {
             state.username = username;
-        },
-        setPassword(state,password)
-        {
-            state.password = password;
         },
         setAvatar(state,avatar)
         {

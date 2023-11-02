@@ -7,7 +7,7 @@
     <div class="PersonalIndex-affix-div-style">
         <el-affix>
             <el-button 
-            v-if="userId == null"
+            v-if="tokenValue == null"
             @click="switchLogin"
             color="#ff6666" 
             class="PersonalIndex-affix-button-style" 
@@ -16,7 +16,7 @@
             {{ $t('login.login') }}
             </el-button>
             <el-button 
-            v-if="userId == null"
+            v-if="tokenValue == null"
             @click="switchSignup"
             color="#ff6666" 
             class="PersonalIndex-affix-button-style" 
@@ -25,7 +25,7 @@
             {{ $t('login.signup') }}
             </el-button>
             <el-button 
-            v-if="userId != null"
+            v-if="tokenValue != null"
             @click="switchSetting"
             color="#ff6666" 
             class="PersonalIndex-affix-button-style" 
