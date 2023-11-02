@@ -7,12 +7,7 @@
         <el-card class="common-with-back-el-card-style" :style="active">
             <h1 class="common-text-style">{{  $t('indexaside.used')  }}</h1>
             <el-divider class="common-el-divider-style" />
-            <el-row>
-                <el-col :span="6"><used-card-vue/></el-col>
-                <el-col :span="6"><used-card-springboot/></el-col>
-                <el-col :span="6"><used-card-mysql/></el-col>
-                <el-col :span="6"><used-card-element/></el-col>
-            </el-row>
+            <used-card />
         </el-card>
     </div>
 </template>

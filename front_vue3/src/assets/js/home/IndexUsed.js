@@ -1,14 +1,11 @@
-import UsedCardVue from '@/components/home/UsedCard/UsedCardVue'
-import UsedCardSpringboot from '@/components/home/UsedCard/UsedCardSpringboot'
-import UsedCardMysql from '@/components/home/UsedCard/UsedCardMysql'
-import UsedCardElement from '@/components/home/UsedCard/UsedCardElement'
+import UsedCard from '@/components/home/UsedCard'
 import { useDark } from '@vueuse/core'
 
 const isDark = useDark()
 export default
 {
     name: 'IndexUsed',
-    components: { UsedCardVue,UsedCardSpringboot,UsedCardMysql,UsedCardElement },
+    components: { UsedCard },
     data()
     {
         return{

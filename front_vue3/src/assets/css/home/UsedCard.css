@@ -9,4 +9,11 @@
     background: rgba(255,255,255,0);
     margin-left: 5px;
     margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.UsedCard-common-div
+{
+    width: 25%;
+    float: left;
 }
