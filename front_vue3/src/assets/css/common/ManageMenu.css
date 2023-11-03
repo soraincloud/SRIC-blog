@@ -1,6 +1,10 @@
 .ManageMenu-el-menu:not(.el-menu--collapse) 
 {
     width: 200px;
+}
+
+.ManageMenu-el-menu
+{
     min-height: 1000px;
 }
 

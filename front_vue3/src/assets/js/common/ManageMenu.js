@@ -6,7 +6,9 @@ export default
         return{
             isCollapse: false,
             defaultActive: '',
-            navList: [
+            buttonIcon: 'ArrowLeftBold',
+            navList: 
+            [
                 {
                     name: 'manageIndex',
                     navItem: '后台管理',
@@ -15,8 +17,25 @@ export default
             ],
         }
     },
+    methods:
+    {
+        clickChange()
+        {
+            if(this.isCollapse == false)
+            {
+                this.isCollapse = true
+                this.buttonIcon = 'ArrowRightBold'
+            }
+            else
+            {
+                this.isCollapse = false
+                this.buttonIcon = 'ArrowLeftBold'
+            }
+
+        }
+    },
     created()
     {
         this.defaultActive = this.$route.name;
-    }
+    },
 }

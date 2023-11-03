@@ -8,9 +8,12 @@
             active-text-color="#ff8f8f"
             :default-active="defaultActive"
             :collapse="isCollapse"
-            @open="handleOpen"
-            @close="handleClose"
         >
+            <el-menu-item @click="clickChange()">
+                <el-icon>
+                    <component :is="buttonIcon"></component>
+                </el-icon>
+            </el-menu-item>
             <el-menu-item
                 v-for="(item, i) in navList"
                 :index="item.name"
@@ -20,7 +23,7 @@
                 <el-icon>
                     <component :is="item.icon"></component>
                 </el-icon>
-                {{ item.navItem }}
+                <template #title>{{ item.navItem }}</template>
             </el-menu-item>
         </el-menu>
     </div>
