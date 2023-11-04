@@ -10,7 +10,7 @@
             :collapse="isCollapse"
         >
             <el-menu-item @click="clickChange()">
-                <el-icon>
+                <el-icon class="ManageMenu-el-icon">
                     <component :is="buttonIcon"></component>
                 </el-icon>
             </el-menu-item>

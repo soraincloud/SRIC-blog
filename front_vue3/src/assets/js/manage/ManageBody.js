@@ -3,7 +3,7 @@ import ManageMenu from '@/components/common/ManageMenu'
 
 export default
     {
-        name: 'AppBody',
+        name: 'ManageBody',
         components: { ManageBar,ManageMenu },
         data() {
             return {

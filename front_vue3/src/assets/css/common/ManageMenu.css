@@ -6,6 +6,7 @@
 .ManageMenu-el-menu
 {
     min-height: 1000px;
+    float: left;
 }
 
 .ManageMenu-menu-div .el-menu 
@@ -22,4 +23,14 @@ html.dark .ManageMenu-menu-div .el-menu
 {
     font-size: 16px;
     font-weight: bold;
+}
+
+.el-icon.ManageMenu-el-icon
+{
+    color: black;
+}
+
+html.dark .el-icon.ManageMenu-el-icon
+{
+    color: white;
 }
