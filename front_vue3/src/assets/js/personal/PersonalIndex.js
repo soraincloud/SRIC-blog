@@ -47,7 +47,6 @@ export default
         if(this.tokenValue != null)
         {
             var _this = this
-            console.log(this.tokenValue)
             getUserByToken({ tokenValue: this.tokenValue }).then(function(resp){
                     _this.username = resp.data.username
                     _this.avatar = resp.data.avatar
@@ -56,7 +55,6 @@ export default
                     _this.$store.commit('setAvatar',resp.data.avatar)
                     _this.$store.commit('setMark',resp.data.mark)
                     _this.$store.commit('setStatus',resp.data.status)
-                    console.log(resp.data)
             })
             getTagByToken({ tokenValue: this.tokenValue }).then(function(resp){
                     _this.tags = resp.data

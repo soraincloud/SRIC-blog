@@ -13,6 +13,7 @@ export default
         back: 'blur',
         fire: 'want firework?',
         mode: 'change mode',
+        collapse: 'menu collapse',
     },
     indexaside:
     {
@@ -114,5 +115,13 @@ export default
     {
         success: 'copy success',
         error: 'copy failed',
+    },
+    manageIndex:
+    {
+        textTitle: 'This is the management page of the website',
+        text1: 'You can manage the website here',
+        text2: 'All of your administrative privileges are displayed in the menu bar on the left',
+        text3: 'Dont change the content promiscuously of the website',
+        text4: '(›´ω`‹ )',
     },
 }

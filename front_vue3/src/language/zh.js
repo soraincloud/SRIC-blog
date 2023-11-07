@@ -13,6 +13,7 @@ export default
         back: '背景模糊',
         fire: '放烟花吗',
         mode: '切换模式',
+        collapse: '菜单折叠',
     },
     indexaside:
     {
@@ -115,5 +116,13 @@ export default
     {
         success: '复制成功',
         error: '复制失败,可能是浏览器不支持 ?',
+    },
+    manageIndex:
+    {
+        textTitle: '这里是网站的后台管理页面',
+        text1: '你可以在这里对网站进行管理',
+        text2: '你所有拥有的管理权限都会显示在左边的菜单栏',
+        text3: '不要乱改网站的内容哦',
+        text4: '(›´ω`‹ )',
     },
 }

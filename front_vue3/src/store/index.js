@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 
 import user from "@/store/modules/user"
+import manageMenu from '@/store/modules/manageMenu'
 
 export default createStore({
   state:{},
@@ -10,5 +11,6 @@ export default createStore({
   modules: 
   {
     user,
+    manageMenu,
   }
 })

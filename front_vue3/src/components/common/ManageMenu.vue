@@ -9,10 +9,11 @@
             :default-active="defaultActive"
             :collapse="isCollapse"
         >
-            <el-menu-item @click="clickChange()">
+            <el-menu-item @click="clickChange()" class="ManageMenu-menu-text-style">
                 <el-icon class="ManageMenu-el-icon">
                     <component :is="buttonIcon"></component>
                 </el-icon>
+                <template #title>{{ $t("menu.collapse") }}</template>
             </el-menu-item>
             <el-menu-item
                 v-for="(item, i) in navList"

@@ -3,7 +3,10 @@
         <div id="echarts-background-text"></div>
         <manage-bar />
         <manage-menu />
+        <div>
         <router-view />
+        </div>
+
     </body>
 </template>
 

@@ -34,3 +34,8 @@ html.dark .el-icon.ManageMenu-el-icon
 {
     color: white;
 }
+
+.el-popper
+{
+    font-weight: bold;
+}

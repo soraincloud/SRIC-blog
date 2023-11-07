@@ -13,6 +13,7 @@ export default
         back: '看不清底',
         fire: '放火炸嘛',
         mode: '换个面样',
+        collapse: '菜单开开',
     },
     indexaside:
     {
@@ -114,5 +115,13 @@ export default
     {
         success: '拷文成了',
         error: '拷文败了,可或是看看器不支持 ?',
+    },
+    manageIndex:
+    {
+        textTitle: '这李是站站的后抬机理页页',
+        text1: '你阔以在这里对站站进行机理',
+        text2: '你全全有有的机理权线都会出视在左边的引单栏',
+        text3: '不要瞎调站站的东西哦',
+        text4: '(›´ω`‹ )',
     },
 }
