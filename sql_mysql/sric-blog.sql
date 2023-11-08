@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 26/10/2023 10:24:27
+ Date: 08/11/2023 11:09:14
 */
 
 SET NAMES utf8mb4;
@@ -72,16 +72,38 @@ CREATE TABLE `notes`  (
 -- ----------------------------
 -- Records of notes
 -- ----------------------------
-INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 4);
+INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', 1, 'NULL.md', 5);
 INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 4, 'SPRING001.md', 6);
 INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 2, 'C001.md', 1);
 INSERT INTO `notes` VALUES (4, 'vue3项目的创建', '@vuecli对vue3项目的创建与依赖的引入', 3, 'VUE001.md', 0);
 INSERT INTO `notes` VALUES (5, 'vue-axios', 'VUE中前后端数据传输axios', 3, 'VUE002.md', 0);
 INSERT INTO `notes` VALUES (6, 'vue-router', 'VUE中的路由vue-router', 3, 'VUE003.md', 0);
-INSERT INTO `notes` VALUES (7, 'VUE传值', 'VUE中组件间的传值与VUEX', 3, 'VUE004.md', 0);
+INSERT INTO `notes` VALUES (7, 'VUE传值', 'VUE中组件间的传值与VUEX', 3, 'VUE004.md', 3);
 INSERT INTO `notes` VALUES (8, 'VUE动画效果', 'VUE中的简单动画效果', 3, 'VUE005.md', 0);
 INSERT INTO `notes` VALUES (9, '红烧肉', '简易的红烧肉 做法', 5, 'COOK001.md', 0);
 INSERT INTO `notes` VALUES (10, '番茄牛腩', '不加水的番茄牛腩 怎么做', 5, 'COOK002.md', 0);
+
+-- ----------------------------
+-- Table structure for page-visited
+-- ----------------------------
+DROP TABLE IF EXISTS `page-visited`;
+CREATE TABLE `page-visited`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `page` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `visited` int(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of page-visited
+-- ----------------------------
+INSERT INTO `page-visited` VALUES (1, 'main', 7);
+INSERT INTO `page-visited` VALUES (2, 'index', 4);
+INSERT INTO `page-visited` VALUES (3, 'notes', 1);
+INSERT INTO `page-visited` VALUES (4, 'resources', 0);
+INSERT INTO `page-visited` VALUES (5, 'forum', 0);
+INSERT INTO `page-visited` VALUES (6, 'personal', 0);
+INSERT INTO `page-visited` VALUES (7, 'function', 1);
 
 -- ----------------------------
 -- Table structure for resources
@@ -170,7 +192,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'SRIC', 'abe4618871b8413bdfb1777f1db128b6', 'head-main.webp', '11451419198', '114514@qq.com', 'soraincloud here', 1);
+INSERT INTO `user` VALUES (1, 'SRIC', 'abe4618871b8413bdfb1777f1db128b6', 'head-main.webp', '11451419198', '114514@qq.com', 'SORAINCLOUD YEAH！！！', 1);
 INSERT INTO `user` VALUES (2, 'homo', '46cdf9fce44f17b47ef33cd4d9bd99f4', 'head-main.webp', NULL, NULL, '114514', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

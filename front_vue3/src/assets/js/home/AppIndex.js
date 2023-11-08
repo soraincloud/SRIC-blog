@@ -4,6 +4,7 @@ import IndexUsed from '@/components/home/IndexUsed'
 import IndexAbout from '@/components/home/IndexAbout'
 import IndexTime from '@/components/home/IndexTime'
 import IndexAside from '@/components/home/IndexAside'
+import { visitPage } from '@/axios/api/visitApi'
 
 let isMore = 0;
 
@@ -23,6 +24,7 @@ export default
     },
     mounted()
     {
+        visitPage({ page: "index" })
         window.onresize = () => 
         {
             this.indexHeight = (window.innerHeight - 70) + 'px'

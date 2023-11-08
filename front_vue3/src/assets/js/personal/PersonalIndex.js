@@ -1,5 +1,6 @@
 import i18n from '@/language'
 import { getTagByToken,getUserByToken } from '@/axios/api/userApi'
+import { visitPage } from '@/axios/api/visitApi'
 
 const { t } = i18n.global
 export default
@@ -38,6 +39,7 @@ export default
     },
     mounted()
     {
+        visitPage({ page: "personal" })
         window.addEventListener('resize',() =>
             this.paddingTop = "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
         )

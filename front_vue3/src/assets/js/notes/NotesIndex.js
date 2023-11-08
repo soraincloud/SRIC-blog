@@ -2,6 +2,7 @@ import AsideMessage from '@/components/common/AsideMessage'
 import NotesCard from '@/components/notes/NotesCard'
 import NotesAside from '@/components/notes/NotesAside'
 import { getNoteListByCategory } from '@/axios/api/notesApi'
+import { visitPage } from '@/axios/api/visitApi'
 
 let isMore = 0;
 
@@ -22,6 +23,7 @@ export default
     },
     mounted()
     {
+        visitPage({ page: "notes" })
         window.onresize = () => 
         {
             this.indexHeight = (window.innerHeight - 70) + 'px'

@@ -2,6 +2,7 @@ import AsideMessage from '@/components/common/AsideMessage'
 import ResourcesCard from '@/components/resources/ResourcesCard'
 import ResourcesAside from '@/components/resources/ResourcesAside'
 import { getResourcesListByCategory } from '@/axios/api/resourcesApi'
+import { visitPage } from '@/axios/api/visitApi'
 
 let isMore = 0;
 
@@ -22,6 +23,7 @@ export default
     },
     mounted()
     {
+        visitPage({ page: "resources" })
         window.onresize = () => 
         {
             this.indexHeight = (window.innerHeight - 70) + 'px'

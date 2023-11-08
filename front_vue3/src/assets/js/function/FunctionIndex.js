@@ -1,4 +1,5 @@
 import { useDark } from '@vueuse/core'
+import { visitPage } from '@/axios/api/visitApi'
 
 const isDark = useDark()
 export default
@@ -32,5 +33,9 @@ export default
         {
             this.$router.push('/FunctionHead')
         },
-    }
+    },
+    mounted()
+    {
+        visitPage({ page: "function" })
+    },
 }

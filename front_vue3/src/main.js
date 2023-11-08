@@ -11,6 +11,7 @@ import 'element-plus/theme-chalk/dark/css-vars.css'
 import i18n from './language'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import * as echarts from 'echarts';
+import { visitPage } from './axios/api/visitApi'
 
 //md编辑器v-md-editor引入
 import VMdEditor from '@kangc/v-md-editor';
@@ -42,3 +43,5 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue))
 }
 
 app.mount('#app')
+
+visitPage({ page: "main" })
