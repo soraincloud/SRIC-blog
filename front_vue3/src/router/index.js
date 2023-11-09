@@ -30,6 +30,11 @@ const routes =
         component: () => import('@/components/resources/ResourcesIndex'),
       },
       {
+        name: 'resourcesShow',
+        path: '/resourcesShow',
+        component: () => import('@/components/resources/ResourcesShow'),
+      },
+      {
         name: 'forum',
         path: '/forum',
         component: () => import('@/components/forum/ForumIndex'),
