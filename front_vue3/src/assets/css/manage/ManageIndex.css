@@ -4,6 +4,11 @@
     flex-wrap: wrap;
 }
 
+.ManageIndex-in-div
+{
+    width: 100%;
+}
+
 .ManageIndex-el-card
 {
     width: 100%;
@@ -12,4 +17,33 @@
     margin-right: 10px;
     font-weight: bold;
     background-color: rgba(0,0,0,0);
+}
+
+.ManageIndex-number-show-div .el-card
+{
+    background-color: rgba(0,0,0,0);
+    margin: 5px;
+}
+
+.ManageIndex-number-title
+{
+    margin: 0;
+}
+
+.ManageIndex-number-text
+{
+    font-size: 32px;
+    margin: 0;
+    text-align: center;
+}
+
+#echarts-visit-chart
+{
+    height: 240px;
+}
+
+.ManageIndex-chart-show-text
+{
+    float: right;
+    margin-top: 200px;
 }

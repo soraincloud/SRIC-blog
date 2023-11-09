@@ -39,3 +39,17 @@ html.dark .el-icon.ManageMenu-el-icon
 {
     font-weight: bold;
 }
+
+.el-menu-item
+{
+    color: black;
+}
+
+html.dark .el-menu-item
+{
+    color: white;
+}
+
+.el-menu-item.is-active {
+    color: var(--el-menu-active-color) !important;
+}

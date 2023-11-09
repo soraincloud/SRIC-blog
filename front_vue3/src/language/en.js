@@ -123,5 +123,7 @@ export default
         text2: 'All of your administrative privileges are displayed in the menu bar on the left',
         text3: 'Dont change the content promiscuously of the website',
         text4: '(›´ω`‹ )',
+        pages: 'page visits',
+        visit: 'Total visits :',
     },
 }
