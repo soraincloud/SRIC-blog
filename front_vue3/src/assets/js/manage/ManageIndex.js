@@ -1,44 +1,77 @@
 import gsap from "gsap"
+import { getManageIndexData } from "@/axios/api/manageApi"
 
 export default
 {
     name: 'ManageIndex',
     data() {
         return {
-            changeNumber: 0,
-            showNumber: 0,
-            number: 200,
+            num: 0,
+            visitShowNumber: 0,
+            userShowNumber: 0,
+            timeShowNumber: 0,
+            pageShowNumber: 0,
+            visitChangeNumber: 0,
+            userChangeNumber: 0,
+            timeChangeNumber: 0,
+            pageChangeNumber: 0,
+            chartData: [],
         }
     },
     watch:
     {
-        changeNumber(newValue)
+        visitChangeNumber(newValue)
         {
             gsap.to(this,{
                 duration: 1,
-                showNumber: newValue,
+                visitShowNumber: newValue,
             })
-        }
+        },
+        userChangeNumber(newValue)
+        {
+            gsap.to(this,{
+                duration: 1,
+                userShowNumber: newValue,
+            })
+        },
+        timeChangeNumber(newValue)
+        {
+            gsap.to(this,{
+                duration: 1,
+                timeShowNumber: newValue,
+            })
+        },
+        pageChangeNumber(newValue)
+        {
+            gsap.to(this,{
+                duration: 1,
+                pageShowNumber: newValue,
+            })
+        },
     },
     created()
     {
-        this.changeNumber = 114514 
-    },
-    mounted() {
-        this.drawEcharts()
+        var _this = this
+        getManageIndexData().then(function(resp){
+            _this.visitChangeNumber = resp.data.visits
+            _this.userChangeNumber = resp.data.users
+            _this.timeChangeNumber = resp.data.days
+            _this.pageChangeNumber = resp.data.pages
+
+            _this.chartData = resp.data.visitsList
+            _this.drawEcharts()
+        })
     },
     methods:
     {
         drawEcharts() {
             let echartsBackground = this.$echarts.init(document.getElementById('echarts-visit-chart'))
             echartsBackground.setOption({
-                
                 tooltip: {
                     trigger: 'item'
                   },
                   series: [
                     {
-                      name: 'Access From',
                       type: 'pie',
                       radius: ['40%', '70%'],
                       avoidLabelOverlap: false,
@@ -61,17 +94,9 @@ export default
                       labelLine: {
                         show: false
                       },
-                      data: [
-                        { value: 1048, name: 'Search Engine' },
-                        { value: 735, name: 'Direct' },
-                        { value: 580, name: 'Email' },
-                        { value: 484, name: 'Union Ads' },
-                        { value: 300, name: 'Video Ads' },
-                        { value: this.number, name: 'fafasd' },
-                      ]
+                      data: this.chartData
                     }
                   ]  
-                
             })
         }
     },

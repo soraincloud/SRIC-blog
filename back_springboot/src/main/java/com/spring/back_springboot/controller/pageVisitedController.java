@@ -24,7 +24,6 @@ public class pageVisitedController
     @GetMapping("/visited/visitPage")
     public void visitPage(String page)
     {
-        System.out.println(page);
         service.updateVisitedByPage(page);
     }
 }

@@ -8,4 +8,5 @@ public interface userService
     user GetUserByName(String username);
     void UpdateNameById(String username, int id);
     void UpdateMarkById(String mark,int id);
+    int getUserCount();
 }

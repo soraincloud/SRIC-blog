@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 08/11/2023 11:09:14
+ Date: 09/11/2023 15:59:02
 */
 
 SET NAMES utf8mb4;
@@ -97,13 +97,13 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 7);
-INSERT INTO `page-visited` VALUES (2, 'index', 4);
-INSERT INTO `page-visited` VALUES (3, 'notes', 1);
-INSERT INTO `page-visited` VALUES (4, 'resources', 0);
-INSERT INTO `page-visited` VALUES (5, 'forum', 0);
-INSERT INTO `page-visited` VALUES (6, 'personal', 0);
-INSERT INTO `page-visited` VALUES (7, 'function', 1);
+INSERT INTO `page-visited` VALUES (1, 'main', 169);
+INSERT INTO `page-visited` VALUES (2, 'index', 8);
+INSERT INTO `page-visited` VALUES (3, 'notes', 4);
+INSERT INTO `page-visited` VALUES (4, 'resources', 5);
+INSERT INTO `page-visited` VALUES (5, 'forum', 10);
+INSERT INTO `page-visited` VALUES (6, 'personal', 3);
+INSERT INTO `page-visited` VALUES (7, 'function', 4);
 
 -- ----------------------------
 -- Table structure for resources

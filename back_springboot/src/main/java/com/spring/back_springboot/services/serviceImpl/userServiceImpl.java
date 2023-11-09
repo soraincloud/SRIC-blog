@@ -35,4 +35,10 @@ public class userServiceImpl implements userService
     {
         mapper.UpdateMarkById(mark,id);
     }
+
+    @Override
+    public int getUserCount()
+    {
+        return mapper.getUserCount();
+    }
 }
