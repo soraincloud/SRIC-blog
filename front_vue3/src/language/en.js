@@ -125,5 +125,11 @@ export default
         text4: '(›´ω`‹ )',
         pages: 'page visits',
         visit: 'Total visits :',
+        user: 'signed users :',
+        time: 'online times :',
+        page: 'menu visits :',
+        times: 'times',
+        days: 'days',
+        users: 'users',
     },
 }

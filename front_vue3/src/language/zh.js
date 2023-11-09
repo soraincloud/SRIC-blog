@@ -126,5 +126,11 @@ export default
         text4: '(›´ω`‹ )',
         pages: '页面访问',
         visit: '总访问量 :',
+        user: '注册用户 :',
+        time: '运行时间 :',
+        page: '菜单点击 :',
+        times: '次',
+        days: '天',
+        users: '个',
     },
 }

@@ -18,32 +18,36 @@
                                     <p class="ManageIndex-number-text">
                                         {{ showNumber.toFixed(0) }}
                                     </p>
+                                    <p class="ManageIndex-number-unit">{{ $t('manageIndex.times') }}</p>
                                 </el-card>
                             </el-col>
                             <el-col :span="12">
                                 <el-card>
-                                    <p class="ManageIndex-number-title">{{ $t('manageIndex.visit') }}</p>
+                                    <p class="ManageIndex-number-title">{{ $t('manageIndex.user') }}</p>
                                     <p class="ManageIndex-number-text">
                                         {{ showNumber.toFixed(0) }}
                                     </p>
+                                    <p class="ManageIndex-number-unit">{{ $t('manageIndex.users') }}</p>
                                 </el-card>
                             </el-col>
                         </el-row>
                         <el-row>
                             <el-col :span="12">
                                 <el-card>
-                                    <p class="ManageIndex-number-title">{{ $t('manageIndex.visit') }}</p>
+                                    <p class="ManageIndex-number-title">{{ $t('manageIndex.time') }}</p>
                                     <p class="ManageIndex-number-text">
                                         {{ showNumber.toFixed(0) }}
                                     </p>
+                                    <p class="ManageIndex-number-unit">{{ $t('manageIndex.days') }}</p>
                                 </el-card>
                             </el-col>
                             <el-col :span="12">
                                 <el-card>
-                                    <p class="ManageIndex-number-title">{{ $t('manageIndex.visit') }}</p>
+                                    <p class="ManageIndex-number-title">{{ $t('manageIndex.page') }}</p>
                                     <p class="ManageIndex-number-text">
                                         {{ showNumber.toFixed(0) }}
                                     </p>
+                                    <p class="ManageIndex-number-unit">{{ $t('manageIndex.times') }}</p>
                                 </el-card>
                             </el-col>
                         </el-row>

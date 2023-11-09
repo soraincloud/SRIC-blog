@@ -125,5 +125,11 @@ export default
         text4: '(›´ω`‹ )',
         pages: '页前看看',
         visit: '总看看量 :',
+        user: '注了沃人 :',
+        time: '跑动时尝 :',
+        page: '头单按击 :',
+        times: '茨',
+        days: '日',
+        users: '只',
     },
 }

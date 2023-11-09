@@ -37,6 +37,13 @@
     text-align: center;
 }
 
+.ManageIndex-number-unit
+{
+    float: right;
+    font-size: 10px;
+    margin: 0;
+}
+
 #echarts-visit-chart
 {
     height: 240px;
