@@ -113,7 +113,7 @@ export default
     },
     functions:
     {
-        head: 'WARMA CHANGE HAIR _(≧∇≦」∠)_',
+        head: 'WARMA CHANGE HAIR',
     },
     copy:
     {

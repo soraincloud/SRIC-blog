@@ -113,7 +113,7 @@ export default
     },
     functions:
     {
-        head: '蛙蟆 变脑其能 _(≧∇≦」∠)_',
+        head: '蛙蟆 变脑其能',
     },
     copy:
     {

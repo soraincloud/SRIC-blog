@@ -14,7 +14,7 @@ const messages =
 const i18n = createI18n
 ({
     messages,
-    locale: 'zh',
+    locale: localStorage.getItem('language'),
 })
 
 export default i18n

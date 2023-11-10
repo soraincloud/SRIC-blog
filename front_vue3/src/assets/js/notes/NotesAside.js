@@ -85,15 +85,6 @@ export default
             }
         }
     },
-    created()
-    {
-        this.category[0].content = t('notes.all')
-        this.category[1].content = t('notes.none')
-        this.category[2].content = t('notes.algorithm')
-        this.category[3].content = t('notes.front')
-        this.category[4].content = t('notes.back')
-        this.category[5].content = t('notes.cook')
-    },
     watch:
     {
         '$i18n.locale'(newValue)

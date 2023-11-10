@@ -47,14 +47,17 @@ export default
             if(lang == 0)
             {
                 this.$i18n.locale = 'zh'
+                localStorage.setItem('language','zh')
             }
             else if(lang == 1)
             {
                 this.$i18n.locale = 'en'
+                localStorage.setItem('language','en')
             }
             else if(lang == 2)
             {
                 this.$i18n.locale = 'warma'
+                localStorage.setItem('language','warma')
             }
             this.navList[0].navItem = t('menu.index')
             this.navList[1].navItem = t('menu.note')
@@ -62,6 +65,22 @@ export default
             this.navList[3].navItem = t('menu.forum')
             this.navList[4].navItem = t('menu.personal')
             this.navList[5].navItem = t('menu.functions')
+        },
+        loadLanguage()
+        {
+            let lang = localStorage.getItem('language')
+            if(lang == 'zh')
+            {
+                this.language = '0'
+            }
+            else if(lang == 'en')
+            {
+                this.language = '1'
+            }
+            else if(lang == 'warma')
+            {
+                this.language = '2'
+            }
         },
         switchSetting()
         {
@@ -77,6 +96,6 @@ export default
     created()
     {
         this.defaultActive = this.$route.name;
-        this.changeLanguage()
+        this.loadLanguage()
     }
 }
