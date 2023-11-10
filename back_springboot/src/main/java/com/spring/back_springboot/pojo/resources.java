@@ -12,4 +12,5 @@ public class resources
     private String file;
     private int visited;
     private String tag;
+    private double size;
 }

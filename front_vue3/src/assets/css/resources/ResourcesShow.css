@@ -1,0 +1,66 @@
+.ResourcesShow-image-style
+{
+    width: 480px;
+    position: absolute;
+    left: 0px;
+    transition: 0.8s bottom;
+}
+
+.ResourcesShow-h1-text
+{
+    position: relative;
+    font-size: 50px;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: #ff5f5f 0px 0 10px;
+    transition: 1s left ease;
+}
+
+.ResourcesShow-tag-div
+{
+    position: relative;
+    transition: 1s left ease;
+}
+
+.ResourcesShow-el-icon-style
+{
+    margin-right: 5px;
+    color: #ffffff;
+    text-shadow: #ff5f5f 0px 0 10px;
+}
+
+.ResourcesShow-tag-text-style
+{
+    font-size: 10px;
+    color: #ffffff;
+    text-shadow: #ff5f5f 0px 0 10px;
+}
+
+.ResourcesShow-back-icon-style
+{
+    margin-right: 10px;
+}
+
+.ResourcesShow-back-button-style
+{
+    background-color: rgba(255,255,255,0.64);
+    font-weight: bold;
+    color: #ff6666;
+    position: relative;
+    transition: 1s left ease;
+}
+
+html.dark .ResourcesShow-back-button-style
+{
+    background-color: rgba(0,0,0,0.64);
+}
+
+.ResourcesShow-h3-text
+{
+    position: relative;
+    font-size: 25px;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: #ff5f5f 0px 0 10px;
+    transition: 1s left ease;
+}

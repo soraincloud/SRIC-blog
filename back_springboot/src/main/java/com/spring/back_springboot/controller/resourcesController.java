@@ -30,7 +30,7 @@ public class resourcesController
     }
 
     @CrossOrigin
-    @GetMapping("/resources/getResourceById")
+    @GetMapping("/resources/getResourcesById")
     public resources GetResourceById(int id)
     {
         service.addResourceVisit(id);

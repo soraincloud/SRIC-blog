@@ -48,7 +48,7 @@ export default
     },
     notes:
     {
-        visit:'visited:',
+        visit: 'visited:',
         note: 'note',
         head: 'category',
         all: 'all',
@@ -57,6 +57,10 @@ export default
         front: 'front',
         back: 'back',
         cook: 'cook',
+    },
+    resources:
+    {
+        download: 'download',
     },
     login:
     {

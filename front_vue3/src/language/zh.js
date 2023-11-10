@@ -48,7 +48,7 @@ export default
     },
     notes:
     {
-        visit:'访问量:',
+        visit: '访问量:',
         note: '笔记',
         head: '分类',
         all: '全部',
@@ -57,6 +57,10 @@ export default
         front: '前端',
         back: '后端',
         cook: '做饭',
+    },
+    resources:
+    {
+        download: '下载',
     },
     login:
     {
