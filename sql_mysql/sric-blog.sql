@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 09/11/2023 15:59:02
+ Date: 10/11/2023 23:14:31
 */
 
 SET NAMES utf8mb4;
@@ -84,6 +84,21 @@ INSERT INTO `notes` VALUES (9, '红烧肉', '简易的红烧肉 做法', 5, 'COO
 INSERT INTO `notes` VALUES (10, '番茄牛腩', '不加水的番茄牛腩 怎么做', 5, 'COOK002.md', 0);
 
 -- ----------------------------
+-- Table structure for notes-category
+-- ----------------------------
+DROP TABLE IF EXISTS `notes-category`;
+CREATE TABLE `notes-category`  (
+  `id` int(11) NOT NULL,
+  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of notes-category
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for page-visited
 -- ----------------------------
 DROP TABLE IF EXISTS `page-visited`;
@@ -97,13 +112,13 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 169);
-INSERT INTO `page-visited` VALUES (2, 'index', 8);
-INSERT INTO `page-visited` VALUES (3, 'notes', 4);
-INSERT INTO `page-visited` VALUES (4, 'resources', 5);
+INSERT INTO `page-visited` VALUES (1, 'main', 281);
+INSERT INTO `page-visited` VALUES (2, 'index', 28);
+INSERT INTO `page-visited` VALUES (3, 'notes', 22);
+INSERT INTO `page-visited` VALUES (4, 'resources', 44);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 3);
-INSERT INTO `page-visited` VALUES (7, 'function', 4);
+INSERT INTO `page-visited` VALUES (6, 'personal', 16);
+INSERT INTO `page-visited` VALUES (7, 'function', 9);
 
 -- ----------------------------
 -- Table structure for resources
@@ -117,23 +132,23 @@ CREATE TABLE `resources`  (
   `file` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL',
   `visited` int(12) UNSIGNED NOT NULL DEFAULT 0,
   `tag` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL',
+  `size` double NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of resources
 -- ----------------------------
-INSERT INTO `resources` VALUES (1, 'C001.md', '二叉树文档的md文件', 1, '/md/C001.md', 0, 'markdown');
-INSERT INTO `resources` VALUES (2, 'NULL TYTLE', 'NO DESCRIPTION', -1, 'NULL', 0, 'NULL');
-INSERT INTO `resources` VALUES (3, 'COOK001.md', '红烧肉文档的md文件', 1, '/md/COOK001.md', 0, 'markdown');
-INSERT INTO `resources` VALUES (4, 'COOK002.md', '番茄牛腩文档的md文件', 1, '/md/COOK002.md', 0, 'markdown');
-INSERT INTO `resources` VALUES (5, 'NULL.md', '为未分类的笔记提供默认显示的md文件', -1, '/md/NULL.md', 0, 'NULL');
-INSERT INTO `resources` VALUES (6, 'SPRING001.md', '后端四层架构文档的md文件', 1, '/md/SPRING001.md', 0, 'markdown');
-INSERT INTO `resources` VALUES (7, 'VUE001.md', 'vue3项目的创建文档的md文件', 1, '/md/VUE001.md', 0, 'markdown');
-INSERT INTO `resources` VALUES (8, 'VUE002.md', 'vue-axios文档的md文件', 1, '/md/VUE002.md', 0, 'markdown');
-INSERT INTO `resources` VALUES (9, 'VUE003.md', 'vue-router文档的md文件', 1, '/md/VUE003.md', 0, 'markdown');
-INSERT INTO `resources` VALUES (10, 'VUE004.md', 'VUE传值文档的md文件', 1, '/md/VUE004.md', 0, 'markdown');
-INSERT INTO `resources` VALUES (11, 'VUE005.md', 'VUE动画效果文档的md文件', 1, '/md/VUE005.md', 0, 'markdown');
+INSERT INTO `resources` VALUES (1, 'C001.md', '二叉树文档的md文件', 1, '/md/C001.md', 89, 'markdown', NULL);
+INSERT INTO `resources` VALUES (2, 'NULL.md', '为未分类的笔记提供默认显示的md文件', -1, '/md/NULL.md', 11, 'NULL', NULL);
+INSERT INTO `resources` VALUES (3, 'COOK001.md', '红烧肉文档的md文件', 1, '/md/COOK001.md', 1, 'markdown', NULL);
+INSERT INTO `resources` VALUES (4, 'COOK002.md', '番茄牛腩文档的md文件', 1, '/md/COOK002.md', 0, 'markdown', NULL);
+INSERT INTO `resources` VALUES (5, 'VUE005.md', 'VUE动画效果文档的md文件', 1, '/md/VUE005.md', 0, 'markdown', NULL);
+INSERT INTO `resources` VALUES (6, 'SPRING001.md', '后端四层架构文档的md文件', 1, '/md/SPRING001.md', 1, 'markdown', NULL);
+INSERT INTO `resources` VALUES (7, 'VUE001.md', 'vue3项目的创建文档的md文件', 1, '/md/VUE001.md', 0, 'markdown', NULL);
+INSERT INTO `resources` VALUES (8, 'VUE002.md', 'vue-axios文档的md文件', 1, '/md/VUE002.md', 0, 'markdown', NULL);
+INSERT INTO `resources` VALUES (9, 'VUE003.md', 'vue-router文档的md文件', 1, '/md/VUE003.md', 0, 'markdown', NULL);
+INSERT INTO `resources` VALUES (10, 'VUE004.md', 'VUE传值文档的md文件', 1, '/md/VUE004.md', 0, 'markdown', NULL);
 
 -- ----------------------------
 -- Table structure for resources-category
@@ -141,7 +156,7 @@ INSERT INTO `resources` VALUES (11, 'VUE005.md', 'VUE动画效果文档的md文�
 DROP TABLE IF EXISTS `resources-category`;
 CREATE TABLE `resources-category`  (
   `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `category` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `category` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'Menu',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
