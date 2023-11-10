@@ -16,6 +16,11 @@ export default
             timeChangeNumber: 0,
             pageChangeNumber: 0,
             chartData: [],
+            back0: '',
+            back1: '',
+            back2: '',
+            back3: '',
+            back4: '',
         }
     },
     watch:
@@ -98,6 +103,53 @@ export default
                     }
                   ]  
             })
+        },
+        mouseOver(num)
+        {
+            if(num == 0)
+            {
+                this.back0 = "background-color: rgba(255,143,143,0.5);"
+            }
+            else if(num == 1)
+            {
+                this.back1 = "background-color: rgba(255,143,143,0.5);"
+            }
+            else if(num == 2)
+            {
+                this.back2 = "background-color: rgba(255,143,143,0.5);"
+            }
+            else if(num == 3)
+            {
+                this.back3 = "background-color: rgba(255,143,143,0.5);"
+            }
+            else if(num == 4)
+            {
+                this.back4 = "background-color: rgba(255,143,143,0.5);"
+            }
+        },
+        mouseLeave(num)
+        {
+            if(num == 0)
+            {
+                this.back0 = ''
+            }
+            else if(num == 1)
+            {
+                this.back1 = ''
+            }
+            else if(num == 2)
+            {
+                this.back2 = ''
+            }
+            else if(num == 3)
+            {
+                this.back3 = ''
+            }
+            else if(num == 4)
+            {
+                this.back4 = ''
+            }
         }
     },
+
 }
