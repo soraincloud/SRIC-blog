@@ -1,3 +1,6 @@
+import i18n from '@/language'
+
+const { t } = i18n.global
 export default
 {
     name: 'ManageMenu',
@@ -37,5 +40,13 @@ export default
     created()
     {
         this.defaultActive = this.$route.name;
+        this.navList[0].navItem = t('manageMenu.manage')
+    },
+    watch:
+    {
+        '$i18n.locale'(newValue)
+        {
+            this.navList[0].navItem = t('manageMenu.manage')
+        }
     },
 }

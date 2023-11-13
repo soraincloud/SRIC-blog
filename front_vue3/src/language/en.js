@@ -53,10 +53,6 @@ export default
         head: 'category',
         all: 'all',
         none: 'uncategorized',
-        algorithm: 'algorithm',
-        front: 'front',
-        back: 'back',
-        cook: 'cook',
     },
     resources:
     {
@@ -135,5 +131,9 @@ export default
         times: 'times',
         days: 'days',
         users: 'users',
+    },
+    manageMenu:
+    {
+        manage: 'management',
     },
 }

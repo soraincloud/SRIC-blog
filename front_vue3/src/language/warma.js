@@ -53,10 +53,6 @@ export default
         head: '类类',
         all: '所有',
         none: '没类类',
-        algorithm: '计法',
-        front: '前面',
-        back: '后面',
-        cook: '饭饭',
     },
     resources:
     {
@@ -135,5 +131,9 @@ export default
         times: '茨',
         days: '日',
         users: '只',
+    },
+    manageMenu:
+    {
+        manage: '站站管地',
     },
 }

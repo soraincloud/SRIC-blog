@@ -41,14 +41,14 @@ export default
                                     keyframes: 
                                     [
                                         {
-                                            percent: 0.1,
+                                            percent: 0,
                                             style: {
                                                 lineDashOffset: 0,
                                                 lineDash: [0, 200]
                                             }
                                         },
                                         {
-                                            percent: 0.7,
+                                            percent: 0.6,
                                             style: {
                                                 fill: 'rgba(255,255,255,0)',
                                                 lineDashOffset: 200,
@@ -56,29 +56,35 @@ export default
                                             }
                                         },
                                         {
-                                            percent: 0.75,
+                                            percent: 0.65,
                                             style: {
                                                 fill: 'rgba(255,255,255,0)'
                                             }
                                         },
                                         {
-                                            percent: 0.8,
+                                            percent: 0.7,
                                             style: {
                                                 fill: '#ff8f8f',
                                             }
                                         },
                                         {
-                                            percent: 0.95,
+                                            percent: 0.85,
                                             style: {
                                                 fill: '#ff8f8f',
                                                 stroke: '#ff8f8f',
                                             }
                                         },
                                         {
-                                            percent: 1,
+                                            percent: 0.9,
                                             style: {
                                                 fill: 'rgba(255,255,255,0)',
                                                 stroke: 'rgba(255,255,255,0)',
+                                            }
+                                        },
+                                        {
+                                            percent: 0.9,
+                                            style: {
+                                                fill: 'rgba(255,255,255,0)',
                                             }
                                         },
                                     ]

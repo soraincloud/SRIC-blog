@@ -53,10 +53,6 @@ export default
         head: '分类',
         all: '全部',
         none: '未分类',
-        algorithm: '算法',
-        front: '前端',
-        back: '后端',
-        cook: '做饭',
     },
     resources:
     {
@@ -136,5 +132,9 @@ export default
         times: '次',
         days: '天',
         users: '个',
+    },
+    manageMenu:
+    {
+        manage: '后台管理',
     },
 }

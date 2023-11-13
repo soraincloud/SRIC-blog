@@ -47,5 +47,25 @@ export default
         {
             this.$router.push('/index')
         },
+        loadLanguage()
+        {
+            let lang = localStorage.getItem('language')
+            if(lang == 'zh')
+            {
+                this.language = '0'
+            }
+            else if(lang == 'en')
+            {
+                this.language = '1'
+            }
+            else if(lang == 'warma')
+            {
+                this.language = '2'
+            }
+        },
+    },
+    created()
+    {
+        this.loadLanguage()
     },
 }
