@@ -8,12 +8,6 @@
     </el-tab-pane>
     <el-tab-pane>
       <template #label>
-        <el-image :src="TwitterSvg" class="LinkCard-el-tabs-svg-style"></el-image>
-      </template>
-      <link-card-twitter/>
-    </el-tab-pane>
-    <el-tab-pane>
-      <template #label>
         <el-image :src="BilibiliSvg" class="LinkCard-el-tabs-svg-style"></el-image>
       </template>
       <link-card-bilibili/>
