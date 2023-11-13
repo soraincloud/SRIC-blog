@@ -10,7 +10,7 @@ export default
         return{
             active: '',
             indexHeadTitle: '',
-            indexHead: '14514\n15454',
+            indexHead: '',
             lang: localStorage.getItem('language'),
         }
     },
@@ -33,6 +33,7 @@ export default
         },
         loadText()
         {
+            this.lang = localStorage.getItem('language')
             if(this.lang == 'zh')
             {
                 this.indexHeadTitle = this.$store.getters.getIndexHeadTitleZh
@@ -77,7 +78,6 @@ export default
             if(_this.lang == 'zh')
             {
                 _this.indexHead = resp.data[0].text
-                console.log(_this.indexHead)
             }
             else if(_this.lang == 'en')
             {
