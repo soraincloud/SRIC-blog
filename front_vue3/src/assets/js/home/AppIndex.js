@@ -56,5 +56,9 @@ export default
                 isMore = 0;
             }
         },
+    },
+    created()
+    {
+        
     }
 }

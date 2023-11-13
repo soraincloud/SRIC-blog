@@ -13,13 +13,13 @@ import java.util.List;
 public interface resourcesMapper
 {
     @Select(value = "SELECT * FROM resources")
-    List<resources> GetAllResources();
+    List<resources> getAllResources();
 
     @Select(value = "SELECT * FROM resources WHERE category = #{category}")
-    List<resources> GetResourcesByCategory(@Param(value = "category") String category);
+    List<resources> getResourcesByCategory(@Param(value = "category") String category);
 
     @Select(value = "SELECT * FROM resources WHERE id = #{id}")
-    resources GetResourceById(@Param(value = "id")int id);
+    resources getResourceById(@Param(value = "id")int id);
 
     @Update(value = "UPDATE resources SET VISITED = VISITED + 1 WHERE id = #{id}")
     void addResourceVisit(@Param(value = "id")int id);

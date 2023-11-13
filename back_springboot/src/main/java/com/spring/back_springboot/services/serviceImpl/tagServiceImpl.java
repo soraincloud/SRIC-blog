@@ -15,8 +15,8 @@ public class tagServiceImpl implements tagService
     tagMapper mapper;
 
     @Override
-    public List<tag> GetTagByUid(int uid)
+    public List<tag> getTagByUid(int uid)
     {
-        return mapper.GetTagByUid(uid);
+        return mapper.getTagByUid(uid);
     }
 }

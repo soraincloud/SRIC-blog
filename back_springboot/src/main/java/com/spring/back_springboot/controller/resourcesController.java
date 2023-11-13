@@ -17,24 +17,24 @@ public class resourcesController
 
     @CrossOrigin
     @GetMapping("/resources/getResourcesList")
-    public List<resources> GetAllResources()
+    public List<resources> getAllResources()
     {
-        return service.GetAllResources();
+        return service.getAllResources();
     }
 
     @CrossOrigin
     @GetMapping("/resources/getResourcesListByCategory")
-    public List<resources> GetResourcesListByCategory(String category) throws Exception
+    public List<resources> getResourcesListByCategory(String category) throws Exception
     {
-        return service.GetResourcesByCategory(category);
+        return service.getResourcesByCategory(category);
     }
 
     @CrossOrigin
     @GetMapping("/resources/getResourcesById")
-    public resources GetResourceById(int id)
+    public resources getResourceById(int id)
     {
         service.addResourceVisit(id);
-        return service.GetResourceById(id);
+        return service.getResourceById(id);
     }
 
     @CrossOrigin

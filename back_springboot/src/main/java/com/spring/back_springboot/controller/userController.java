@@ -18,10 +18,10 @@ public class userController
 
     @CrossOrigin
     @GetMapping("/user/getUserByToken")
-    public user GetUserByToken(String tokenValue)
+    public user getUserByToken(String tokenValue)
     {
         int id = Integer.parseInt(StpUtil.getLoginIdByToken(tokenValue).toString());
-        user u = service.GetUserById(id);
+        user u = service.getUserById(id);
         u.setId(0);
         u.setPassword("");
         u.markPhoneNumber();
@@ -34,7 +34,7 @@ public class userController
     @PostMapping("/user/login")
     public login login(@RequestBody user user)
     {
-        user u = service.GetUserByName(user.getUsername()); //根据用户名查询
+        user u = service.getUserByName(user.getUsername()); //根据用户名查询
         if(u == null) //用户名不存在
         {
             return new login(401,null);
@@ -55,15 +55,15 @@ public class userController
 
     @CrossOrigin
     @PostMapping("/user/updateNameByToken")
-    public code UpdateNameByToken(@RequestBody userToken userToken)
+    public code updateNameByToken(@RequestBody userToken userToken)
     {
-        user getUser = service.GetUserByName(userToken.getUsername());
+        user getUser = service.getUserByName(userToken.getUsername());
         if(getUser != null)
         {
             return new code(400);
         }
         int id = Integer.parseInt(StpUtil.getLoginIdByToken(userToken.getTokenValue()).toString());
-        service.UpdateNameById(userToken.getUsername(),id);
+        service.updateNameById(userToken.getUsername(),id);
         return new code(200);
     }
 
@@ -72,7 +72,7 @@ public class userController
     public code UpdateMarkByToken(@RequestBody userToken userToken)
     {
         int id = Integer.parseInt(StpUtil.getLoginIdByToken(userToken.getTokenValue()).toString());
-        service.UpdateMarkById(userToken.getMark(),id);
+        service.updateMarkById(userToken.getMark(),id);
         return new code(200);
     }
 }

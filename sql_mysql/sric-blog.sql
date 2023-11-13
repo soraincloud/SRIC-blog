@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 13/11/2023 15:47:59
+ Date: 13/11/2023 21:13:21
 */
 
 SET NAMES utf8mb4;
@@ -31,9 +31,9 @@ CREATE TABLE `index-head`  (
 -- ----------------------------
 -- Records of index-head
 -- ----------------------------
-INSERT INTO `index-head` VALUES (1, 'zh', '欢迎来到我的博客 ! ( ＾∀＾)/');
-INSERT INTO `index-head` VALUES (2, 'en', 'welcome to my blog ! ( ＾∀＾)/');
-INSERT INTO `index-head` VALUES (3, 'warma', '欢赢来到我的展示地 ! ( ＾∀＾)/');
+INSERT INTO `index-head` VALUES (1, 'zh', '欢迎来到我的博客 ! ( ＾∀＾)/\\n或许会有很多有意思的东西, 现在就开始吧 !');
+INSERT INTO `index-head` VALUES (2, 'en', 'welcome to my blog ! ( ＾∀＾)/\\nMaybe we have a lot of interesting stuff, so lets start now !');
+INSERT INTO `index-head` VALUES (3, 'warma', '欢赢来到我的展示地 ! ( ＾∀＾)/\\n或栩会有多多有意思的西东, 现在就开使吧 !');
 
 -- ----------------------------
 -- Table structure for index-head-title
@@ -44,11 +44,14 @@ CREATE TABLE `index-head-title`  (
   `language` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '语言',
   `text` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '对应文字',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '主页标题文字' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '主页标题文字' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of index-head-title
 -- ----------------------------
+INSERT INTO `index-head-title` VALUES (1, 'zh', 'SRIC \'s BLOG');
+INSERT INTO `index-head-title` VALUES (2, 'en', 'SRIC \'s BLOG');
+INSERT INTO `index-head-title` VALUES (3, 'warma', 'SRIC \'s BLOG');
 
 -- ----------------------------
 -- Table structure for index-time
@@ -149,13 +152,13 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 300);
-INSERT INTO `page-visited` VALUES (2, 'index', 35);
-INSERT INTO `page-visited` VALUES (3, 'notes', 29);
-INSERT INTO `page-visited` VALUES (4, 'resources', 51);
+INSERT INTO `page-visited` VALUES (1, 'main', 342);
+INSERT INTO `page-visited` VALUES (2, 'index', 77);
+INSERT INTO `page-visited` VALUES (3, 'notes', 30);
+INSERT INTO `page-visited` VALUES (4, 'resources', 52);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 26);
-INSERT INTO `page-visited` VALUES (7, 'function', 13);
+INSERT INTO `page-visited` VALUES (6, 'personal', 27);
+INSERT INTO `page-visited` VALUES (7, 'function', 14);
 
 -- ----------------------------
 -- Table structure for resources

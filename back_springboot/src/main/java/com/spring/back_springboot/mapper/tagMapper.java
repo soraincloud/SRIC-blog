@@ -11,5 +11,5 @@ import java.util.List;
 public interface tagMapper
 {
     @Select(value="SELECT * FROM TAG WHERE UID = #{uid}")
-    List<tag> GetTagByUid(@Param(value = "uid") int uid);
+    List<tag> getTagByUid(@Param(value = "uid") int uid);
 }

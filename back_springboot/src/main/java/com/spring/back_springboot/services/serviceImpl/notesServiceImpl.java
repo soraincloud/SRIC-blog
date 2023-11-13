@@ -16,21 +16,21 @@ public class notesServiceImpl implements notesService
     notesMapper mapper;
 
     @Override
-    public List<notes> GetAllNotes()
+    public List<notes> getAllNotes()
     {
-        return mapper.GetAllNotes();
+        return mapper.getAllNotes();
     }
 
     @Override
-    public List<notes> GetNotesByCategory(String category)
+    public List<notes> getNotesByCategory(String category)
     {
-        return mapper.GetNotesByCategory(category);
+        return mapper.getNotesByCategory(category);
     }
 
     @Override
-    public notes GetNoteById(int id)
+    public notes getNoteById(int id)
     {
-        return mapper.GetNoteById(id);
+        return mapper.getNoteById(id);
     }
 
     @Override

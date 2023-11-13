@@ -8,5 +8,5 @@ import java.util.List;
 public interface indexTimeMapper
 {
     @Select(value = "SELECT * FROM `index-time`")
-    List<indexTime> GetAllIndexTime();
+    List<indexTime> getAllIndexTime();
 }

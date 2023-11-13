@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface resourcesService
 {
-    List<resources> GetAllResources();
-    List<resources> GetResourcesByCategory(String category);
-    resources GetResourceById(int id);
+    List<resources> getAllResources();
+    List<resources> getResourcesByCategory(String category);
+    resources getResourceById(int id);
     void addResourceVisit(int id);
     List<resourcesCategory> getAllResourcesCategory();
 }

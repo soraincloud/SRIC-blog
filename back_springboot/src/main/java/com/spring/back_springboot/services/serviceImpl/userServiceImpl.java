@@ -13,27 +13,27 @@ public class userServiceImpl implements userService
     userMapper mapper;
 
     @Override
-    public user GetUserById(int id)
+    public user getUserById(int id)
     {
-        return mapper.GetUserById(id);
+        return mapper.getUserById(id);
     }
 
     @Override
-    public user GetUserByName(String username)
+    public user getUserByName(String username)
     {
-        return mapper.GetUserByName(username);
+        return mapper.getUserByName(username);
     }
 
     @Override
-    public void UpdateNameById(String username, int id)
+    public void updateNameById(String username, int id)
     {
-        mapper.UpdateNameById(username,id);
+        mapper.updateNameById(username,id);
     }
 
     @Override
-    public void UpdateMarkById(String mark,int id)
+    public void updateMarkById(String mark,int id)
     {
-        mapper.UpdateMarkById(mark,id);
+        mapper.updateMarkById(mark,id);
     }
 
     @Override

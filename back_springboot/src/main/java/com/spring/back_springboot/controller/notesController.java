@@ -17,24 +17,24 @@ public class notesController
 
     @CrossOrigin
     @GetMapping("/notes/getNotesList")
-    public List<notes> GetAllNotes()
+    public List<notes> getAllNotes()
     {
-        return service.GetAllNotes();
+        return service.getAllNotes();
     }
 
     @CrossOrigin
     @GetMapping("/notes/getNoteListByCategory")
-    public List<notes> GetNotesByCategory(String category) throws Exception
+    public List<notes> getNotesByCategory(String category) throws Exception
     {
-        return service.GetNotesByCategory(category);
+        return service.getNotesByCategory(category);
     }
 
     @CrossOrigin
     @GetMapping("/notes/getNoteById")
-    public notes GetNoteById(int id)
+    public notes getNoteById(int id)
     {
         service.addNoteVisit(id);
-        return service.GetNoteById(id);
+        return service.getNoteById(id);
     }
 
     @CrossOrigin

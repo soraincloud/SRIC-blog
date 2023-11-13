@@ -13,13 +13,13 @@ import java.util.List;
 public interface notesMapper
 {
     @Select(value = "SELECT * FROM notes")
-    List<notes> GetAllNotes();
+    List<notes> getAllNotes();
 
     @Select(value = "SELECT * FROM notes WHERE category = #{category}")
-    List<notes> GetNotesByCategory(@Param(value = "category") String category);
+    List<notes> getNotesByCategory(@Param(value = "category") String category);
 
     @Select(value = "SELECT * FROM notes WHERE id = #{id}")
-    notes GetNoteById(@Param(value = "id")int id);
+    notes getNoteById(@Param(value = "id")int id);
 
     @Update(value = "UPDATE NOTES SET VISITED = VISITED + 1 WHERE id = #{id}")
     void addNoteVisit(@Param(value = "id")int id);

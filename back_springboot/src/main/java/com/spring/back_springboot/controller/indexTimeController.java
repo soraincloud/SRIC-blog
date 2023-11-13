@@ -19,8 +19,8 @@ public class indexTimeController
 
     @CrossOrigin
     @GetMapping("/home/indexTimeList")
-    public List<indexTime> GetAllIndexTime() throws Exception
+    public List<indexTime> getAllIndexTime() throws Exception
     {
-        return Service.GetAllIndexTime();
+        return Service.getAllIndexTime();
     }
 }

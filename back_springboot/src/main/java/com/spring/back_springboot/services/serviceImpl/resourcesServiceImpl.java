@@ -16,21 +16,21 @@ public class resourcesServiceImpl implements resourcesService
     resourcesMapper mapper;
 
     @Override
-    public List<resources> GetAllResources()
+    public List<resources> getAllResources()
     {
-        return mapper.GetAllResources();
+        return mapper.getAllResources();
     }
 
     @Override
-    public List<resources> GetResourcesByCategory(String category)
+    public List<resources> getResourcesByCategory(String category)
     {
-        return mapper.GetResourcesByCategory(category);
+        return mapper.getResourcesByCategory(category);
     }
 
     @Override
-    public resources GetResourceById(int id)
+    public resources getResourceById(int id)
     {
-        return mapper.GetResourceById(id);
+        return mapper.getResourceById(id);
     }
 
     @Override

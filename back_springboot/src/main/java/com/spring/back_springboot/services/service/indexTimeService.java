@@ -4,5 +4,5 @@ import java.util.List;
 
 public interface indexTimeService
 {
-    List<indexTime> GetAllIndexTime();
+    List<indexTime> getAllIndexTime();
 }

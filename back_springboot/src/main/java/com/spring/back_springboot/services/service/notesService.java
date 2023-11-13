@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface notesService
 {
-    List<notes> GetAllNotes();
-    List<notes> GetNotesByCategory(String category);
-    notes GetNoteById(int id);
+    List<notes> getAllNotes();
+    List<notes> getNotesByCategory(String category);
+    notes getNoteById(int id);
     void addNoteVisit(int id);
     List<notesCategory> getAllNotesCategory();
 }

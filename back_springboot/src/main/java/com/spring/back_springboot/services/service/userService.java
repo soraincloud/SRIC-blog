@@ -4,9 +4,9 @@ import com.spring.back_springboot.pojo.user;
 
 public interface userService
 {
-    user GetUserById(int id);
-    user GetUserByName(String username);
-    void UpdateNameById(String username, int id);
-    void UpdateMarkById(String mark,int id);
+    user getUserById(int id);
+    user getUserByName(String username);
+    void updateNameById(String username, int id);
+    void updateMarkById(String mark,int id);
     int getUserCount();
 }
