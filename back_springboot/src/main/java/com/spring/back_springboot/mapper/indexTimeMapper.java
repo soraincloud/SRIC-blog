@@ -7,6 +7,6 @@ import java.util.List;
 @Mapper
 public interface indexTimeMapper
 {
-    @Select(value = "SELECT * FROM indexTime")
+    @Select(value = "SELECT * FROM `index-time`")
     List<indexTime> GetAllIndexTime();
 }

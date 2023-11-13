@@ -11,63 +11,96 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 13/11/2023 15:12:15
+ Date: 13/11/2023 15:47:59
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
--- Table structure for indextime
+-- Table structure for index-head
 -- ----------------------------
-DROP TABLE IF EXISTS `indextime`;
-CREATE TABLE `indextime`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `timestmap` date NULL DEFAULT NULL,
-  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `color` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+DROP TABLE IF EXISTS `index-head`;
+CREATE TABLE `index-head`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `language` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '语言',
+  `text` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '对应文字',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '主页标题下文字' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of indextime
+-- Records of index-head
 -- ----------------------------
-INSERT INTO `indextime` VALUES (1, 'create', '2023-06-12', 'danger', 'white');
-INSERT INTO `indextime` VALUES (2, 'add more pages', '2023-07-13', 'success', 'white');
-INSERT INTO `indextime` VALUES (3, 'pack css', '2023-07-13', 'danger', 'white');
-INSERT INTO `indextime` VALUES (4, 'add personal page', '2023-07-16', 'success', 'white');
-INSERT INTO `indextime` VALUES (5, 'add login', '2023-07-19', 'success', 'white');
-INSERT INTO `indextime` VALUES (6, 'pack js', '2023-08-07', 'danger', 'white');
-INSERT INTO `indextime` VALUES (7, 'add language change', '2023-08-13', 'success', 'white');
-INSERT INTO `indextime` VALUES (8, 'add back to top button', '2023-09-14', 'success', 'white');
-INSERT INTO `indextime` VALUES (9, 'add change name and mark', '2023-09-15', 'success', 'white');
-INSERT INTO `indextime` VALUES (10, 'add safety page', '2023-09-19', 'success', 'white');
-INSERT INTO `indextime` VALUES (11, 'add some transition', '2023-09-22', 'success', 'white');
-INSERT INTO `indextime` VALUES (12, 'add sign up page', '2023-09-26', 'success', 'white');
-INSERT INTO `indextime` VALUES (13, 'add note show page', '2023-09-28', 'success', 'white');
-INSERT INTO `indextime` VALUES (14, 'change images to webp', '2023-10-07', 'danger', 'white');
-INSERT INTO `indextime` VALUES (15, 'add change head page', '2023-10-10', 'success', 'white');
-INSERT INTO `indextime` VALUES (16, 'add forun page', '2023-10-11', 'success', 'white');
-INSERT INTO `indextime` VALUES (17, 'update README', '2023-10-17', 'warning', 'white');
-INSERT INTO `indextime` VALUES (18, 'Register All Icons', '2023-10-20', 'danger', 'white');
-INSERT INTO `indextime` VALUES (19, 'add resources category', '2023-10-23', 'success', 'white');
-INSERT INTO `indextime` VALUES (20, 'add copy clipboard', '2023-10-24', 'success', 'white');
-INSERT INTO `indextime` VALUES (21, 'use interceptors and promise', '2023-10-25', 'danger', 'white');
+INSERT INTO `index-head` VALUES (1, 'zh', '欢迎来到我的博客 ! ( ＾∀＾)/');
+INSERT INTO `index-head` VALUES (2, 'en', 'welcome to my blog ! ( ＾∀＾)/');
+INSERT INTO `index-head` VALUES (3, 'warma', '欢赢来到我的展示地 ! ( ＾∀＾)/');
+
+-- ----------------------------
+-- Table structure for index-head-title
+-- ----------------------------
+DROP TABLE IF EXISTS `index-head-title`;
+CREATE TABLE `index-head-title`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `language` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '语言',
+  `text` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '对应文字',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '主页标题文字' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of index-head-title
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for index-time
+-- ----------------------------
+DROP TABLE IF EXISTS `index-time`;
+CREATE TABLE `index-time`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '内容',
+  `timestmap` date NULL DEFAULT NULL COMMENT '时间',
+  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '外圈颜色',
+  `color` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '内部颜色',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '主页活动时间轴' ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of index-time
+-- ----------------------------
+INSERT INTO `index-time` VALUES (1, 'create', '2023-06-12', 'danger', 'white');
+INSERT INTO `index-time` VALUES (2, 'add more pages', '2023-07-13', 'success', 'white');
+INSERT INTO `index-time` VALUES (3, 'pack css', '2023-07-13', 'danger', 'white');
+INSERT INTO `index-time` VALUES (4, 'add personal page', '2023-07-16', 'success', 'white');
+INSERT INTO `index-time` VALUES (5, 'add login', '2023-07-19', 'success', 'white');
+INSERT INTO `index-time` VALUES (6, 'pack js', '2023-08-07', 'danger', 'white');
+INSERT INTO `index-time` VALUES (7, 'add language change', '2023-08-13', 'success', 'white');
+INSERT INTO `index-time` VALUES (8, 'add back to top button', '2023-09-14', 'success', 'white');
+INSERT INTO `index-time` VALUES (9, 'add change name and mark', '2023-09-15', 'success', 'white');
+INSERT INTO `index-time` VALUES (10, 'add safety page', '2023-09-19', 'success', 'white');
+INSERT INTO `index-time` VALUES (11, 'add some transition', '2023-09-22', 'success', 'white');
+INSERT INTO `index-time` VALUES (12, 'add sign up page', '2023-09-26', 'success', 'white');
+INSERT INTO `index-time` VALUES (13, 'add note show page', '2023-09-28', 'success', 'white');
+INSERT INTO `index-time` VALUES (14, 'change images to webp', '2023-10-07', 'danger', 'white');
+INSERT INTO `index-time` VALUES (15, 'add change head page', '2023-10-10', 'success', 'white');
+INSERT INTO `index-time` VALUES (16, 'add forun page', '2023-10-11', 'success', 'white');
+INSERT INTO `index-time` VALUES (17, 'update README', '2023-10-17', 'warning', 'white');
+INSERT INTO `index-time` VALUES (18, 'Register All Icons', '2023-10-20', 'danger', 'white');
+INSERT INTO `index-time` VALUES (19, 'add resources category', '2023-10-23', 'success', 'white');
+INSERT INTO `index-time` VALUES (20, 'add copy clipboard', '2023-10-24', 'success', 'white');
+INSERT INTO `index-time` VALUES (21, 'use interceptors and promise', '2023-10-25', 'danger', 'white');
 
 -- ----------------------------
 -- Table structure for notes
 -- ----------------------------
 DROP TABLE IF EXISTS `notes`;
 CREATE TABLE `notes`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL TYTLE',
-  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NO DESCRIPTION',
-  `category` int(10) NOT NULL DEFAULT 1,
-  `md` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL.md',
-  `visited` int(12) UNSIGNED NOT NULL DEFAULT 0,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL TYTLE' COMMENT '标题',
+  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NO DESCRIPTION' COMMENT '描述',
+  `category` int(10) NOT NULL DEFAULT 1 COMMENT '类别',
+  `md` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL.md' COMMENT '对应文件',
+  `visited` int(12) UNSIGNED NOT NULL DEFAULT 0 COMMENT '访问次数',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '笔记' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of notes
@@ -88,11 +121,11 @@ INSERT INTO `notes` VALUES (10, '番茄牛腩', '不加水的番茄牛腩 怎么
 -- ----------------------------
 DROP TABLE IF EXISTS `notes-category`;
 CREATE TABLE `notes-category`  (
-  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '内容',
+  `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '对应图标',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '笔记类别' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of notes-category
@@ -107,21 +140,21 @@ INSERT INTO `notes-category` VALUES (4, '做饭', 'KnifeFork');
 -- ----------------------------
 DROP TABLE IF EXISTS `page-visited`;
 CREATE TABLE `page-visited`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `page` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `visited` int(10) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `page` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '页面',
+  `visited` int(10) UNSIGNED NOT NULL COMMENT '访问次数',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '页面访问次数' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 288);
-INSERT INTO `page-visited` VALUES (2, 'index', 33);
+INSERT INTO `page-visited` VALUES (1, 'main', 300);
+INSERT INTO `page-visited` VALUES (2, 'index', 35);
 INSERT INTO `page-visited` VALUES (3, 'notes', 29);
-INSERT INTO `page-visited` VALUES (4, 'resources', 50);
+INSERT INTO `page-visited` VALUES (4, 'resources', 51);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 24);
+INSERT INTO `page-visited` VALUES (6, 'personal', 26);
 INSERT INTO `page-visited` VALUES (7, 'function', 13);
 
 -- ----------------------------
@@ -129,16 +162,16 @@ INSERT INTO `page-visited` VALUES (7, 'function', 13);
 -- ----------------------------
 DROP TABLE IF EXISTS `resources`;
 CREATE TABLE `resources`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL TYTLE',
-  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NO DESCRIPTION',
-  `category` int(10) NOT NULL DEFAULT -1,
-  `file` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL',
-  `visited` int(12) UNSIGNED NOT NULL DEFAULT 0,
-  `tag` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL',
-  `size` double NULL DEFAULT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL TYTLE' COMMENT '标题',
+  `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NO DESCRIPTION' COMMENT '描述',
+  `category` int(10) NOT NULL DEFAULT -1 COMMENT '类别',
+  `file` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL' COMMENT '对应文件',
+  `visited` int(12) UNSIGNED NOT NULL DEFAULT 0 COMMENT '访问次数',
+  `tag` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL' COMMENT '标签',
+  `size` double NULL DEFAULT NULL COMMENT '文件大小',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '资源' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of resources
@@ -159,11 +192,11 @@ INSERT INTO `resources` VALUES (10, 'VUE004.md', 'VUE传值文档的md文件', 1
 -- ----------------------------
 DROP TABLE IF EXISTS `resources-category`;
 CREATE TABLE `resources-category`  (
-  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `category` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'Menu',
+  `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `category` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '类别',
+  `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'Menu' COMMENT '对应图标',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '资源类别' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of resources-category
@@ -176,11 +209,11 @@ INSERT INTO `resources-category` VALUES (2, 'png', 'Menu');
 -- ----------------------------
 DROP TABLE IF EXISTS `tag`;
 CREATE TABLE `tag`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `uid` int(10) UNSIGNED NOT NULL,
-  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `uid` int(10) UNSIGNED NOT NULL COMMENT '对应用户ID',
+  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '内容',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户标签' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tag
@@ -197,16 +230,16 @@ INSERT INTO `tag` VALUES (6, 2, '114514');
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
-  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'head-main.webp',
-  `phonenumber` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `mark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL',
-  `status` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '用户名',
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '密码',
+  `avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'head-main.webp' COMMENT '头像',
+  `phonenumber` varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '电话号码',
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
+  `mark` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'NULL' COMMENT '个人描述',
+  `status` int(10) UNSIGNED NOT NULL DEFAULT 0 COMMENT '权限',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user
