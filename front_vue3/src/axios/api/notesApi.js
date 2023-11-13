@@ -14,3 +14,8 @@ export function getNoteById(params)
 {
     return get('/notes/getNoteById',params)
 }
+
+export function getAllNotesCategory(params)
+{
+    return get('/notes/getAllNotesCategory',params)
+}

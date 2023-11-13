@@ -2,6 +2,7 @@ package com.spring.back_springboot.services.serviceImpl;
 
 import com.spring.back_springboot.mapper.notesMapper;
 import com.spring.back_springboot.pojo.notes;
+import com.spring.back_springboot.pojo.notesCategory;
 import com.spring.back_springboot.services.service.notesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,4 +35,10 @@ public class notesServiceImpl implements notesService
 
     @Override
     public void addNoteVisit(int id) { mapper.addNoteVisit(id); }
+
+    @Override
+    public List<notesCategory> getAllNotesCategory()
+    {
+        return mapper.getAllNotesCategory();
+    }
 }

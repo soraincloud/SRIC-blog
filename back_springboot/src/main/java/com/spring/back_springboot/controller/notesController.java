@@ -1,6 +1,7 @@
 package com.spring.back_springboot.controller;
 
 import com.spring.back_springboot.pojo.notes;
+import com.spring.back_springboot.pojo.notesCategory;
 import com.spring.back_springboot.services.service.notesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,5 +35,12 @@ public class notesController
     {
         service.addNoteVisit(id);
         return service.GetNoteById(id);
+    }
+
+    @CrossOrigin
+    @GetMapping("/notes/getAllNotesCategory")
+    public List<notesCategory> getAllNotesCategory()
+    {
+        return service.getAllNotesCategory();
     }
 }

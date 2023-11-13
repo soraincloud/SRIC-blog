@@ -1,5 +1,6 @@
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
+import { getAllNotesCategory } from '@/axios/api/notesApi'
 
 const { t } = i18n.global
 const isDark = useDark()
@@ -13,28 +14,14 @@ export default
             category:
             [
                 {
+                    id: 0,
                     content: "全部",
                     icon: "Menu",
                 },
                 {
+                    id: -1,
                     content: "未分类",
                     icon: "QuestionFilled",
-                },
-                {
-                    content: "算法",
-                    icon: "Opportunity",
-                },
-                {
-                    content: "前端",
-                    icon: "Platform",
-                },
-                {
-                    content: "后端",
-                    icon: "Histogram",
-                },
-                {
-                    content: "做饭",
-                    icon: "KnifeFork",
                 },
             ],
             categoryNeed: ''
@@ -74,16 +61,26 @@ export default
         },
         choose(i)
         {
-            if(i == 0)
+            if(this.category[i].id == 0)
             {
                 this.$emit('loadAllNotesFormAside')
             }
             else
             {
-                this.categoryNeed = i
+                this.categoryNeed = this.category[i].id
                 this.$emit('loadNotesFromAside')
             }
         }
+    },
+    created()
+    {
+        var _this = this
+        getAllNotesCategory().then(function(resp){
+                for(let i = 0;i < resp.data.length;i++)
+                {
+                    _this.category.push(resp.data[i])
+                }
+        })
     },
     watch:
     {
@@ -91,10 +88,6 @@ export default
         {
             this.category[0].content = t('notes.all')
             this.category[1].content = t('notes.none')
-            this.category[2].content = t('notes.algorithm')
-            this.category[3].content = t('notes.front')
-            this.category[4].content = t('notes.back')
-            this.category[5].content = t('notes.cook')
         }
     },
 }
