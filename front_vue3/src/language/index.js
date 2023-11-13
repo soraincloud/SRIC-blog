@@ -15,6 +15,7 @@ const i18n = createI18n
 ({
     messages,
     locale: localStorage.getItem('language'),
+    globalInjection: true,
 })
 
 export default i18n

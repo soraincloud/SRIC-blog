@@ -92,4 +92,10 @@ export default
             this.catalogs[3].content = t('indexaside.time')
         }
     },
+    created()
+    {
+        this.catalogs[1].content = t('indexaside.used')
+        this.catalogs[2].content = t('indexaside.about')
+        this.catalogs[3].content = t('indexaside.time')
+    },
 }

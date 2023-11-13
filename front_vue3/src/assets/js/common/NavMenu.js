@@ -81,6 +81,12 @@ export default
             {
                 this.language = '2'
             }
+            this.navList[0].navItem = t('menu.index')
+            this.navList[1].navItem = t('menu.note')
+            this.navList[2].navItem = t('menu.resource')
+            this.navList[3].navItem = t('menu.forum')
+            this.navList[4].navItem = t('menu.personal')
+            this.navList[5].navItem = t('menu.functions')
         },
         switchSetting()
         {
