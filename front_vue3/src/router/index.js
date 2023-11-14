@@ -87,7 +87,12 @@ const routes =
         name: 'manageIndex',
         path: '/manageIndex',
         component: () => import('@/components/manage/ManageIndex'),
-      }
+      },
+      {
+        name: 'manageHome',
+        path: '/manageHome',
+        component: () => import('@/components/manage/ManageHome'),
+      },
     ]
   },
 ]
