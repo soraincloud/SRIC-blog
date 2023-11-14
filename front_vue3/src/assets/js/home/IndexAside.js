@@ -1,4 +1,5 @@
 import { useDark } from '@vueuse/core'
+import { getAllIndexHeadTitle } from '@/axios/api/homeApi'
 import i18n from '@/language'
 
 const { t } = i18n.global
@@ -34,7 +35,8 @@ export default
                     borders: 'border-color: rgba(255,255,255,0);',
                     backgrounds: '',
                 },
-            ]
+            ],
+            lang: localStorage.getItem('language'),
         }
     },
     methods:
@@ -82,14 +84,31 @@ export default
             }
             this.catalogs[i].backgrounds = 'background: rgba(252,204,204,0.64);'
         },
+        loadText()
+        {
+            lang = localStorage.getItem('language')
+            if(this.lang == 'zh')
+            {
+                this.catalogs[0].content = resp.data[0].text
+            }
+            else if(this.lang == 'en')
+            {
+                this.catalogs[0].content = resp.data[1].text
+            }
+            else if(this.lang == 'warma')
+            {
+                this.catalogs[0].content = resp.data[2].text
+            }
+            this.catalogs[1].content = t('indexaside.used')
+            this.catalogs[2].content = t('indexaside.about')
+            this.catalogs[3].content = t('indexaside.time')
+        },
     },
     watch:
     {
         '$i18n.locale'(newValue)
         {
-            this.catalogs[1].content = t('indexaside.used')
-            this.catalogs[2].content = t('indexaside.about')
-            this.catalogs[3].content = t('indexaside.time')
+            this.loadText
         }
     },
     created()
@@ -97,5 +116,20 @@ export default
         this.catalogs[1].content = t('indexaside.used')
         this.catalogs[2].content = t('indexaside.about')
         this.catalogs[3].content = t('indexaside.time')
+        var _this = this
+        getAllIndexHeadTitle().then(function(resp){
+            if(_this.lang == 'zh')
+            {
+                _this.catalogs[0].content = resp.data[0].text
+            }
+            else if(_this.lang == 'en')
+            {
+                _this.catalogs[0].content = resp.data[1].text
+            }
+            else if(_this.lang == 'warma')
+            {
+                _this.catalogs[0].content = resp.data[2].text
+            }
+        })
     },
 }

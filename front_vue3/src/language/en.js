@@ -22,11 +22,6 @@ export default
         about: 'about',
         time: 'update',
     },
-    indexhead:
-    {
-        welcome: 'welcome to my blog ! ( ＾∀＾)/',
-        maybe: 'Maybe we have a lot of interesting stuff, so lets start now !',
-    },
     indexabout:
     {
         about0: 'welcome to my blog ! ( ＾∀＾)/',

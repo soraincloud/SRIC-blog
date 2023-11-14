@@ -22,11 +22,6 @@ export default
         about: '有关东西',
         time: '时间更新',
     },
-    indexhead:
-    {
-        welcome: '欢赢来到我的展示地 ! ( ＾∀＾)/',
-        maybe: '或栩会有多多有意思的西东, 现在就开使吧 !',
-    },
     indexabout:
     {
         about0: '欢营来到沃的展示地 ! ( ＾∀＾)/',

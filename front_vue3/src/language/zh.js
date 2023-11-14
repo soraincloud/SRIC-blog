@@ -22,11 +22,6 @@ export default
         about: '关于',
         time: '近期活动',
     },
-    indexhead:
-    {
-        welcome: '欢迎来到我的博客 ! ( ＾∀＾)/ \n114514',
-        maybe: '或许会有很多有意思的东西, 现在就开始吧 !',
-    },
     indexabout:
     {
         about0: '欢迎来到我的博客 ! ( ＾∀＾)/',
