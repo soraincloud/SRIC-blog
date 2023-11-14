@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 13/11/2023 21:13:21
+ Date: 14/11/2023 11:19:51
 */
 
 SET NAMES utf8mb4;
@@ -92,6 +92,23 @@ INSERT INTO `index-time` VALUES (20, 'add copy clipboard', '2023-10-24', 'succes
 INSERT INTO `index-time` VALUES (21, 'use interceptors and promise', '2023-10-25', 'danger', 'white');
 
 -- ----------------------------
+-- Table structure for manage-navlist
+-- ----------------------------
+DROP TABLE IF EXISTS `manage-navlist`;
+CREATE TABLE `manage-navlist`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '菜单名',
+  `navItem` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜单文字',
+  `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '对应图标',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '管理页面动态菜单' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of manage-navlist
+-- ----------------------------
+INSERT INTO `manage-navlist` VALUES (1, 'manageHome', '主页管理', 'HomeFilled');
+
+-- ----------------------------
 -- Table structure for notes
 -- ----------------------------
 DROP TABLE IF EXISTS `notes`;
@@ -152,8 +169,8 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 342);
-INSERT INTO `page-visited` VALUES (2, 'index', 77);
+INSERT INTO `page-visited` VALUES (1, 'main', 367);
+INSERT INTO `page-visited` VALUES (2, 'index', 100);
 INSERT INTO `page-visited` VALUES (3, 'notes', 30);
 INSERT INTO `page-visited` VALUES (4, 'resources', 52);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
