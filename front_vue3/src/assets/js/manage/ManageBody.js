@@ -82,7 +82,7 @@ export default
                                             }
                                         },
                                         {
-                                            percent: 0.9,
+                                            percent: 1,
                                             style: {
                                                 fill: 'rgba(255,255,255,0)',
                                             }

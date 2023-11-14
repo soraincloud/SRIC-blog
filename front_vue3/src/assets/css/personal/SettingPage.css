@@ -8,12 +8,12 @@
 
 .el-input__wrapper.is-focus
 {
-    box-shadow: 0 0 0 1px #ffcccc;
+    box-shadow: 0 0 0 1px #ff8f8f;
 }
 
 .el-input-group__append
 {
-    box-shadow: 0 0 0 1px #ffcccc;
+    box-shadow: 0 0 0 1px #ff8f8f;
 }
 
 .SettingPage-input-div-style

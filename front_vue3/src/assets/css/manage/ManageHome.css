@@ -1,0 +1,46 @@
+.manageHome-el-card
+{
+    margin-top: 10px;
+    background-color: rgba(0,0,0,0);
+}
+
+.el-tabs__item.is-active
+{
+    color: #39c5bb;
+}
+
+.el-tabs__item:hover
+{
+    color: #39c5bb;
+}
+
+.el-tabs__item
+{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.el-tabs__active-bar
+{
+    background-color: #39c5bb;
+}
+
+.el-input__wrapper
+{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.el-textarea__inner
+{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.el-input__wrapper.is-focus
+{
+    box-shadow:0 0 0 1px #39c5bb inset;
+}
+
+.el-textarea__inner:focus
+{
+    box-shadow:0 0 0 1px #39c5bb inset;
+}

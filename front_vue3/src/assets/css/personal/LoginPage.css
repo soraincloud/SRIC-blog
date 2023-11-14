@@ -28,7 +28,7 @@
 
 .el-input__wrapper.is-focus
 {
-    box-shadow: 0 0 0 1px #ffcccc;
+    box-shadow: 0 0 0 1px #ff8f8f;
 }
 
 .LoginPage-submit-button-style
