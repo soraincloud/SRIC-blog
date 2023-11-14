@@ -1,3 +1,4 @@
+import { getAllManageMenu } from '@/axios/api/manageApi'
 import i18n from '@/language'
 
 const { t } = i18n.global
@@ -13,6 +14,7 @@ export default
             navList: 
             [
                 {
+                    id: 0,
                     name: 'manageIndex',
                     navItem: '后台管理',
                     icon: 'Menu',
@@ -41,6 +43,13 @@ export default
     {
         this.defaultActive = this.$route.name;
         this.navList[0].navItem = t('manageMenu.manage')
+        var _this = this
+        getAllManageMenu().then(function(resp){
+            for(let i = 0;i < resp.data.length;i++)
+            {
+                _this.navList.push(resp.data[i])
+            }
+        })
     },
     watch:
     {

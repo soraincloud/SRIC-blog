@@ -1,8 +1,10 @@
 package com.spring.back_springboot.controller;
 
 import com.spring.back_springboot.pojo.manageIndexData;
+import com.spring.back_springboot.pojo.manageMenuList;
 import com.spring.back_springboot.pojo.pageVisitedChart;
 import com.spring.back_springboot.services.service.indexTimeService;
+import com.spring.back_springboot.services.service.manageMenuService;
 import com.spring.back_springboot.services.service.pageVisitedService;
 import com.spring.back_springboot.services.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,8 @@ public class manageController
     userService userService;
     @Autowired
     indexTimeService indexTimeService;
+    @Autowired
+    manageMenuService manageMenuService;
 
     @CrossOrigin
     @GetMapping("/manage/getManageIndexData")
@@ -52,5 +56,12 @@ public class manageController
             days = (int)(num/24/60/60/1000);
         }catch(ParseException e) {e.printStackTrace();}
         return new manageIndexData(visits,users,days,pages,pvc);
+    }
+
+    @CrossOrigin
+    @GetMapping("/manage/getAllManageMenu")
+    public List<manageMenuList> getAllManageMenu()
+    {
+        return manageMenuService.getAllManageMenu();
     }
 }

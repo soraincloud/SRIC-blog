@@ -76,10 +76,10 @@ export default
     {
         var _this = this
         getAllResourcesCategory().then(function(resp){
-                for(let i = 0;i < resp.data.length;i++)
-                {
-                    _this.category.push(resp.data[i])
-                }
+            for(let i = 0;i < resp.data.length;i++)
+            {
+                _this.category.push(resp.data[i])
+            }
         })
     },
     watch:
