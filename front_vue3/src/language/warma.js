@@ -1,5 +1,11 @@
 export default
 {
+    common:
+    {
+        submit: '交了',
+        save: '存好',
+        cances: '弃了',
+    },
     menu:
     {
         index: '初见页',

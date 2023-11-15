@@ -1,5 +1,11 @@
 export default
 {
+    common:
+    {
+        submit: '提交',
+        save: '保存',
+        cancel: '取消',
+    },
     menu:
     {
         index: '首页',

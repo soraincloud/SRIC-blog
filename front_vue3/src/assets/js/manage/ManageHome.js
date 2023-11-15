@@ -1,4 +1,4 @@
-import { getAllIndexHeadTitle,getAllIndexHead } from "@/axios/api/homeApi"
+import { getAllIndexHeadTitle,getAllIndexHead,setIndexHead,setIndexHeadTitle } from "@/axios/api/homeApi"
 
 export default
 {
@@ -52,6 +52,34 @@ export default
                 this.indexHead = this.indexHeadData[2].text
             }
         },
+        headTitleBlur()
+        {
+            if(this.langNow == 'zh')
+            {
+                this.indexHeadTitleData[0].text = this.indexHeadTitle
+            }
+            else if(this.langNow == 'en')
+            {
+                this.indexHeadTitleData[1].text = this.indexHeadTitle
+            }else if(this.langNow == 'warma')
+            {
+                this.indexHeadTitleData[2].text = this.indexHeadTitle
+            }
+        },
+        headBlur()
+        {
+            if(this.langNow == 'zh')
+            {
+                this.indexHeadData[0].text = this.indexHead
+            }
+            else if(this.langNow == 'en')
+            {
+                this.indexHeadData[1].text = this.indexHead
+            }else if(this.langNow == 'warma')
+            {
+                this.indexHeadData[2].text = this.indexHead
+            }
+        }
     },
     created()
     {

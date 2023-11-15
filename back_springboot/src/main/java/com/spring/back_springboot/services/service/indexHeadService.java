@@ -8,4 +8,6 @@ public interface indexHeadService
 {
     List<languageText> getAllIndexHead();
     List<languageText> getAllIndexHeadTitle();
+    void setIndexHead(List<languageText> list);
+    void setIndexHeadTitle(List<languageText> list);
 }

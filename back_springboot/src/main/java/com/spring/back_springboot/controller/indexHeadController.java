@@ -3,10 +3,7 @@ package com.spring.back_springboot.controller;
 import com.spring.back_springboot.pojo.languageText;
 import com.spring.back_springboot.services.service.indexHeadService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +26,19 @@ public class indexHeadController
     public List<languageText> getAllIndexHeadTitle()
     {
         return service.getAllIndexHeadTitle();
+    }
+
+    @CrossOrigin
+    @PostMapping("/home/setIndexHead")
+    public void setIndexHead(@RequestBody List<languageText> list)
+    {
+        service.setIndexHead(list);
+    }
+
+    @CrossOrigin
+    @PostMapping("/home/setIndexHeadTitle")
+    public void setIndexHeadTitle(@RequestBody List<languageText> list)
+    {
+        service.setIndexHeadTitle(list);
     }
 }

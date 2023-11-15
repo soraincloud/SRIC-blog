@@ -14,3 +14,13 @@ export function getAllIndexHeadTitle(params)
 {
     return get('/home/getAllIndexHeadTitle',params)
 }
+
+export function setIndexHead(params)
+{
+    return post('/home/setIndexHead',params)
+}
+
+export function setIndexHeadTitle(params)
+{
+    return post('/home/setIndexHeadTitle',params)
+}

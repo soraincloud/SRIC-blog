@@ -24,13 +24,21 @@
                     show-word-limit
                     type="text"
                     style="margin-bottom: 10px"
+                    @blur="headTitleBlur"
                 />
                 <el-input
                     v-model="indexHead"
                     maxlength="100"
                     show-word-limit
                     type="textarea"
+                    @blur="headBlur"
                 />
+                <el-button
+                    @click="clickHeadSubmit()"
+                    type="danger"
+                    class="manageHome-submit-button"
+                    plain
+                >{{ $t('common.submit') }}</el-button>
             </el-card>
         </el-card>
     </div>

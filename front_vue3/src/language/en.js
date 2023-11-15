@@ -1,5 +1,11 @@
 export default
 {
+    common:
+    {
+        submit: 'submit',
+        save: 'save',
+        cancel: 'cancel',
+    },
     menu:
     {
         index: 'HOME',
