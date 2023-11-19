@@ -4,7 +4,11 @@ export default
     {
         submit: 'submit',
         save: 'save',
+        apply: 'apply',
         cancel: 'cancel',
+        submitText: 'submit your changes',
+        applyText: 'sure to apply ?',
+        applySuccess: 'apply success',
     },
     menu:
     {

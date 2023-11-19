@@ -20,7 +20,7 @@ export function post(url,params)
         method: 'post',
         url: `${url}`,
         data: params,
-        header:{ 'Content-Type':'application/json' }
+        header:{ "Content-Type":"application/json" }
     })
 }
 

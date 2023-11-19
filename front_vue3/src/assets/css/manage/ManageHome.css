@@ -4,6 +4,11 @@
     background-color: rgba(0,0,0,0);
 }
 
+html.dark .manageHome-el-card
+{
+    background-color: rgba(0,0,0,0.5);
+}
+
 .el-tabs__item.is-active
 {
     color: #39c5bb;
@@ -49,4 +54,12 @@
 {
     box-shadow: 0 0 0 1px #000000;
     margin-top: 10px;
+}
+
+.manageHome-submit-text
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 15px;
+    margin-left: 10px;
 }

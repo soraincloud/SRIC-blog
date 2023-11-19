@@ -1,5 +1,7 @@
 import { getAllIndexHeadTitle,getAllIndexHead,setIndexHead,setIndexHeadTitle } from "@/axios/api/homeApi"
+import i18n from '@/language'
 
+const { t } = i18n.global
 export default
 {
     name: 'ManageHome',
@@ -13,6 +15,8 @@ export default
             indexHeadData: [],
             headActiveTabs: 'zh',
             langNow: 'zh',
+            headSubmit: false,
+            headSubmitText: '',
         }
     },
     methods:
@@ -79,6 +83,25 @@ export default
             {
                 this.indexHeadData[2].text = this.indexHead
             }
+        },
+        clickHeadSubmit()
+        {
+            this.headSubmit = true
+            this.headSubmitText = t('common.applyText')
+        },
+        clickHeadApply()
+        {
+            setIndexHeadTitle(this.indexHeadTitleData).then()
+            setIndexHead(this.indexHeadData).then(
+                this.$message.success({message: t('common.applySuccess'),}),
+                this.headSubmit = false,
+                this.headSubmitText = t('common.submitText'),
+                )
+        },
+        clickHeadCancel()
+        {
+            this.headSubmit = false
+            this.headSubmitText = t('common.submitText')
         }
     },
     created()
@@ -92,5 +115,6 @@ export default
             _this.indexHeadData = resp.data
             _this.indexHead = resp.data[0].text
         })
+        this.headSubmitText = t('common.submitText')
     }
 }

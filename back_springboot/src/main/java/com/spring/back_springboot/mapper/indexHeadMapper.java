@@ -17,10 +17,10 @@ public interface indexHeadMapper
     @Select(value = "SELECT * FROM `index-head-title`")
     List<languageText> getAllIndexHeadTitle();
 
-    @Update(value = "UPDATE `index-head-title` SET text = #{text} WHERE ID = #{id}")
+    @Update(value = "UPDATE `index-head` SET text = #{text} WHERE ID = #{id}")
     void setIndexHeadById(@Param(value = "text") String text, @Param(value = "id") int id);
 
-    @Update(value = "UPDATE `index-head` SET text = #{text} WHERE ID = #{id}")
+    @Update(value = "UPDATE `index-head-title` SET text = #{text} WHERE ID = #{id}")
     void setIndexHeadTitleById(@Param(value = "text") String text, @Param(value = "id") int id);
 
 }

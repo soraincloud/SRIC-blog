@@ -34,18 +34,18 @@ public class indexHeadServiceImpl implements indexHeadService
     @Override
     public void setIndexHead(List<languageText> list)
     {
-        for(int i = 1;i <= list.size();i++)
+        for(int i = 0;i < list.size();i++)
         {
-            mapper.setIndexHeadById(list.get(i).getText(),i);
+            mapper.setIndexHeadById(list.get(i).getText(),i + 1);
         }
     }
 
     @Override
     public void setIndexHeadTitle(List<languageText> list)
     {
-        for(int i = 1;i <= list.size();i++)
+        for(int i = 0;i < list.size();i++)
         {
-            mapper.setIndexHeadById(list.get(i).getText(),i);
+            mapper.setIndexHeadTitleById(list.get(i).getText(),i + 1);
         }
     }
 }

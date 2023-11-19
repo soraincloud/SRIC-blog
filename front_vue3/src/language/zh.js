@@ -4,7 +4,11 @@ export default
     {
         submit: '提交',
         save: '保存',
+        apply: '确定',
         cancel: '取消',
+        submitText: '提交你的修改',
+        applyText: '确定提交吗 ?',
+        applySuccess: '提交成功',
     },
     menu:
     {
