@@ -12,9 +12,7 @@
 .ManageIndex-el-card
 {
     width: 100%;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 10px;
     font-weight: bold;
     background-color: rgba(0,0,0,0);
 }

@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : mysql
+ Source Server         : test-connect
  Source Server Type    : MySQL
  Source Server Version : 50742
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 20/11/2023 12:20:11
+ Date: 20/11/2023 15:35:26
 */
 
 SET NAMES utf8mb4;
@@ -23,10 +23,10 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `index-about`;
 CREATE TABLE `index-about`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `language` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '语言',
+  `language` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '' COMMENT '语言',
   `text` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '对应文字',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '主页关于文字' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '主页关于文字' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of index-about
@@ -49,9 +49,9 @@ CREATE TABLE `index-head`  (
 -- ----------------------------
 -- Records of index-head
 -- ----------------------------
-INSERT INTO `index-head` VALUES (1, 'zh', '欢迎来到我的博客 ! ( ＾∀＾)/或许会有很多有意思的东西, 现在就开始吧 !');
-INSERT INTO `index-head` VALUES (2, 'en', 'welcome to my blog ! ( ＾∀＾)/Maybe we have a lot of interesting stuff, so lets start now !');
-INSERT INTO `index-head` VALUES (3, 'warma', '欢赢来到我的展示地 ! ( ＾∀＾)/或栩会有多多有意思的西东, 现在就开使吧 !');
+INSERT INTO `index-head` VALUES (1, 'zh', '欢迎来到我的博客 ! ( ＾∀＾)/\n或许会有很多有意思的东西, 现在就开始吧 !');
+INSERT INTO `index-head` VALUES (2, 'en', 'welcome to my blog ! ( ＾∀＾)/\nMaybe we have a lot of interesting stuff, so lets start now !');
+INSERT INTO `index-head` VALUES (3, 'warma', '欢赢来到我的展示地 ! ( ＾∀＾)/\n或栩会有多多有意思的西东, 现在就开使吧 !');
 
 -- ----------------------------
 -- Table structure for index-head-title
@@ -187,12 +187,12 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 436);
-INSERT INTO `page-visited` VALUES (2, 'index', 109);
+INSERT INTO `page-visited` VALUES (1, 'main', 462);
+INSERT INTO `page-visited` VALUES (2, 'index', 123);
 INSERT INTO `page-visited` VALUES (3, 'notes', 32);
 INSERT INTO `page-visited` VALUES (4, 'resources', 54);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 34);
+INSERT INTO `page-visited` VALUES (6, 'personal', 35);
 INSERT INTO `page-visited` VALUES (7, 'function', 16);
 
 -- ----------------------------

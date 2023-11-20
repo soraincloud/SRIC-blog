@@ -6,7 +6,7 @@ export default
         save: '存好',
         apply: '确是',
         cances: '弃了',
-        submitText: '上定逆的改改',
+        submitText: '上定这里改改',
         applyText: '确是上交蟆 ?',
         applySuccess: '上交成力',
     },

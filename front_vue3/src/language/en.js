@@ -6,7 +6,7 @@ export default
         save: 'save',
         apply: 'apply',
         cancel: 'cancel',
-        submitText: 'submit your changes',
+        submitText: 'submit these changes',
         applyText: 'sure to apply ?',
         applySuccess: 'apply success',
     },
