@@ -24,6 +24,8 @@ export default
             indexAboutData: [],
             aboutActiveTabs: 'zh',
             aboutLangNow: 'zh',
+            aboutSubmit: false,
+            aboutSubmitText: '',
         }
     },
     methods:
@@ -138,7 +140,39 @@ export default
                 this.indexAbout = this.indexAboutData[2].text
                 this.indexAboutTitle = "有关东西"
             }
-        }
+        },
+        aboutBlur()
+        {
+            if(this.aboutLangNow == 'zh')
+            {
+                this.indexAboutData[0].text = this.indexAbout
+            }
+            else if(this.aboutLangNow == 'en')
+            {
+                this.indexAboutData[1].text = this.indexAbout
+            }else if(this.aboutLangNow == 'warma')
+            {
+                this.indexAboutData[2].text = this.indexAbout
+            }
+        },
+        clickAboutSubmit()
+        {
+            this.aboutSubmit = true
+            this.aboutSubmitText = t('common.applyText')
+        },
+        clickAboutApply()
+        {
+            setIndexAbout(this.indexAboutData).then(
+                this.$message.success({message: t('common.applySuccess'),}),
+                this.aboutSubmit = false,
+                this.aboutSubmitText = t('common.submitText'),
+                )
+        },
+        clickAboutCancel()
+        {
+            this.aboutSubmit = false
+            this.aboutSubmitText = t('common.submitText')
+        },
     },
     created()
     {
