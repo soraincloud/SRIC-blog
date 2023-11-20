@@ -190,6 +190,7 @@ export default
             _this.indexAboutData = resp.data
             _this.indexAbout = resp.data[0].text
         })
+        this.aboutSubmitText = t('common.submitText')
         this.indexAboutTitle = "关于"
     },
     mounted()
@@ -197,6 +198,28 @@ export default
         window.onresize = () => 
         {
             this.bodyHeight = (window.innerHeight - 70) + 'px'
+        }
+    },
+    watch:
+    {
+        '$i18n.locale'(newValue)
+        {
+            if(this.headSubmit == false)
+            {
+                this.headSubmitText = t('common.submitText')
+            }
+            else
+            {
+                this.headSubmitText = t('common.applyText')
+            }
+            if(this.aboutSubmit == false)
+            {
+                this.aboutSubmitText = t('common.submitText')
+            }
+            else
+            {
+                this.aboutSubmitText = t('common.applyText')
+            }
         }
     },
 }

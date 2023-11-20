@@ -32,9 +32,9 @@
                         class="manageHome-submit-button" plain>
                         {{ $t("common.cancel") }}
                     </el-button>
-                    <span class="manageHome-submit-text">{{
-                        headSubmitText
-                    }}</span>
+                    <span class="manageHome-submit-text">
+                        {{ headSubmitText }}
+                    </span>
                 </el-card>
                 <h1 class="ManageHome-h1-text">{{ $t("manageHome.about") }}</h1>
                 <div @mouseover="mouseOver(1)" @mouseleave="mouseLeave(1)" class="IndexAbout-outside-div-style">
@@ -66,9 +66,9 @@
                         class="manageHome-submit-button" plain>
                         {{ $t("common.cancel") }}
                     </el-button>
-                    <span class="manageHome-submit-text">{{
-                        headSubmitText
-                    }}</span>
+                    <span class="manageHome-submit-text">
+                        {{ aboutSubmitText }}
+                    </span>
                 </el-card>
             </el-card>
         </div>
