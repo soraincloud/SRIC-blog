@@ -24,3 +24,13 @@ export function setIndexHeadTitle(params)
 {
     return post('/home/setIndexHeadTitle',params)
 }
+
+export function getAllIndexAbout(params)
+{
+    return get('/home/getAllIndexAbout',params)
+}
+
+export function setIndexAbout(params)
+{
+    return post('/home/setIndexAbout',params)
+}
