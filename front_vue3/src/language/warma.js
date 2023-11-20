@@ -129,4 +129,9 @@ export default
     {
         manage: '站站管地',
     },
+    manageHome:
+    {
+        head: '编改头题',
+        about: '编改卡容',
+    },
 }

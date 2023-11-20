@@ -129,4 +129,9 @@ export default
     {
         manage: 'management',
     },
+    manageHome:
+    {
+        head: 'edit title',
+        about: 'edit card',
+    },
 }

@@ -130,4 +130,9 @@ export default
     {
         manage: '后台管理',
     },
+    manageHome:
+    {
+        head: '编辑标题',
+        about: '编辑卡片',
+    },
 }

@@ -2,6 +2,7 @@
     <el-scrollbar :height="bodyHeight">
         <div class="ManageIndex-out-div">
             <el-card class="ManageIndex-el-card">
+                <h1 class="ManageHome-h1-text">{{ $t("manageHome.head") }}</h1>
                 <div @mouseover="mouseOver(0)" @mouseleave="mouseLeave(0)" class="IndexHeadWarmaGood">
                     <el-card class="common-with-back-el-card-style" :style="card0">
                         <h1 class="common-text-style">{{ indexHeadTitle }}</h1>
@@ -35,6 +36,7 @@
                         headSubmitText
                     }}</span>
                 </el-card>
+                <h1 class="ManageHome-h1-text">{{ $t("manageHome.about") }}</h1>
                 <div @mouseover="mouseOver(1)" @mouseleave="mouseLeave(1)" class="IndexAbout-outside-div-style">
                     <el-card class="common-with-back-el-card-style" :style="card1">
                         <h1 class="common-text-style">

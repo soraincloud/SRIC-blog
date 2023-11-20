@@ -33,14 +33,17 @@ export default
             if(lang == 0)
             {
                 this.$i18n.locale = 'zh'
+                localStorage.setItem('language','zh')
             }
             else if(lang == 1)
             {
                 this.$i18n.locale = 'en'
+                localStorage.setItem('language','en')
             }
             else if(lang == 2)
             {
                 this.$i18n.locale = 'warma'
+                localStorage.setItem('language','warma')
             }
         },
         switchSetting()
