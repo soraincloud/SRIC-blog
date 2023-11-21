@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : test-connect
+ Source Server         : mysql
  Source Server Type    : MySQL
  Source Server Version : 50742
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 50742
  File Encoding         : 65001
 
- Date: 20/11/2023 15:35:26
+ Date: 21/11/2023 22:46:17
 */
 
 SET NAMES utf8mb4;
@@ -32,7 +32,7 @@ CREATE TABLE `index-about`  (
 -- Records of index-about
 -- ----------------------------
 INSERT INTO `index-about` VALUES (1, 'zh', '欢迎来到我的博客 ! ( ＾∀＾)/\r\n它由 VUE3 与 springboot 实现\r\n应该会写一些小文章在这里, 记录一下\r\n不过或许我想多做一些东西在博客里面\r\n所以关于文章的内容并不会出现在这个首页 ~\r\n这里就是一些展示和很多奇奇怪怪的东西\r\n新功能应该会不断出现在顶部的导航栏\r\n快逛逛吧 ~ (>▽');
-INSERT INTO `index-about` VALUES (2, 'en', 'welcome to my blog ! ( ＾∀＾)/\r\nit is implenented by VUE3 and springboot\r\nI will write some note here to have a record\r\nbut maybe i want to put more things in it\r\nso all things about note will not be put in here ~\r\nthis place is just for showing some interesting things\r\nnew things will come right in navMenu\r\njust have fun ~ (>▽');
+INSERT INTO `index-about` VALUES (2, 'en', 'welcome to my blog ! ( ＾∀＾)/\nit is implenented by VUE3 and springboot\nI will write some note here to have a record\nbut maybe i want to put more things in it\nso all things about note will not be put in here ~\nthis place is just for showing some interesting things\nnew things will come right in navMenu\njust have fun ~ (>▽');
 INSERT INTO `index-about` VALUES (3, 'warma', '欢营来到沃的展示地 ! ( ＾∀＾)/\r\n它用 VUE3 与 springboot 做真\r\n鹰该会写一些小记字在这里, 划标一下\r\n不过货许我想多做一些西东在展示地里面\r\n所以有意思与文章的容内并不会出现在这个初见页 ~\r\n这里就世一些示出和很多齐齐怪怪的西东\r\n新工能应该会不断出现在头上的指路栏\r\n快咣咣吧 ~ (>▽');
 
 -- ----------------------------
@@ -119,12 +119,13 @@ CREATE TABLE `manage-navlist`  (
   `navItem` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '菜单文字',
   `icon` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '对应图标',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '管理页面动态菜单' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '管理页面动态菜单' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of manage-navlist
 -- ----------------------------
 INSERT INTO `manage-navlist` VALUES (1, 'manageHome', '主页管理', 'HomeFilled');
+INSERT INTO `manage-navlist` VALUES (2, 'manageTime', '日志管理', 'InfoFilled');
 
 -- ----------------------------
 -- Table structure for notes
@@ -187,8 +188,8 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 462);
-INSERT INTO `page-visited` VALUES (2, 'index', 123);
+INSERT INTO `page-visited` VALUES (1, 'main', 515);
+INSERT INTO `page-visited` VALUES (2, 'index', 140);
 INSERT INTO `page-visited` VALUES (3, 'notes', 32);
 INSERT INTO `page-visited` VALUES (4, 'resources', 54);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
