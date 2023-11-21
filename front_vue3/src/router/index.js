@@ -93,6 +93,11 @@ const routes =
         path: '/manageHome',
         component: () => import('@/components/manage/ManageHome'),
       },
+      {
+        name: 'manageTime',
+        path: '/manageTime',
+        component: () => import('@/components/manage/ManageTime'),
+      },
     ]
   },
 ]
