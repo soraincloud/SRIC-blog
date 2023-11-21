@@ -12,6 +12,8 @@ export default
             indexHeadTitle: '',
             indexHead: '',
             lang: localStorage.getItem('language'),
+            indexHeadTitleData: [],
+            indexHeadData: [],
         }
     },
     methods:
@@ -36,18 +38,18 @@ export default
             this.lang = localStorage.getItem('language')
             if(this.lang == 'zh')
             {
-                this.indexHeadTitle = this.$store.getters.getIndexHeadTitleZh
-                this.indexHead = this.$store.getters.getIndexHeadZh
+                this.indexHeadTitle = this.indexHeadTitleData[0].text
+                this.indexHead = this.indexHeadData[0].text
             }
             else if(this.lang == 'en')
             {
-                this.indexHeadTitle = this.$store.getters.getIndexHeadTitleEn
-                this.indexHead = this.$store.getters.getIndexHeadEn
+                this.indexHeadTitle = this.indexHeadTitleData[1].text
+                this.indexHead = this.indexHeadData[1].text
             }
             else if(this.lang == 'warma')
             {
-                this.indexHeadTitle = this.$store.getters.getIndexHeadTitleWarma
-                this.indexHead = this.$store.getters.getIndexHeadWarma
+                this.indexHeadTitle = this.indexHeadTitleData[2].text
+                this.indexHead = this.indexHeadData[2].text
             }
         },
     },
@@ -55,9 +57,7 @@ export default
     {
         var _this = this;
         getAllIndexHeadTitle().then(function(resp){
-            _this.$store.commit('setIndexHeadTitleZh',resp.data[0].text)
-            _this.$store.commit('setIndexHeadTitleEn',resp.data[1].text)
-            _this.$store.commit('setIndexHeadTitleWarma',resp.data[2].text)
+            _this.indexHeadTitleData = resp.data
             if(_this.lang == 'zh')
             {
                 _this.indexHeadTitle = resp.data[0].text
@@ -72,9 +72,7 @@ export default
             }
         })
         getAllIndexHead().then(function(resp){
-            _this.$store.commit('setIndexHeadZh',resp.data[0].text)
-            _this.$store.commit('setIndexHeadEn',resp.data[1].text)
-            _this.$store.commit('setIndexHeadWarma',resp.data[2].text)
+            _this.indexHeadData = resp.data
             if(_this.lang == 'zh')
             {
                 _this.indexHead = resp.data[0].text

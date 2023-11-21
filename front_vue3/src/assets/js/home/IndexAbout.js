@@ -11,6 +11,7 @@ export default
             active: '',
             indexAbout: '',
             lang: localStorage.getItem('language'),
+            indexAboutData: [],
         }
     },
     methods:
@@ -35,15 +36,15 @@ export default
             this.lang = localStorage.getItem('language')
             if(this.lang == 'zh')
             {
-                this.indexAbout = this.$store.getters.getIndexAboutZh
+                this.indexAbout = this.indexAboutData[0].text
             }
             else if(this.lang == 'en')
             {
-                this.indexAbout = this.$store.getters.getIndexAboutEn
+                this.indexAbout = this.indexAboutData[1].text
             }
             else if(this.lang == 'warma')
             {
-                this.indexAbout = this.$store.getters.getIndexAboutWarma
+                this.indexAbout = this.indexAboutData[2].text
             }
         },
     },
@@ -51,9 +52,7 @@ export default
     {
         var _this = this
         getAllIndexAbout().then(function(resp){
-            _this.$store.commit('setIndexAboutZh',resp.data[0].text)
-            _this.$store.commit('setIndexAboutEn',resp.data[1].text)
-            _this.$store.commit('setIndexAboutWarma',resp.data[2].text)
+            _this.indexAboutData = resp.data
             if(_this.lang == 'zh')
             {
                 _this.indexAbout = resp.data[0].text

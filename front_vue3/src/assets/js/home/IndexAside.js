@@ -37,6 +37,7 @@ export default
                 },
             ],
             lang: localStorage.getItem('language'),
+            indexHeadTitleData: [],
         }
     },
     methods:
@@ -86,18 +87,18 @@ export default
         },
         loadText()
         {
-            lang = localStorage.getItem('language')
+            this.lang = localStorage.getItem('language')
             if(this.lang == 'zh')
             {
-                this.catalogs[0].content = resp.data[0].text
+                this.catalogs[0].content = this.indexHeadTitleData[0].text
             }
             else if(this.lang == 'en')
             {
-                this.catalogs[0].content = resp.data[1].text
+                this.catalogs[0].content = this.indexHeadTitleData[1].text
             }
             else if(this.lang == 'warma')
             {
-                this.catalogs[0].content = resp.data[2].text
+                this.catalogs[0].content = this.indexHeadTitleData[2].text
             }
             this.catalogs[1].content = t('indexaside.used')
             this.catalogs[2].content = t('indexaside.about')
@@ -108,7 +109,7 @@ export default
     {
         '$i18n.locale'(newValue)
         {
-            this.loadText
+            this.loadText()
         }
     },
     created()
@@ -118,6 +119,7 @@ export default
         this.catalogs[3].content = t('indexaside.time')
         var _this = this
         getAllIndexHeadTitle().then(function(resp){
+            _this.indexHeadTitleData = resp.data
             if(_this.lang == 'zh')
             {
                 _this.catalogs[0].content = resp.data[0].text
