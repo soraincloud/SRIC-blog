@@ -9,6 +9,11 @@ export default
         submitText: 'submit these changes',
         applyText: 'sure to apply ?',
         applySuccess: 'apply success',
+        edit: 'edit',
+        delete: 'delete',
+        text: 'text',
+        time: 'time',
+        color: 'color',
     },
     menu:
     {

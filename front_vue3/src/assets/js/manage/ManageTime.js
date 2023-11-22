@@ -9,8 +9,9 @@ export default
     {
         return{
             bodyHeight: (window.innerHeight - 60) + 'px',
-            timeline:[],
+            timeline: [],
             active: '',
+            timelineCard: [],
         }
     },
     mounted()
@@ -26,6 +27,10 @@ export default
         getIndexTimeList().then(function(resp){
             _this.timeline = resp.data
             _this.loading = false
+            for(let i = 0;i < resp.data.length;i++)
+            {
+                _this.timelineCard[i] = { height: 'height: 0px;' }
+            }
         })
     },
     methods:
@@ -44,6 +49,17 @@ export default
         mouseLeave()
         {
             this.active = ''
+        },
+        clickEdit(i)
+        {
+            var divObject = document.getElementById("manageTime-card-div-id")
+            var divHeight = divObject.offsetHeight
+            console.log(divHeight)
+            this.timelineCard[i].height = 'height: ' + (divHeight + 60) + 'px;'
+        },
+        clickDelete(i)
+        {
+
         },
     },
 }

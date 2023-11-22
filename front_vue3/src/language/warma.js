@@ -9,6 +9,11 @@ export default
         submitText: '上定这里改改',
         applyText: '确是上交蟆 ?',
         applySuccess: '上交成力',
+        edit: '改改',
+        delete: '删掉',
+        text: '文写',
+        time: '时候',
+        color: '色色',
     },
     menu:
     {

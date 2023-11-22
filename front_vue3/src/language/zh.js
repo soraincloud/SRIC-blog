@@ -9,6 +9,11 @@ export default
         submitText: '提交这些修改',
         applyText: '确定提交吗 ?',
         applySuccess: '提交成功',
+        edit: '修改',
+        delete: '删除',
+        text: '文本',
+        time: '时间',
+        color: '颜色',
     },
     menu:
     {

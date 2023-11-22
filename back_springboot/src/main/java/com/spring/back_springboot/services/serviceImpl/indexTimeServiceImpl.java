@@ -17,6 +17,8 @@ public class indexTimeServiceImpl implements indexTimeService
     @Override
     public List<indexTime> getAllIndexTime()
     {
-        return mapper.getAllIndexTime();
+        List<indexTime> list = mapper.getAllIndexTime();
+        list.sort((t1, t2) -> t2.getTimestmap().compareTo(t1.getTimestmap()));
+        return list;
     }
 }

@@ -16,6 +16,24 @@
                             class="IndexTime-timeline-item-style"
                             >
                                 {{ item.content }}
+                                <el-button class="manageTime-el-button" type="danger" size="small" plain @click="clickDelete(i)">
+                                    {{ $t('common.delete') }}
+                                </el-button>
+                                <el-button class="manageTime-el-button" type="warning" size="small" plain @click="clickEdit(i)">
+                                    {{ $t('common.edit') }}
+                                </el-button>
+                                <el-card class="manageTime-change-el-card" :style="timelineCard[i].height">
+                                    <div id="manageTime-card-div-id">
+                                        <el-form>
+                                            <el-form-item>
+                                                <template v-slot:label>
+                                                    {{ $t('common.text') }}
+                                                </template>
+                                                <el-input maxlength="20" show-word-limit type="text" @blur="textInputBlur"></el-input>
+                                            </el-form-item>
+                                        </el-form>
+                                    </div>
+                                </el-card>
                             </el-timeline-item>
                         </el-timeline>
                     </el-card>
@@ -31,7 +49,7 @@ export default managetime;
 </script>
 
 <style scope>
-@import "@/assets/css/manage/ManageHome.css";
+@import "@/assets/css/manage/ManageTime.css";
 @import "@/assets/css/manage/ManageIndex.css";
 @import "@/assets/css/common.css";
 @import "@/assets/css/home/IndexTime.css";

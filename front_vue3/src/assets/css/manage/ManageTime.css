@@ -1,0 +1,21 @@
+.manageTime-change-el-card
+{
+    margin-top: 10px;
+}
+
+.manageTime-el-button
+{
+    float: right;
+    margin-right: 10px;
+}
+
+.manageTime-change-el-card .el-card__body
+{
+    padding: 10px;
+    background: rgba(0,0,0,0) !important;
+}
+
+.manageTime-change-el-card
+{
+    background-color: rgba(0,0,0,0);
+}
