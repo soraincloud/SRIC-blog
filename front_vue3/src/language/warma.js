@@ -15,6 +15,7 @@ export default
         time: '时候',
         color: '色色',
         deleteSure: '确要删没蟆 ?',
+        seleteSuccess: '删没成力',
     },
     menu:
     {

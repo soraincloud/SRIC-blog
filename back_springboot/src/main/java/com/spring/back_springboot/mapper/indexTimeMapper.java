@@ -18,4 +18,7 @@ public interface indexTimeMapper
             @Param(value = "color") String color,
             @Param(value = "id") int id
     );
+
+    @Delete(value="DELETE FROM `index-time` WHERE ID = #{id}")
+    void deleteTimeById(@Param(value = "id") int id);
 }

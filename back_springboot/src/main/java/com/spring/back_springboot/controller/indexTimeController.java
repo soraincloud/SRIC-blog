@@ -27,4 +27,11 @@ public class indexTimeController
     {
         service.updateTimeById(time);
     }
+
+    @CrossOrigin
+    @PostMapping("/home/deleteTimeById")
+    public void deleteTimeById(@RequestBody indexTime time)
+    {
+        service.deleteTimeById(time.getId());
+    }
 }

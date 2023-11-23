@@ -27,4 +27,10 @@ public class indexTimeServiceImpl implements indexTimeService
     {
         mapper.updateTimeById(time.getContent(),time.getTimestmap(),time.getType(),time.getColor(),time.getId());
     }
+
+    @Override
+    public void deleteTimeById(int id)
+    {
+        mapper.deleteTimeById(id);
+    }
 }

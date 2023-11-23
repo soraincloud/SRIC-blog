@@ -1,4 +1,4 @@
-import { getIndexTimeList,updateTimeById } from "@/axios/api/homeApi"
+import { getIndexTimeList,updateTimeById,deleteTimeById } from "@/axios/api/homeApi"
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -114,9 +114,12 @@ export default
         {
             this.timelineCard[i].submit = false
         },
-        deleteConfirm()
+        deleteConfirm(i)
         {
-
+            deleteTimeById({ id: this.timeline[i].id }).then(
+                this.timeline.splice(i,1),
+                this.$message.success({message: t('common.deleteSuccess'),}),
+            )
         },
     },
     watch:

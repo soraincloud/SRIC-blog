@@ -20,10 +20,11 @@
                                 :title="deleteTitle"
                                 :confirm-button-text="deleteOk"
                                 :cancel-button-text="deleteCancel"
+                                confirm-button-type="danger"
                                 icon="DeleteFilled"
                                 icon-color="#FF8F8F"
                                 width="250"
-                                @confirm="deleteConfirm"
+                                @confirm="deleteConfirm(i)"
                                 >
                                     <template #reference>
                                     <el-button class="manageTime-el-button" type="danger" size="small" plain @click="clickDelete(i)">
