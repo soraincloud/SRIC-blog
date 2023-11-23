@@ -37,6 +37,9 @@ export default
                     label: 'danger',
                 },
             ],
+            deleteTitle: t('common.deleteSure'),
+            deleteOk: t('common.apply'),
+            deleteCancel: t('common.cancel'),
         }
     },
     mounted()
@@ -100,7 +103,6 @@ export default
         },
         clickApply(i)
         {
-            console.log(this.timeline[i])
             updateTimeById(this.timeline[i]).then(
                 this.$message.success({message: t('common.applySuccess'),}),
                 this.timelineCard[i].submit = false,
@@ -112,5 +114,18 @@ export default
         {
             this.timelineCard[i].submit = false
         },
+        deleteConfirm()
+        {
+
+        },
+    },
+    watch:
+    {
+        '$i18n.locale'(newValue)
+        {
+            this.deleteTitle = t('common.deleteSure')
+            this.deleteOk = t('common.apply')
+            this.deleteCancel = t('common.cancel')
+        }
     },
 }

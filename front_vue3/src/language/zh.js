@@ -14,6 +14,7 @@ export default
         text: '文本',
         time: '时间',
         color: '颜色',
+        deleteSure: '确定删除吗 ?',
     },
     menu:
     {

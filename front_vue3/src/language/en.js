@@ -14,6 +14,7 @@ export default
         text: 'text',
         time: 'time',
         color: 'color',
+        deleteSure: 'sure to delete this ?',
     },
     menu:
     {

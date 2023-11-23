@@ -14,6 +14,7 @@ export default
         text: '文写',
         time: '时候',
         color: '色色',
+        deleteSure: '确要删没蟆 ?',
     },
     menu:
     {

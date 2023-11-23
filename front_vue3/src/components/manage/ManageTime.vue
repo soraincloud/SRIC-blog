@@ -16,9 +16,22 @@
                             class="IndexTime-timeline-item-style"
                             >
                                 {{ item.content }}
-                                <el-button class="manageTime-el-button" type="danger" size="small" plain @click="clickDelete(i)">
-                                    {{ $t('common.delete') }}
-                                </el-button>
+                                <el-popconfirm
+                                :title="deleteTitle"
+                                :confirm-button-text="deleteOk"
+                                :cancel-button-text="deleteCancel"
+                                icon="DeleteFilled"
+                                icon-color="#FF8F8F"
+                                width="250"
+                                @confirm="deleteConfirm"
+                                >
+                                    <template #reference>
+                                    <el-button class="manageTime-el-button" type="danger" size="small" plain @click="clickDelete(i)">
+                                        {{ $t('common.delete') }}
+                                    </el-button>
+                                    </template>
+                                </el-popconfirm>
+                                
                                 <el-button class="manageTime-el-button" type="warning" size="small" plain @click="clickEdit(i)">
                                     {{ $t('common.edit') }}
                                 </el-button>
