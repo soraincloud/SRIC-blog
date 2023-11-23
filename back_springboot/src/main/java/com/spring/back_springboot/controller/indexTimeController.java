@@ -3,10 +3,7 @@ package com.spring.back_springboot.controller;
 import com.spring.back_springboot.pojo.indexTime;
 import com.spring.back_springboot.services.service.indexTimeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,12 +12,19 @@ import java.util.List;
 public class indexTimeController
 {
     @Autowired
-    indexTimeService Service;
+    indexTimeService service;
 
     @CrossOrigin
     @GetMapping("/home/indexTimeList")
     public List<indexTime> getAllIndexTime() throws Exception
     {
-        return Service.getAllIndexTime();
+        return service.getAllIndexTime();
+    }
+
+    @CrossOrigin
+    @PostMapping("/home/updateTimeById")
+    public void updateTimeById(@RequestBody indexTime time)
+    {
+        service.updateTimeById(time);
     }
 }

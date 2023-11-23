@@ -5,4 +5,5 @@ import java.util.List;
 public interface indexTimeService
 {
     List<indexTime> getAllIndexTime();
+    void updateTimeById(indexTime time);
 }

@@ -1,6 +1,8 @@
-import { getIndexTimeList } from "@/axios/api/homeApi"
+import { getIndexTimeList,updateTimeById } from "@/axios/api/homeApi"
 import { useDark } from '@vueuse/core'
+import i18n from '@/language'
 
+const { t } = i18n.global
 const isDark = useDark()
 export default
 {
@@ -98,7 +100,13 @@ export default
         },
         clickApply(i)
         {
-
+            console.log(this.timeline[i])
+            updateTimeById(this.timeline[i]).then(
+                this.$message.success({message: t('common.applySuccess'),}),
+                this.timelineCard[i].submit = false,
+                this.timelineCard[i].open = false,
+                this.timelineCard[i].height = 'height: ' + 0 + 'px;',
+            )
         },
         clickCancel(i)
         {

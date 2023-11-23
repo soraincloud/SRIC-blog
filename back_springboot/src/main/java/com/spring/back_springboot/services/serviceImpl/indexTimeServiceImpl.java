@@ -21,4 +21,10 @@ public class indexTimeServiceImpl implements indexTimeService
         list.sort((t1, t2) -> t2.getTimestmap().compareTo(t1.getTimestmap()));
         return list;
     }
+
+    @Override
+    public void updateTimeById(indexTime time)
+    {
+        mapper.updateTimeById(time.getContent(),time.getTimestmap(),time.getType(),time.getColor(),time.getId());
+    }
 }

@@ -9,4 +9,13 @@ public interface indexTimeMapper
 {
     @Select(value = "SELECT * FROM `index-time`")
     List<indexTime> getAllIndexTime();
+
+    @Update(value="UPDATE `index-time` SET CONTENT = #{content}, TIMESTMAP = #{timestmap}, TYPE = #{type}, COLOR = #{color} WHERE ID = #{id}")
+    void updateTimeById(
+            @Param(value = "content") String content,
+            @Param(value = "timestmap") String timestmap,
+            @Param(value = "type") String type,
+            @Param(value = "color") String color,
+            @Param(value = "id") int id
+    );
 }

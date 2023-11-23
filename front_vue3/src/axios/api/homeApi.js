@@ -5,6 +5,11 @@ export function getIndexTimeList(params)
     return get('/home/indexTimeList',params)
 }
 
+export function updateTimeById(params)
+{
+    return post('/home/updateTimeById',params)
+}
+
 export function getAllIndexHead(params)
 {
     return get('/home/getAllIndexHead',params)
