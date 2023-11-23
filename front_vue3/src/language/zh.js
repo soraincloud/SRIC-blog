@@ -30,6 +30,10 @@ export default
         mode: '切换模式',
         collapse: '菜单折叠',
     },
+    indexTime:
+    {
+        color: '内部颜色',
+    },
     indexaside:
     {
         menu: '目录',

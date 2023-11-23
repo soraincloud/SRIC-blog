@@ -19,3 +19,26 @@
 {
     background-color: rgba(0,0,0,0);
 }
+
+.manageTime-el-select
+{
+    margin-right: 10px;
+}
+
+.manageTime-span-text
+{
+    margin-right: 10px;
+    color: var(--el-text-color-regular);
+}
+
+.manageTime-submit-button
+{
+    box-shadow: 0 0 0 1px #000000;
+}
+
+.manageTime-submit-text
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+}

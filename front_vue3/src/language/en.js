@@ -30,6 +30,10 @@ export default
         mode: 'change mode',
         collapse: 'menu collapse',
     },
+    indexTime:
+    {
+        color: 'color inside',
+    },
     indexaside:
     {
         menu: 'menu',

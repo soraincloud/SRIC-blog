@@ -29,7 +29,45 @@
                                                 <template v-slot:label>
                                                     {{ $t('common.text') }}
                                                 </template>
-                                                <el-input maxlength="20" show-word-limit type="text" @blur="textInputBlur"></el-input>
+                                                <el-input maxlength="50" show-word-limit type="text" v-model="item.content"></el-input>
+                                            </el-form-item>
+                                            <el-form-item>
+                                                <template v-slot:label>
+                                                    {{ $t('common.time') }}
+                                                </template>
+                                                <el-date-picker v-model="item.timestmap" type="date" value-format="YYYY-MM-DD"></el-date-picker>
+                                            </el-form-item>
+                                            <el-form-item>
+                                                <template v-slot:label>
+                                                    {{ $t('common.color') }}
+                                                </template>
+                                                <el-select v-model="item.type" class="manageTime-el-select">
+                                                    <el-option
+                                                    v-for="item in options"
+                                                    :key="item.value"
+                                                    :label="item.label"
+                                                    :value="item.value">
+                                                    </el-option>
+                                                </el-select>
+                                                <span class="manageTime-span-text">{{ $t('indexTime.color') }}</span>
+                                                <el-color-picker v-model="item.color"></el-color-picker>
+                                            </el-form-item>
+                                            <el-form-item>
+                                                <el-button v-if="timelineCard[i].submit == false" @click="clickSubmit(i)" type="danger"
+                                                    class="manageTime-submit-button" plain>
+                                                    {{ $t("common.submit") }}
+                                                </el-button>
+                                                <el-button v-if="timelineCard[i].submit == true" @click="clickApply(i)" type="danger"
+                                                    class="manageTime-submit-button" plain>
+                                                    {{ $t("common.apply") }}
+                                                </el-button>
+                                                <el-button v-if="timelineCard[i].submit == true" @click="clickCancel(i)" type="info"
+                                                    class="manageTime-submit-button" plain>
+                                                    {{ $t("common.cancel") }}
+                                                </el-button>
+                                                <span class="manageTime-submit-text">
+                                                    {{ $t("common.submitText") }}
+                                                </span>
                                             </el-form-item>
                                         </el-form>
                                     </div>

@@ -12,6 +12,29 @@ export default
             timeline: [],
             active: '',
             timelineCard: [],
+            options: 
+            [
+                {
+                    value: 'primary',
+                    label: 'primary',
+                },
+                {
+                    value: 'success',
+                    label: 'success',
+                },
+                {
+                    value: 'info',
+                    label: 'info',
+                },
+                {
+                    value: 'warning',
+                    label: 'warning',
+                },
+                {
+                    value: 'danger',
+                    label: 'danger',
+                },
+            ],
         }
     },
     mounted()
@@ -29,7 +52,7 @@ export default
             _this.loading = false
             for(let i = 0;i < resp.data.length;i++)
             {
-                _this.timelineCard[i] = { height: 'height: 0px;' }
+                _this.timelineCard[i] = { height: 'height: 0px;',submit: false,open: false }
             }
         })
     },
@@ -52,14 +75,34 @@ export default
         },
         clickEdit(i)
         {
-            var divObject = document.getElementById("manageTime-card-div-id")
-            var divHeight = divObject.offsetHeight
-            console.log(divHeight)
-            this.timelineCard[i].height = 'height: ' + (divHeight + 60) + 'px;'
+            if(this.timelineCard[i].open == false)
+            {
+                var divObject = document.getElementById("manageTime-card-div-id")
+                var divHeight = divObject.offsetHeight
+                this.timelineCard[i].height = 'height: ' + (divHeight + 20) + 'px;'
+                this.timelineCard[i].open = true
+            }
+            else
+            {
+                this.timelineCard[i].height = 'height: ' + 0 + 'px;'
+                this.timelineCard[i].open = false
+            }
         },
         clickDelete(i)
         {
 
+        },
+        clickSubmit(i)
+        {
+            this.timelineCard[i].submit = true
+        },
+        clickApply(i)
+        {
+
+        },
+        clickCancel(i)
+        {
+            this.timelineCard[i].submit = false
         },
     },
 }

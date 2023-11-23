@@ -30,6 +30,10 @@ export default
         mode: '换个面样',
         collapse: '菜单开开',
     },
+    indexTime:
+    {
+        color: '内里色色',
+    },
     indexaside:
     {
         menu: '头信息',
