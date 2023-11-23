@@ -4,6 +4,7 @@
 -->
 
 <template>
+<div class="common-pack-div" v-loading="loading" element-loading-text="Loading . . .">
     <el-image class="AppIndex-backTop-image-style" :src="backTop" @click="backToTop()" :style="bottomData"></el-image>
     <el-row>
         <el-col :span="1"></el-col>
@@ -15,7 +16,7 @@
                 <index-head id="appindex-card-0" @mouseover="over(0)" />
                 <index-used id="appindex-card-1" @mouseover="over(1)" />
                 <index-about id="appindex-card-2" @mouseover="over(2)" />
-                <index-time id="appindex-card-3" @mouseover="over(3)" />
+                <index-time id="appindex-card-3" @mouseover="over(3)" @isLoading="loading = $event" />
             </el-scrollbar>
         </el-col>
         <el-col :span="5">
@@ -25,6 +26,7 @@
         </el-col>
         <el-col :span="1"></el-col>
     </el-row>
+</div>
 </template>
 
 <script>
@@ -33,5 +35,6 @@
 </script>
 
 <style>
+    @import '@/assets/css/common.css';
     @import '@/assets/css/home/AppIndex.css';
 </style>

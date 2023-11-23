@@ -2,9 +2,6 @@
     <div
         @mouseover="mouseOver"
         @mouseleave="mouseLeave"
-        v-loading.fullscreen.lock="loading"
-        element-loading-background="rgba(255,255,255,0.2)"
-        element-loading-text="Loading . . ."
     >
         <el-card class="common-with-back-el-card-style" :style="active">
             <h1 class="common-text-style">{{ $t("indexaside.time") }}</h1>

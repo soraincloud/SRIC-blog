@@ -1,7 +1,10 @@
 <template>
   <body id="AppBody-background-style" :style="fire">
     <nav-menu @dochangefire="changeFire" @doChangeFilter="changeFilter" ref="changeProgress" />
-    <div class="AppBody-allBody-div-style" :style="filter">
+    <div
+    class="AppBody-allBody-div-style"
+    :style="filter"
+    >
       <router-view/>
     </div>
 

@@ -20,6 +20,7 @@ export default
             asideHeight: (window.innerHeight - 70) + 'px',
             data: 0,
             bottomData: 'bottom: ' + (window.innerHeight + 100) + 'px',
+            loading: true,
         }
     },
     mounted()

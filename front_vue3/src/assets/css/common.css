@@ -43,3 +43,9 @@ html.dark .common-el-divider-style
 {
     background-color: #ffffff;
 }
+
+.common-pack-div
+{
+    width: 100%;
+    height: 100%;
+}

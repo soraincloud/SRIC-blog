@@ -9,7 +9,6 @@ export default
     {
         return{
             notes:[],
-            loading: true,
         }
     },
     methods:
@@ -40,7 +39,7 @@ export default
             var _this = this
             getNotesList().then(function(resp){
                 _this.notes = resp.data
-                _this.loading = false
+                _this.$emit('isLoading',false)
             })
         },
     },
