@@ -42,6 +42,12 @@ export default
             deleteTitle: t('common.deleteSure'),
             deleteOk: t('common.apply'),
             deleteCancel: t('common.cancel'),
+            select: '',
+            selectPlaceholderText: t('common.select'),
+            placeholderText: t('common.search'),
+            labelText: t('common.text'),
+            labelTime: t('common.time'),
+            secrch: '',
         }
     },
     mounted()
@@ -95,10 +101,6 @@ export default
                 this.timelineCard[i].open = false
             }
         },
-        clickDelete(i)
-        {
-
-        },
         clickSubmit(i)
         {
             this.timelineCard[i].submit = true
@@ -123,6 +125,17 @@ export default
                 this.$message.success({message: t('common.deleteSuccess'),}),
             )
         },
+        clickSearch()
+        {
+            if(this.select == 1)
+            {
+
+            }
+            else
+            {
+                
+            }
+        },
     },
     watch:
     {
@@ -131,6 +144,10 @@ export default
             this.deleteTitle = t('common.deleteSure')
             this.deleteOk = t('common.apply')
             this.deleteCancel = t('common.cancel')
+            selectPlaceholderText = t('common.select')
+            this.placeholderText = t('common.search')
+            labelText = t('common.text')
+            labelTime = t('common.time')
         }
     },
 }

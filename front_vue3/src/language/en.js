@@ -15,7 +15,9 @@ export default
         time: 'time',
         color: 'color',
         deleteSure: 'sure to delete this ?',
-        seleteSuccess: 'delete success',
+        deleteSuccess: 'delete success',
+        search: 'search',
+        select: 'select',
     },
     menu:
     {

@@ -15,7 +15,9 @@ export default
         time: '时间',
         color: '颜色',
         deleteSure: '确定删除吗 ?',
-        seleteSuccess: '删除成功',
+        deleteSuccess: '删除成功',
+        search: '搜索',
+        select: '选择',
     },
     menu:
     {

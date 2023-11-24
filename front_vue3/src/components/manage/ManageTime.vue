@@ -7,18 +7,18 @@
                         <el-col :span="1"></el-col>
                         <el-col :span="12">
                             <el-input
-                            v-model="input3"
-                            placeholder="Please input"
+                            v-model="search"
+                            :placeholder="placeholderText"
                             class="manageTime-input-with-select"
                             >
                             <template #prepend>
-                                <el-select v-model="select" placeholder="Select" style="width: 115px">
-                                <el-option label="Restaurant" value="1" />
-                                <el-option label="Order No." value="2" />
+                                <el-select v-model="select" :placeholder="selectPlaceholderText" style="width: 115px">
+                                    <el-option :label="labelText" value="0" />
+                                    <el-option :label="labelTime" value="1" />
                                 </el-select>
                             </template>
                             <template #append>
-                                <el-button type="danger" icon="Search" />
+                                <el-button type="danger" icon="Search" class="manageTime-button-icon" @click="clickSearch()"/>
                             </template>
                             </el-input>
                             
@@ -58,7 +58,7 @@
                                 @confirm="deleteConfirm(i)"
                                 >
                                     <template #reference>
-                                    <el-button class="manageTime-el-button" type="danger" size="small" plain @click="clickDelete(i)">
+                                    <el-button class="manageTime-el-button" type="danger" size="small" plain>
                                         {{ $t('common.delete') }}
                                     </el-button>
                                     </template>
