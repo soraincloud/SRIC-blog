@@ -52,3 +52,15 @@
     float: right;
     margin-top: 200px;
 }
+
+.el-loading-spinner .path
+{
+    stroke: #ff5f5f;
+}
+
+.el-loading-spinner .el-loading-text
+{
+    color: #ff5f5f;
+    font-weight: bold;
+    font-size: 20px;
+}

@@ -1,9 +1,40 @@
 <template>
-    <el-scrollbar :height="bodyHeight">
+    <el-scrollbar :height="bodyHeight" v-loading="loading" element-loading-text="Loading . . .">
         <div class="ManageIndex-out-div">
-            <el-card class="ManageIndex-el-card">
+            <el-card class="ManageIndex-el-card" style="padding-top:0px;">
+                <el-affix :offset="75">
+                    <el-row>
+                        <el-col :span="1"></el-col>
+                        <el-col :span="12">
+                            <el-input
+                            v-model="input3"
+                            placeholder="Please input"
+                            class="manageTime-input-with-select"
+                            >
+                            <template #prepend>
+                                <el-select v-model="select" placeholder="Select" style="width: 115px">
+                                <el-option label="Restaurant" value="1" />
+                                <el-option label="Order No." value="2" />
+                                </el-select>
+                            </template>
+                            <template #append>
+                                <el-button type="danger" icon="Search" />
+                            </template>
+                            </el-input>
+                            
+                        </el-col>
+                        <el-col :span="1">
+                            <el-button type="danger" style="margin-left: 10px;" plain>
+                                <el-icon>
+                                    <CirclePlusFilled />
+                                </el-icon>
+                            </el-button>
+                        </el-col>
+                        <el-col :span="10"></el-col>
+                    </el-row>
+                </el-affix>
                 <div @mouseover="mouseOver" @mouseleave="mouseLeave">
-                    <el-card class="common-with-back-el-card-style" :style="active">
+                    <el-card class="common-with-back-el-card-style" :style="[active,margin]">
                         <h1 class="common-text-style">{{ $t("indexaside.time") }}</h1>
                         <el-divider class="common-el-divider-style" />
                         <el-timeline>

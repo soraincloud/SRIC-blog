@@ -9,7 +9,6 @@ export default
     {
         return{
             resources:[],
-            loading: true,
         }
     },
     methods:
@@ -39,7 +38,7 @@ export default
             var _this = this
             getResourcesList().then(function(resp){
                 _this.resources = resp.data
-                _this.loading = false
+                _this.$emit('isLoading',false)
             })
         },
     },

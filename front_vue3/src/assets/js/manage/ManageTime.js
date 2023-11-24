@@ -10,9 +10,11 @@ export default
     data()
     {
         return{
+            loading: true,
             bodyHeight: (window.innerHeight - 60) + 'px',
             timeline: [],
             active: '',
+            margin: 'margin-top: 50px;',
             timelineCard: [],
             options: 
             [
@@ -54,11 +56,11 @@ export default
         var _this = this
         getIndexTimeList().then(function(resp){
             _this.timeline = resp.data
-            _this.loading = false
             for(let i = 0;i < resp.data.length;i++)
             {
                 _this.timelineCard[i] = { height: 'height: 0px;',submit: false,open: false }
             }
+            _this.loading = false
         })
     },
     methods:

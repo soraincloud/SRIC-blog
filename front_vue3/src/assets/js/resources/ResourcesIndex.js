@@ -19,6 +19,7 @@ export default
             backTop: require('@/assets/webp/background/backTop.webp'),
             data: 0,
             bottomData: 'bottom: ' + (window.innerHeight + 100) + 'px',
+            loading: true,
         }
     },
     mounted()

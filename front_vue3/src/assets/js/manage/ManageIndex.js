@@ -6,6 +6,8 @@ export default
     name: 'ManageIndex',
     data() {
         return {
+            loading: true,
+            bodyHeight: (window.innerHeight - 60) + 'px',
             num: 0,
             visitShowNumber: 0,
             userShowNumber: 0,
@@ -65,6 +67,7 @@ export default
 
             _this.chartData = resp.data.visitsList
             _this.drawEcharts()
+            _this.loading = false
         })
     },
     methods:
@@ -151,5 +154,11 @@ export default
             }
         }
     },
-
+    mounted()
+    {
+        window.onresize = () => 
+        {
+            this.bodyHeight = (window.innerHeight - 70) + 'px'
+        }
+    },
 }

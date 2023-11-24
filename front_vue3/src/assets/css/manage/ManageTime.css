@@ -42,3 +42,8 @@
     vertical-align: top;
     margin-left: 10px;
 }
+
+.manageTime-input-with-select .el-input__wrapper
+{
+    background-color: #eeeeee;
+}

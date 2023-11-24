@@ -1,5 +1,5 @@
 <template>
-    <el-scrollbar :height="bodyHeight">
+    <el-scrollbar :height="bodyHeight" v-loading="loading" element-loading-text="Loading . . .">
         <div class="ManageIndex-out-div">
             <el-card class="ManageIndex-el-card">
                 <h1 class="ManageHome-h1-text">{{ $t("manageHome.head") }}</h1>

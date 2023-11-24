@@ -1,4 +1,5 @@
 <template>
+<div class="common-pack-div" v-loading="loading" element-loading-text="Loading . . .">
     <el-image class="NotesIndex-backTop-image-style" :src="backTop" @click="backToTop()" :style="bottomData"></el-image>
     <el-row>
         <el-col :span="1"></el-col>
@@ -9,7 +10,7 @@
         </el-col>
         <el-col :span="12">
             <el-scrollbar  @scroll="handleScroll($event)" ref="indexScroll" :height="indexHeight">
-                <resources-card ref="loadAllResourcesToCard" />
+                <resources-card ref="loadAllResourcesToCard" @isLoading="loading = $event" />
             </el-scrollbar>
         </el-col>
         <el-col :span="5">
@@ -19,6 +20,7 @@
         </el-col>
         <el-col :span="1"></el-col>
     </el-row>
+</div>
 </template>
 
 <script>

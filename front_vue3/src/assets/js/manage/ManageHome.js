@@ -8,6 +8,7 @@ export default
     data()
     {
         return{
+            loading: true,
             card0: '',
             card1: '',
             bodyHeight: (window.innerHeight - 60) + 'px',
@@ -189,6 +190,7 @@ export default
         getAllIndexAbout().then(function(resp){
             _this.indexAboutData = resp.data
             _this.indexAbout = resp.data[0].text
+            _this.loading = false
         })
         this.aboutSubmitText = t('common.submitText')
         this.indexAboutTitle = "关于"
