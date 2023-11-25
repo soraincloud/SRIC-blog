@@ -46,7 +46,7 @@ export default
             selectPlaceholderText: t('common.select'),
             placeholderText: t('common.search'),
             labelText: t('common.text'),
-            labelTime: t('common.time'),
+            labelTime: t('common.time') + " (YY-MM-DD)",
             labelYears: t('common.years'),
             search: '',
         }
@@ -163,6 +163,21 @@ export default
                 })
             }
         },
+        clickAdd()
+        {},
+        clickRefresh()
+        {
+            var _this = this
+            _this.loading = true
+            getIndexTimeList().then(function(resp){
+                _this.timeline = resp.data
+                for(let i = 0;i < resp.data.length;i++)
+                {
+                    _this.timelineCard[i] = { height: 'height: 0px;',submit: false,open: false }
+                }
+                _this.loading = false
+            })
+        },
     },
     watch:
     {
@@ -174,7 +189,7 @@ export default
             this.selectPlaceholderText = t('common.select')
             this.placeholderText = t('common.search')
             this.labelText = t('common.text')
-            this.labelTime = t('common.time')
+            this.labelTime = t('common.time') + " (YY-MM-DD)"
             this.labelYears = t('common.years')
         }
     },

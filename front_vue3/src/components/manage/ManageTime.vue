@@ -24,12 +24,12 @@
                             </el-input>
                         </el-col>
                         <el-col :span="12">
-                            <el-button type="danger" style="margin-left: 10px;" plain>
+                            <el-button type="danger" style="margin-left: 10px;" plain @click="clickadd()">
                                 <el-icon>
                                     <CirclePlusFilled />
                                 </el-icon>
                             </el-button>
-                            <el-button type="success" style="margin-left: 10px;" plain>
+                            <el-button type="success" style="margin-left: 10px;" plain @click="clickRefresh()">
                                 <el-icon>
                                     <Refresh />
                                 </el-icon>
