@@ -49,6 +49,13 @@ export default
             labelTime: t('common.time') + " (YY-MM-DD)",
             labelYears: t('common.years'),
             search: '',
+            addShow: false,
+            addTimestmap: '',
+            addType: '',
+            addColor: '#909399',
+            addContent: '',
+            addHeight: 'height: 0px;',
+            addText: '',
         }
     },
     mounted()
@@ -165,10 +172,23 @@ export default
         },
         clickAdd()
         {
-            
+            this.addShow = true
+            this.addText = ''
+            setTimeout( () => { 
+                var divObject = document.getElementById("add-card-div-id")
+                var divHeight = divObject.offsetHeight
+                this.addHeight = 'height: ' + (divHeight + 20) + 'px;'
+             },100)
         },
         clickRefresh()
         {
+            this.addShow = false
+            this.addTimestmap = ''
+            this.addType = ''
+            this.addColor = '#909399'
+            this.addContent = ''
+            this.addHeight = 'height: 0px;'
+            this.addText = ''
             var _this = this
             _this.loading = true
             getIndexTimeList().then(function(resp){
@@ -179,6 +199,17 @@ export default
                 }
                 _this.loading = false
             })
+        },
+        addApply()
+        {
+
+        },
+        addCancel()
+        {
+            this.addHeight = 'height: 0px;'
+            this.addText = 'color: #909399;'
+            this.addType = ''
+            this.addColor = '#909399'
         },
     },
     watch:

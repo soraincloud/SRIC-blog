@@ -45,7 +45,6 @@
                                 </el-button>
                             </el-tooltip>
                         </el-col>
-
                     </el-row>
                 </el-affix>
                 <div @mouseover="mouseOver" @mouseleave="mouseLeave">
@@ -54,10 +53,64 @@
                         <el-divider class="common-el-divider-style" />
                         <el-timeline>
                             <el-timeline-item
+                            v-if="addShow"
+                            :timestmap="addTimestmap"
+                            :type="addType"
+                            :color="addColor"
+                            :hollow="true" size="large"
+                            class="IndexTime-timeline-item-style"
+                            >
+                            <div :style="addText">{{ addContent }}</div>
+                            <el-card class="manageTime-change-el-card" :style="addHeight">
+                                <div id="add-card-div-id">
+                                    <el-form>
+                                        <el-form-item>
+                                            <template v-slot:label>
+                                                {{ $t('common.text') }}
+                                            </template>
+                                            <el-input maxlength="50" show-word-limit type="text" v-model="addContent"></el-input>
+                                        </el-form-item>
+                                        <el-form-item>
+                                            <template v-slot:label>
+                                                {{ $t('common.time') }}
+                                            </template>
+                                            <el-date-picker v-model="addTimestmap" type="date" value-format="YYYY-MM-DD"></el-date-picker>
+                                        </el-form-item>
+                                        <el-form-item>
+                                            <template v-slot:label>
+                                                {{ $t('common.color') }}
+                                            </template>
+                                            <el-select v-model="addType" class="manageTime-el-select">
+                                                <el-option
+                                                v-for="item in options"
+                                                :key="item.value"
+                                                :label="item.label"
+                                                :value="item.value">
+                                                </el-option>
+                                            </el-select>
+                                            <span class="manageTime-span-text">{{ $t('indexTime.color') }}</span>
+                                            <el-color-picker v-model="addColor"></el-color-picker>
+                                        </el-form-item>
+                                        <el-form-item>
+                                            <el-button @click="addApply()" type="danger"
+                                                class="manageTime-submit-button" plain>
+                                                {{ $t("common.apply") }}
+                                            </el-button>
+                                            <el-button @click="addCancel()" type="info"
+                                                class="manageTime-submit-button" plain>
+                                                {{ $t("common.cancel") }}
+                                            </el-button>
+                                        </el-form-item>
+                                    </el-form>
+                                </div>
+                            </el-card>
+                            </el-timeline-item>
+                            <el-timeline-item
                             v-for="(item, i) in timeline"
-                            :key="i" :timestamp="item.timestmap"
-                            :type="item.type" 
-                            :color="item.color" 
+                            :key="i"
+                            :timestamp="item.timestmap"
+                            :type="item.type"
+                            :color="item.color"
                             :hollow="true" size="large"
                             class="IndexTime-timeline-item-style"
                             >
@@ -78,7 +131,6 @@
                                     </el-button>
                                     </template>
                                 </el-popconfirm>
-                                
                                 <el-button class="manageTime-el-button" type="warning" size="small" plain @click="clickEdit(i)">
                                     {{ $t('common.edit') }}
                                 </el-button>
