@@ -9,6 +9,16 @@ export function getTimeByText(params)
     return get('/home/getTimeByText',params)
 }
 
+export function getTimeByTime(params)
+{
+    return get('/home/getTimeByTime',params)
+}
+
+export function getTimeByYear(params)
+{
+    return get('/home/getTimeByYear',params)
+}
+
 export function updateTimeById(params)
 {
     return post('/home/updateTimeById',params)

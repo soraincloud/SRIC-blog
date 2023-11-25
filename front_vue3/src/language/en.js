@@ -13,11 +13,15 @@ export default
         delete: 'delete',
         text: 'text',
         time: 'time',
+        years: 'years',
         color: 'color',
         deleteSure: 'sure to delete this ?',
         deleteSuccess: 'delete success',
         search: 'search',
         select: 'select',
+        year: 'year',
+        month: 'month',
+        day: 'day',
     },
     menu:
     {

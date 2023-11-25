@@ -5,7 +5,7 @@
                 <el-affix :offset="75">
                     <el-row>
                         <el-col :span="1"></el-col>
-                        <el-col :span="12">
+                        <el-col :span="11">
                             <el-input
                             v-model="search"
                             :placeholder="placeholderText"
@@ -15,22 +15,27 @@
                                 <el-select v-model="select" :placeholder="selectPlaceholderText" style="width: 115px">
                                     <el-option :label="labelText" value="0" />
                                     <el-option :label="labelTime" value="1" />
+                                    <el-option :label="labelYears" value="2" />
                                 </el-select>
                             </template>
                             <template #append>
                                 <el-button type="danger" icon="Search" class="manageTime-button-icon" @click="clickSearch()"/>
                             </template>
                             </el-input>
-                            
                         </el-col>
-                        <el-col :span="1">
+                        <el-col :span="12">
                             <el-button type="danger" style="margin-left: 10px;" plain>
                                 <el-icon>
                                     <CirclePlusFilled />
                                 </el-icon>
                             </el-button>
+                            <el-button type="success" style="margin-left: 10px;" plain>
+                                <el-icon>
+                                    <Refresh />
+                                </el-icon>
+                            </el-button>
                         </el-col>
-                        <el-col :span="10"></el-col>
+
                     </el-row>
                 </el-affix>
                 <div @mouseover="mouseOver" @mouseleave="mouseLeave">

@@ -13,11 +13,15 @@ export default
         delete: '删掉',
         text: '文写',
         time: '时候',
+        years: '年时',
         color: '色色',
         deleteSure: '确要删没蟆 ?',
         deleteSuccess: '删没成力',
         search: '搜看',
         select: '选这',
+        year: '连',
+        month: '跃',
+        day: '日',
     },
     menu:
     {

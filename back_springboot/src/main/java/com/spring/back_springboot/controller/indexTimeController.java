@@ -41,4 +41,18 @@ public class indexTimeController
     {
         return service.getTimeByText(text);
     }
+
+    @CrossOrigin
+    @GetMapping("/home/getTimeByTime")
+    public List<indexTime> getTimeByTime(String time)
+    {
+        return service.getTimeByTime(time);
+    }
+
+    @CrossOrigin
+    @GetMapping("/home/getTimeByYear")
+    public List<indexTime> getTimeByYear(String year)
+    {
+        return service.getTimeByTime(year);
+    }
 }

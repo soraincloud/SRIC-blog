@@ -39,4 +39,16 @@ public class indexTimeServiceImpl implements indexTimeService
     {
         return mapper.getTimeByText(text);
     }
+
+    @Override
+    public List<indexTime> getTimeByTime(String time)
+    {
+        return mapper.getTimeByTime(time);
+    }
+
+    @Override
+    public List<indexTime> getTimeByYear(String year)
+    {
+        return mapper.getTimeByTime(year);
+    }
 }

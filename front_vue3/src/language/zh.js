@@ -13,11 +13,15 @@ export default
         delete: '删除',
         text: '文本',
         time: '时间',
+        years: '年份',
         color: '颜色',
         deleteSure: '确定删除吗 ?',
         deleteSuccess: '删除成功',
         search: '搜索',
         select: '选择',
+        year: '年',
+        month: '月',
+        day: '日',
     },
     menu:
     {

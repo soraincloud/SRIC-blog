@@ -24,4 +24,10 @@ public interface indexTimeMapper
 
     @Select(value = "SELECT * FROM `index-time` WHERE CONTENT LIKE concat('%',#{text},'%')")
     List<indexTime> getTimeByText(@Param(value = "text")String text);
+
+    @Select(value = "SELECT * FROM `index-time` WHERE TIMESTMAP LIKE concat('%',#{time},'%')")
+    List<indexTime> getTimeByTime(@Param(value = "time")String time);
+
+    @Select(value = "SELECT * FROM `index-time` WHERE DATE_FORMAT(timestmap,'%Y') = #{year}")
+    List<indexTime> getTimeByYear(@Param(value = "year")String year);
 }
