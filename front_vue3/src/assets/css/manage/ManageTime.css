@@ -52,3 +52,28 @@
 {
     color: #ff8f8f;
 }
+
+html.dark .manageTime-input-with-select .el-input__wrapper
+{
+    background-color: #111111;
+}
+
+.el-input__wrapper.is-focus
+{
+    box-shadow:0 0 0 1px #ff8f8f inset !important;
+}
+
+.el-input-group--prepend .el-input-group__prepend .el-select .el-input.is-focus .el-input__wrapper
+{
+    box-shadow:0 0 0 1px #ff8f8f inset !important;
+}
+
+.el-select .el-input__wrapper.is-focus
+{
+    box-shadow:0 0 0 1px #ff8f8f inset !important;
+}
+
+.el-select-dropdown__item.selected
+{
+    color: #ff8f8f;
+}

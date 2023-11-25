@@ -22,6 +22,6 @@ public interface indexTimeMapper
     @Delete(value = "DELETE FROM `index-time` WHERE ID = #{id}")
     void deleteTimeById(@Param(value = "id") int id);
 
-    @Select(value = "SELECT * FROM `index-time` WHERE CONTENT LIKE '%#{text}%'")
+    @Select(value = "SELECT * FROM `index-time` WHERE CONTENT LIKE concat('%',#{text},'%')")
     List<indexTime> getTimeByText(@Param(value = "text")String text);
 }

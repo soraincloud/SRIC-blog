@@ -131,7 +131,7 @@ import managetime from "@/assets/js/manage/ManageTime.js";
 export default managetime;
 </script>
 
-<style scope>
+<style>
 @import "@/assets/css/manage/ManageTime.css";
 @import "@/assets/css/manage/ManageIndex.css";
 @import "@/assets/css/common.css";
