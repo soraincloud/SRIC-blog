@@ -4,6 +4,10 @@ export function getIndexTimeList(params)
 {
     return get('/home/indexTimeList',params)
 }
+export function getTimeByText(params)
+{
+    return get('/home/getTimeByText',params)
+}
 
 export function updateTimeById(params)
 {

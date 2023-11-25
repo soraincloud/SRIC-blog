@@ -1,4 +1,4 @@
-import { getIndexTimeList,updateTimeById,deleteTimeById } from "@/axios/api/homeApi"
+import { getIndexTimeList,updateTimeById,deleteTimeById,getTimeByText } from "@/axios/api/homeApi"
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -47,7 +47,7 @@ export default
             placeholderText: t('common.search'),
             labelText: t('common.text'),
             labelTime: t('common.time'),
-            secrch: '',
+            search: '',
         }
     },
     mounted()
@@ -127,13 +127,24 @@ export default
         },
         clickSearch()
         {
+            var _this = this
             if(this.select == 1)
             {
 
             }
             else
             {
-                
+                getTimeByText({ text: this.search }).then(function(resp){
+                    _this.timeline = resp.data
+                    console.log(_this.timelineCard)
+                    _this.timelineCard = {}
+                    console.log(_this.timelineCard)
+                    for(let i = 0;i < resp.data.length;i++)
+                    {
+                        _this.timelineCard[i] = { height: 'height: 0px;',submit: false,open: false }
+                    }
+                    console.log(_this.timelineCard)
+                })
             }
         },
     },

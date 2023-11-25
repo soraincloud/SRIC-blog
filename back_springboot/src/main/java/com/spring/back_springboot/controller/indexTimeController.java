@@ -34,4 +34,11 @@ public class indexTimeController
     {
         service.deleteTimeById(time.getId());
     }
+
+    @CrossOrigin
+    @GetMapping("/home/getTimeByText")
+    public List<indexTime> getTimeByText(String text)
+    {
+        return service.getTimeByText(text);
+    }
 }

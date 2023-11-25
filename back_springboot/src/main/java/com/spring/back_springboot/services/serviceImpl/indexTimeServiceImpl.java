@@ -33,4 +33,10 @@ public class indexTimeServiceImpl implements indexTimeService
     {
         mapper.deleteTimeById(id);
     }
+
+    @Override
+    public List<indexTime> getTimeByText(String text)
+    {
+        return mapper.getTimeByText(text);
+    }
 }

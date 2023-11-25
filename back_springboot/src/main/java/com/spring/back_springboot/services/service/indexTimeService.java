@@ -7,4 +7,5 @@ public interface indexTimeService
     List<indexTime> getAllIndexTime();
     void updateTimeById(indexTime time);
     void deleteTimeById(int id);
+    List<indexTime> getTimeByText(String text);
 }
