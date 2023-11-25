@@ -24,16 +24,26 @@
                             </el-input>
                         </el-col>
                         <el-col :span="12">
-                            <el-button type="danger" style="margin-left: 10px;" plain @click="clickadd()">
-                                <el-icon>
-                                    <CirclePlusFilled />
-                                </el-icon>
-                            </el-button>
-                            <el-button type="success" style="margin-left: 10px;" plain @click="clickRefresh()">
-                                <el-icon>
-                                    <Refresh />
-                                </el-icon>
-                            </el-button>
+                            <el-tooltip effect="light" placement="bottom">
+                                <template #content>
+                                    <p class="NavMenu-tooltip-p-style">{{ $t("common.add") }}</p>
+                                </template>
+                                <el-button type="danger" style="margin-left: 10px;" plain @click="clickAdd()">
+                                    <el-icon>
+                                        <CirclePlusFilled />
+                                    </el-icon>
+                                </el-button>
+                            </el-tooltip>
+                            <el-tooltip effect="light" placement="bottom">
+                                <template #content>
+                                    <p class="NavMenu-tooltip-p-style">{{ $t("common.refresh") }}</p>
+                                </template>
+                                <el-button type="success" style="margin-left: 10px;" plain @click="clickRefresh()">
+                                    <el-icon>
+                                        <Refresh />
+                                    </el-icon>
+                                </el-button>
+                            </el-tooltip>
                         </el-col>
 
                     </el-row>
@@ -141,4 +151,5 @@ export default managetime;
 @import "@/assets/css/manage/ManageIndex.css";
 @import "@/assets/css/common.css";
 @import "@/assets/css/home/IndexTime.css";
+@import "@/assets/css/common/NavMenu.css";
 </style>

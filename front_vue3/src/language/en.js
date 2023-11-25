@@ -22,6 +22,8 @@ export default
         year: 'year',
         month: 'month',
         day: 'day',
+        add: 'add',
+        refresh: 'refresh',
     },
     menu:
     {

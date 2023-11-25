@@ -22,6 +22,8 @@ export default
         year: '年',
         month: '月',
         day: '日',
+        add: '添加',
+        refresh: '刷新',
     },
     menu:
     {

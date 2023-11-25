@@ -22,6 +22,8 @@ export default
         year: '连',
         month: '跃',
         day: '日',
+        add: '添多',
+        refresh: '刷表',
     },
     menu:
     {

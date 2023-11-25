@@ -164,7 +164,9 @@ export default
             }
         },
         clickAdd()
-        {},
+        {
+            
+        },
         clickRefresh()
         {
             var _this = this
