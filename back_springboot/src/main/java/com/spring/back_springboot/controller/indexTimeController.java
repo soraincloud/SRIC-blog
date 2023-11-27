@@ -55,4 +55,11 @@ public class indexTimeController
     {
         return service.getTimeByTime(year);
     }
+
+    @CrossOrigin
+    @PostMapping("/home/addIndexTime")
+    public void addIndexTime(@RequestBody indexTime time)
+    {
+        service.addIndexTime(time);
+    }
 }

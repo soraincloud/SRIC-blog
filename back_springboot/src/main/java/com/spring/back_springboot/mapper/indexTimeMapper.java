@@ -30,4 +30,12 @@ public interface indexTimeMapper
 
     @Select(value = "SELECT * FROM `index-time` WHERE DATE_FORMAT(timestmap,'%Y') = #{year}")
     List<indexTime> getTimeByYear(@Param(value = "year")String year);
+
+    @Insert(value = "INSERT INTO `index-time` values (null, #{content}, #{timestmap}, #{type}, #{color})")
+    void addIndexTime(
+            @Param(value = "content") String content,
+            @Param(value = "timestmap") String timestmap,
+            @Param(value = "type") String type,
+            @Param(value = "color") String color
+    );
 }

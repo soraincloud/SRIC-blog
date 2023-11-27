@@ -11,4 +11,5 @@ public interface indexTimeService
     List<indexTime> getTimeByText(String text);
     List<indexTime> getTimeByTime(String time);
     List<indexTime> getTimeByYear(String year);
+    void addIndexTime(indexTime time);
 }

@@ -51,4 +51,10 @@ public class indexTimeServiceImpl implements indexTimeService
     {
         return mapper.getTimeByTime(year);
     }
+
+    @Override
+    public void addIndexTime(indexTime time)
+    {
+        mapper.addIndexTime(time.getContent(),time.getTimestmap(),time.getType(),time.getColor());
+    }
 }
