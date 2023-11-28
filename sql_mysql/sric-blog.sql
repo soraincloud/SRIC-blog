@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : test-connect
+ Source Server         : mysql
  Source Server Type    : MySQL
  Source Server Version : 80035
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 28/11/2023 14:39:26
+ Date: 28/11/2023 17:45:31
 */
 
 SET NAMES utf8mb4;
@@ -26,7 +26,7 @@ CREATE TABLE `dict_el_color_type`  (
   `label` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '显示文字',
   `value` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '值',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of dict_el_color_type
@@ -128,6 +128,28 @@ INSERT INTO `index-time` VALUES (18, 'Register All Icons', '2023-10-20', 'danger
 INSERT INTO `index-time` VALUES (19, 'add resources category', '2023-10-23', 'success', '#ffffff');
 INSERT INTO `index-time` VALUES (20, 'add copy clipboard', '2023-10-24', 'success', '#ffffff');
 INSERT INTO `index-time` VALUES (21, 'use interceptors and promise', '2023-10-25', 'danger', '#ffffff');
+INSERT INTO `index-time` VALUES (22, 'add loading transition', '2023-10-26', 'success', '#FFFFFF');
+INSERT INTO `index-time` VALUES (23, 'add vue3-puzzle-vcode to intercept login', '2023-10-26', 'success', '#FFFFFF');
+INSERT INTO `index-time` VALUES (24, 'add manage page', '2023-10-27', 'success', '#FFFFFF');
+INSERT INTO `index-time` VALUES (25, 'add manage bar', '2023-10-31', 'success', '#FFFFFF');
+INSERT INTO `index-time` VALUES (26, 'import sa-token', '2023-11-02', 'warning', '#FFFFFF');
+INSERT INTO `index-time` VALUES (27, 'add manage menu', '2023-11-02', 'success', '#FFFFFF');
+INSERT INTO `index-time` VALUES (28, 'add collapse menu', '2023-11-03', 'success', '#FFFFFF');
+INSERT INTO `index-time` VALUES (29, 'fix manage page flex style', '2023-11-07', 'danger', '#FFFFFF');
+INSERT INTO `index-time` VALUES (30, 'add page visited count', '2023-11-08', 'warning', '#FFFFFF');
+INSERT INTO `index-time` VALUES (31, 'add resources show page to download files', '2023-11-09', 'success', '#FFFFFF');
+INSERT INTO `index-time` VALUES (32, 'let language save in local storage', '2023-11-10', 'danger', '#FFFFFF');
+INSERT INTO `index-time` VALUES (33, 'delete some useless components and fix some bugs', '2023-11-13', 'danger', '#FF8F8F');
+INSERT INTO `index-time` VALUES (34, 'add manage home page', '2023-11-14', 'success', '#FFFFFF');
+INSERT INTO `index-time` VALUES (35, 'add changing index head and title', '2023-11-14', 'success', '#FFFFFF');
+INSERT INTO `index-time` VALUES (36, 'fix index head manage page', '2023-11-20', 'warning', '#FFFFFF');
+INSERT INTO `index-time` VALUES (37, 'update mysql to 8.0.35', '2023-11-21', 'primary', '#FF5F5F');
+INSERT INTO `index-time` VALUES (38, 'add manage index time page', '2023-11-22', 'success', '#FFFFFF');
+INSERT INTO `index-time` VALUES (39, 'fix index time edit', '2023-11-23', 'danger', '#FFFFFF');
+INSERT INTO `index-time` VALUES (40, 'fix index time delete', '2023-11-23', 'danger', '#FFFFFF');
+INSERT INTO `index-time` VALUES (41, 'update loading transitions and some components', '2023-11-24', 'warning', '#FFFFFF');
+INSERT INTO `index-time` VALUES (42, 'add search and refresh for time manage page', '2023-11-25', 'success', '#FFFFFF');
+INSERT INTO `index-time` VALUES (43, 'add index time add', '2023-11-28', 'success', '#FFFFFF');
 
 -- ----------------------------
 -- Table structure for manage-navlist
@@ -208,7 +230,7 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 528);
+INSERT INTO `page-visited` VALUES (1, 'main', 529);
 INSERT INTO `page-visited` VALUES (2, 'index', 183);
 INSERT INTO `page-visited` VALUES (3, 'notes', 47);
 INSERT INTO `page-visited` VALUES (4, 'resources', 56);
