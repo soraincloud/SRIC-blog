@@ -11,11 +11,31 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 24/11/2023 10:23:22
+ Date: 28/11/2023 14:39:26
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for dict_el_color_type
+-- ----------------------------
+DROP TABLE IF EXISTS `dict_el_color_type`;
+CREATE TABLE `dict_el_color_type`  (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `label` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '显示文字',
+  `value` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '值',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of dict_el_color_type
+-- ----------------------------
+INSERT INTO `dict_el_color_type` VALUES (1, 'primary', 'primary');
+INSERT INTO `dict_el_color_type` VALUES (2, 'success', 'success');
+INSERT INTO `dict_el_color_type` VALUES (3, 'info', 'info');
+INSERT INTO `dict_el_color_type` VALUES (4, 'warning', 'warning');
+INSERT INTO `dict_el_color_type` VALUES (5, 'danger', 'danger');
 
 -- ----------------------------
 -- Table structure for index-about
@@ -78,7 +98,7 @@ DROP TABLE IF EXISTS `index-time`;
 CREATE TABLE `index-time`  (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `content` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '内容',
-  `timestmap` date NULL DEFAULT NULL COMMENT '时间',
+  `timestamp` date NULL DEFAULT NULL COMMENT '时间',
   `type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '外圈颜色',
   `color` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '内部颜色',
   PRIMARY KEY (`id`) USING BTREE

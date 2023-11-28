@@ -6,7 +6,7 @@ public class indexTime
 {
     private int id;
     private String content;
-    private String timestmap;
+    private String timestamp;
     private String type;
     private String color;
 }

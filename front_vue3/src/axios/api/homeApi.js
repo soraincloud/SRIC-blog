@@ -29,6 +29,11 @@ export function deleteTimeById(params)
     return post('/home/deleteTimeById',params)
 }
 
+export function addIndexTime(params)
+{
+    return post('/home/addIndexTime',params)
+}
+
 export function getAllIndexHead(params)
 {
     return get('/home/getAllIndexHead',params)

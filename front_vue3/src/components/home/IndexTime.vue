@@ -10,7 +10,7 @@
                 <el-timeline-item
                     v-for="(item, i) in timeline"
                     :key="i"
-                    :timestamp="item.timestmap"
+                    :timestamp="item.timestamp"
                     :type="item.type"
                     :color="item.color"
                     :hollow="true"

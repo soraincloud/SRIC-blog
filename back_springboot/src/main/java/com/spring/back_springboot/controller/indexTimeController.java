@@ -58,8 +58,8 @@ public class indexTimeController
 
     @CrossOrigin
     @PostMapping("/home/addIndexTime")
-    public void addIndexTime(@RequestBody indexTime time)
+    public int addIndexTime(@RequestBody indexTime time)
     {
-        service.addIndexTime(time);
+        return service.addIndexTime(time);
     }
 }

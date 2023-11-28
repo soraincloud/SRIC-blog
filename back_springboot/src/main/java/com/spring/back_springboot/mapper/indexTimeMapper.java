@@ -11,13 +11,7 @@ public interface indexTimeMapper
     List<indexTime> getAllIndexTime();
 
     @Update(value = "UPDATE `index-time` SET CONTENT = #{content}, TIMESTMAP = #{timestmap}, TYPE = #{type}, COLOR = #{color} WHERE ID = #{id}")
-    void updateTimeById(
-            @Param(value = "content") String content,
-            @Param(value = "timestmap") String timestmap,
-            @Param(value = "type") String type,
-            @Param(value = "color") String color,
-            @Param(value = "id") int id
-    );
+    void updateTimeById(indexTime time);
 
     @Delete(value = "DELETE FROM `index-time` WHERE ID = #{id}")
     void deleteTimeById(@Param(value = "id") int id);
@@ -32,10 +26,6 @@ public interface indexTimeMapper
     List<indexTime> getTimeByYear(@Param(value = "year")String year);
 
     @Insert(value = "INSERT INTO `index-time` values (null, #{content}, #{timestmap}, #{type}, #{color})")
-    void addIndexTime(
-            @Param(value = "content") String content,
-            @Param(value = "timestmap") String timestmap,
-            @Param(value = "type") String type,
-            @Param(value = "color") String color
-    );
+    @SelectKey(keyProperty = "id",keyColumn = "id",before = false,resultType = Integer.class,statement = "select last_insert_id()")
+    void addIndexTime(indexTime time);
 }

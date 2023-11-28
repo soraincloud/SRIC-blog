@@ -18,14 +18,14 @@ public class indexTimeServiceImpl implements indexTimeService
     public List<indexTime> getAllIndexTime()
     {
         List<indexTime> list = mapper.getAllIndexTime();
-        list.sort((t1, t2) -> t2.getTimestmap().compareTo(t1.getTimestmap()));
+        list.sort((t1, t2) -> t2.getTimestamp().compareTo(t1.getTimestamp()));
         return list;
     }
 
     @Override
     public void updateTimeById(indexTime time)
     {
-        mapper.updateTimeById(time.getContent(),time.getTimestmap(),time.getType(),time.getColor(),time.getId());
+        mapper.updateTimeById(time);
     }
 
     @Override
@@ -53,8 +53,9 @@ public class indexTimeServiceImpl implements indexTimeService
     }
 
     @Override
-    public void addIndexTime(indexTime time)
+    public int addIndexTime(indexTime time)
     {
-        mapper.addIndexTime(time.getContent(),time.getTimestmap(),time.getType(),time.getColor());
+        mapper.addIndexTime(time);
+        return time.getId();
     }
 }

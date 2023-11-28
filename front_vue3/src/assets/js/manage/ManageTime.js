@@ -1,4 +1,4 @@
-import { getIndexTimeList,updateTimeById,deleteTimeById,getTimeByText,getTimeByTime,getTimeByYear } from "@/axios/api/homeApi"
+import { getIndexTimeList,updateTimeById,deleteTimeById,getTimeByText,getTimeByTime,getTimeByYear,addIndexTime } from "@/axios/api/homeApi"
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -50,7 +50,7 @@ export default
             labelYears: t('common.years'),
             search: '',
             addShow: false,
-            addTimestmap: '',
+            addTimestamp: '',
             addType: '',
             addColor: '#909399',
             addContent: '',
@@ -98,8 +98,7 @@ export default
         {
             if(this.timelineCard[i].open == false)
             {
-                var divObject = document.getElementById("manageTime-card-div-id")
-                var divHeight = divObject.offsetHeight
+                var divHeight = document.getElementById("manageTime-card-div-id").offsetHeight
                 this.timelineCard[i].height = 'height: ' + (divHeight + 20) + 'px;'
                 this.timelineCard[i].open = true
             }
@@ -175,15 +174,14 @@ export default
             this.addShow = true
             this.addText = ''
             setTimeout( () => { 
-                var divObject = document.getElementById("add-card-div-id")
-                var divHeight = divObject.offsetHeight
+                var divHeight = document.getElementById("add-card-div-id").offsetHeight
                 this.addHeight = 'height: ' + (divHeight + 20) + 'px;'
              },100)
         },
         clickRefresh()
         {
             this.addShow = false
-            this.addTimestmap = ''
+            this.addTimestamp = ''
             this.addType = ''
             this.addColor = '#909399'
             this.addContent = ''
@@ -202,7 +200,25 @@ export default
         },
         addApply()
         {
-
+            var _this = this
+            addIndexTime({ content: this.addContent,timestamp: this.addTimestamp,type: this.addType,color: this.addColor }).then(function(resp){
+                _this.timeline[_this.timeline.length] = {
+                    id: resp.data.id,
+                    content: _this.addContent,
+                    timestamp: _this.addTimestamp,
+                    type: _this.addType,
+                    color: _this.addColor,
+                },
+                _this.timelineCard[_this.timelineCard.length] = { height: 'height: 0px;',submit: false,open: false },
+                _this.addContent = '',
+                _this.addTimestamp = '',
+                _this.addType = '',
+                _this.addColor = '#909399',
+                _this.addHeight = 'height: 0px;',
+                _this.addShow = false,
+                _this.$refs.scrollbar.scrollTo({top: document.getElementById("manageTime-scrollbar").offsetHeight, behavior: 'smooth'}),
+                _this.$message.success({message: t('common.applySuccess'),})
+            })
         },
         addCancel()
         {

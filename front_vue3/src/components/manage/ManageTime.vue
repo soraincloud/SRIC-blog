@@ -1,6 +1,6 @@
 <template>
-    <el-scrollbar :height="bodyHeight" v-loading="loading" element-loading-text="Loading . . .">
-        <div class="ManageIndex-out-div">
+    <el-scrollbar :height="bodyHeight" v-loading="loading" element-loading-text="Loading . . ." ref="scrollbar">
+        <div class="ManageIndex-out-div" id="manageTime-scrollbar">
             <el-card class="ManageIndex-el-card" style="padding-top:0px;">
                 <el-affix :offset="75">
                     <el-row>
@@ -54,7 +54,7 @@
                         <el-timeline>
                             <el-timeline-item
                             v-if="addShow"
-                            :timestmap="addTimestmap"
+                            :timestamp="addTimestamp"
                             :type="addType"
                             :color="addColor"
                             :hollow="true" size="large"
@@ -74,7 +74,7 @@
                                             <template v-slot:label>
                                                 {{ $t('common.time') }}
                                             </template>
-                                            <el-date-picker v-model="addTimestmap" type="date" value-format="YYYY-MM-DD"></el-date-picker>
+                                            <el-date-picker v-model="addTimestamp" type="date" value-format="YYYY-MM-DD"></el-date-picker>
                                         </el-form-item>
                                         <el-form-item>
                                             <template v-slot:label>
@@ -108,7 +108,7 @@
                             <el-timeline-item
                             v-for="(item, i) in timeline"
                             :key="i"
-                            :timestamp="item.timestmap"
+                            :timestamp="item.timestamp"
                             :type="item.type"
                             :color="item.color"
                             :hollow="true" size="large"
@@ -147,7 +147,7 @@
                                                 <template v-slot:label>
                                                     {{ $t('common.time') }}
                                                 </template>
-                                                <el-date-picker v-model="item.timestmap" type="date" value-format="YYYY-MM-DD"></el-date-picker>
+                                                <el-date-picker v-model="item.timestamp" type="date" value-format="YYYY-MM-DD"></el-date-picker>
                                             </el-form-item>
                                             <el-form-item>
                                                 <template v-slot:label>
