@@ -1,5 +1,10 @@
 <template>
-    <el-scrollbar :height="bodyHeight" v-loading="loading" element-loading-text="Loading . . ." ref="scrollbar">
+    <el-button :style="scrollShow" class="manageTime-to-top-button" @click="clickBackTop()" type="primary" plain>
+        <el-icon>
+            <CaretTop />
+        </el-icon>
+    </el-button>
+    <el-scrollbar @scroll="handleScroll($event)" :height="bodyHeight" v-loading="loading" element-loading-text="Loading . . ." ref="scrollbar">
         <div class="ManageIndex-out-div" id="manageTime-scrollbar">
             <el-card class="ManageIndex-el-card" style="padding-top:0px;">
                 <el-affix :offset="75">

@@ -77,3 +77,11 @@ html.dark .manageTime-input-with-select .el-input__wrapper
 {
     color: #ff8f8f;
 }
+
+.manageTime-to-top-button
+{
+    position: absolute;
+    bottom: 20px;
+    z-index: 99;
+    transition: 0.5s right ease;
+}

@@ -5,6 +5,7 @@ import i18n from '@/language'
 
 const { t } = i18n.global
 const isDark = useDark()
+let isMore = 0;
 export default
 {
     name: 'ManageTime',
@@ -42,7 +43,8 @@ export default
             {
                 content: '',
                 timestamp: '',
-            }
+            },
+            scrollShow: 'right: -50px;',
         }
     },
     mounted()
@@ -239,6 +241,24 @@ export default
             this.addText = 'color: #909399;'
             this.addType = ''
             this.addColor = '#909399'
+        },
+        clickBackTop()
+        {
+            this.$refs.scrollbar.scrollTo({top: 0, behavior: 'smooth'})
+        },
+        handleScroll(e)
+        {
+            this.data = e.scrollTop
+            if(this.data > 300 && isMore == 0)
+            {
+                this.scrollShow = 'right: 20px;'
+                isMore = 1
+            }
+            if(this.data < 300)
+            {
+                this.scrollShow = 'right: -50px;'
+                isMore = 0;
+            }
         },
     },
     watch:
