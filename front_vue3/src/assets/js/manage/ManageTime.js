@@ -1,4 +1,5 @@
 import { getIndexTimeList,updateTimeById,deleteTimeById,getTimeByText,getTimeByTime,getTimeByYear,addIndexTime } from "@/axios/api/homeApi"
+import { getDictElColorType } from "@/axios/api/dictApi"
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -16,29 +17,7 @@ export default
             active: '',
             margin: 'margin-top: 50px;',
             timelineCard: [],
-            options: 
-            [
-                {
-                    value: 'primary',
-                    label: 'primary',
-                },
-                {
-                    value: 'success',
-                    label: 'success',
-                },
-                {
-                    value: 'info',
-                    label: 'info',
-                },
-                {
-                    value: 'warning',
-                    label: 'warning',
-                },
-                {
-                    value: 'danger',
-                    label: 'danger',
-                },
-            ],
+            options: [],
             deleteTitle: t('common.deleteSure'),
             deleteOk: t('common.apply'),
             deleteCancel: t('common.cancel'),
@@ -68,6 +47,9 @@ export default
     created()
     {
         var _this = this
+        getDictElColorType().then(function(resp){
+            _this.options = resp.data
+        })
         getIndexTimeList().then(function(resp){
             _this.timeline = resp.data
             for(let i = 0;i < resp.data.length;i++)
