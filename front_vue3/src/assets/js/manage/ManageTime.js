@@ -29,17 +29,20 @@ export default
             labelYears: t('common.years'),
             search: '',
             addShow: false,
-            addTimestamp: '',
             addType: '',
             addColor: '#909399',
-            addContent: '',
             addHeight: 'height: 0px;',
             addText: '',
             rules:
             {
-                text: [{required: true, message: 'NOT NULL'}],
-                time: [{required: true, message: 'NOT NULL'}],
+                content: [{required: true, message: 'NOT NULL'}],
+                timestamp: [{required: true, message: 'NOT NULL'}],
             },
+            addForm: 
+            {
+                content: '',
+                timestamp: '',
+            }
         }
     },
     mounted()
@@ -101,12 +104,22 @@ export default
         },
         clickApply(i)
         {
-            updateTimeById(this.timeline[i]).then(
-                this.$message.success({message: t('common.applySuccess'),}),
-                this.timelineCard[i].submit = false,
-                this.timelineCard[i].open = false,
-                this.timelineCard[i].height = 'height: ' + 0 + 'px;',
-            )
+            this.$refs['editForm'][i].validate((valid) => {
+                if(valid)
+                {
+                    updateTimeById(this.timeline[i]).then(
+                        this.$message.success({message: t('common.applySuccess'),}),
+                        this.timelineCard[i].submit = false,
+                        this.timelineCard[i].open = false,
+                        this.timelineCard[i].height = 'height: ' + 0 + 'px;',
+                    )
+                }
+                else
+                {
+                    this.$message.error({message: t('common.error'),})
+                    return
+                }
+            })
         },
         clickCancel(i)
         {
@@ -168,10 +181,13 @@ export default
         clickRefresh()
         {
             this.addShow = false
-            this.addTimestamp = ''
+            this.addForm = 
+            {
+                content: '',
+                timestamp: '',
+            }
             this.addType = ''
             this.addColor = '#909399'
-            this.addContent = ''
             this.addHeight = 'height: 0px;'
             this.addText = ''
             var _this = this
@@ -187,29 +203,34 @@ export default
         },
         addApply()
         {
-            if(this.addContent == '' || this.addTimestamp == '')
-            {
-                this.$message.error({message: t('common.error'),})
-                return
-            }
-            var _this = this
-            addIndexTime({ content: this.addContent,timestamp: this.addTimestamp,type: this.addType,color: this.addColor }).then(function(resp){
-                _this.timeline[_this.timeline.length] = {
-                    id: resp.data.id,
-                    content: _this.addContent,
-                    timestamp: _this.addTimestamp,
-                    type: _this.addType,
-                    color: _this.addColor,
-                },
-                _this.timelineCard[_this.timelineCard.length] = { height: 'height: 0px;',submit: false,open: false },
-                _this.addContent = '',
-                _this.addTimestamp = '',
-                _this.addType = '',
-                _this.addColor = '#909399',
-                _this.addHeight = 'height: 0px;',
-                _this.addShow = false,
-                _this.$refs.scrollbar.scrollTo({top: document.getElementById("manageTime-scrollbar").offsetHeight, behavior: 'smooth'}),
-                _this.$message.success({message: t('common.applySuccess'),})
+            this.$refs['addForm'].validate((valid) => {
+                if(valid)
+                {
+                    var _this = this
+                    addIndexTime({ content: this.addForm.content,timestamp: this.addForm.timestamp,type: this.addType,color: this.addColor }).then(function(resp){
+                        _this.timeline[_this.timeline.length] = {
+                            id: resp.data.id,
+                            content: _this.addForm.content,
+                            timestamp: _this.addForm.timestamp,
+                            type: _this.addType,
+                            color: _this.addColor,
+                        },
+                        _this.timelineCard[_this.timelineCard.length] = { height: 'height: 0px;',submit: false,open: false },
+                        _this.addForm.content = '',
+                        _this.addForm.timestamp = '',
+                        _this.addType = '',
+                        _this.addColor = '#909399',
+                        _this.addHeight = 'height: 0px;',
+                        _this.addShow = false,
+                        _this.$refs.scrollbar.scrollTo({top: document.getElementById("manageTime-scrollbar").offsetHeight, behavior: 'smooth'}),
+                        _this.$message.success({message: t('common.applySuccess'),})
+                    })
+                }
+                else
+                {
+                    this.$message.error({message: t('common.error'),})
+                    return
+                }
             })
         },
         addCancel()

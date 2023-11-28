@@ -63,18 +63,18 @@
                             <div :style="addText">{{ addContent }}</div>
                             <el-card class="manageTime-change-el-card" :style="addHeight">
                                 <div id="add-card-div-id">
-                                    <el-form :rules="rules">
-                                        <el-form-item prop="text">
+                                    <el-form :model="addForm" :rules="rules" ref="addForm">
+                                        <el-form-item prop="content">
                                             <template v-slot:label>
                                                 {{ $t('common.text') }}
                                             </template>
-                                            <el-input maxlength="50" show-word-limit type="text" v-model="addContent"></el-input>
+                                            <el-input maxlength="50" show-word-limit type="text" v-model="addForm.content"></el-input>
                                         </el-form-item>
-                                        <el-form-item prop="time">
+                                        <el-form-item prop="timestamp">
                                             <template v-slot:label>
                                                 {{ $t('common.time') }}
                                             </template>
-                                            <el-date-picker v-model="addTimestamp" type="date" value-format="YYYY-MM-DD"></el-date-picker>
+                                            <el-date-picker v-model="addForm.timestamp" type="date" value-format="YYYY-MM-DD"></el-date-picker>
                                         </el-form-item>
                                         <el-form-item>
                                             <template v-slot:label>
@@ -136,14 +136,14 @@
                                 </el-button>
                                 <el-card class="manageTime-change-el-card" :style="timelineCard[i].height">
                                     <div id="manageTime-card-div-id">
-                                        <el-form :rules="rules">
-                                            <el-form-item prop="text">
+                                        <el-form :model="item" :rules="rules" ref="editForm">
+                                            <el-form-item prop="content">
                                                 <template v-slot:label>
                                                     {{ $t('common.text') }}
                                                 </template>
                                                 <el-input maxlength="50" show-word-limit type="text" v-model="item.content"></el-input>
                                             </el-form-item>
-                                            <el-form-item prop="time">
+                                            <el-form-item prop="timestamp">
                                                 <template v-slot:label>
                                                     {{ $t('common.time') }}
                                                 </template>
