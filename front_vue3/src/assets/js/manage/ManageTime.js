@@ -75,11 +75,11 @@ export default
         {
             if(isDark.value == true)
             {
-                this.active = 'background: rgba(0,0,0,0.3);'
+                this.active = 'background: rgba(0,0,0,0.5);'
             }
             else
             {
-                this.active = 'background: rgba(255,255,255,0.3)'
+                this.active = 'background: rgba(255,255,255,0.5)'
             }
         },
         mouseLeave()
