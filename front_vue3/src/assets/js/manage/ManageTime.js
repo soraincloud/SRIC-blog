@@ -35,6 +35,11 @@ export default
             addContent: '',
             addHeight: 'height: 0px;',
             addText: '',
+            rules:
+            {
+                text: [{required: true, message: 'NOT NULL'}],
+                time: [{required: true, message: 'NOT NULL'}],
+            },
         }
     },
     mounted()
@@ -182,6 +187,11 @@ export default
         },
         addApply()
         {
+            if(this.addContent == '' || this.addTimestamp == '')
+            {
+                this.$message.error({message: t('common.error'),})
+                return
+            }
             var _this = this
             addIndexTime({ content: this.addContent,timestamp: this.addTimestamp,type: this.addType,color: this.addColor }).then(function(resp){
                 _this.timeline[_this.timeline.length] = {

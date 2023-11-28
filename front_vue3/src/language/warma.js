@@ -24,6 +24,7 @@ export default
         day: '日',
         add: '添多',
         refresh: '刷表',
+        error: '戳辣',
     },
     menu:
     {

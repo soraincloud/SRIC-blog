@@ -63,14 +63,14 @@
                             <div :style="addText">{{ addContent }}</div>
                             <el-card class="manageTime-change-el-card" :style="addHeight">
                                 <div id="add-card-div-id">
-                                    <el-form>
-                                        <el-form-item>
+                                    <el-form :rules="rules">
+                                        <el-form-item prop="text">
                                             <template v-slot:label>
                                                 {{ $t('common.text') }}
                                             </template>
                                             <el-input maxlength="50" show-word-limit type="text" v-model="addContent"></el-input>
                                         </el-form-item>
-                                        <el-form-item>
+                                        <el-form-item prop="time">
                                             <template v-slot:label>
                                                 {{ $t('common.time') }}
                                             </template>
@@ -136,14 +136,14 @@
                                 </el-button>
                                 <el-card class="manageTime-change-el-card" :style="timelineCard[i].height">
                                     <div id="manageTime-card-div-id">
-                                        <el-form>
-                                            <el-form-item>
+                                        <el-form :rules="rules">
+                                            <el-form-item prop="text">
                                                 <template v-slot:label>
                                                     {{ $t('common.text') }}
                                                 </template>
                                                 <el-input maxlength="50" show-word-limit type="text" v-model="item.content"></el-input>
                                             </el-form-item>
-                                            <el-form-item>
+                                            <el-form-item prop="time">
                                                 <template v-slot:label>
                                                     {{ $t('common.time') }}
                                                 </template>

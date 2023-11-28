@@ -24,6 +24,7 @@ export default
         day: 'day',
         add: 'add',
         refresh: 'refresh',
+        error: 'error',
     },
     menu:
     {

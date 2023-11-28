@@ -53,7 +53,7 @@ public class indexTimeController
     @GetMapping("/home/getTimeByYear")
     public List<indexTime> getTimeByYear(String year)
     {
-        return service.getTimeByTime(year);
+        return service.getTimeByYear(year);
     }
 
     @CrossOrigin

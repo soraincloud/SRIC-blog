@@ -49,7 +49,7 @@ public class indexTimeServiceImpl implements indexTimeService
     @Override
     public List<indexTime> getTimeByYear(String year)
     {
-        return mapper.getTimeByTime(year);
+        return mapper.getTimeByYear(year);
     }
 
     @Override

@@ -24,6 +24,7 @@ export default
         day: '日',
         add: '添加',
         refresh: '刷新',
+        error: '错误',
     },
     menu:
     {

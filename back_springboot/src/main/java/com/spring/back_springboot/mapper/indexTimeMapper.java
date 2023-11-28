@@ -10,7 +10,7 @@ public interface indexTimeMapper
     @Select(value = "SELECT * FROM `index-time`")
     List<indexTime> getAllIndexTime();
 
-    @Update(value = "UPDATE `index-time` SET CONTENT = #{content}, TIMESTMAP = #{timestmap}, TYPE = #{type}, COLOR = #{color} WHERE ID = #{id}")
+    @Update(value = "UPDATE `index-time` SET CONTENT = #{content}, TIMESTAMP = #{timestamp}, TYPE = #{type}, COLOR = #{color} WHERE ID = #{id}")
     void updateTimeById(indexTime time);
 
     @Delete(value = "DELETE FROM `index-time` WHERE ID = #{id}")
@@ -19,13 +19,13 @@ public interface indexTimeMapper
     @Select(value = "SELECT * FROM `index-time` WHERE CONTENT LIKE concat('%',#{text},'%')")
     List<indexTime> getTimeByText(@Param(value = "text")String text);
 
-    @Select(value = "SELECT * FROM `index-time` WHERE TIMESTMAP LIKE concat('%',#{time},'%')")
+    @Select(value = "SELECT * FROM `index-time` WHERE TIMESTAMP LIKE concat('%',#{time},'%')")
     List<indexTime> getTimeByTime(@Param(value = "time")String time);
 
-    @Select(value = "SELECT * FROM `index-time` WHERE DATE_FORMAT(timestmap,'%Y') = #{year}")
+    @Select(value = "SELECT * FROM `index-time` WHERE DATE_FORMAT(timestamp,'%Y') = #{year}")
     List<indexTime> getTimeByYear(@Param(value = "year")String year);
 
-    @Insert(value = "INSERT INTO `index-time` values (null, #{content}, #{timestmap}, #{type}, #{color})")
+    @Insert(value = "INSERT INTO `index-time` values (null, #{content}, #{timestamp}, #{type}, #{color})")
     @SelectKey(keyProperty = "id",keyColumn = "id",before = false,resultType = Integer.class,statement = "select last_insert_id()")
     void addIndexTime(indexTime time);
 }
