@@ -1,15 +1,17 @@
+import { getAllNotesCategory } from '@/axios/api/notesApi'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
-import { getAllNotesCategory } from '@/axios/api/notesApi'
 
 const { t } = i18n.global
 const isDark = useDark()
 export default
 {
-    name: 'NotesAside',
+    name: 'ManageNotesCategory',
     data()
     {
         return{
+            loading: false,
+            bodyHeight: (window.innerHeight - 60) + 'px',
             active: '',
             category:
             [
@@ -24,7 +26,13 @@ export default
                     icon: "QuestionFilled",
                 },
             ],
-            categoryNeed: ''
+        }
+    },
+    mounted()
+    {
+        window.onresize = () => 
+        {
+            this.bodyHeight = (window.innerHeight - 70) + 'px'
         }
     },
     methods:
@@ -33,11 +41,11 @@ export default
         {
             if(isDark.value == true)
             {
-                this.active = 'background: rgba(0,0,0,0.85);'
+                this.active = 'background: rgba(0,0,0,0);'
             }
             else
             {
-                this.active = 'background: rgba(255,255,255,0.85);'
+                this.active = 'background: rgba(255,255,255,0);'
             }
         },
         mouseLeave()
@@ -59,18 +67,6 @@ export default
         {
             this.category[i].backgrounds = ''
         },
-        choose(i)
-        {
-            if(this.category[i].id == 0)
-            {
-                this.$emit('loadAllNotesFormAside')
-            }
-            else
-            {
-                this.categoryNeed = this.category[i].id
-                this.$emit('loadNotesFromAside')
-            }
-        }
     },
     created()
     {

@@ -98,6 +98,11 @@ const routes =
         path: '/manageTime',
         component: () => import('@/components/manage/ManageTime'),
       },
+      {
+        name: 'manageNotesCategory',
+        path: '/manageNotesCategory',
+        component: () => import('@/components/manage/ManageNotesCategory'),
+      },
     ]
   },
 ]

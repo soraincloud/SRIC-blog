@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 29/11/2023 09:15:38
+ Date: 29/11/2023 10:33:34
 */
 
 SET NAMES utf8mb4;
@@ -171,6 +171,7 @@ CREATE TABLE `manage-navlist`  (
 -- ----------------------------
 INSERT INTO `manage-navlist` VALUES (1, 'manageHome', '', 'HomeFilled', '主页管理', 'manage home', '主面管管');
 INSERT INTO `manage-navlist` VALUES (2, 'manageTime', '', 'InfoFilled', '日志管理', 'manage log', '时表管管');
+INSERT INTO `manage-navlist` VALUES (3, 'manageNotesCategory', '', 'List', '笔记分类', 'notes category', '记纸类类');
 
 -- ----------------------------
 -- Table structure for notes
@@ -233,10 +234,10 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 541);
-INSERT INTO `page-visited` VALUES (2, 'index', 183);
-INSERT INTO `page-visited` VALUES (3, 'notes', 47);
-INSERT INTO `page-visited` VALUES (4, 'resources', 56);
+INSERT INTO `page-visited` VALUES (1, 'main', 559);
+INSERT INTO `page-visited` VALUES (2, 'index', 184);
+INSERT INTO `page-visited` VALUES (3, 'notes', 50);
+INSERT INTO `page-visited` VALUES (4, 'resources', 59);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
 INSERT INTO `page-visited` VALUES (6, 'personal', 37);
 INSERT INTO `page-visited` VALUES (7, 'function', 18);
@@ -285,8 +286,8 @@ CREATE TABLE `resources-category`  (
 -- ----------------------------
 -- Records of resources-category
 -- ----------------------------
-INSERT INTO `resources-category` VALUES (1, 'markdown', 'Menu');
-INSERT INTO `resources-category` VALUES (2, 'png', 'Menu');
+INSERT INTO `resources-category` VALUES (1, 'markdown', 'EditPen');
+INSERT INTO `resources-category` VALUES (2, 'png', 'Picture');
 
 -- ----------------------------
 -- Table structure for tag
