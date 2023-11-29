@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : mysql
+ Source Server         : test-connect
  Source Server Type    : MySQL
  Source Server Version : 80035
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 28/11/2023 17:45:31
+ Date: 29/11/2023 09:15:38
 */
 
 SET NAMES utf8mb4;
@@ -102,7 +102,7 @@ CREATE TABLE `index-time`  (
   `type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '外圈颜色',
   `color` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '内部颜色',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '主页活动时间轴' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 44 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '主页活动时间轴' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of index-time
@@ -160,14 +160,17 @@ CREATE TABLE `manage-navlist`  (
   `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT '' COMMENT '菜单名',
   `navItem` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '菜单文字',
   `icon` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '对应图标',
+  `zh` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '中文文字',
+  `en` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '英文文字',
+  `warma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '沃沃文字',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '管理页面动态菜单' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of manage-navlist
 -- ----------------------------
-INSERT INTO `manage-navlist` VALUES (1, 'manageHome', '主页管理', 'HomeFilled');
-INSERT INTO `manage-navlist` VALUES (2, 'manageTime', '日志管理', 'InfoFilled');
+INSERT INTO `manage-navlist` VALUES (1, 'manageHome', '', 'HomeFilled', '主页管理', 'manage home', '主面管管');
+INSERT INTO `manage-navlist` VALUES (2, 'manageTime', '', 'InfoFilled', '日志管理', 'manage log', '时表管管');
 
 -- ----------------------------
 -- Table structure for notes
@@ -230,7 +233,7 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 529);
+INSERT INTO `page-visited` VALUES (1, 'main', 541);
 INSERT INTO `page-visited` VALUES (2, 'index', 183);
 INSERT INTO `page-visited` VALUES (3, 'notes', 47);
 INSERT INTO `page-visited` VALUES (4, 'resources', 56);

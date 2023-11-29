@@ -9,4 +9,7 @@ public class manageMenuList
     private String name;
     private String navItem;
     private String icon;
+    private String zh;
+    private String en;
+    private String warma;
 }

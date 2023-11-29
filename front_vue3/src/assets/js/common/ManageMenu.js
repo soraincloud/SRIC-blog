@@ -20,6 +20,7 @@ export default
                     icon: 'Menu',
                 },
             ],
+            language: localStorage.getItem('language')
         }
     },
     methods:
@@ -47,6 +48,18 @@ export default
         getAllManageMenu().then(function(resp){
             for(let i = 0;i < resp.data.length;i++)
             {
+                if(_this.language == 'zh')
+                {
+                    resp.data[i].navItem = resp.data[i].zh
+                }
+                else if(_this.language == 'en')
+                {
+                    resp.data[i].navItem = resp.data[i].en
+                }
+                else if(_this.language == 'warma')
+                {
+                    resp.data[i].navItem = resp.data[i].warma
+                }
                 _this.navList.push(resp.data[i])
             }
         })
@@ -56,6 +69,27 @@ export default
         '$i18n.locale'(newValue)
         {
             this.navList[0].navItem = t('manageMenu.manage')
+            if(newValue == 'zh')
+            {
+                for(let i = 1;i < this.navList.length;i++)
+                {
+                    this.navList[i].navItem = this.navList[i].zh
+                }
+            }
+            else if(newValue == 'en')
+            {
+                for(let i = 1;i < this.navList.length;i++)
+                {
+                    this.navList[i].navItem = this.navList[i].en
+                }
+            }
+            else if(newValue == 'warma')
+            {
+                for(let i = 1;i < this.navList.length;i++)
+                {
+                    this.navList[i].navItem = this.navList[i].warma
+                }
+            }
         }
     },
 }
