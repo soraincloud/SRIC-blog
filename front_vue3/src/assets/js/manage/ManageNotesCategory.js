@@ -40,7 +40,17 @@ export default
             selectPlaceholderText: t('common.select'),
             isAdd: false,
             isEdit:false,
-            isApply: false,
+            isDelete: false,
+            isEditApply: false,
+            isDeleteApply: false,
+            isCancel: false,
+            showText: '',
+            addBackgrounds: 'background: #ff7f7f',
+            rules:
+            {
+                content: [{required: true, message: 'NOT NULL'}],
+                icon: [{required: true, message: 'NOT NULL'}],
+            },
         }
     },
     mounted()
@@ -114,24 +124,104 @@ export default
             this.input.content = this.category[i].content
             this.input.icon = this.category[i].icon
             this.isEdit = true
+            this.isDelete = true
+            this.isAdd = false
+            this.isEditApply = false
+            this.isDeleteApply = false
+            this.isCancel = false
+            this.showText = ''
+        },
+        clickAdd()
+        {
+            this.isAdd = true
+            this.isEdit = false
+            this.isDelete = false
+            this.isEditApply = false
+            this.isDeleteApply = false
+            this.isCancel = false
+            this.showText = ''
+            this.input = 
+            {
+                id: '',
+                content: '',
+                icon: '',
+            }
         },
         add()
         {
-
+            this.$refs['form'].validate((valid) => {
+                if(valid)
+                {
+                    
+                }
+                else
+                {
+                    this.$message.error({message: t('message.notNullError'),})
+                    return
+                }
+            })
         },
-        edit()
+        clickEdit()
         {
             this.isEdit = false
-            this.isApply = true
+            this.isDelete = false
+            this.isEditApply = true
+            this.isCancel = true
+            this.showText = t('common.applyText')
         },
-        apply()
+        editApply()
         {
-
+            this.$refs['form'].validate((valid) => {
+                if(valid)
+                {
+                    
+                }
+                else
+                {
+                    this.$message.error({message: t('message.notNullError'),})
+                    return
+                }
+            })
+        },
+        clickDelete()
+        {
+            this.isEdit = false
+            this.isDelete = false
+            this.isDeleteApply = true
+            this.isCancel = true
+            this.showText = t('common.deleteSure')
+        },
+        deleteAppply()
+        {
+            this.$refs['form'].validate((valid) => {
+                if(valid)
+                {
+                    
+                }
+                else
+                {
+                    this.$message.error({message: t('message.notNullError'),})
+                    return
+                }
+            })
         },
         cancel()
         {
-            this.isApply = false
+            this.isEditApply = false
+            this.isDeleteApply = false
+            this.isCancel = false
+            this.isAdd = false
             this.isEdit = true
+            this.isDelete = true
+            this.showText = ''
+        },
+        addOver()
+        {
+            this.addBackgrounds = "background: #ff5f5f"
+        },
+        addLeave()
+        {
+            this.addBackgrounds = 'background: #ff7f7f'
         },
     },
     created()

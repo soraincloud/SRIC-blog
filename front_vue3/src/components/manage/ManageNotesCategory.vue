@@ -9,6 +9,19 @@
                                 <h1 class="common-text-style" style="margin-top: 64px">{{ $t('notes.head') }}</h1>
                                 <el-divider class="common-el-divider-style" />
                                 <el-card
+                                shadow="never"
+                                class="NotesAside-item-card-style"
+                                :style="addBackgrounds"
+                                @mouseover="addOver()"
+                                @mouseleave="addLeave()"
+                                @click="clickAdd()"
+                                >
+                                <el-icon size="20px" style="float:right;">
+                                    <CirclePlusFilled />
+                                </el-icon>
+                                {{ $t('common.add') }}
+                                </el-card>
+                                <el-card
                                 v-for="(item,i) in category"
                                 :key="i"
                                 shadow="never"
@@ -33,11 +46,13 @@
                                     <el-form
                                     label-position="right"
                                     :model="input"
+                                    :rules="rules"
+                                    ref="form"
                                     >
-                                    <el-form-item :label="textLabel">
+                                    <el-form-item :label="textLabel"  prop="content">
                                         <el-input v-model="input.content" />
                                     </el-form-item>
-                                    <el-form-item :label="iconLabel">
+                                    <el-form-item :label="iconLabel"  prop="icon">
                                         <el-icon size="20px" class="manageNotesCategory-left"><component :is="input.icon"></component></el-icon>
                                         <el-select v-model="input.icon" class="manageNotesCategory-select" :placeholder="selectPlaceholderText">
                                             <el-option
@@ -58,15 +73,24 @@
                                         <el-button v-if="isAdd" @click="add()" type="danger"  plain>
                                             {{ $t("common.add") }}
                                         </el-button>
-                                        <el-button v-if="isEdit" @click="edit()" type="danger"  plain>
+                                        <el-button v-if="isEdit" @click="clickEdit()" type="warning"  plain>
                                             {{ $t("common.edit") }}
                                         </el-button>
-                                        <el-button v-if="isApply" @click="apply()" type="danger"  plain>
+                                        <el-button v-if="isEditApply" @click="editApply()" type="warning"  plain>
                                             {{ $t("common.apply") }}
                                         </el-button>
-                                        <el-button v-if="isApply" @click="cancel()" type="info" plain>
+                                        <el-button v-if="isDelete" @click="clickDelete()" type="danger"  plain>
+                                            {{ $t("common.delete") }}
+                                        </el-button>
+                                        <el-button v-if="isDeleteApply" @click="deleteApply()" type="danger"  plain>
+                                            {{ $t("common.edit") }}
+                                        </el-button>
+                                        <el-button v-if="isCancel" @click="cancel()" type="info" plain>
                                             {{ $t("common.cancel") }}
                                         </el-button>
+                                        <span class="manageTime-submit-text">
+                                            {{ showText }}
+                                        </span>
                                     </el-form-item>
                                     </el-form>
                                 </el-card>
@@ -89,4 +113,5 @@ export default managenotescategory;
 @import '@/assets/css/common.css';
 @import '@/assets/css/notes/NotesAside.css';
 @import '@/assets/css/manage/ManageNotesCategory.css';
+@import "@/assets/css/manage/ManageTime.css";
 </style>
