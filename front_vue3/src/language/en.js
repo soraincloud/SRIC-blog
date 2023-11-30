@@ -8,7 +8,6 @@ export default
         cancel: 'cancel',
         submitText: 'submit these changes',
         applyText: 'sure to apply ?',
-        applySuccess: 'apply success',
         edit: 'edit',
         delete: 'delete',
         text: 'text',
@@ -16,7 +15,6 @@ export default
         years: 'years',
         color: 'color',
         deleteSure: 'sure to delete this ?',
-        deleteSuccess: 'delete success',
         search: 'search',
         select: 'select',
         year: 'year',
@@ -25,6 +23,14 @@ export default
         add: 'add',
         refresh: 'refresh',
         error: 'error',
+        icon: 'icon',
+    },
+    message:
+    {
+        applySuccess: 'apply success',
+        deleteSuccess: 'delete success',
+        notNullError: 'not null',
+        notDefaultChange: 'could not change default configuration',
     },
     menu:
     {

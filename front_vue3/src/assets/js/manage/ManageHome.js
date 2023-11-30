@@ -111,7 +111,7 @@ export default
         {
             setIndexHeadTitle(this.indexHeadTitleData).then()
             setIndexHead(this.indexHeadData).then(
-                this.$message.success({message: t('common.applySuccess'),}),
+                this.$message.success({message: t('message.applySuccess'),}),
                 this.headSubmit = false,
                 this.headSubmitText = t('common.submitText'),
                 )
@@ -164,7 +164,7 @@ export default
         clickAboutApply()
         {
             setIndexAbout(this.indexAboutData).then(
-                this.$message.success({message: t('common.applySuccess'),}),
+                this.$message.success({message: t('message.applySuccess'),}),
                 this.aboutSubmit = false,
                 this.aboutSubmitText = t('common.submitText'),
                 )

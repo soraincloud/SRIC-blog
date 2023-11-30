@@ -8,7 +8,6 @@ export default
         cancel: '弃了',
         submitText: '上定这里改改',
         applyText: '确是上交蟆 ?',
-        applySuccess: '上交成力',
         edit: '改改',
         delete: '删掉',
         text: '文写',
@@ -16,7 +15,6 @@ export default
         years: '年时',
         color: '色色',
         deleteSure: '确要删没蟆 ?',
-        deleteSuccess: '删没成力',
         search: '搜看',
         select: '选这',
         year: '连',
@@ -25,6 +23,14 @@ export default
         add: '添多',
         refresh: '刷表',
         error: '戳辣',
+        icon: '纸标',
+    },
+    message:
+    {
+        applySuccess: '上交成力',
+        deleteSuccess: '删没成力',
+        notNullError: '不有空空',
+        notDefaultChange: '无能改改本有配文',
     },
     menu:
     {

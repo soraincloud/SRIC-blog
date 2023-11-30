@@ -8,7 +8,6 @@ export default
         cancel: '取消',
         submitText: '提交这些修改',
         applyText: '确定提交吗 ?',
-        applySuccess: '提交成功',
         edit: '修改',
         delete: '删除',
         text: '文本',
@@ -16,7 +15,6 @@ export default
         years: '年份',
         color: '颜色',
         deleteSure: '确定删除吗 ?',
-        deleteSuccess: '删除成功',
         search: '搜索',
         select: '选择',
         year: '年',
@@ -25,6 +23,14 @@ export default
         add: '添加',
         refresh: '刷新',
         error: '错误',
+        icon: '图标',
+    },
+    message:
+    {
+        applySuccess: '提交成功',
+        deleteSuccess: '删除成功',
+        notNullError: '不能为空',
+        notDefaultChange: '无法更改默认配置',
     },
     menu:
     {

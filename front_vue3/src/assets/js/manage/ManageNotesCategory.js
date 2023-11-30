@@ -1,4 +1,5 @@
 import { getAllNotesCategory } from '@/axios/api/notesApi'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -12,7 +13,8 @@ export default
         return{
             loading: false,
             bodyHeight: (window.innerHeight - 60) + 'px',
-            active: '',
+            active0: '',
+            active1: '',
             category:
             [
                 {
@@ -26,6 +28,19 @@ export default
                     icon: "QuestionFilled",
                 },
             ],
+            textLabel: t('common.text'),
+            iconLabel: t('common.icon'),
+            input:
+            {
+                id: '',
+                content: '',
+                icon: '',
+            },
+            icons: [],
+            selectPlaceholderText: t('common.select'),
+            isAdd: false,
+            isEdit:false,
+            isApply: false,
         }
     },
     mounted()
@@ -37,20 +52,41 @@ export default
     },
     methods:
     {
-        mouseOver()
+        mouseOver(i)
         {
             if(isDark.value == true)
             {
-                this.active = 'background: rgba(0,0,0,0);'
+                if(i == 0)
+                {
+                    this.active0 = 'background: rgba(0,0,0,0);'
+                }
+                else if(i == 1)
+                {
+                    this.active1 = 'background: rgba(0,0,0,0);'
+                }
             }
             else
             {
-                this.active = 'background: rgba(255,255,255,0);'
+                if(i == 0)
+                {
+                    this.active0 = 'background: rgba(255,255,255,0);'
+                }
+                else if(i == 1)
+                {
+                    this.active1 = 'background: rgba(255,255,255,0);'
+                }
             }
         },
-        mouseLeave()
+        mouseLeave(i)
         {
-            this.active = ''
+            if(i == 0)
+            {
+                this.active0 = ''
+            }
+            else if(i == 1)
+            {
+                this.active1 = ''
+            }
         },
         over(i)
         {
@@ -67,6 +103,36 @@ export default
         {
             this.category[i].backgrounds = ''
         },
+        choose(i)
+        {
+            if(i == 0 || i == 1)
+            {
+                this.$message.error({message: t('message.notDefaultChange'),})
+                return
+            }
+            this.input.id = this.category[i].id
+            this.input.content = this.category[i].content
+            this.input.icon = this.category[i].icon
+            this.isEdit = true
+        },
+        add()
+        {
+
+        },
+        edit()
+        {
+            this.isEdit = false
+            this.isApply = true
+        },
+        apply()
+        {
+
+        },
+        cancel()
+        {
+            this.isApply = false
+            this.isEdit = true
+        },
     },
     created()
     {
@@ -77,6 +143,12 @@ export default
                 _this.category.push(resp.data[i])
             }
         })
+        for (const [key] of Object.entries(ElementPlusIconsVue)) 
+        {
+            this.icons.push({
+                icon: key,
+            })
+        }
     },
     watch:
     {
@@ -84,6 +156,9 @@ export default
         {
             this.category[0].content = t('notes.all')
             this.category[1].content = t('notes.none')
+            this.textLabel = t('common.text')
+            this.iconLabel = t('common.icon')
+            this.selectPlaceholderText = t('common.select')
         }
     },
 }

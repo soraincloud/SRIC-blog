@@ -1,0 +1,41 @@
+.NotesAside-el-card-style
+{
+    margin-top: 0px;
+}
+
+.manageNotesCategory-el-card-style
+{
+    width: 100%;
+    background: rgba(255,255,255,0.64);
+}
+
+.manageNotesCategory-el-card-style .el-card__body
+{
+    padding-bottom: 0;
+}
+
+html.dark .manageNotesCategory-el-card-style
+{
+    background: rgba(0,0,0,0.64);
+}
+
+.manageNotesCategory-el-icon
+{
+    margin-right: 20px;
+}
+
+.manageNotesCategory-select-button
+{
+    width: 20%;
+    font-weight: bold;
+}
+
+.manageNotesCategory-left
+{
+    margin-right: 10px;
+}
+
+.manageNotesCategory-select
+{
+    width: 75%;
+}

@@ -110,7 +110,7 @@ export default
                 if(valid)
                 {
                     updateTimeById(this.timeline[i]).then(
-                        this.$message.success({message: t('common.applySuccess'),}),
+                        this.$message.success({message: t('message.applySuccess'),}),
                         this.timelineCard[i].submit = false,
                         this.timelineCard[i].open = false,
                         this.timelineCard[i].height = 'height: ' + 0 + 'px;',
@@ -118,7 +118,7 @@ export default
                 }
                 else
                 {
-                    this.$message.error({message: t('common.error'),})
+                    this.$message.error({message: t('message.notNullError'),})
                     return
                 }
             })
@@ -225,12 +225,12 @@ export default
                         _this.addHeight = 'height: 0px;',
                         _this.addShow = false,
                         _this.$refs.scrollbar.scrollTo({top: document.getElementById("manageTime-scrollbar").offsetHeight, behavior: 'smooth'}),
-                        _this.$message.success({message: t('common.applySuccess'),})
+                        _this.$message.success({message: t('message.applySuccess'),})
                     })
                 }
                 else
                 {
-                    this.$message.error({message: t('common.error'),})
+                    this.$message.error({message: t('message.notNullError'),})
                     return
                 }
             })
