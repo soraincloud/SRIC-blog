@@ -2,10 +2,7 @@ package com.spring.back_springboot.mapper;
 
 import com.spring.back_springboot.pojo.resources;
 import com.spring.back_springboot.pojo.resourcesCategory;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -26,4 +23,13 @@ public interface resourcesMapper
 
     @Select(value = "SELECT * FROM `resources-category`")
     List<resourcesCategory> getAllResourcesCategory();
+
+    @Insert(value = "INSERT INTO `resources-category` values (null, #{content}, #{icon})")
+    void addResourcesCategory(resourcesCategory category);
+
+    @Update(value = "UPDATE `resources-category` SET CONTENT = #{content}, ICON = #{icon} WHERE ID = #{id}")
+    void updateResourcesCategoryById(resourcesCategory category);
+
+    @Delete(value = "DELETE FROM `resources-category` WHERE ID = #{id}")
+    void deleteResourcesCategoryById(@Param(value = "id")int id);
 }

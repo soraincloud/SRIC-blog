@@ -6,6 +6,6 @@ import lombok.Data;
 public class resourcesCategory
 {
     private int id;
-    private String category;
+    private String content;
     private String icon;
 }

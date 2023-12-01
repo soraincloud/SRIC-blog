@@ -43,4 +43,25 @@ public class notesController
     {
         return service.getAllNotesCategory();
     }
+
+    @CrossOrigin
+    @PostMapping("/notes/addNotesCategory")
+    public void addNotesCategory(@RequestBody notesCategory category)
+    {
+        service.addNotesCategory(category);
+    }
+
+    @CrossOrigin
+    @PostMapping("/notes/updateNotesCategoryById")
+    public void updateNotesCategoryById(@RequestBody notesCategory category)
+    {
+        service.updateNotesCategoryById(category);
+    }
+
+    @CrossOrigin
+    @PostMapping("/notes/deleteNotesCategoryById")
+    public void deleteNotesCategoryById(@RequestBody notesCategory category)
+    {
+        service.deleteNotesCategoryById(category.getId());
+    }
 }

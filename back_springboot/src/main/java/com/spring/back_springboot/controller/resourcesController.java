@@ -43,4 +43,25 @@ public class resourcesController
     {
         return service.getAllResourcesCategory();
     }
+
+    @CrossOrigin
+    @PostMapping("/resources/addResourcesCategory")
+    public void addResourcesCategory(@RequestBody resourcesCategory category)
+    {
+        service.addResourcesCategory(category);
+    }
+
+    @CrossOrigin
+    @PostMapping("/resources/updateResourcesCategoryById")
+    public void updateResourcesCategoryById(@RequestBody resourcesCategory category)
+    {
+        service.updateResourcesCategoryById(category);
+    }
+
+    @CrossOrigin
+    @PostMapping("/resources/deleteResourcesCategoryById")
+    public void deleteResourcesCategoryById(@RequestBody resourcesCategory category)
+    {
+        service.deleteResourcesCategoryById(category.getId());
+    }
 }

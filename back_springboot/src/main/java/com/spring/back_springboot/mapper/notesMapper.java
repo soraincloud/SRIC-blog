@@ -2,10 +2,7 @@ package com.spring.back_springboot.mapper;
 
 import com.spring.back_springboot.pojo.notes;
 import com.spring.back_springboot.pojo.notesCategory;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -26,4 +23,13 @@ public interface notesMapper
 
     @Select(value = "SELECT * FROM `notes-category`")
     List<notesCategory> getAllNotesCategory();
+
+    @Insert(value = "INSERT INTO `notes-category` values (null, #{content}, #{icon})")
+    void addNotesCategory(notesCategory category);
+
+    @Update(value = "UPDATE `notes-category` SET CONTENT = #{content}, ICON = #{icon} WHERE ID = #{id}")
+    void updateNotesCategoryById(notesCategory category);
+
+    @Delete(value = "DELETE FROM `notes-category` WHERE ID = #{id}")
+    void deleteNotesCategoryById(@Param(value = "id")int id);
 }

@@ -12,4 +12,7 @@ public interface resourcesService
     resources getResourceById(int id);
     void addResourceVisit(int id);
     List<resourcesCategory> getAllResourcesCategory();
+    void addResourcesCategory(resourcesCategory category);
+    void updateResourcesCategoryById(resourcesCategory category);
+    void deleteResourcesCategoryById(int id);
 }

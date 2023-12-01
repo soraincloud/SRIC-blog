@@ -12,4 +12,7 @@ public interface notesService
     notes getNoteById(int id);
     void addNoteVisit(int id);
     List<notesCategory> getAllNotesCategory();
+    void addNotesCategory(notesCategory category);
+    void updateNotesCategoryById(notesCategory category);
+    void deleteNotesCategoryById(int id);
 }

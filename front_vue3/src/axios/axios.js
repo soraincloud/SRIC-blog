@@ -34,3 +34,15 @@ axios.interceptors.response.use(resp => {
         return Promise.reject(resp.data.code)
     }
 })
+
+// axios.interceptors.request.use(
+// config => {
+//     if(config.url !== "/user/login")
+//     {
+//         config.headers.token = localStorage.getItem('tokenValue')
+//     }
+//     return config
+// },
+// error =>{
+//     return Promise.reject(error)
+// })

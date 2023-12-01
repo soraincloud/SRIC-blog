@@ -44,4 +44,22 @@ public class resourcesServiceImpl implements resourcesService
     {
         return mapper.getAllResourcesCategory();
     }
+
+    @Override
+    public void addResourcesCategory(resourcesCategory category)
+    {
+        mapper.addResourcesCategory(category);
+    }
+
+    @Override
+    public void updateResourcesCategoryById(resourcesCategory category)
+    {
+        mapper.updateResourcesCategoryById(category);
+    }
+
+    @Override
+    public void deleteResourcesCategoryById(int id)
+    {
+        mapper.deleteResourcesCategoryById(id);
+    }
 }

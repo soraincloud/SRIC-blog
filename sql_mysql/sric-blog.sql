@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : mysql
+ Source Server         : test-connect
  Source Server Type    : MySQL
  Source Server Version : 80035
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 30/11/2023 18:02:51
+ Date: 01/12/2023 15:19:39
 */
 
 SET NAMES utf8mb4;
@@ -26,7 +26,7 @@ CREATE TABLE `dict_el_color_type`  (
   `label` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '显示文字',
   `value` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '值',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = 'element 颜色字典' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of dict_el_color_type
@@ -87,7 +87,7 @@ CREATE TABLE `index-head-title`  (
 -- ----------------------------
 -- Records of index-head-title
 -- ----------------------------
-INSERT INTO `index-head-title` VALUES (1, 'zh', 'SRIC \'s BLOG');
+INSERT INTO `index-head-title` VALUES (1, 'zh', 'SRIC \'s BLOGzh');
 INSERT INTO `index-head-title` VALUES (2, 'en', 'SRIC \'s BLOG');
 INSERT INTO `index-head-title` VALUES (3, 'warma', 'SRIC \'s BLOG');
 
@@ -190,8 +190,8 @@ CREATE TABLE `notes`  (
 -- ----------------------------
 -- Records of notes
 -- ----------------------------
-INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', -1, 'NULL.md', 6);
-INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 3, 'SPRING001.md', 6);
+INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', -1, 'NULL.md', 7);
+INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 3, 'SPRING001.md', 7);
 INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 1, 'C001.md', 1);
 INSERT INTO `notes` VALUES (4, 'vue3项目的创建', '@vuecli对vue3项目的创建与依赖的引入', 2, 'VUE001.md', 0);
 INSERT INTO `notes` VALUES (5, 'vue-axios', 'VUE中前后端数据传输axios', 2, 'VUE002.md', 0);
@@ -234,12 +234,12 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 559);
-INSERT INTO `page-visited` VALUES (2, 'index', 184);
-INSERT INTO `page-visited` VALUES (3, 'notes', 50);
-INSERT INTO `page-visited` VALUES (4, 'resources', 59);
+INSERT INTO `page-visited` VALUES (1, 'main', 712);
+INSERT INTO `page-visited` VALUES (2, 'index', 189);
+INSERT INTO `page-visited` VALUES (3, 'notes', 52);
+INSERT INTO `page-visited` VALUES (4, 'resources', 63);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 37);
+INSERT INTO `page-visited` VALUES (6, 'personal', 42);
 INSERT INTO `page-visited` VALUES (7, 'function', 18);
 
 -- ----------------------------
@@ -261,7 +261,7 @@ CREATE TABLE `resources`  (
 -- ----------------------------
 -- Records of resources
 -- ----------------------------
-INSERT INTO `resources` VALUES (1, 'C001.md', '二叉树文档的md文件', 1, '/md/C001.md', 89, 'markdown', NULL);
+INSERT INTO `resources` VALUES (1, 'C001.md', '二叉树文档的md文件', 1, '/md/C001.md', 91, 'markdown', NULL);
 INSERT INTO `resources` VALUES (2, 'NULL.md', '为未分类的笔记提供默认显示的md文件', -1, '/md/NULL.md', 11, 'NULL', NULL);
 INSERT INTO `resources` VALUES (3, 'COOK001.md', '红烧肉文档的md文件', 1, '/md/COOK001.md', 1, 'markdown', NULL);
 INSERT INTO `resources` VALUES (4, 'COOK002.md', '番茄牛腩文档的md文件', 1, '/md/COOK002.md', 0, 'markdown', NULL);
@@ -278,7 +278,7 @@ INSERT INTO `resources` VALUES (10, 'VUE004.md', 'VUE传值文档的md文件', 1
 DROP TABLE IF EXISTS `resources-category`;
 CREATE TABLE `resources-category`  (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `category` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '类别',
+  `content` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '类别',
   `icon` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'Menu' COMMENT '对应图标',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '资源类别' ROW_FORMAT = DYNAMIC;

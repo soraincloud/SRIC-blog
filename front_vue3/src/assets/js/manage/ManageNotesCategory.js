@@ -1,4 +1,4 @@
-import { getAllNotesCategory } from '@/axios/api/notesApi'
+import { getAllNotesCategory,addNotesCategory,updateNotesCategoryById,deleteNotesCategoryById } from '@/axios/api/notesApi'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
@@ -152,7 +152,12 @@ export default
             this.$refs['form'].validate((valid) => {
                 if(valid)
                 {
-                    
+                    var _this = this
+                    addNotesCategory({ content: this.input.content,icon: this.input.icon }).then(function(resp){
+                        _this.isAdd = false
+                        _this.refresh()
+                        _this.$message.success({message: t('message.applySuccess'),})
+                    })
                 }
                 else
                 {
@@ -174,7 +179,14 @@ export default
             this.$refs['form'].validate((valid) => {
                 if(valid)
                 {
-                    
+                    var _this = this
+                    updateNotesCategoryById({ id: this.input.id,content: this.input.content,icon: this.input.icon }).then(function(resp){
+                        _this.isEditApply = false
+                        _this.isCancel = false
+                        _this.showText = ''
+                        _this.refresh()
+                        _this.$message.success({message: t('message.applySuccess'),})
+                    })
                 }
                 else
                 {
@@ -191,12 +203,19 @@ export default
             this.isCancel = true
             this.showText = t('common.deleteSure')
         },
-        deleteAppply()
+        deleteApply()
         {
             this.$refs['form'].validate((valid) => {
                 if(valid)
                 {
-                    
+                    var _this = this
+                    deleteNotesCategoryById({ id: this.input.id }).then(function(resp){
+                        _this.isDeleteApply = false
+                        _this.isCancel = false
+                        _this.showText = ''
+                        _this.refresh()
+                        _this.$message.success({message: t('message.deleteSuccess'),})
+                    })
                 }
                 else
                 {
@@ -222,6 +241,29 @@ export default
         addLeave()
         {
             this.addBackgrounds = 'background: #ff7f7f'
+        },
+        refresh()
+        {
+            this.category = 
+            [
+                {
+                    id: 0,
+                    content: "全部",
+                    icon: "Menu",
+                },
+                {
+                    id: -1,
+                    content: "未分类",
+                    icon: "QuestionFilled",
+                },
+            ]
+            var _this = this
+            getAllNotesCategory().then(function(resp){
+                for(let i = 0;i < resp.data.length;i++)
+                {
+                    _this.category.push(resp.data[i])
+                }
+            })
         },
     },
     created()

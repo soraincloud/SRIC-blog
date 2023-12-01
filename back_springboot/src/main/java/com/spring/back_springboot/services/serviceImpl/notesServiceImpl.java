@@ -41,4 +41,22 @@ public class notesServiceImpl implements notesService
     {
         return mapper.getAllNotesCategory();
     }
+
+    @Override
+    public void addNotesCategory(notesCategory category)
+    {
+        mapper.addNotesCategory(category);
+    }
+
+    @Override
+    public void updateNotesCategoryById(notesCategory category)
+    {
+        mapper.updateNotesCategoryById(category);
+    }
+
+    @Override
+    public void deleteNotesCategoryById(int id)
+    {
+        mapper.deleteNotesCategoryById(id);
+    }
 }

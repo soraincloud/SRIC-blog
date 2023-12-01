@@ -15,12 +15,12 @@ export default
             [
                 {
                     id: 0,
-                    category: "全部",
+                    content: "全部",
                     icon: "List",
                 },
                 {
                     id: -1,
-                    category: "未分类",
+                    content: "未分类",
                     icon: "QuestionFilled",
                 },
             ],

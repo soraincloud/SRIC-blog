@@ -83,7 +83,7 @@
                                             {{ $t("common.delete") }}
                                         </el-button>
                                         <el-button v-if="isDeleteApply" @click="deleteApply()" type="danger"  plain>
-                                            {{ $t("common.edit") }}
+                                            {{ $t("common.apply") }}
                                         </el-button>
                                         <el-button v-if="isCancel" @click="cancel()" type="info" plain>
                                             {{ $t("common.cancel") }}
