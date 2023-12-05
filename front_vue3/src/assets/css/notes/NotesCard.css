@@ -2,12 +2,14 @@
 {
     color: #333333;
     margin-right: 5px;
+    margin-left: 10px;
 }
 
 .NotesCard-tag-text-style
 {
     font-size: 10px;
     color: #333333;
+    margin-right: 20px;
 }
 
 html.dark .NotesCard-el-icon-style

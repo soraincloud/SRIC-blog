@@ -12,5 +12,6 @@ public class notes
     private String md;
     private int visited;
     private int uid;
+    private String username;
     private String date;
 }

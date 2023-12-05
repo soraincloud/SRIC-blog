@@ -18,12 +18,18 @@
                 effect="dark"
                 >{{ item.tag }}</el-tag
             >
-            <el-icon size="10px" class="NotesCard-el-icon-style"
-                ><Histogram
-            /></el-icon>
-            <span class="NotesCard-tag-text-style"
-                >{{ $t("notes.visit") }} {{ item.visited }}</span
-            >
+            <el-icon size="10px" class="NotesCard-el-icon-style"><Histogram/></el-icon>
+            <span class="NotesCard-tag-text-style">
+                {{ $t("notes.visit") }} {{ item.visited }}
+            </span>
+            <el-icon size="10px" class="NotesCard-el-icon-style"><UserFilled/></el-icon>
+            <span class="NotesCard-tag-text-style">
+                {{ $t("notes.created") }} {{ item.username }}
+            </span>
+            <el-icon size="10px" class="NotesCard-el-icon-style"><List/></el-icon>
+            <span class="NotesCard-tag-text-style">
+                {{ $t("notes.date") }} {{ item.date }}
+            </span>
         </div>
     </el-card>
 </template>

@@ -68,6 +68,8 @@ export default
     notes:
     {
         visit: 'visited:',
+        created: 'created by:',
+        date: 'date:',
         note: 'note',
         head: 'category',
         all: 'all',

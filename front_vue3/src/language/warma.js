@@ -68,6 +68,8 @@ export default
     notes:
     {
         visit: '访访多:',
+        created: '写建人:',
+        date: '时候:',
         note: '记记',
         head: '类类',
         all: '所有',
