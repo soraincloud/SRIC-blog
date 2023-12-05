@@ -103,6 +103,11 @@ const routes =
         path: '/manageNotesCategory',
         component: () => import('@/components/manage/ManageNotesCategory'),
       },
+      {
+        name: 'manageResourcesCategory',
+        path: '/manageResourcesCategory',
+        component: () => import('@/components/manage/ManageResourcesCategory'),
+      },
     ]
   },
 ]

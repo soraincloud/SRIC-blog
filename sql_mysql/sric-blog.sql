@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 01/12/2023 15:19:39
+ Date: 05/12/2023 10:35:27
 */
 
 SET NAMES utf8mb4;
@@ -102,7 +102,7 @@ CREATE TABLE `index-time`  (
   `type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '外圈颜色',
   `color` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '内部颜色',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 44 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '主页活动时间轴' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '主页活动时间轴' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of index-time
@@ -172,6 +172,7 @@ CREATE TABLE `manage-navlist`  (
 INSERT INTO `manage-navlist` VALUES (1, 'manageHome', '', 'HomeFilled', '主页管理', 'manage home', '主面管管');
 INSERT INTO `manage-navlist` VALUES (2, 'manageTime', '', 'InfoFilled', '日志管理', 'manage log', '时表管管');
 INSERT INTO `manage-navlist` VALUES (3, 'manageNotesCategory', '', 'List', '笔记分类', 'notes category', '记纸类类');
+INSERT INTO `manage-navlist` VALUES (5, 'manageResourcesCategory', '', 'List', '资源分类', 'resources category', '材源类类');
 
 -- ----------------------------
 -- Table structure for notes
@@ -210,7 +211,7 @@ CREATE TABLE `notes-category`  (
   `content` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '内容',
   `icon` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '对应图标',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '笔记类别' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '笔记类别' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of notes-category
@@ -234,7 +235,7 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 712);
+INSERT INTO `page-visited` VALUES (1, 'main', 728);
 INSERT INTO `page-visited` VALUES (2, 'index', 189);
 INSERT INTO `page-visited` VALUES (3, 'notes', 52);
 INSERT INTO `page-visited` VALUES (4, 'resources', 63);

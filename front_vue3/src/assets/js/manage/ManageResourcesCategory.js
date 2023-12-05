@@ -1,4 +1,4 @@
-import { getAllNotesCategory,addNotesCategory,updateNotesCategoryById,deleteNotesCategoryById } from '@/axios/api/notesApi'
+import { getAllResourcesCategory,addResourcesCategory,updateResourcesCategoryById,deleteResourcesCategoryById } from '@/axios/api/resourcesApi'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
@@ -153,7 +153,7 @@ export default
                 if(valid)
                 {
                     var _this = this
-                    addNotesCategory({ content: this.input.content,icon: this.input.icon }).then(function(resp){
+                    addResourcesCategory({ content: this.input.content,icon: this.input.icon }).then(function(resp){
                         _this.isAdd = false
                         _this.refresh()
                         _this.$message.success({message: t('message.applySuccess'),})
@@ -186,7 +186,7 @@ export default
                 if(valid)
                 {
                     var _this = this
-                    updateNotesCategoryById({ id: this.input.id,content: this.input.content,icon: this.input.icon }).then(function(resp){
+                    updateResourcesCategoryById({ id: this.input.id,content: this.input.content,icon: this.input.icon }).then(function(resp){
                         _this.isEditApply = false
                         _this.isCancel = false
                         _this.showText = ''
@@ -221,7 +221,7 @@ export default
                 if(valid)
                 {
                     var _this = this
-                    deleteNotesCategoryById({ id: this.input.id }).then(function(resp){
+                    deleteResourcesCategoryById({ id: this.input.id }).then(function(resp){
                         _this.isDeleteApply = false
                         _this.isCancel = false
                         _this.showText = ''
@@ -276,7 +276,7 @@ export default
                 },
             ]
             var _this = this
-            getAllNotesCategory().then(function(resp){
+            getAllResourcesCategory().then(function(resp){
                 for(let i = 0;i < resp.data.length;i++)
                 {
                     _this.category.push(resp.data[i])
@@ -287,7 +287,7 @@ export default
     created()
     {
         var _this = this
-        getAllNotesCategory().then(function(resp){
+        getAllResourcesCategory().then(function(resp){
             for(let i = 0;i < resp.data.length;i++)
             {
                 _this.category.push(resp.data[i])
