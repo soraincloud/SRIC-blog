@@ -131,7 +131,7 @@ export default
         {
             deleteTimeById({ id: this.timeline[i].id }).then(
                 this.timeline.splice(i,1),
-                this.$message.success({message: t('common.deleteSuccess'),}),
+                this.$message.success({message: t('message.deleteSuccess'),}),
             )
         },
         clickSearch()

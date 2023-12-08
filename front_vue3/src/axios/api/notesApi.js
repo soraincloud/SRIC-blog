@@ -17,7 +17,7 @@ export function updateNote(params)
 
 export function deleteNoteById(params)
 {
-    return post('/notes/deleteNotebyId',params)
+    return post('/notes/deleteNoteById',params)
 }
 
 export function getNoteListByCategory(params)

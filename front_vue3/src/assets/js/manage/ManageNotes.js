@@ -11,11 +11,12 @@ export default
         return {
             loading: true,
             bodyHeight: "height:" + (window.innerHeight - 80) + "px;",
-            scrollCardHeight: (window.innerHeight - 110),
+            scrollCardHeight: (window.innerHeight - 150),
             back0: '',
             deleteTitle: t('common.deleteSure'),
             deleteOk: t('common.apply'),
             deleteCancel: t('common.cancel'),
+            placeholderText: t('common.search'),
             showLeft: '',
             category:
             [
@@ -31,6 +32,7 @@ export default
                 },
             ],
             notes:[],
+            search: '',
         }
     },
     methods:
@@ -106,7 +108,27 @@ export default
         },
         deleteConfirm(i)
         {
-            deleteNoteById({ id: this.notes[i].id })
+            this.loading = true
+            var _this = this
+            deleteNoteById({ id: this.notes[i].id }).then(function(resp){
+                _this.$message.success({message: t('message.deleteSuccess'),}),
+                _this.loadNotes()
+            })
+        },
+        clickEdit(i)
+        {
+
+        },
+        clickSearch()
+        {
+
+        },
+        clickAdd()
+        {
+
+        },
+        clickRefresh()
+        {
             this.loading = true
             this.loadNotes()
         },
@@ -127,7 +149,7 @@ export default
         window.onresize = () => 
         {
             this.bodyHeight = "height:" + (window.innerHeight - 80) + "px;"
-            this.scrollCardHeight = (window.innerHeight - 110)
+            this.scrollCardHeight = (window.innerHeight - 150)
         }
     },
     watch:
@@ -137,6 +159,7 @@ export default
             this.deleteTitle = t('common.deleteSure')
             this.deleteOk = t('common.apply')
             this.deleteCancel = t('common.cancel')
+            this.placeholderText = t('common.search')
         }
     },
 }
