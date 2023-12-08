@@ -2,44 +2,6 @@
 <el-scrollbar>
     <div class="ManageIndex-out-div">
         <el-card class="ManageIndex-el-card" :style="[bodyHeight,showLeft]">
-            <el-affix :offset="90">
-                <el-row>
-                    <el-col :span="8"></el-col>
-                    <el-col :span="12">
-                        <el-input
-                        v-model="search"
-                        :placeholder="placeholderText"
-                        class="manageTime-input-with-select"
-                        >
-                        <template #append>
-                            <el-button type="danger" icon="Search" class="manageTime-button-icon" @click="clickSearch()"/>
-                        </template>
-                        </el-input>
-                    </el-col>
-                    <el-col :span="4">
-                        <el-tooltip effect="light" placement="bottom">
-                            <template #content>
-                                <p class="NavMenu-tooltip-p-style">{{ $t("common.add") }}</p>
-                            </template>
-                            <el-button type="danger" style="margin-left: 10px;" plain @click="clickAdd()">
-                                <el-icon>
-                                    <CirclePlusFilled />
-                                </el-icon>
-                            </el-button>
-                        </el-tooltip>
-                        <el-tooltip effect="light" placement="bottom">
-                            <template #content>
-                                <p class="NavMenu-tooltip-p-style">{{ $t("common.refresh") }}</p>
-                            </template>
-                            <el-button type="success" style="margin-left: 10px;" plain @click="clickRefresh()">
-                                <el-icon>
-                                    <Refresh />
-                                </el-icon>
-                            </el-button>
-                        </el-tooltip>
-                    </el-col>
-                </el-row>
-            </el-affix>
             <el-row>
                 <el-col :span="8">
                     <el-scrollbar>
@@ -65,7 +27,44 @@
                     </el-scrollbar>
                 </el-col>
                 <el-col :span="16">
-                    <el-scrollbar :height="scrollCardHeight" style="margin-top:50px;">
+                    <div style="margin-top:10px;">
+                    <el-row>
+                        <el-col :span="16">
+                            <el-input
+                            v-model="search"
+                            :placeholder="placeholderText"
+                            class="manageTime-input-with-select"
+                            >
+                            <template #append>
+                                <el-button type="danger" icon="Search" class="manageTime-button-icon" @click="clickSearch()"/>
+                            </template>
+                            </el-input>
+                        </el-col>
+                        <el-col :span="8">
+                            <el-tooltip effect="light" placement="bottom">
+                                <template #content>
+                                    <p class="NavMenu-tooltip-p-style">{{ $t("common.add") }}</p>
+                                </template>
+                                <el-button type="danger" style="margin-left: 10px;" plain @click="clickAdd()">
+                                    <el-icon>
+                                        <CirclePlusFilled />
+                                    </el-icon>
+                                </el-button>
+                            </el-tooltip>
+                            <el-tooltip effect="light" placement="bottom">
+                                <template #content>
+                                    <p class="NavMenu-tooltip-p-style">{{ $t("common.refresh") }}</p>
+                                </template>
+                                <el-button type="success" style="margin-left: 10px;" plain @click="clickRefresh()">
+                                    <el-icon>
+                                        <Refresh />
+                                    </el-icon>
+                                </el-button>
+                            </el-tooltip>
+                        </el-col>
+                    </el-row>
+                    </div>
+                    <el-scrollbar :height="scrollCardHeight" style="margin-top:10px;">
                     <el-card
                         v-for="(item, i) in notes"
                         :key="i"
