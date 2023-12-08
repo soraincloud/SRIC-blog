@@ -12,7 +12,7 @@ export default
     {
         return{
             loading: false,
-            bodyHeight: (window.innerHeight - 60) + 'px',
+            bodyHeight: (window.innerHeight - 60),
             active0: '',
             active1: '',
             category:
@@ -57,7 +57,7 @@ export default
     {
         window.onresize = () => 
         {
-            this.bodyHeight = (window.innerHeight - 70) + 'px'
+            this.bodyHeight = (window.innerHeight - 70)
         }
     },
     methods:

@@ -13,7 +13,7 @@ export default
     {
         return{
             loading: true,
-            bodyHeight: (window.innerHeight - 60) + 'px',
+            bodyHeight: (window.innerHeight - 60),
             timeline: [],
             active: '',
             margin: 'margin-top: 50px;',
@@ -51,7 +51,7 @@ export default
     {
         window.onresize = () => 
         {
-            this.bodyHeight = (window.innerHeight - 70) + 'px'
+            this.bodyHeight = (window.innerHeight - 70)
         }
     },
     created()

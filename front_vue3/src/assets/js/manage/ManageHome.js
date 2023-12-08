@@ -11,7 +11,7 @@ export default
             loading: true,
             card0: '',
             card1: '',
-            bodyHeight: (window.innerHeight - 60) + 'px',
+            bodyHeight: (window.innerHeight - 60),
             indexHeadTitle: '',
             indexHead: '',
             indexHeadTitleData: [],
@@ -199,7 +199,7 @@ export default
     {
         window.onresize = () => 
         {
-            this.bodyHeight = (window.innerHeight - 70) + 'px'
+            this.bodyHeight = (window.innerHeight - 70)
         }
     },
     watch:

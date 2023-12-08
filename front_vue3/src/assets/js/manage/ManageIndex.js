@@ -7,7 +7,7 @@ export default
     data() {
         return {
             loading: true,
-            bodyHeight: (window.innerHeight - 60) + 'px',
+            bodyHeight: (window.innerHeight - 60),
             num: 0,
             visitShowNumber: 0,
             userShowNumber: 0,
@@ -158,7 +158,7 @@ export default
     {
         window.onresize = () => 
         {
-            this.bodyHeight = (window.innerHeight - 70) + 'px'
+            this.bodyHeight = (window.innerHeight - 70)
         }
     },
 }

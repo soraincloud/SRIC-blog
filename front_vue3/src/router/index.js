@@ -104,6 +104,11 @@ const routes =
         component: () => import('@/components/manage/ManageNotesCategory'),
       },
       {
+        name: 'manageNotes',
+        path: '/manageNotes',
+        component: () => import('@/components/manage/ManageNotes'),
+      },
+      {
         name: 'manageResourcesCategory',
         path: '/manageResourcesCategory',
         component: () => import('@/components/manage/ManageResourcesCategory'),
