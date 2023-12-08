@@ -1,4 +1,4 @@
-import { getAllNotesCategory,getNotesList,getNoteListByCategory } from '@/axios/api/notesApi'
+import { getAllNotesCategory,getNotesList,getNoteListByCategory,deleteNoteById } from '@/axios/api/notesApi'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -35,6 +35,14 @@ export default
     },
     methods:
     {
+        loadNotes()
+        {
+            var _this = this
+            getNotesList().then(function(resp){
+                _this.notes = resp.data
+                _this.loading = false
+            })
+        },
         mouseOver(i)
         {
             if(i == 0)
@@ -86,10 +94,7 @@ export default
             var _this = this
             if(this.category[i].id == 0)
             {
-                getNotesList().then(function(resp){
-                    _this.notes = resp.data
-                    _this.loading = false
-                })
+                this.loadNotes()
             }
             else
             {
@@ -98,6 +103,12 @@ export default
                     _this.loading = false
                 })
             }
+        },
+        deleteConfirm(i)
+        {
+            deleteNoteById({ id: this.notes[i].id })
+            this.loading = true
+            this.loadNotes()
         },
     },
     created()
@@ -109,10 +120,7 @@ export default
                 _this.category.push(resp.data[i])
             }
         })
-        getNotesList().then(function(resp){
-            _this.notes = resp.data
-            _this.loading = false
-        })
+        this.loadNotes()
     },
     mounted()
     {

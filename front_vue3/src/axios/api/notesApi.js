@@ -5,6 +5,21 @@ export function getNotesList(params)
     return get('/notes/getNotesList',params)
 }
 
+export function addNote(params)
+{
+    return post('/notes/addNote',params)
+}
+
+export function updateNote(params)
+{
+    return post('/notes/updateNote',params)
+}
+
+export function deleteNoteById(params)
+{
+    return post('/notes/deleteNotebyId',params)
+}
+
 export function getNoteListByCategory(params)
 {
     return get('/notes/getNoteListByCategory',params)
