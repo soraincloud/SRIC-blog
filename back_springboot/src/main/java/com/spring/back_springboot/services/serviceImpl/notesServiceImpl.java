@@ -37,6 +37,24 @@ public class notesServiceImpl implements notesService
     public void addNoteVisit(int id) { mapper.addNoteVisit(id); }
 
     @Override
+    public void addNote(notes note)
+    {
+        mapper.addNote(note);
+    }
+
+    @Override
+    public void updateNote(notes note)
+    {
+        mapper.updateNote(note);
+    }
+
+    @Override
+    public void deleteNoteById(int id)
+    {
+        mapper.deleteNoteById(id);
+    }
+
+    @Override
     public List<notesCategory> getAllNotesCategory()
     {
         return mapper.getAllNotesCategory();

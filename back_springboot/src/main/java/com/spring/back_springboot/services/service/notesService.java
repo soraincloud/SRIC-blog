@@ -11,6 +11,9 @@ public interface notesService
     List<notes> getNotesByCategory(String category);
     notes getNoteById(int id);
     void addNoteVisit(int id);
+    void addNote(notes note);
+    void updateNote(notes note);
+    void deleteNoteById(int id);
     List<notesCategory> getAllNotesCategory();
     void addNotesCategory(notesCategory category);
     void updateNotesCategoryById(notesCategory category);

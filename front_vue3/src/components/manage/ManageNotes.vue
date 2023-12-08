@@ -1,7 +1,7 @@
 <template>
 <el-scrollbar>
     <div class="ManageIndex-out-div">
-        <el-card class="ManageIndex-el-card" :style="bodyHeight">
+        <el-card class="ManageIndex-el-card" :style="[bodyHeight,showLeft]">
             <el-row>
                 <el-col :span="8">
                     <el-scrollbar>
@@ -51,7 +51,26 @@
                                 {{ $t("notes.date") }} {{ item.date }}
                             </span>
                         </div>
-                        <el-divider class="common-el-divider-style" />
+                        <el-divider class="common-el-divider-style"/>
+                        <el-popconfirm
+                        :title="deleteTitle"
+                        :confirm-button-text="deleteOk"
+                        :cancel-button-text="deleteCancel"
+                        confirm-button-type="danger"
+                        icon="DeleteFilled"
+                        icon-color="#FF8F8F"
+                        width="250"
+                        @confirm="deleteConfirm(i)"
+                        >
+                            <template #reference>
+                            <el-button class="manageTime-el-button" type="danger" size="small" plain>
+                                {{ $t('common.delete') }}
+                            </el-button>
+                            </template>
+                        </el-popconfirm>
+                        <el-button class="manageTime-el-button" type="warning" size="small" plain @click="clickEdit(i)">
+                            {{ $t('common.edit') }}
+                        </el-button>
                         <p class="common-text-style">{{ item.description }}</p>
                     </el-card>
                     </el-scrollbar>
@@ -72,4 +91,5 @@ export default managenotes;
 @import '@/assets/css/common.css';
 @import '@/assets/css/notes/NotesAside.css';
 @import "@/assets/css/notes/NotesCard.css";
+@import "@/assets/css/manage/ManageTime.css";
 </style>

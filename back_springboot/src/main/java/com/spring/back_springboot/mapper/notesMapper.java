@@ -21,6 +21,15 @@ public interface notesMapper
     @Update(value = "UPDATE NOTES SET VISITED = VISITED + 1 WHERE id = #{id}")
     void addNoteVisit(@Param(value = "id")int id);
 
+    @Insert(value = "INSERT INTO notes values (null, #{title}, #{description}, #{category}, #{md}, #{visited}, #{uid}, #{username}, #{date})")
+    void addNote(notes note);
+
+    @Update(value = "UPDATE notes SET TITLE = #{title}, DESCRIPTION = #{description}, CATEGORY = #{category}, MD = #{md}, VISITED = #{visited}, UID = #{uid}, USERNAME = #{username}, DATE = #{date} WHERE ID = #{id}")
+    void updateNote(notes note);
+
+    @Delete(value = "DELETE FROM notes WHERE ID = #{id}")
+    void deleteNoteById(@Param(value = "id")int id);
+
     @Select(value = "SELECT * FROM `notes-category`")
     List<notesCategory> getAllNotesCategory();
 

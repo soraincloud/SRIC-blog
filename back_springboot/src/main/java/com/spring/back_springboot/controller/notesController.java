@@ -38,6 +38,27 @@ public class notesController
     }
 
     @CrossOrigin
+    @PostMapping("/notes/addNote")
+    public void addNote(@RequestBody notes note)
+    {
+        service.addNote(note);
+    }
+
+    @CrossOrigin
+    @PostMapping("/notes/updateNote")
+    public void updateNote(@RequestBody notes note)
+    {
+        service.updateNote(note);
+    }
+
+    @CrossOrigin
+    @PostMapping("/notes/deleteNoteById")
+    public void deleteNoteById(@RequestBody notes note)
+    {
+        service.deleteNoteById(note.getId());
+    }
+
+    @CrossOrigin
     @GetMapping("/notes/getAllNotesCategory")
     public List<notesCategory> getAllNotesCategory()
     {

@@ -1,6 +1,8 @@
 import { getAllNotesCategory,getNotesList,getNoteListByCategory } from '@/axios/api/notesApi'
 import { useDark } from '@vueuse/core'
+import i18n from '@/language'
 
+const { t } = i18n.global
 const isDark = useDark()
 export default
 {
@@ -11,6 +13,10 @@ export default
             bodyHeight: "height:" + (window.innerHeight - 80) + "px;",
             scrollCardHeight: (window.innerHeight - 110),
             back0: '',
+            deleteTitle: t('common.deleteSure'),
+            deleteOk: t('common.apply'),
+            deleteCancel: t('common.cancel'),
+            showLeft: '',
             category:
             [
                 {
@@ -31,7 +37,6 @@ export default
     {
         mouseOver(i)
         {
-            console.log(i)
             if(i == 0)
             {
                 this.back0 = 'background: rgba(0,0,0,0);'
@@ -114,6 +119,16 @@ export default
         window.onresize = () => 
         {
             this.bodyHeight = "height:" + (window.innerHeight - 80) + "px;"
+            this.scrollCardHeight = (window.innerHeight - 110)
+        }
+    },
+    watch:
+    {
+        '$i18n.locale'(newValue)
+        {
+            this.deleteTitle = t('common.deleteSure')
+            this.deleteOk = t('common.apply')
+            this.deleteCancel = t('common.cancel')
         }
     },
 }
