@@ -1,7 +1,7 @@
 <template>
 <el-scrollbar>
     <div class="ManageIndex-out-div" :style="outDivHeight">
-        <el-card class="ManageIndex-el-card" :style="[bodyHeight,showLeft]">
+        <el-card class="ManageNotes-el-card" :style="[bodyHeight,showLeft]">
             <el-row>
                 <el-col :span="8">
                     <el-scrollbar>
@@ -116,8 +116,12 @@
             </el-row>
         </el-card>
 
-        <el-card class="ManageIndex-el-card" :style="[bodyHeight,editLeft]">
+        <el-card class="ManageNotes-el-card" :style="[bodyHeight,updateLeft]">
             123
+        </el-card>
+
+        <el-card class="ManageNotes-el-card" :style="[bodyHeight,editLeft]">
+
         </el-card>
     </div>
 </el-scrollbar>
@@ -129,6 +133,7 @@ export default managenotes;
 </script>
 
 <style scope>
+@import "@/assets/css/manage/ManageNotes.css";
 @import "@/assets/css/manage/ManageIndex.css";
 @import '@/assets/css/common.css';
 @import '@/assets/css/notes/NotesAside.css';

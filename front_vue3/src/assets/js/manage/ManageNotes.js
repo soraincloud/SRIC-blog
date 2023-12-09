@@ -19,6 +19,7 @@ export default
             placeholderText: t('common.search'),
             outDivHeight: 'height: ' + (window.innerHeight + 1000) + 'px;',
             showLeft: 'left: 0px;',
+            updateLeft: 'left: ' + (window.innerWidth + 1000) + 'px;',
             editLeft: 'left: ' + (window.innerWidth + 1000) + 'px;',
             category:
             [
