@@ -1,6 +1,6 @@
 <template>
 <el-scrollbar>
-    <div class="ManageIndex-out-div">
+    <div class="ManageIndex-out-div" :style="outDivHeight">
         <el-card class="ManageIndex-el-card" :style="[bodyHeight,showLeft]">
             <el-row>
                 <el-col :span="8">
@@ -114,6 +114,10 @@
                     </el-scrollbar>
                 </el-col>
             </el-row>
+        </el-card>
+
+        <el-card class="ManageIndex-el-card" :style="[bodyHeight,editLeft]">
+            123
         </el-card>
     </div>
 </el-scrollbar>
