@@ -17,7 +17,7 @@ export default
             deleteOk: t('common.apply'),
             deleteCancel: t('common.cancel'),
             placeholderText: t('common.search'),
-            outDivHeight: 'height: ' + (window.innerHeight + 1000) + 'px;',
+            outDivHeight: 'height: ' + (window.innerHeight) + 'px;',
             showLeft: 'left: 0px;',
             updateLeft: 'left: ' + (window.innerWidth + 1000) + 'px;',
             editLeft: 'left: ' + (window.innerWidth + 1000) + 'px;',
@@ -134,7 +134,7 @@ export default
         clickAdd()
         {
             this.showLeft = 'left: ' + (-(window.innerWidth + 500)) + 'px;'
-            this.editLeft = 'left: 0px;'
+            this.updateLeft = 'left: 0px;'
         },
         clickRefresh()
         {
@@ -159,7 +159,7 @@ export default
         {
             this.bodyHeight = "height:" + (window.innerHeight - 80) + "px;"
             this.scrollCardHeight = (window.innerHeight - 150)
-            this.outDivHeight = 'height: ' + (window.innerHeight + 1000) + 'px;'
+            this.outDivHeight = 'height: ' + (window.innerHeight) + 'px;'
         }
     },
     watch:
