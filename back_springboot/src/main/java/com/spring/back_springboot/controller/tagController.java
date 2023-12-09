@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/api")//此Controller中所有api前缀路径为/api
+@RequestMapping("/api/user")//此Controller中所有api前缀路径为/api
 public class tagController
 {
     @Autowired
     tagService service;
 
-    @CrossOrigin
-    @GetMapping("/user/getTagByToken")
+    @GetMapping("/getTagByToken")
     public List<tag> getTagByToken(String tokenValue)
     {
         int uid = Integer.parseInt(StpUtil.getLoginIdByToken(tokenValue).toString());

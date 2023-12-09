@@ -7,36 +7,33 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/api")//此Controller中所有api前缀路径为/api
+@RequestMapping("/api/home")//此Controller中所有api前缀路径为/api
 public class indexHeadController
 {
     @Autowired
     indexHeadService service;
 
-    @CrossOrigin
-    @GetMapping("/home/getAllIndexHead")
+    @GetMapping("/getAllIndexHead")
     public List<languageText> getAllIndexHead()
     {
         return service.getAllIndexHead();
     }
 
-    @CrossOrigin
-    @GetMapping("/home/getAllIndexHeadTitle")
+    @GetMapping("/getAllIndexHeadTitle")
     public List<languageText> getAllIndexHeadTitle()
     {
         return service.getAllIndexHeadTitle();
     }
 
-    @CrossOrigin
-    @PostMapping("/home/setIndexHead")
+    @PostMapping("/setIndexHead")
     public void setIndexHead(@RequestBody List<languageText> list)
     {
         service.setIndexHead(list);
     }
 
-    @CrossOrigin
-    @PostMapping("/home/setIndexHeadTitle")
+    @PostMapping("/setIndexHeadTitle")
     public void setIndexHeadTitle(@RequestBody List<languageText> list)
     {
         service.setIndexHeadTitle(list);

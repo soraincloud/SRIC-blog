@@ -9,15 +9,15 @@ import com.spring.back_springboot.services.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/api")//此Controller中所有api前缀路径为/api
+@RequestMapping("/api/user")//此Controller中所有api前缀路径为/api
 public class userController
 {
     @Autowired
     userService service;
 
-    @CrossOrigin
-    @GetMapping("/user/getUserByToken")
+    @GetMapping("/getUserByToken")
     public user getUserByToken(String tokenValue)
     {
         int id = Integer.parseInt(StpUtil.getLoginIdByToken(tokenValue).toString());
@@ -30,8 +30,7 @@ public class userController
         return u;
     }
 
-    @CrossOrigin
-    @PostMapping("/user/login")
+    @PostMapping("/login")
     public login login(@RequestBody user user)
     {
         user u = service.getUserByName(user.getUsername()); //根据用户名查询
@@ -53,8 +52,7 @@ public class userController
         }
     }
 
-    @CrossOrigin
-    @PostMapping("/user/updateNameByToken")
+    @PostMapping("/updateNameByToken")
     public code updateNameByToken(@RequestBody userToken userToken)
     {
         user getUser = service.getUserByName(userToken.getUsername());
@@ -67,8 +65,7 @@ public class userController
         return new code(200);
     }
 
-    @CrossOrigin
-    @PostMapping("/user/updateMarkByToken")
+    @PostMapping("/updateMarkByToken")
     public code UpdateMarkByToken(@RequestBody userToken userToken)
     {
         int id = Integer.parseInt(StpUtil.getLoginIdByToken(userToken.getTokenValue()).toString());

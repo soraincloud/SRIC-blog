@@ -7,57 +7,51 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/api")//此Controller中所有api前缀路径为/api
+@RequestMapping("/api/home")//此Controller中所有api前缀路径为/api
 public class indexTimeController
 {
     @Autowired
     indexTimeService service;
 
-    @CrossOrigin
-    @GetMapping("/home/indexTimeList")
+    @GetMapping("/indexTimeList")
     public List<indexTime> getAllIndexTime() throws Exception
     {
         return service.getAllIndexTime();
     }
 
-    @CrossOrigin
-    @PostMapping("/home/updateTimeById")
+    @PostMapping("/updateTimeById")
     public void updateTimeById(@RequestBody indexTime time)
     {
         service.updateTimeById(time);
     }
 
-    @CrossOrigin
-    @PostMapping("/home/deleteTimeById")
+    @PostMapping("/deleteTimeById")
     public void deleteTimeById(@RequestBody indexTime time)
     {
         service.deleteTimeById(time.getId());
     }
 
-    @CrossOrigin
-    @GetMapping("/home/getTimeByText")
+    @GetMapping("/getTimeByText")
     public List<indexTime> getTimeByText(String text)
     {
         return service.getTimeByText(text);
     }
 
-    @CrossOrigin
-    @GetMapping("/home/getTimeByTime")
+    @GetMapping("/getTimeByTime")
     public List<indexTime> getTimeByTime(String time)
     {
         return service.getTimeByTime(time);
     }
 
-    @CrossOrigin
-    @GetMapping("/home/getTimeByYear")
+    @GetMapping("/getTimeByYear")
     public List<indexTime> getTimeByYear(String year)
     {
         return service.getTimeByYear(year);
     }
 
-    @CrossOrigin
-    @PostMapping("/home/addIndexTime")
+    @PostMapping("/addIndexTime")
     public int addIndexTime(@RequestBody indexTime time)
     {
         return service.addIndexTime(time);

@@ -19,8 +19,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/api")//此Controller中所有api前缀路径为/api
+@RequestMapping("/api/manage")//此Controller中所有api前缀路径为/api
 public class manageController
 {
     @Autowired
@@ -32,8 +33,7 @@ public class manageController
     @Autowired
     manageMenuService manageMenuService;
 
-    @CrossOrigin
-    @GetMapping("/manage/getManageIndexData")
+    @GetMapping("/getManageIndexData")
     public manageIndexData getManageIndexData()
     {
         List<pageVisitedChart> pvc = pageVisitedService.getAllPageVisitedChart();
@@ -58,8 +58,7 @@ public class manageController
         return new manageIndexData(visits,users,days,pages,pvc);
     }
 
-    @CrossOrigin
-    @GetMapping("/manage/getAllManageMenu")
+    @GetMapping("/getAllManageMenu")
     public List<manageMenuList> getAllManageMenu()
     {
         return manageMenuService.getAllManageMenu();

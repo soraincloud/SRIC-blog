@@ -6,22 +6,21 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/api")//此Controller中所有api前缀路径为/api
+@RequestMapping("/api/visited")//此Controller中所有api前缀路径为/api
 public class pageVisitedController
 {
     @Autowired
     pageVisitedService service;
 
-    @CrossOrigin
-    @GetMapping("/visited/getAllPageVisited")
+    @GetMapping("/getAllPageVisited")
     public List<pageVisited> getAllPageVisited()
     {
         return service.getAllPageVisited();
     }
 
-    @CrossOrigin
-    @GetMapping("/visited/visitPage")
+    @GetMapping("/visitPage")
     public void visitPage(String page)
     {
         service.updateVisitedByPage(page);
