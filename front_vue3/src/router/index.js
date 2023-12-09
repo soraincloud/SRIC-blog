@@ -3,6 +3,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = 
 [
   {
+    name: 'home',
+    path: '/',
+    redirect: '/index',
+  },
+  {
     name: "AppBody",
     path: '/AppBody',
     component: () => import('@/components/AppBody'),
