@@ -15,6 +15,7 @@
                             v-model="search"
                             :placeholder="placeholderText"
                             class="manageTime-input-with-select"
+                            clearable
                             >
                             <template #prepend>
                                 <el-select v-model="select" :placeholder="selectPlaceholderText" style="width: 115px">

@@ -34,6 +34,7 @@
                             v-model="search"
                             :placeholder="placeholderText"
                             class="manageTime-input-with-select"
+                            clearable
                             >
                             <template #append>
                                 <el-button type="danger" icon="Search" class="manageTime-button-icon" @click="clickSearch()"/>
