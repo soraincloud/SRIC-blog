@@ -34,6 +34,12 @@ public class notesServiceImpl implements notesService
     }
 
     @Override
+    public List<notes> getNotesByText(String text)
+    {
+        return mapper.getNotesByText(text);
+    }
+
+    @Override
     public void addNoteVisit(int id) { mapper.addNoteVisit(id); }
 
     @Override

@@ -10,6 +10,7 @@ public interface notesService
     List<notes> getAllNotes();
     List<notes> getNotesByCategory(String category);
     notes getNoteById(int id);
+    List<notes> getNotesByText(String text);
     void addNoteVisit(int id);
     void addNote(notes note);
     void updateNote(notes note);

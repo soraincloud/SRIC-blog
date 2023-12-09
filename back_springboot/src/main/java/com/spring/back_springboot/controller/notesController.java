@@ -8,79 +8,76 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/api")//此Controller中所有api前缀路径为/api
+@RequestMapping("/api/notes")//此Controller中所有api前缀路径为/api
 public class notesController
 {
     @Autowired
     notesService service;
 
-    @CrossOrigin
-    @GetMapping("/notes/getNotesList")
+    @GetMapping("/getNotesList")
     public List<notes> getAllNotes()
     {
         return service.getAllNotes();
     }
 
-    @CrossOrigin
-    @GetMapping("/notes/getNoteListByCategory")
+    @GetMapping("/getNoteListByCategory")
     public List<notes> getNotesByCategory(String category) throws Exception
     {
         return service.getNotesByCategory(category);
     }
 
-    @CrossOrigin
-    @GetMapping("/notes/getNoteById")
+    @GetMapping("/getNoteById")
     public notes getNoteById(int id)
     {
         service.addNoteVisit(id);
         return service.getNoteById(id);
     }
 
-    @CrossOrigin
-    @PostMapping("/notes/addNote")
+    @GetMapping("/getNotesByText")
+    public List<notes> getNotesByText(String text)
+    {
+        return service.getNotesByText(text);
+    }
+
+    @PostMapping("/addNote")
     public void addNote(@RequestBody notes note)
     {
         service.addNote(note);
     }
 
-    @CrossOrigin
-    @PostMapping("/notes/updateNote")
+    @PostMapping("/updateNote")
     public void updateNote(@RequestBody notes note)
     {
         service.updateNote(note);
     }
 
-    @CrossOrigin
-    @PostMapping("/notes/deleteNoteById")
+    @PostMapping("/deleteNoteById")
     public void deleteNoteById(@RequestBody notes note)
     {
         service.deleteNoteById(note.getId());
     }
 
-    @CrossOrigin
-    @GetMapping("/notes/getAllNotesCategory")
+    @GetMapping("/getAllNotesCategory")
     public List<notesCategory> getAllNotesCategory()
     {
         return service.getAllNotesCategory();
     }
 
-    @CrossOrigin
-    @PostMapping("/notes/addNotesCategory")
+    @PostMapping("/addNotesCategory")
     public void addNotesCategory(@RequestBody notesCategory category)
     {
         service.addNotesCategory(category);
     }
 
-    @CrossOrigin
-    @PostMapping("/notes/updateNotesCategoryById")
+    @PostMapping("/updateNotesCategoryById")
     public void updateNotesCategoryById(@RequestBody notesCategory category)
     {
         service.updateNotesCategoryById(category);
     }
 
-    @CrossOrigin
-    @PostMapping("/notes/deleteNotesCategoryById")
+    @PostMapping("/deleteNotesCategoryById")
     public void deleteNotesCategoryById(@RequestBody notesCategory category)
     {
         service.deleteNotesCategoryById(category.getId());

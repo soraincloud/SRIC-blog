@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
-@RequestMapping("/api")//此Controller中所有api前缀路径为/api
+@RequestMapping("/api/dict")//此Controller中所有api前缀路径为/api
 public class dictionaryController
 {
     @Autowired
     dictionaryService service;
 
-    @CrossOrigin
-    @GetMapping("/dict/getDictElColorType")
+    @GetMapping("/getDictElColorType")
     public List<dictionary> getDictElColorType()
     {
         return service.getDictElColorType();

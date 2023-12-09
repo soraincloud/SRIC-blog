@@ -18,6 +18,9 @@ public interface notesMapper
     @Select(value = "SELECT * FROM notes WHERE id = #{id}")
     notes getNoteById(@Param(value = "id")int id);
 
+    @Select(value = "SELECT DISTINCT * FROM notes WHERE title LIKE concat('%',#{text},'%') or description LIKE concat('%',#{text},'%')")
+    List<notes> getNotesByText(@Param(value = "text")String text);
+
     @Update(value = "UPDATE NOTES SET VISITED = VISITED + 1 WHERE id = #{id}")
     void addNoteVisit(@Param(value = "id")int id);
 
