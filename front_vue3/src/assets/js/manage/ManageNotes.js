@@ -17,7 +17,7 @@ export default
             deleteOk: t('common.apply'),
             deleteCancel: t('common.cancel'),
             placeholderText: t('common.search'),
-            showLeft: '',
+            showLeft: 'left: 0px;',
             category:
             [
                 {
@@ -130,7 +130,7 @@ export default
         },
         clickAdd()
         {
-
+            this.showLeft = 'left: ' + (-(window.innerWidth)) + 'px;'
         },
         clickRefresh()
         {
