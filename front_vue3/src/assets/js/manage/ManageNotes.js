@@ -133,7 +133,7 @@ export default
         },
         clickAdd()
         {
-            this.showLeft = 'left: ' + (-(window.innerWidth + 500)) + 'px;'
+            this.showLeft = 'left: ' + (-(window.innerWidth + 1000)) + 'px;'
             this.updateLeft = 'left: 0px;'
         },
         clickRefresh()
