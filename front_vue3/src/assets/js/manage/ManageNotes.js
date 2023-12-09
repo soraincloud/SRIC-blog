@@ -1,4 +1,4 @@
-import { getAllNotesCategory,getNotesList,getNoteListByCategory,deleteNoteById } from '@/axios/api/notesApi'
+import { getAllNotesCategory,getNotesList,getNoteListByCategory,deleteNoteById,getNotesByText } from '@/axios/api/notesApi'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -121,7 +121,12 @@ export default
         },
         clickSearch()
         {
-
+            this.loading = true
+            var _this = this
+            getNotesByText({ text: this.search }).then(function(resp){
+                _this.notes = resp.data
+                _this.loading = false
+            })
         },
         clickAdd()
         {
