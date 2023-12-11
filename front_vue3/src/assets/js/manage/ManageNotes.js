@@ -48,15 +48,25 @@ export default
                 username: '',
                 date: '',
             },
+            rules:
+            {
+                title: [{required: true, message: 'NOT NULL'}],
+                description: [{required: true, message: 'NOT NULL'}],
+                category: [{required: true, message: 'NOT NULL'}],
+                md: [{required: true, message: 'NOT NULL'}],
+                visited: [{required: true, message: 'NOT NULL'}],
+                username: [{required: true, message: 'NOT NULL'}],
+                date: [{required: true, message: 'NOT NULL'}],
+            },
             label:
             {
                 title: t('notes.title'),
-                description: '',
-                category: '',
-                md: '',
-                visited: '',
-                username: '',
-                date: '',
+                description: t('notes.description'),
+                category: t('notes.category'),
+                md: t('notes.md'),
+                visited: t('notes.visited'),
+                username: t('notes.username'),
+                date: t('notes.date'),
             },
         }
     },

@@ -123,9 +123,25 @@
             :rules="rules"
             ref="form"
             >
-            <el-form-item :label="label.title"  prop="content">
-                <el-input v-model="input.content" />
-            </el-form-item>
+                <el-form-item :label="label.title" prop="title">
+                    <el-input
+                    v-model="input.title"
+                    type="text"
+                    maxlength="20"
+                    show-word-limit
+                    clearable
+                    />
+                </el-form-item>
+                <el-form-item :label="label.description" prop="description">
+                    <el-input
+                    v-model="input.description"
+                    type="textarea"
+                    maxlength="100"
+                    :autosize="{ minRows: 2 }"
+                    show-word-limit
+                    clearable
+                    />
+                </el-form-item>
             </el-form>
         </el-card>
 
