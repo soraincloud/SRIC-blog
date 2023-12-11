@@ -36,6 +36,28 @@ export default
             ],
             notes:[],
             search: '',
+            input: 
+            {
+                id: '',
+                title: '',
+                description: '',
+                category: '',
+                md: '',
+                visited: '',
+                uid: '',
+                username: '',
+                date: '',
+            },
+            label:
+            {
+                title: t('notes.title'),
+                description: '',
+                category: '',
+                md: '',
+                visited: '',
+                username: '',
+                date: '',
+            },
         }
     },
     methods:

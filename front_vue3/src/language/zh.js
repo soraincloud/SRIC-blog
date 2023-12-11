@@ -74,6 +74,13 @@ export default
         head: '分类',
         all: '全部',
         none: '未分类',
+        title: '标题',
+        description: '描述',
+        category: '类别',
+        md: '文件',
+        visited: '访问',
+        username: '用户',
+        date: '时间',
     },
     resources:
     {

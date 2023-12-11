@@ -74,6 +74,13 @@ export default
         head: '类类',
         all: '所有',
         none: '没类类',
+        title: '上题',
+        description: '描说',
+        category: '类类',
+        md: '文片',
+        visited: '看量',
+        username: '用人',
+        date: '时候',
     },
     resources:
     {

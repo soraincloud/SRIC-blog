@@ -117,7 +117,16 @@
         </el-card>
 
         <el-card class="ManageNotes-el-card" :style="[bodyHeight,updateLeft]">
-            123
+            <el-form
+            label-position="right"
+            :model="input"
+            :rules="rules"
+            ref="form"
+            >
+            <el-form-item :label="label.title"  prop="content">
+                <el-input v-model="input.content" />
+            </el-form-item>
+            </el-form>
         </el-card>
 
         <el-card class="ManageNotes-el-card" :style="[bodyHeight,editLeft]">

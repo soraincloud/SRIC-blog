@@ -74,6 +74,13 @@ export default
         head: 'category',
         all: 'all',
         none: 'uncategorized',
+        title: 'title',
+        description: 'description',
+        category: 'category',
+        md: 'file',
+        visited: 'visited',
+        username: 'user',
+        date: 'date',
     },
     resources:
     {
