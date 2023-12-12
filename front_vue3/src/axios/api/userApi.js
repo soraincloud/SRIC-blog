@@ -24,3 +24,8 @@ export function login(params)
 {
     return post('/user/login',params)
 }
+
+export function getAllUsername(params)
+{
+    return get('/user/getAllUsername',params)
+}

@@ -106,7 +106,7 @@
                             </el-button>
                             </template>
                         </el-popconfirm>
-                        <el-button class="manageTime-el-button" type="warning" size="small" plain @click="clickEdit(i)">
+                        <el-button class="manageTime-el-button" type="warning" size="small" plain @click="clickUpdate(i)">
                             {{ $t('common.edit') }}
                         </el-button>
                         <p class="common-text-style">{{ item.description }}</p>
@@ -117,32 +117,113 @@
         </el-card>
 
         <el-card class="ManageNotes-el-card" :style="[bodyHeight,updateLeft]">
-            <el-form
-            label-position="right"
-            :model="input"
-            :rules="rules"
-            ref="form"
+            <el-card
+                class="common-with-back-el-card-style"
+                :style="[inputBackgrounds]"
+                @mouseover="updateCardOver()"
+                @mouseleave="updateCardLeave()"
             >
-                <el-form-item :label="label.title" prop="title">
-                    <el-input
-                    v-model="input.title"
-                    type="text"
-                    maxlength="20"
-                    show-word-limit
-                    clearable
-                    />
-                </el-form-item>
-                <el-form-item :label="label.description" prop="description">
-                    <el-input
-                    v-model="input.description"
-                    type="textarea"
-                    maxlength="100"
-                    :autosize="{ minRows: 2 }"
-                    show-word-limit
-                    clearable
-                    />
-                </el-form-item>
-            </el-form>
+                <h1 class="common-text-style">{{ input.title }}</h1>
+                <div>
+                    <el-icon size="10px" class="NotesCard-el-icon-style"><Histogram/></el-icon>
+                    <span class="NotesCard-tag-text-style">
+                        {{ $t("notes.visit") }} {{ input.visited }}
+                    </span>
+                    <el-icon size="10px" class="NotesCard-el-icon-style"><UserFilled/></el-icon>
+                    <span class="NotesCard-tag-text-style">
+                        {{ $t("notes.created") }} {{ input.username }}
+                    </span>
+                    <el-icon size="10px" class="NotesCard-el-icon-style"><List/></el-icon>
+                    <span class="NotesCard-tag-text-style">
+                        {{ $t("notes.date") }} {{ input.date }}
+                    </span>
+                </div>
+                <el-divider class="common-el-divider-style"/>
+                <p class="common-text-style">{{ input.description }}</p>
+            </el-card>
+            <el-scrollbar class="manageNotes-update-form">
+            <el-row>
+                <el-col :span="4">
+                    <h1 class="manageNotes-form-h1-text">{{ updateText }}</h1>
+                </el-col>
+                <el-col :span="20">
+                    <el-form
+                    label-position="right"
+                    :model="input"
+                    :rules="rules"
+                    ref="form"
+                    >
+                        <el-form-item :label="label.title" prop="title">
+                            <el-input
+                            v-model="input.title"
+                            type="text"
+                            maxlength="20"
+                            show-word-limit
+                            clearable
+                            />
+                        </el-form-item>
+                        <el-form-item :label="label.description" prop="description">
+                            <el-input
+                            v-model="input.description"
+                            type="textarea"
+                            maxlength="100"
+                            :autosize="{ minRows: 2 }"
+                            show-word-limit
+                            clearable
+                            />
+                        </el-form-item>
+                        <el-row>
+                            <el-col :span="12">
+                                <el-form-item :label="label.category" prop="category">
+                                    <el-select
+                                    v-model="input.category"
+                                    clearable
+                                    >
+                                        <el-option
+                                        v-for="(item,i) in category"
+                                        :key="i"
+                                        :label="item.content"
+                                        :value="item.id"
+                                        >
+                                        </el-option>
+                                    </el-select>
+                                </el-form-item>
+                            </el-col>
+                            <el-col :span="12">
+                                <el-form-item :label="label.md">
+                                    <p>{{ input.md }}</p>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-form-item :label="label.visited" prop="visited">
+                            <el-input
+                            v-model="input.visited"
+                            type="text"
+                            :formatter="number"
+                            clearable
+                            >
+                            </el-input>
+                        </el-form-item>
+                        <el-form-item :label="label.username" prop="username">
+                            <el-select
+                            v-model="input.username"
+                            clearable
+                            >
+                                <el-option
+                                v-for="(item,i) in user"
+                                :key="i"
+                                :label="item.username"
+                                :value="item.username"
+                                >
+                                </el-option>
+                            </el-select>
+                        </el-form-item>
+                    </el-form>
+                </el-col>
+            </el-row>
+            </el-scrollbar>
+
+
         </el-card>
 
         <el-card class="ManageNotes-el-card" :style="[bodyHeight,editLeft]">

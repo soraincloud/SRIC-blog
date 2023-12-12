@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
+
 @Mapper
 public interface userMapper
 {
@@ -23,4 +25,7 @@ public interface userMapper
 
     @Select(value="SELECT COUNT(*) FROM USER")
     int getUserCount();
+
+    @Select(value="SELECT USERNAME FROM USER")
+    List<String> getAllUsername();
 }

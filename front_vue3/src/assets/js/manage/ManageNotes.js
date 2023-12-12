@@ -1,4 +1,5 @@
 import { getAllNotesCategory,getNotesList,getNoteListByCategory,deleteNoteById,getNotesByText } from '@/axios/api/notesApi'
+import { getAllUsername } from '@/axios/api/userApi'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -36,6 +37,7 @@ export default
             ],
             notes:[],
             search: '',
+            inputBackgrounds: '',
             input: 
             {
                 id: '',
@@ -54,7 +56,11 @@ export default
                 description: [{required: true, message: 'NOT NULL'}],
                 category: [{required: true, message: 'NOT NULL'}],
                 md: [{required: true, message: 'NOT NULL'}],
-                visited: [{required: true, message: 'NOT NULL'}],
+                visited: 
+                [
+                    {required: true, message: 'NOT NULL'},
+                    {type: 'number', message: 'NEEDS NUMBER', trigger: 'blur', transform: (value) => Number(value)}
+                ],
                 username: [{required: true, message: 'NOT NULL'}],
                 date: [{required: true, message: 'NOT NULL'}],
             },
@@ -68,6 +74,9 @@ export default
                 username: t('notes.username'),
                 date: t('notes.date'),
             },
+            isUpdate: true,
+            updateText: '',
+            user: [],
         }
     },
     methods:
@@ -125,6 +134,14 @@ export default
         {
             this.notes[i].backgrounds = ""
         },
+        updateCardOver()
+        {
+            this.inputBackgrounds = "background: rgba(255,255,255,0);"
+        },
+        updateCardLeave()
+        {
+            this.inputBackgrounds = ""
+        },
         choose(i)
         {
             this.loading = true
@@ -150,9 +167,10 @@ export default
                 _this.loadNotes()
             })
         },
-        clickEdit(i)
+        clickUpdate(i)
         {
-
+            this.isUpdate = true
+            this.updateText = t('common.edit')
         },
         clickSearch()
         {
@@ -165,6 +183,8 @@ export default
         },
         clickAdd()
         {
+            this.isUpdate = false
+            this.updateText = t('common.add')
             this.showLeft = 'left: ' + (-(window.innerWidth + 1000)) + 'px;'
             this.updateLeft = 'left: 0px;'
         },
@@ -202,6 +222,13 @@ export default
             this.deleteOk = t('common.apply')
             this.deleteCancel = t('common.cancel')
             this.placeholderText = t('common.search')
+            this.label.title = t('notes.title')
+            this.label.description = t('notes.description')
+            this.label.category = t('notes.category')
+            this.label.md = t('notes.md')
+            this.label.visited = t('notes.visited')
+            this.label.username = t('notes.username')
+            this.label.date = t('notes.date')
         }
     },
 }

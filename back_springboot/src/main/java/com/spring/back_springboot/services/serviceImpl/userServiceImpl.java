@@ -6,6 +6,8 @@ import com.spring.back_springboot.services.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class userServiceImpl implements userService
 {
@@ -40,5 +42,11 @@ public class userServiceImpl implements userService
     public int getUserCount()
     {
         return mapper.getUserCount();
+    }
+
+    @Override
+    public List<String> getAllUsername()
+    {
+        return mapper.getAllUsername();
     }
 }

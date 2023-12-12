@@ -7,3 +7,14 @@
     position: absolute;
     transition: 0.5s left ease;
 }
+
+.manageNotes-update-form
+{
+    margin-top: 10px;
+}
+
+.manageNotes-form-h1-text
+{
+    float: right;
+    margin-right: 20px;
+}

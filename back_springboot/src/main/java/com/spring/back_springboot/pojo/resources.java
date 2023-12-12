@@ -13,7 +13,6 @@ public class resources
     private int visited;
     private String tag;
     private double size;
-    private int uid;
     private String username;
     private String date;
 }

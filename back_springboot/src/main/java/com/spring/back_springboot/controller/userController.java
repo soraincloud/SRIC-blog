@@ -9,6 +9,8 @@ import com.spring.back_springboot.services.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/user")//此Controller中所有api前缀路径为/api
@@ -71,5 +73,11 @@ public class userController
         int id = Integer.parseInt(StpUtil.getLoginIdByToken(userToken.getTokenValue()).toString());
         service.updateMarkById(userToken.getMark(),id);
         return new code(200);
+    }
+
+    @GetMapping("/getAllUsername")
+    public List<String> getAllUsername()
+    {
+        return service.getAllUsername();
     }
 }
