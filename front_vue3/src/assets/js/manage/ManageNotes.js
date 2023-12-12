@@ -1,4 +1,4 @@
-import { getAllNotesCategory,getNotesList,getNoteListByCategory,deleteNoteById,getNotesByText } from '@/axios/api/notesApi'
+import { getAllNotesCategory,getNotesList,getNoteListByCategory,deleteNoteById,getNotesByText,addNote,updateNote } from '@/axios/api/notesApi'
 import { getAllUsername } from '@/axios/api/userApi'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
@@ -252,13 +252,18 @@ export default
             this.$refs['form'].validate((valid) => {
                 if(valid)
                 {
+                    var _this = this
                     if(this.isUpdate == true)
                     {
-                        
+                        updateNote(this.input).then(function(resp){
+
+                        })
                     }
                     else
                     {
-
+                        addNote(this.input).then(function(resp){
+                            
+                        })
                     }
                 }
                 else
