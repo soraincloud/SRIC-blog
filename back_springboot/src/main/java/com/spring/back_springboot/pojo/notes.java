@@ -8,7 +8,7 @@ public class notes
     private int id;
     private String title;
     private String description;
-    private String category;
+    private int category;
     private String md;
     private int visited;
     private String username;

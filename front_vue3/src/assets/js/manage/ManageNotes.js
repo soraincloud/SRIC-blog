@@ -13,6 +13,7 @@ export default
             loading: true,
             bodyHeight: "height:" + (window.innerHeight - 80) + "px;",
             scrollCardHeight: (window.innerHeight - 150),
+            updateBodyHeight: (window.innerHeight - 110),
             back0: '',
             deleteTitle: t('common.deleteSure'),
             deleteOk: t('common.apply'),
@@ -46,7 +47,6 @@ export default
                 category: '',
                 md: '',
                 visited: '',
-                uid: '',
                 username: '',
                 date: '',
             },
@@ -77,6 +77,8 @@ export default
             isUpdate: true,
             updateText: '',
             user: [],
+            formBackground: 'background: rgba(0,0,0,0);',
+            isSubmit: false,
         }
     },
     methods:
@@ -142,6 +144,21 @@ export default
         {
             this.inputBackgrounds = ""
         },
+        formOver()
+        {
+            if(isDark.value == true)
+            {
+                this.formBackground = "background: rgba(0,0,0,0.5)"
+            }
+            else
+            {
+                this.formBackground = "background: rgba(255,255,255,0.5)"
+            }
+        },
+        formLeave()
+        {
+            this.formBackground = "background: rgba(0,0,0,0)"
+        },
         choose(i)
         {
             this.loading = true
@@ -171,6 +188,19 @@ export default
         {
             this.isUpdate = true
             this.updateText = t('common.edit')
+            this.showLeft = 'left: ' + (-(window.innerWidth + 1000)) + 'px;'
+            this.updateLeft = 'left: 0px;'
+            this.input = 
+            {
+                id: this.notes[i].id,
+                title: this.notes[i].title,
+                description: this.notes[i].description,
+                category: this.notes[i].category,
+                md: this.notes[i].md,
+                visited: this.notes[i].visited,
+                username: this.notes[i].username,
+                date: this.notes[i].date,
+            }
         },
         clickSearch()
         {
@@ -187,11 +217,59 @@ export default
             this.updateText = t('common.add')
             this.showLeft = 'left: ' + (-(window.innerWidth + 1000)) + 'px;'
             this.updateLeft = 'left: 0px;'
+            this.input = 
+            {
+                id: '',
+                title: '',
+                description: '',
+                category: '',
+                md: '',
+                visited: 0,
+                username: '',
+                date: '',
+            }
         },
         clickRefresh()
         {
             this.loading = true
             this.loadNotes()
+        },
+        clickEditNote()
+        {
+
+        },
+        clickCancelUpdate()
+        {
+            this.showLeft = 'left: 0px;'
+            this.updateLeft = 'left: ' + (window.innerWidth + 1000) + 'px;'
+        },
+        clickSubmit()
+        {
+            this.isSubmit = true
+        },
+        clickApply()
+        {
+            this.$refs['form'].validate((valid) => {
+                if(valid)
+                {
+                    if(this.isUpdate == true)
+                    {
+                        
+                    }
+                    else
+                    {
+
+                    }
+                }
+                else
+                {
+                    return
+                }
+            })
+        },
+        clickCancel()
+        {
+            this.isSubmit = false
         },
     },
     created()
@@ -203,6 +281,9 @@ export default
                 _this.category.push(resp.data[i])
             }
         })
+        getAllUsername().then(function(resp){
+            _this.user = resp.data
+        })
         this.loadNotes()
     },
     mounted()
@@ -211,6 +292,7 @@ export default
         {
             this.bodyHeight = "height:" + (window.innerHeight - 80) + "px;"
             this.scrollCardHeight = (window.innerHeight - 150)
+            this.updateBodyHeight = (window.innerHeight - 110)
             this.outDivHeight = 'height: ' + (window.innerHeight) + 'px;'
         }
     },

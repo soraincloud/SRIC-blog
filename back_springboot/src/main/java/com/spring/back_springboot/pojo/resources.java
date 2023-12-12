@@ -8,7 +8,7 @@ public class resources
     private int id;
     private String title;
     private String description;
-    private String category;
+    private int category;
     private String file;
     private int visited;
     private String tag;

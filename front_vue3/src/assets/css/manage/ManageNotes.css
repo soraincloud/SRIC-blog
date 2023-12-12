@@ -5,7 +5,7 @@
     font-weight: bold;
     background-color: rgba(0,0,0,0);
     position: absolute;
-    transition: 0.5s left ease;
+    transition: 1s left ease;
 }
 
 .manageNotes-update-form
@@ -17,4 +17,17 @@
 {
     float: right;
     margin-right: 20px;
+    margin-bottom: 0px;
+}
+
+.manageNotes-el-button-div
+{
+    float: right;
+    margin-right: 20px;
+}
+
+.manageNotes-el-button
+{
+    margin-top: 10px;
+    float: right;
 }

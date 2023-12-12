@@ -117,6 +117,7 @@
         </el-card>
 
         <el-card class="ManageNotes-el-card" :style="[bodyHeight,updateLeft]">
+            <el-scrollbar :height="updateBodyHeight">
             <el-card
                 class="common-with-back-el-card-style"
                 :style="[inputBackgrounds]"
@@ -141,89 +142,123 @@
                 <el-divider class="common-el-divider-style"/>
                 <p class="common-text-style">{{ input.description }}</p>
             </el-card>
-            <el-scrollbar class="manageNotes-update-form">
-            <el-row>
-                <el-col :span="4">
-                    <h1 class="manageNotes-form-h1-text">{{ updateText }}</h1>
-                </el-col>
-                <el-col :span="20">
-                    <el-form
-                    label-position="right"
-                    :model="input"
-                    :rules="rules"
-                    ref="form"
-                    >
-                        <el-form-item :label="label.title" prop="title">
-                            <el-input
-                            v-model="input.title"
-                            type="text"
-                            maxlength="20"
-                            show-word-limit
-                            clearable
-                            />
-                        </el-form-item>
-                        <el-form-item :label="label.description" prop="description">
-                            <el-input
-                            v-model="input.description"
-                            type="textarea"
-                            maxlength="100"
-                            :autosize="{ minRows: 2 }"
-                            show-word-limit
-                            clearable
-                            />
-                        </el-form-item>
-                        <el-row>
-                            <el-col :span="12">
-                                <el-form-item :label="label.category" prop="category">
-                                    <el-select
-                                    v-model="input.category"
+            <div class="manageNotes-update-form">
+                <el-row>
+                    <el-col :span="4">
+                        <h1 class="manageNotes-form-h1-text">{{ updateText }}</h1>
+                        <div class="manageNotes-el-button-div">
+                            <el-button class="manageNotes-el-button" type="warning" plain @click="clickEditNote()">
+                                {{ $t('notes.edit') }}
+                            </el-button>
+                            <el-button class="manageNotes-el-button" type="info" plain @click="clickCancelUpdate()">
+                                {{ $t('common.cancel') }}
+                            </el-button>
+                        </div>
+                    </el-col>
+                    <el-col :span="20">
+                        <el-card :style="formBackground" @mouseover="formOver()" @mouseleave="formLeave()">
+                            <el-form
+                            label-position="right"
+                            :model="input"
+                            :rules="rules"
+                            ref="form"
+                            >
+                                <el-form-item :label="label.title" prop="title">
+                                    <el-input
+                                    v-model="input.title"
+                                    type="text"
+                                    maxlength="20"
+                                    show-word-limit
+                                    clearable
+                                    />
+                                </el-form-item>
+                                <el-form-item :label="label.description" prop="description">
+                                    <el-input
+                                    v-model="input.description"
+                                    type="textarea"
+                                    maxlength="100"
+                                    :autosize="{ minRows: 2 }"
+                                    show-word-limit
+                                    clearable
+                                    />
+                                </el-form-item>
+                                <el-row>
+                                    <el-col :span="12">
+                                        <el-form-item :label="label.category" prop="category">
+                                            <el-select
+                                            v-model="input.category"
+                                            clearable
+                                            >
+                                                <el-option
+                                                v-for="(item,i) in category"
+                                                :key="i"
+                                                :label="item.content"
+                                                :value="item.id"
+                                                >
+                                                </el-option>
+                                            </el-select>
+                                        </el-form-item>
+                                    </el-col>
+                                    <el-col :span="12">
+                                        <el-form-item :label="label.md">
+                                            <p style="color: #ff8f8f;">{{ input.md }}</p>
+                                        </el-form-item>
+                                    </el-col>
+                                </el-row>
+                                <el-form-item :label="label.visited" prop="visited">
+                                    <el-input
+                                    v-model="input.visited"
+                                    type="text"
                                     clearable
                                     >
-                                        <el-option
-                                        v-for="(item,i) in category"
-                                        :key="i"
-                                        :label="item.content"
-                                        :value="item.id"
-                                        >
-                                        </el-option>
-                                    </el-select>
+                                    </el-input>
                                 </el-form-item>
-                            </el-col>
-                            <el-col :span="12">
-                                <el-form-item :label="label.md">
-                                    <p>{{ input.md }}</p>
+                                <el-row>
+                                    <el-col :span="12">
+                                        <el-form-item :label="label.username" prop="username">
+                                            <el-select
+                                            v-model="input.username"
+                                            clearable
+                                            >
+                                                <el-option
+                                                v-for="(item,i) in user"
+                                                :key="i"
+                                                :label="item"
+                                                :value="item"
+                                                >
+                                                </el-option>
+                                            </el-select>
+                                        </el-form-item>
+                                    </el-col>
+                                    <el-col :span="12">
+                                        <el-form-item :label="label.date" prop="date">
+                                            <el-date-picker v-model="input.date" type="date" value-format="YYYY-MM-DD"></el-date-picker>
+                                        </el-form-item>
+                                    </el-col>
+                                </el-row>
+                                <el-form-item>
+                                    <el-button v-if="isSubmit == false" @click="clickSubmit()" type="danger"
+                                        class="manageTime-submit-button" plain>
+                                        {{ $t("common.submit") }}
+                                    </el-button>
+                                    <el-button v-if="isSubmit == true" @click="clickApply()" type="danger"
+                                        class="manageTime-submit-button" plain>
+                                        {{ $t("common.apply") }}
+                                    </el-button>
+                                    <el-button v-if="isSubmit == true" @click="clickCancel()" type="info"
+                                        class="manageTime-submit-button" plain>
+                                        {{ $t("common.cancel") }}
+                                    </el-button>
+                                    <span v-if="isSubmit == true" class="manageTime-submit-text">
+                                        {{ $t("common.applyText") }}
+                                    </span>
                                 </el-form-item>
-                            </el-col>
-                        </el-row>
-                        <el-form-item :label="label.visited" prop="visited">
-                            <el-input
-                            v-model="input.visited"
-                            type="text"
-                            :formatter="number"
-                            clearable
-                            >
-                            </el-input>
-                        </el-form-item>
-                        <el-form-item :label="label.username" prop="username">
-                            <el-select
-                            v-model="input.username"
-                            clearable
-                            >
-                                <el-option
-                                v-for="(item,i) in user"
-                                :key="i"
-                                :label="item.username"
-                                :value="item.username"
-                                >
-                                </el-option>
-                            </el-select>
-                        </el-form-item>
-                    </el-form>
-                </el-col>
-            </el-row>
-            </el-scrollbar>
-
-
+                            </el-form>
+                        </el-card>
+                    </el-col>
+                </el-row>
+            </div>
+        </el-scrollbar>
         </el-card>
 
         <el-card class="ManageNotes-el-card" :style="[bodyHeight,editLeft]">

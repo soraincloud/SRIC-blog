@@ -81,6 +81,7 @@ export default
         visited: '看量',
         username: '用人',
         date: '时候',
+        edit: '写改记记',
     },
     resources:
     {

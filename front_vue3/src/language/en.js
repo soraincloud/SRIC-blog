@@ -81,6 +81,7 @@ export default
         visited: 'visited',
         username: 'user',
         date: 'date',
+        edit: 'edit note',
     },
     resources:
     {

@@ -81,6 +81,7 @@ export default
         visited: '访问',
         username: '用户',
         date: '时间',
+        edit: '编辑笔记',
     },
     resources:
     {
