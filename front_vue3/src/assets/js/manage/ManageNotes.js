@@ -222,7 +222,7 @@ export default
                 id: '',
                 title: '',
                 description: '',
-                category: '',
+                category: -1,
                 md: '',
                 visited: 0,
                 username: '',
@@ -236,7 +236,8 @@ export default
         },
         clickEditNote()
         {
-
+            this.updateLeft = 'left: ' + (-(window.innerWidth + 1000)) + 'px;'
+            this.editLeft = 'left: 0px;'
         },
         clickCancelUpdate()
         {
@@ -256,13 +257,21 @@ export default
                     if(this.isUpdate == true)
                     {
                         updateNote(this.input).then(function(resp){
-
+                            _this.$message.success({message: t('message.applySuccess'),})
+                            _this.loadNotes()
+                            _this.showLeft = 'left: 0px;'
+                            _this.updateLeft = 'left: ' + (window.innerWidth + 1000) + 'px;'
+                            _this.isSubmit = false
                         })
                     }
                     else
                     {
                         addNote(this.input).then(function(resp){
-                            
+                            _this.$message.success({message: t('message.applySuccess'),})
+                            _this.loadNotes()
+                            _this.showLeft = 'left: 0px;'
+                            _this.updateLeft = 'left: ' + (window.innerWidth + 1000) + 'px;'
+                            _this.isSubmit = false
                         })
                     }
                 }

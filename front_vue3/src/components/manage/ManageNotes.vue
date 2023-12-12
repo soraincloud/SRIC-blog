@@ -147,11 +147,11 @@
                     <el-col :span="4">
                         <h1 class="manageNotes-form-h1-text">{{ updateText }}</h1>
                         <div class="manageNotes-el-button-div">
-                            <el-button class="manageNotes-el-button" type="warning" plain @click="clickEditNote()">
-                                {{ $t('notes.edit') }}
-                            </el-button>
                             <el-button class="manageNotes-el-button" type="info" plain @click="clickCancelUpdate()">
                                 {{ $t('common.cancel') }}
+                            </el-button>
+                            <el-button class="manageNotes-el-button" type="warning" plain @click="clickEditNote()">
+                                {{ $t('notes.edit') }}
                             </el-button>
                         </div>
                     </el-col>
