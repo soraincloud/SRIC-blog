@@ -1,7 +1,7 @@
 import AsideMessage from '@/components/common/AsideMessage'
 import NotesCard from '@/components/notes/NotesCard'
 import NotesAside from '@/components/notes/NotesAside'
-import { getNoteListByCategory } from '@/axios/api/notesApi'
+import { getNoteListByCategory,getNotesByText,getNotesList } from '@/axios/api/notesApi'
 import { visitPage } from '@/axios/api/visitApi'
 
 let isMore = 0;
@@ -13,13 +13,14 @@ export default
     data()
     {
         return{
-            indexHeight: (window.innerHeight - 70) + 'px',
+            indexHeight: (window.innerHeight - 120) + 'px',
             asideHeight: (window.innerHeight - 70) + 'px',
             categoryHeight: (window.innerHeight - 70) + 'px',
             backTop: require('@/assets/webp/background/backTop.webp'),
             data: 0,
             bottomData: 'bottom: ' + (window.innerHeight + 100) + 'px',
             loading: true,
+            search: '',
         }
     },
     mounted()
@@ -27,7 +28,7 @@ export default
         visitPage({ page: "notes" })
         window.onresize = () => 
         {
-            this.indexHeight = (window.innerHeight - 70) + 'px'
+            this.indexHeight = (window.innerHeight - 120) + 'px'
             this.asideHeight = (window.innerHeight - 70) + 'px'
             this.categoryHeight = (window.innerHeight - 70) + 'px'
         }
@@ -64,6 +65,20 @@ export default
                 this.bottomData = 'bottom: ' + (window.innerHeight + 100) + 'px'
                 isMore = 0;
             }
+        },
+        clickSearch()
+        {
+            var _this = this
+            getNotesByText({ text: this.search }).then(function(resp){
+                _this.$refs.loadAllNotesToCard.notes = resp.data
+            })
+        },
+        clickRefresh()
+        {
+            var _this = this
+            getNotesList().then(function(resp){
+                _this.$refs.loadAllNotesToCard.notes = resp.data
+            })
         },
     }
 }

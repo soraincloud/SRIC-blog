@@ -9,6 +9,34 @@
             </el-scrollbar>
         </el-col>
         <el-col :span="12">
+            <div class="notesIndex-search-div">
+            <el-row>
+                <el-col :span="20">
+                    <el-input
+                    v-model="search"
+                    :placeholder="placeholderText"
+                    class="manageTime-input-with-select"
+                    clearable
+                    >
+                    <template #append>
+                        <el-button type="danger" icon="Search" class="manageTime-button-icon" @click="clickSearch()"/>
+                    </template>
+                    </el-input>
+                </el-col>
+                <el-col :span="4">
+                    <el-tooltip effect="light" placement="bottom">
+                        <template #content>
+                            <p class="NavMenu-tooltip-p-style">{{ $t("common.refresh") }}</p>
+                        </template>
+                        <el-button type="success" style="margin-left: 10px;" plain @click="clickRefresh()">
+                            <el-icon>
+                                <Refresh />
+                            </el-icon>
+                        </el-button>
+                    </el-tooltip>
+                </el-col>
+            </el-row>
+            </div>
             <el-scrollbar  @scroll="handleScroll($event)" ref="indexScroll" :height="indexHeight">
                 <resources-card ref="loadAllResourcesToCard" @isLoading="loading = $event" />
             </el-scrollbar>
