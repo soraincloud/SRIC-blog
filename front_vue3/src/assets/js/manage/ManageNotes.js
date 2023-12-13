@@ -80,6 +80,7 @@ export default
             formBackground: 'background: rgba(0,0,0,0);',
             isSubmit: false,
             markdownText: require('@/assets/md/NULL.md'),
+            isEditSubmit: false,
         }
     },
     methods:
@@ -291,6 +292,23 @@ export default
         clickCancel()
         {
             this.isSubmit = false
+        },
+        clickEditSubmit()
+        {
+            this.isEditSubmit = true
+        },
+        clickEditApply()
+        {
+
+        },
+        clickEditCancel()
+        {
+            this.isEditSubmit = false
+        },
+        clickBack()
+        {
+            this.updateLeft = 'left: 0px;'
+            this.editLeft = 'left: ' + (window.innerWidth + 1000) + 'px;'
         },
     },
     created()

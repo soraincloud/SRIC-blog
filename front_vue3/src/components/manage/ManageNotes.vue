@@ -231,16 +231,13 @@
                                     <p style="color: #ff8f8f;">{{ input.md }}</p>
                                 </el-form-item>
                                 <el-form-item>
-                                    <el-button v-if="isSubmit == false" @click="clickSubmit()" type="danger"
-                                        class="manageTime-submit-button" plain>
+                                    <el-button v-if="isSubmit == false" @click="clickSubmit()" type="danger" class="manageTime-submit-button" plain>
                                         {{ $t("common.submit") }}
                                     </el-button>
-                                    <el-button v-if="isSubmit == true" @click="clickApply()" type="danger"
-                                        class="manageTime-submit-button" plain>
+                                    <el-button v-if="isSubmit == true" @click="clickApply()" type="danger" class="manageTime-submit-button" plain>
                                         {{ $t("common.apply") }}
                                     </el-button>
-                                    <el-button v-if="isSubmit == true" @click="clickCancel()" type="info"
-                                        class="manageTime-submit-button" plain>
+                                    <el-button v-if="isSubmit == true" @click="clickCancel()" type="info" class="manageTime-submit-button" plain>
                                         {{ $t("common.cancel") }}
                                     </el-button>
                                     <span v-if="isSubmit == true" class="manageTime-submit-text">
@@ -258,15 +255,44 @@
         <el-card class="ManageNotes-el-card" :style="[bodyHeight,editLeft]">
             <el-row>
                 <el-col :span="12">
-                    
+                    <div style="margin-bottom: 10px;">
+                        <el-button @click="clickBack()" type="warning" class="manageTime-submit-button" plain>
+                            <el-icon class="SafetyPage-back-icon-style"><ArrowLeftBold /></el-icon>
+                            {{ $t("common.back") }}
+                        </el-button>
+                        <el-button v-if="isEditSubmit == false" @click="clickEditSubmit()" type="danger" class="manageTime-submit-button" plain>
+                            {{ $t("common.submit") }}
+                        </el-button>
+                        <el-button v-if="isEditSubmit == true" @click="clickEditApply()" type="danger" class="manageTime-submit-button" plain>
+                            {{ $t("common.apply") }}
+                        </el-button>
+                        <el-button v-if="isEditSubmit == true" @click="clickEditCancel()" type="info" class="manageTime-submit-button" plain>
+                            {{ $t("common.cancel") }}
+                        </el-button>
+                        <span v-if="isEditSubmit == true" class="manageTime-submit-text" style="margin-top: 5px;">
+                            {{ $t("common.applyText") }}
+                        </span>
+                    </div>
+                    <el-scrollbar :height="scrollCardHeight">
+                        <el-card class="common-with-back-el-card-style" style="margin-right: 10px;">
+                            <el-input
+                            v-model="markdownText"
+                            type="textarea"
+                            maxlength="50000"
+                            :autosize="{ minRows: 2 }"
+                            show-word-limit
+                            clearable
+                            style="margin-bottom: 10px;"
+                            />
+                        </el-card>
+                </el-scrollbar>
                 </el-col>
                 <el-col :span="12">
-                    <el-card
-                        class="common-with-back-el-card-style"
-                        :style="backgrounds"
-                    >
-                    <v-md-editor v-model="markdownText" mode="preview"></v-md-editor>
-                    </el-card>
+                    <el-scrollbar :height="updateBodyHeight">
+                        <el-card class="common-with-back-el-card-style">
+                            <v-md-editor v-model="markdownText" mode="preview"></v-md-editor>
+                        </el-card>
+                    </el-scrollbar>
                 </el-col>
             </el-row>
         </el-card>
@@ -288,4 +314,5 @@ export default managenotes;
 @import "@/assets/css/manage/ManageTime.css";
 @import "@/assets/css/common/NavMenu.css";
 @import "@/assets/css/notes/NotesShow.css";
+@import "@/assets/css/personal/SafetyPage.css";
 </style>

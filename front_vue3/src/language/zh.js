@@ -24,6 +24,7 @@ export default
         refresh: '刷新',
         error: '错误',
         icon: '图标',
+        back: '返回',
     },
     message:
     {

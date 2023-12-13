@@ -24,6 +24,7 @@ export default
         refresh: 'refresh',
         error: 'error',
         icon: 'icon',
+        back: 'back',
     },
     message:
     {

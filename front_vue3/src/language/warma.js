@@ -24,6 +24,7 @@ export default
         refresh: '刷表',
         error: '戳辣',
         icon: '纸标',
+        back: '退去',
     },
     message:
     {
