@@ -256,7 +256,19 @@
         </el-card>
 
         <el-card class="ManageNotes-el-card" :style="[bodyHeight,editLeft]">
-
+            <el-row>
+                <el-col :span="12">
+                    
+                </el-col>
+                <el-col :span="12">
+                    <el-card
+                        class="common-with-back-el-card-style"
+                        :style="backgrounds"
+                    >
+                    <v-md-editor v-model="markdownText" mode="preview"></v-md-editor>
+                    </el-card>
+                </el-col>
+            </el-row>
         </el-card>
     </div>
 </el-scrollbar>
@@ -275,4 +287,5 @@ export default managenotes;
 @import "@/assets/css/notes/NotesCard.css";
 @import "@/assets/css/manage/ManageTime.css";
 @import "@/assets/css/common/NavMenu.css";
+@import "@/assets/css/notes/NotesShow.css";
 </style>

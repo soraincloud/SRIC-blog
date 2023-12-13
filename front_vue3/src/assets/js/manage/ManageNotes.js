@@ -79,6 +79,7 @@ export default
             user: [],
             formBackground: 'background: rgba(0,0,0,0);',
             isSubmit: false,
+            markdownText: require('@/assets/md/NULL.md'),
         }
     },
     methods:
@@ -243,6 +244,7 @@ export default
             }
             this.updateLeft = 'left: ' + (-(window.innerWidth + 1000)) + 'px;'
             this.editLeft = 'left: 0px;'
+            this.markdownText = require('@/assets/md/' + this.input.md)
         },
         clickCancelUpdate()
         {
