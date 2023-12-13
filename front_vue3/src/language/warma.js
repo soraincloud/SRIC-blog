@@ -83,6 +83,7 @@ export default
         username: '用人',
         date: '时候',
         edit: '写改记记',
+        editFile: '写改文片',
     },
     resources:
     {

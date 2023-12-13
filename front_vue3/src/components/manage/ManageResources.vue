@@ -168,8 +168,8 @@
                             <el-button class="manageNotes-el-button" type="info" plain @click="clickCancelUpdate()">
                                 {{ $t('common.cancel') }}
                             </el-button>
-                            <el-button class="manageNotes-el-button" type="warning" plain @click="clickEditNote()">
-                                {{ $t('notes.edit') }}
+                            <el-button class="manageNotes-el-button" type="warning" plain @click="clickEditFile()">
+                                {{ $t('notes.editFile') }}
                             </el-button>
                         </div>
                     </el-col>

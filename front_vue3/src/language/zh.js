@@ -83,6 +83,7 @@ export default
         username: '用户',
         date: '时间',
         edit: '编辑笔记',
+        editFile: '编辑文件',
     },
     resources:
     {

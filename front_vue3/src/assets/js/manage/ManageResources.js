@@ -239,7 +239,7 @@ export default
             this.loading = true
             this.loadResources()
         },
-        clickEditNote()
+        clickEditFile()
         {
             this.updateLeft = 'left: ' + (-(window.innerWidth + 1000)) + 'px;'
             this.editLeft = 'left: 0px;'

@@ -83,6 +83,7 @@ export default
         username: 'user',
         date: 'date',
         edit: 'edit note',
+        editFile: 'edit file',
     },
     resources:
     {
