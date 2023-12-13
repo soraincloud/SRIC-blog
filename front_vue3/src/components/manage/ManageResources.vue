@@ -218,7 +218,14 @@
                                         </el-form-item>
                                     </el-col>
                                     <el-col :span="12">
-
+                                        <el-form-item :label="label.tag" prop="tag">
+                                            <el-input
+                                            v-model="input.tag"
+                                            type="text"
+                                            clearable
+                                            >
+                                            </el-input>
+                                        </el-form-item>
                                     </el-col>
                                 </el-row>
                                 <el-form-item :label="label.visited" prop="visited">
