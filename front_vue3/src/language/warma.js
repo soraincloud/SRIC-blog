@@ -31,6 +31,7 @@ export default
         deleteSuccess: '删没成力',
         notNullError: '不有空空',
         notDefaultChange: '无能改改本有配文',
+        nullFile: '没看有文片',
     },
     menu:
     {

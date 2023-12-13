@@ -241,6 +241,11 @@ export default
         },
         clickEditFile()
         {
+            if(this.input.file == '')
+            {
+                this.$message.error({message: t('message.nullFile'),})
+                return
+            }
             this.updateLeft = 'left: ' + (-(window.innerWidth + 1000)) + 'px;'
             this.editLeft = 'left: 0px;'
         },

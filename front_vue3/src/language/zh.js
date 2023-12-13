@@ -31,6 +31,7 @@ export default
         deleteSuccess: '删除成功',
         notNullError: '不能为空',
         notDefaultChange: '无法更改默认配置',
+        nullFile: '未找到文件',
     },
     menu:
     {

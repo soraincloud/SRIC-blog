@@ -182,29 +182,20 @@
                                     clearable
                                     />
                                 </el-form-item>
-                                <el-row>
-                                    <el-col :span="12">
-                                        <el-form-item :label="label.category" prop="category">
-                                            <el-select
-                                            v-model="input.category"
-                                            clearable
-                                            >
-                                                <el-option
-                                                v-for="(item,i) in category"
-                                                :key="i"
-                                                :label="item.content"
-                                                :value="item.id"
-                                                >
-                                                </el-option>
-                                            </el-select>
-                                        </el-form-item>
-                                    </el-col>
-                                    <el-col :span="12">
-                                        <el-form-item :label="label.md">
-                                            <p style="color: #ff8f8f;">{{ input.md }}</p>
-                                        </el-form-item>
-                                    </el-col>
-                                </el-row>
+                                <el-form-item :label="label.category" prop="category">
+                                    <el-select
+                                    v-model="input.category"
+                                    clearable
+                                    >
+                                        <el-option
+                                        v-for="(item,i) in category"
+                                        :key="i"
+                                        :label="item.content"
+                                        :value="item.id"
+                                        >
+                                        </el-option>
+                                    </el-select>
+                                </el-form-item>
                                 <el-form-item :label="label.visited" prop="visited">
                                     <el-input
                                     v-model="input.visited"
@@ -236,6 +227,9 @@
                                         </el-form-item>
                                     </el-col>
                                 </el-row>
+                                <el-form-item :label="label.md">
+                                    <p style="color: #ff8f8f;">{{ input.md }}</p>
+                                </el-form-item>
                                 <el-form-item>
                                     <el-button v-if="isSubmit == false" @click="clickSubmit()" type="danger"
                                         class="manageTime-submit-button" plain>

@@ -31,6 +31,7 @@ export default
         deleteSuccess: 'delete success',
         notNullError: 'not null',
         notDefaultChange: 'could not change default configuration',
+        nullFile: 'files not found',
     },
     menu:
     {
