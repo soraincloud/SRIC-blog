@@ -18,8 +18,20 @@ public interface resourcesMapper
     @Select(value = "SELECT * FROM resources WHERE id = #{id}")
     resources getResourceById(@Param(value = "id")int id);
 
+    @Select(value = "SELECT DISTINCT * FROM resources WHERE title LIKE concat('%',#{text},'%') or description LIKE concat('%',#{text},'%')")
+    List<resources> getResourcesByText(@Param(value = "text")String text);
+
     @Update(value = "UPDATE resources SET VISITED = VISITED + 1 WHERE id = #{id}")
     void addResourceVisit(@Param(value = "id")int id);
+
+    @Insert(value = "INSERT INTO resources values (null, #{title}, #{description}, #{category}, #{file}, #{visited}, #{tag}, #{size}, #{username}, #{date})")
+    void addResource(resources resources);
+
+    @Update(value = "UPDATE resources SET TITLE = #{title}, DESCRIPTION = #{description}, CATEGORY = #{category}, FILE = #{file}, VISITED = #{visited}, TAG = #{tag}, SIZE = #{size}, USERNAME = #{username}, DATE = #{date} WHERE ID = #{id}")
+    void updateResource(resources resources);
+
+    @Delete(value = "DELETE FROM resources WHERE ID = #{id}")
+    void deleteResourceById(@Param(value = "id")int id);
 
     @Select(value = "SELECT * FROM `resources-category`")
     List<resourcesCategory> getAllResourcesCategory();

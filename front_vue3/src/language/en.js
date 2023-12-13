@@ -77,6 +77,7 @@ export default
         title: 'title',
         description: 'description',
         category: 'category',
+        tag: 'tag',
         md: 'file',
         visited: 'visited',
         username: 'user',

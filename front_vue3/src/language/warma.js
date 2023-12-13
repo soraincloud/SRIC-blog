@@ -77,6 +77,7 @@ export default
         title: '上题',
         description: '描说',
         category: '类类',
+        tag: '标片',
         md: '文片',
         visited: '看量',
         username: '用人',

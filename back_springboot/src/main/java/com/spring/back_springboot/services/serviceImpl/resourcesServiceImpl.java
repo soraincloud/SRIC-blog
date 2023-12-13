@@ -34,9 +34,33 @@ public class resourcesServiceImpl implements resourcesService
     }
 
     @Override
+    public List<resources> getResourcesByText(String text)
+    {
+        return mapper.getResourcesByText(text);
+    }
+
+    @Override
     public void addResourceVisit(int id)
     {
         mapper.addResourceVisit(id);
+    }
+
+    @Override
+    public void addResource(resources resources)
+    {
+        mapper.addResource(resources);
+    }
+
+    @Override
+    public void updateResource(resources resources)
+    {
+        mapper.updateResource(resources);
+    }
+
+    @Override
+    public void deleteResourceById(int id)
+    {
+        mapper.deleteResourceById(id);
     }
 
     @Override

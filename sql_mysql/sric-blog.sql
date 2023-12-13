@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 12/12/2023 12:30:34
+ Date: 13/12/2023 09:16:57
 */
 
 SET NAMES utf8mb4;
@@ -174,6 +174,7 @@ INSERT INTO `manage-navlist` VALUES (2, 'manageTime', '', 'InfoFilled', '日志�
 INSERT INTO `manage-navlist` VALUES (3, 'manageNotesCategory', '', 'List', '笔记分类', 'notes category', '记纸类类');
 INSERT INTO `manage-navlist` VALUES (4, 'manageNotes', '', 'Checked', '笔记管理', 'manage notes', '记纸管管');
 INSERT INTO `manage-navlist` VALUES (5, 'manageResourcesCategory', '', 'List', '资源分类', 'resources category', '材源类类');
+INSERT INTO `manage-navlist` VALUES (6, 'manageResources', '', 'Checked', '资源管理', 'manage resources', '材源管管');
 
 -- ----------------------------
 -- Table structure for notes
@@ -238,7 +239,7 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 756);
+INSERT INTO `page-visited` VALUES (1, 'main', 824);
 INSERT INTO `page-visited` VALUES (2, 'index', 194);
 INSERT INTO `page-visited` VALUES (3, 'notes', 74);
 INSERT INTO `page-visited` VALUES (4, 'resources', 76);

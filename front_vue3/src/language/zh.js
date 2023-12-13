@@ -77,6 +77,7 @@ export default
         title: '标题',
         description: '描述',
         category: '类别',
+        tag: '标签',
         md: '文件',
         visited: '访问',
         username: '用户',

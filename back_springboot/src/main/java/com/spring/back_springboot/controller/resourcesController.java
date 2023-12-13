@@ -35,6 +35,30 @@ public class resourcesController
         return service.getResourceById(id);
     }
 
+    @GetMapping("/getResourcesByText")
+    public List<resources> getResourcesByText(String text)
+    {
+        return service.getResourcesByText(text);
+    }
+
+    @PostMapping("/addResource")
+    public void addResource(@RequestBody resources resource)
+    {
+        service.addResource(resource);
+    }
+
+    @PostMapping("/updateResource")
+    public void updateResource(@RequestBody resources resource)
+    {
+        service.updateResource(resource);
+    }
+
+    @PostMapping("/deleteResourceById")
+    public void deleteResourceById(@RequestBody resources resource)
+    {
+        service.deleteResourceById(resource.getId());
+    }
+
     @GetMapping("/getAllResourcesCategory")
     public List<resourcesCategory> getAllResourcesCategory()
     {

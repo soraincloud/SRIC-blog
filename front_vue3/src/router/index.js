@@ -118,6 +118,11 @@ const routes =
         path: '/manageResourcesCategory',
         component: () => import('@/components/manage/ManageResourcesCategory'),
       },
+      {
+        name: 'manageResources',
+        path: '/manageResources',
+        component: () => import('@/components/manage/ManageResources'),
+      },
     ]
   },
 ]
