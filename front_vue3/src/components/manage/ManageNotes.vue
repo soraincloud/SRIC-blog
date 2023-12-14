@@ -228,7 +228,22 @@
                                     </el-col>
                                 </el-row>
                                 <el-form-item :label="label.md">
-                                    <p style="color: #ff8f8f;">{{ input.md }}</p>
+                                    <el-upload
+                                    v-model:file-list="fileList"
+                                    action
+                                    :http-request="uploadFile"
+                                    :limit="1"
+                                    :on-remove="removeFile"
+                                    :on-exceed="handleExceed"
+                                    :before-upload="beforeUpload"
+                                    accept=".md"
+                                    class="manageNotes-el-upload"
+                                    >
+                                        <el-button type="success" size="small" class="manageTime-submit-button" plain>
+                                            <el-icon class="SafetyPage-back-icon-style"><UploadFilled /></el-icon>
+                                            {{ $t("common.upload") }}
+                                        </el-button>
+                                    </el-upload>
                                 </el-form-item>
                                 <el-form-item>
                                     <el-button v-if="isSubmit == false" @click="clickSubmit()" type="danger" class="manageTime-submit-button" plain>

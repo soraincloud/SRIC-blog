@@ -20,7 +20,18 @@ export function post(url,params)
         method: 'post',
         url: `${url}`,
         data: params,
-        header:{ "Content-Type":"application/json" }
+        header: { "Content-Type":"application/json" }
+    })
+}
+
+export function postFile(url,params)
+{
+    return axios
+    ({
+        method: 'post',
+        url: `${url}`,
+        data: params,
+        header: { "Content-Type": "multipart/form-data" }
     })
 }
 

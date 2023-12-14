@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 13/12/2023 09:16:57
+ Date: 14/12/2023 16:45:24
 */
 
 SET NAMES utf8mb4;
@@ -36,6 +36,20 @@ INSERT INTO `dict_el_color_type` VALUES (2, 'success', 'success');
 INSERT INTO `dict_el_color_type` VALUES (3, 'info', 'info');
 INSERT INTO `dict_el_color_type` VALUES (4, 'warning', 'warning');
 INSERT INTO `dict_el_color_type` VALUES (5, 'danger', 'danger');
+
+-- ----------------------------
+-- Table structure for files
+-- ----------------------------
+DROP TABLE IF EXISTS `files`;
+CREATE TABLE `files`  (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `file` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of files
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for index-about
@@ -164,7 +178,7 @@ CREATE TABLE `manage-navlist`  (
   `en` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '英文文字',
   `warma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '沃沃文字',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '管理页面动态菜单' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '管理页面动态菜单' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of manage-navlist
@@ -195,7 +209,7 @@ CREATE TABLE `notes`  (
 -- ----------------------------
 -- Records of notes
 -- ----------------------------
-INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', -1, 'NULL.md', 10, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', -1, 'NULL.md', 12, 'SRIC', '2023-12-05');
 INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 3, 'SPRING001.md', 7, 'SRIC', '2023-12-05');
 INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 1, 'C001.md', 1, 'SRIC', '2023-12-05');
 INSERT INTO `notes` VALUES (4, 'vue3项目的创建', '@vuecli对vue3项目的创建与依赖的引入', 2, 'VUE001.md', 0, 'SRIC', '2023-12-05');
@@ -239,12 +253,12 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 824);
-INSERT INTO `page-visited` VALUES (2, 'index', 194);
-INSERT INTO `page-visited` VALUES (3, 'notes', 74);
-INSERT INTO `page-visited` VALUES (4, 'resources', 76);
+INSERT INTO `page-visited` VALUES (1, 'main', 877);
+INSERT INTO `page-visited` VALUES (2, 'index', 201);
+INSERT INTO `page-visited` VALUES (3, 'notes', 94);
+INSERT INTO `page-visited` VALUES (4, 'resources', 77);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 42);
+INSERT INTO `page-visited` VALUES (6, 'personal', 44);
 INSERT INTO `page-visited` VALUES (7, 'function', 18);
 
 -- ----------------------------

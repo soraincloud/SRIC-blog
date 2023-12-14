@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/api/home")//此Controller中所有api前缀路径为/api
 public class indexAboutController
@@ -14,14 +15,12 @@ public class indexAboutController
     @Autowired
     indexAboutService service;
 
-    @CrossOrigin
     @GetMapping("/getAllIndexAbout")
     public List<languageText> getAllIndexAbout()
     {
         return service.getAllIndexAbout();
     }
 
-    @CrossOrigin
     @PostMapping("/setIndexAbout")
     public void setIndexAbout(@RequestBody List<languageText> list)
     {

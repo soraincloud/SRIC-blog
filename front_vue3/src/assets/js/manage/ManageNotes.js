@@ -1,5 +1,6 @@
 import { getAllNotesCategory,getNotesList,getNoteListByCategory,deleteNoteById,getNotesByText,addNote,updateNote } from '@/axios/api/notesApi'
 import { getAllUsername } from '@/axios/api/userApi'
+import { addFile } from '@/axios/api/filesApi'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -81,6 +82,8 @@ export default
             isSubmit: false,
             markdownText: require('@/assets/md/NULL.md'),
             isEditSubmit: false,
+            fileList: [],
+            fileType: [ "md" ],
         }
     },
     methods:
@@ -203,6 +206,7 @@ export default
                 username: this.notes[i].username,
                 date: this.notes[i].date,
             }
+            this.fileList = [{ name: this.input.md }]
         },
         clickSearch()
         {
@@ -309,6 +313,43 @@ export default
         {
             this.updateLeft = 'left: 0px;'
             this.editLeft = 'left: ' + (window.innerWidth + 1000) + 'px;'
+        },
+        uploadFile(params)
+        {
+            const file = params.file
+            var form = new FormData()
+            form.append("file",file)
+            var _this = this
+            addFile(form).then(function(resp){
+                console.log(_this.fileList)
+            })
+        },
+        removeFile()
+        {
+            
+        },
+        handleExceed()
+        {
+            this.$message.error({message: t('message.deleteSuccess'),})
+        },
+        beforeUpload(file)
+        {
+            if(file.type != "" || file.type != null || file.type != undefined)
+            {
+                if ((file.size / 1024 / 1024) > 10) {
+                    this.$message.error({message: "big",})
+                    return false;
+                }
+            }
+            if(this.fileType.includes(file.name.replace(/.+\./, "").toLowerCase()))
+            {
+                return true;
+            }
+            else
+            {
+                this.$message.error({message: "格式",})
+                return false;
+            }
         },
     },
     created()

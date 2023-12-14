@@ -25,6 +25,7 @@ export default
         error: 'error',
         icon: 'icon',
         back: 'back',
+        upload: 'upload',
     },
     message:
     {

@@ -25,6 +25,7 @@ export default
         error: '错误',
         icon: '图标',
         back: '返回',
+        upload: '上传',
     },
     message:
     {
