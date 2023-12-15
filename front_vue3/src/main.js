@@ -30,6 +30,7 @@ const app = createApp(App)
 
 app.config.globalProperties.$axios = axios
 app.config.globalProperties.$echarts = echarts;
+app.config.globalProperties.$t = i18n.global.t
 app.use(VueAxios, axios)
 app.use(store)
 app.use(router)

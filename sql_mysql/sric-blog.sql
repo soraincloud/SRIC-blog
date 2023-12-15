@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 14/12/2023 16:45:24
+ Date: 15/12/2023 11:40:24
 */
 
 SET NAMES utf8mb4;
@@ -45,7 +45,7 @@ CREATE TABLE `files`  (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `file` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of files
@@ -116,7 +116,7 @@ CREATE TABLE `index-time`  (
   `type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '外圈颜色',
   `color` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '内部颜色',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '主页活动时间轴' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 44 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '主页活动时间轴' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of index-time
@@ -253,12 +253,12 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 877);
+INSERT INTO `page-visited` VALUES (1, 'main', 878);
 INSERT INTO `page-visited` VALUES (2, 'index', 201);
 INSERT INTO `page-visited` VALUES (3, 'notes', 94);
 INSERT INTO `page-visited` VALUES (4, 'resources', 77);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 44);
+INSERT INTO `page-visited` VALUES (6, 'personal', 49);
 INSERT INTO `page-visited` VALUES (7, 'function', 18);
 
 -- ----------------------------
@@ -340,8 +340,8 @@ CREATE TABLE `user`  (
   `username` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '用户名',
   `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '密码',
   `avatar` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'head-main.webp' COMMENT '头像',
-  `phonenumber` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '电话号码',
-  `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '邮箱',
+  `phonenumber` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '电话号码',
+  `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '邮箱',
   `mark` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NULL' COMMENT '个人描述',
   `status` int UNSIGNED NOT NULL DEFAULT 0 COMMENT '权限',
   PRIMARY KEY (`id`) USING BTREE
@@ -351,6 +351,6 @@ CREATE TABLE `user`  (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'SRIC', 'abe4618871b8413bdfb1777f1db128b6', 'head-main.webp', '11451419198', '114514@qq.com', 'SORAINCLOUD YEAH！！！', 1);
-INSERT INTO `user` VALUES (2, 'homo', '46cdf9fce44f17b47ef33cd4d9bd99f4', 'head-main.webp', NULL, NULL, '114514', 0);
+INSERT INTO `user` VALUES (2, 'homo', '46cdf9fce44f17b47ef33cd4d9bd99f4', 'head-main.webp', '11451419198', '1919810@homo.com', '114514', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
