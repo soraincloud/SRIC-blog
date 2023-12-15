@@ -31,16 +31,20 @@ public class filesController
     @PostMapping("/addFile")
     public void addFile(@RequestParam MultipartFile file)
     {
-        String dir = System.getProperty("user.dir");
-        dir += "\\files";
-        File saveDir = new File(dir);
-        try {
-            FileOutputStream fileOutputStream = new FileOutputStream(saveDir + "/" + file.getOriginalFilename());
-            fileOutputStream.write(file.getBytes());
-            fileOutputStream.flush();
-            fileOutputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        files files = service.saveFile(file);
+        service.AddFile(files);
+    }
+
+    @GetMapping("/getMd")
+    public String getMd(int fid)
+    {
+        String dir = service.getFileById(fid).getFile();
+        return service.readMd(dir);
+    }
+
+    @GetMapping("/getNameById")
+    public String getNameById(int fid)
+    {
+        return service.getFileById(fid).getName();
     }
 }

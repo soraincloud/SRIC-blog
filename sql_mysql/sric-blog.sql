@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 15/12/2023 11:48:52
+ Date: 15/12/2023 17:12:51
 */
 
 SET NAMES utf8mb4;
@@ -43,14 +43,25 @@ INSERT INTO `dict_el_color_type` VALUES (5, 'danger', 'danger');
 DROP TABLE IF EXISTS `files`;
 CREATE TABLE `files`  (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
-  `file` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `file` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '文件',
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '名称',
+  `type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '文件格式',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of files
 -- ----------------------------
+INSERT INTO `files` VALUES (1, '2023-12-15-15-37-09-1610.md', 'NULL.md', 'md');
+INSERT INTO `files` VALUES (2, '2023-12-15-15-37-22-8162.md', 'SPRING001.md', 'md');
+INSERT INTO `files` VALUES (3, '2023-12-15-15-37-27-5315.md', 'C001.md', 'md');
+INSERT INTO `files` VALUES (4, '2023-12-15-15-37-51-7191.md', 'VUE001.md', 'md');
+INSERT INTO `files` VALUES (5, '2023-12-15-15-37-57-6526.md', 'VUE002.md', 'md');
+INSERT INTO `files` VALUES (6, '2023-12-15-15-38-04-6311.md', 'VUE003.md', 'md');
+INSERT INTO `files` VALUES (7, '2023-12-15-15-38-10-4057.md', 'VUE004.md', 'md');
+INSERT INTO `files` VALUES (8, '2023-12-15-15-38-14-8395.md', 'VUE005.md', 'md');
+INSERT INTO `files` VALUES (9, '2023-12-15-15-38-21-9804.md', 'COOK001.md', 'md');
+INSERT INTO `files` VALUES (10, '2023-12-15-15-38-26-9469.md', 'COOK002.md', 'md');
 
 -- ----------------------------
 -- Table structure for index-about
@@ -200,7 +211,7 @@ CREATE TABLE `notes`  (
   `title` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NULL TYTLE' COMMENT '标题',
   `description` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NO DESCRIPTION' COMMENT '描述',
   `category` int NOT NULL DEFAULT 1 COMMENT '类别',
-  `md` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NULL.md' COMMENT '对应文件',
+  `md` int UNSIGNED NOT NULL DEFAULT 0 COMMENT '对应文件ID',
   `visited` int UNSIGNED NOT NULL DEFAULT 0 COMMENT '访问次数',
   `username` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '提供者用户名',
   `date` date NOT NULL COMMENT '时间',
@@ -210,16 +221,16 @@ CREATE TABLE `notes`  (
 -- ----------------------------
 -- Records of notes
 -- ----------------------------
-INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', -1, 'NULL.md', 13, 'SRIC', '2023-12-05');
-INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 3, 'SPRING001.md', 7, 'SRIC', '2023-12-05');
-INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 1, 'C001.md', 1, 'SRIC', '2023-12-05');
-INSERT INTO `notes` VALUES (4, 'vue3项目的创建', '@vuecli对vue3项目的创建与依赖的引入', 2, 'VUE001.md', 0, 'SRIC', '2023-12-05');
-INSERT INTO `notes` VALUES (5, 'vue-axios', 'VUE中前后端数据传输axios', 2, 'VUE002.md', 0, 'SRIC', '2023-12-05');
-INSERT INTO `notes` VALUES (6, 'vue-router', 'VUE中的路由vue-router', 2, 'VUE003.md', 0, 'SRIC', '2023-12-05');
-INSERT INTO `notes` VALUES (7, 'VUE传值', 'VUE中组件间的传值与VUEX', 2, 'VUE004.md', 4, 'SRIC', '2023-12-05');
-INSERT INTO `notes` VALUES (8, 'VUE动画效果', 'VUE中的简单动画效果', 2, 'VUE005.md', 0, 'SRIC', '2023-12-05');
-INSERT INTO `notes` VALUES (9, '红烧肉', '简易的红烧肉 做法', 4, 'COOK001.md', 0, 'SRIC', '2023-12-05');
-INSERT INTO `notes` VALUES (10, '番茄牛腩', '不加水的番茄牛腩 怎么做', 4, 'COOK002.md', 0, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', -1, 1, 30, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 3, 2, 8, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 1, 3, 2, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (4, 'vue3项目的创建', '@vuecli对vue3项目的创建与依赖的引入', 2, 4, 1, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (5, 'vue-axios', 'VUE中前后端数据传输axios', 2, 5, 0, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (6, 'vue-router', 'VUE中的路由vue-router', 2, 6, 0, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (7, 'VUE传值', 'VUE中组件间的传值与VUEX', 2, 7, 4, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (8, 'VUE动画效果', 'VUE中的简单动画效果', 2, 8, 0, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (9, '红烧肉', '简易的红烧肉 做法', 4, 9, 1, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (10, '番茄牛腩', '不加水的番茄牛腩 怎么做', 4, 10, 0, 'SRIC', '2023-12-05');
 
 -- ----------------------------
 -- Table structure for notes-category
@@ -254,13 +265,13 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 878);
-INSERT INTO `page-visited` VALUES (2, 'index', 202);
-INSERT INTO `page-visited` VALUES (3, 'notes', 96);
-INSERT INTO `page-visited` VALUES (4, 'resources', 77);
+INSERT INTO `page-visited` VALUES (1, 'main', 896);
+INSERT INTO `page-visited` VALUES (2, 'index', 205);
+INSERT INTO `page-visited` VALUES (3, 'notes', 120);
+INSERT INTO `page-visited` VALUES (4, 'resources', 84);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
 INSERT INTO `page-visited` VALUES (6, 'personal', 49);
-INSERT INTO `page-visited` VALUES (7, 'function', 18);
+INSERT INTO `page-visited` VALUES (7, 'function', 19);
 
 -- ----------------------------
 -- Table structure for resources
@@ -271,7 +282,7 @@ CREATE TABLE `resources`  (
   `title` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NULL TYTLE' COMMENT '标题',
   `description` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NO DESCRIPTION' COMMENT '描述',
   `category` int NOT NULL DEFAULT -1 COMMENT '类别',
-  `file` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NULL' COMMENT '对应文件',
+  `file` int UNSIGNED NOT NULL DEFAULT 0 COMMENT '对应文件ID',
   `visited` int UNSIGNED NOT NULL DEFAULT 0 COMMENT '访问次数',
   `tag` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NULL' COMMENT '标签',
   `size` double NULL DEFAULT NULL COMMENT '文件大小',
@@ -283,16 +294,16 @@ CREATE TABLE `resources`  (
 -- ----------------------------
 -- Records of resources
 -- ----------------------------
-INSERT INTO `resources` VALUES (1, 'C001.md', '二叉树文档的md文件', 1, '/md/C001.md', 91, 'markdown', NULL, 'SRIC', '2023-12-05');
-INSERT INTO `resources` VALUES (2, 'NULL.md', '为未分类的笔记提供默认显示的md文件', -1, '/md/NULL.md', 11, 'NULL', NULL, 'SRIC', '2023-12-05');
-INSERT INTO `resources` VALUES (3, 'COOK001.md', '红烧肉文档的md文件', 1, '/md/COOK001.md', 1, 'markdown', NULL, 'SRIC', '2023-12-05');
-INSERT INTO `resources` VALUES (4, 'COOK002.md', '番茄牛腩文档的md文件', 1, '/md/COOK002.md', 0, 'markdown', NULL, 'SRIC', '2023-12-05');
-INSERT INTO `resources` VALUES (5, 'VUE005.md', 'VUE动画效果文档的md文件', 1, '/md/VUE005.md', 0, 'markdown', NULL, 'SRIC', '2023-12-05');
-INSERT INTO `resources` VALUES (6, 'SPRING001.md', '后端四层架构文档的md文件', 1, '/md/SPRING001.md', 1, 'markdown', NULL, 'SRIC', '2023-12-05');
-INSERT INTO `resources` VALUES (7, 'VUE001.md', 'vue3项目的创建文档的md文件', 1, '/md/VUE001.md', 0, 'markdown', NULL, 'SRIC', '2023-12-05');
-INSERT INTO `resources` VALUES (8, 'VUE002.md', 'vue-axios文档的md文件', 1, '/md/VUE002.md', 0, 'markdown', NULL, 'SRIC', '2023-12-05');
-INSERT INTO `resources` VALUES (9, 'VUE003.md', 'vue-router文档的md文件', 1, '/md/VUE003.md', 0, 'markdown', NULL, 'SRIC', '2023-12-05');
-INSERT INTO `resources` VALUES (10, 'VUE004.md', 'VUE传值文档的md文件', 1, '/md/VUE004.md', 0, 'markdown', NULL, 'SRIC', '2023-12-05');
+INSERT INTO `resources` VALUES (1, 'C001.md', '二叉树文档的md文件', 1, 1, 94, 'markdown', NULL, 'SRIC', '2023-12-05');
+INSERT INTO `resources` VALUES (2, 'NULL.md', '为未分类的笔记提供默认显示的md文件', -1, 2, 12, 'NULL', NULL, 'SRIC', '2023-12-05');
+INSERT INTO `resources` VALUES (3, 'COOK001.md', '红烧肉文档的md文件', 1, 3, 1, 'markdown', NULL, 'SRIC', '2023-12-05');
+INSERT INTO `resources` VALUES (4, 'COOK002.md', '番茄牛腩文档的md文件', 1, 4, 0, 'markdown', NULL, 'SRIC', '2023-12-05');
+INSERT INTO `resources` VALUES (5, 'VUE005.md', 'VUE动画效果文档的md文件', 1, 5, 0, 'markdown', NULL, 'SRIC', '2023-12-05');
+INSERT INTO `resources` VALUES (6, 'SPRING001.md', '后端四层架构文档的md文件', 1, 6, 1, 'markdown', NULL, 'SRIC', '2023-12-05');
+INSERT INTO `resources` VALUES (7, 'VUE001.md', 'vue3项目的创建文档的md文件', 1, 7, 0, 'markdown', NULL, 'SRIC', '2023-12-05');
+INSERT INTO `resources` VALUES (8, 'VUE002.md', 'vue-axios文档的md文件', 1, 8, 0, 'markdown', NULL, 'SRIC', '2023-12-05');
+INSERT INTO `resources` VALUES (9, 'VUE003.md', 'vue-router文档的md文件', 1, 9, 0, 'markdown', NULL, 'SRIC', '2023-12-05');
+INSERT INTO `resources` VALUES (10, 'VUE004.md', 'VUE传值文档的md文件', 1, 10, 0, 'markdown', NULL, 'SRIC', '2023-12-05');
 
 -- ----------------------------
 -- Table structure for resources-category

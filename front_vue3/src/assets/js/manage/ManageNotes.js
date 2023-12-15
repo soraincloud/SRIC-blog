@@ -1,6 +1,6 @@
 import { getAllNotesCategory,getNotesList,getNoteListByCategory,deleteNoteById,getNotesByText,addNote,updateNote } from '@/axios/api/notesApi'
 import { getAllUsername } from '@/axios/api/userApi'
-import { addFile } from '@/axios/api/filesApi'
+import { addFile,getNameById,getMd } from '@/axios/api/filesApi'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -206,7 +206,14 @@ export default
                 username: this.notes[i].username,
                 date: this.notes[i].date,
             }
-            this.fileList = [{ name: this.input.md }]
+            this.getFileName()
+        },
+        getFileName()
+        {
+            var _this = this
+            getNameById({ fid: this.input.md }).then(function(resp){
+                _this.fileList = [{ name: resp.data }]
+            })
         },
         clickSearch()
         {
@@ -234,6 +241,7 @@ export default
                 username: '',
                 date: '',
             }
+            this.fileList = []
         },
         clickRefresh()
         {
@@ -249,7 +257,10 @@ export default
             }
             this.updateLeft = 'left: ' + (-(window.innerWidth + 1000)) + 'px;'
             this.editLeft = 'left: 0px;'
-            this.markdownText = require('@/assets/md/' + this.input.md)
+            var _this = this
+            getMd({ fid: this.input.md }).then(function(resp){
+                _this.markdownText = resp.data
+            })
         },
         clickCancelUpdate()
         {
@@ -321,7 +332,7 @@ export default
             form.append("file",file)
             var _this = this
             addFile(form).then(function(resp){
-                console.log(_this.fileList)
+
             })
         },
         removeFile()

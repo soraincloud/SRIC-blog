@@ -9,7 +9,7 @@ public class resources
     private String title;
     private String description;
     private int category;
-    private String file;
+    private int file;
     private int visited;
     private String tag;
     private double size;

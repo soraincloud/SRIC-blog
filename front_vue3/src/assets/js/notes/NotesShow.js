@@ -1,6 +1,7 @@
 import AsideMessage from '@/components/common/AsideMessage'
 import { useDark } from '@vueuse/core'
 import { getNoteById } from '@/axios/api/notesApi'
+import { getMd } from '@/axios/api/filesApi'
 
 const isDark = useDark()
 
@@ -25,6 +26,7 @@ export default
             backTop: require('@/assets/webp/background/backTop.webp'),
             data: 0,
             bottomData: 'bottom: ' + (window.innerHeight + 100) + 'px',
+            fileId: '',
         }
     },
     methods:
@@ -78,6 +80,13 @@ export default
                 isMore = 0;
             }
         },
+        getMdString()
+        {
+            var _this = this
+            getMd({ fid: this.fileId }).then(function(resp){
+                _this.markdownText = resp.data
+            })
+        }
     },
     mounted()
     {
@@ -95,7 +104,8 @@ export default
             _this.noteTitle = resp.data.title
             _this.noteDescription = resp.data.description
             _this.noteVisited = resp.data.visited
-            _this.markdownText = require('@/assets/md/' + resp.data.md)
+            _this.fileId = resp.data.md
+            _this.getMdString()
         })
     },
 }

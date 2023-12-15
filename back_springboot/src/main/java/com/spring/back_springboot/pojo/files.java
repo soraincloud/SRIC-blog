@@ -7,4 +7,6 @@ public class files
 {
     private int id;
     private String file;
+    private String name;
+    private String type;
 }

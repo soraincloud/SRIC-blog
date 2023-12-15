@@ -9,7 +9,7 @@ public class notes
     private String title;
     private String description;
     private int category;
-    private String md;
+    private int md;
     private int visited;
     private String username;
     private String date;
