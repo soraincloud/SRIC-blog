@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 15/12/2023 11:40:24
+ Date: 15/12/2023 11:48:52
 */
 
 SET NAMES utf8mb4;
@@ -44,6 +44,7 @@ DROP TABLE IF EXISTS `files`;
 CREATE TABLE `files`  (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `file` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
@@ -209,7 +210,7 @@ CREATE TABLE `notes`  (
 -- ----------------------------
 -- Records of notes
 -- ----------------------------
-INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', -1, 'NULL.md', 12, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', -1, 'NULL.md', 13, 'SRIC', '2023-12-05');
 INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 3, 'SPRING001.md', 7, 'SRIC', '2023-12-05');
 INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 1, 'C001.md', 1, 'SRIC', '2023-12-05');
 INSERT INTO `notes` VALUES (4, 'vue3项目的创建', '@vuecli对vue3项目的创建与依赖的引入', 2, 'VUE001.md', 0, 'SRIC', '2023-12-05');
@@ -254,8 +255,8 @@ CREATE TABLE `page-visited`  (
 -- Records of page-visited
 -- ----------------------------
 INSERT INTO `page-visited` VALUES (1, 'main', 878);
-INSERT INTO `page-visited` VALUES (2, 'index', 201);
-INSERT INTO `page-visited` VALUES (3, 'notes', 94);
+INSERT INTO `page-visited` VALUES (2, 'index', 202);
+INSERT INTO `page-visited` VALUES (3, 'notes', 96);
 INSERT INTO `page-visited` VALUES (4, 'resources', 77);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
 INSERT INTO `page-visited` VALUES (6, 'personal', 49);
