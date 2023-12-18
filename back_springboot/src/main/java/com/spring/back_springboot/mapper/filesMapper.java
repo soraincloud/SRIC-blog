@@ -14,6 +14,9 @@ public interface filesMapper
     @Select(value = "SELECT * FROM FILES")
     List<files> getAllFiles();
 
+    @Select(value = "SELECT id,name FROM FILES")
+    List<files> getFilesNameList();
+
     @Insert(value = "INSERT INTO FILES values (null, #{file}, #{name}, #{type})")
     void AddFile(files files);
 

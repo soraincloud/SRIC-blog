@@ -87,6 +87,8 @@ export default
         date: '时候',
         edit: '写改记记',
         editFile: '写改文片',
+        downloadFile: '下来文片',
+        checkFile: '看看文片',
     },
     resources:
     {

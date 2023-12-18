@@ -8,6 +8,7 @@ import java.util.List;
 public interface filesService
 {
     List<files> getAllFiles();
+    List<files> getFilesNameList();
     void AddFile(files files);
     files saveFile(MultipartFile files);
     String readMd(String direc);

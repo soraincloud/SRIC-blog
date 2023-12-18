@@ -1,5 +1,6 @@
 import { getAllResourcesCategory,getResourcesList,getResourcesListByCategory,deleteResourceById,getResourcesByText,addResource,updateResource } from '@/axios/api/resourcesApi'
 import { getAllUsername } from '@/axios/api/userApi'
+import { getFilesNameList,getMd } from '@/axios/api/filesApi'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -82,6 +83,8 @@ export default
             user: [],
             formBackground: 'background: rgba(0,0,0,0);',
             isSubmit: false,
+            files: [],
+            markdownText: '',
         }
     },
     methods:
@@ -205,6 +208,11 @@ export default
                 username: this.resources[i].username,
                 date: this.resources[i].date,
             }
+            var _this = this
+            getFilesNameList().then(function(resp){
+                _this.files = resp.data
+            })
+
         },
         clickSearch()
         {
@@ -248,6 +256,10 @@ export default
             }
             this.updateLeft = 'left: ' + (-(window.innerWidth + 1000)) + 'px;'
             this.editLeft = 'left: 0px;'
+            var _this = this
+            getMd({ fid: this.input.file }).then(function(resp){
+                _this.markdownText = resp.data
+            })
         },
         clickCancelUpdate()
         {
@@ -294,6 +306,11 @@ export default
         clickCancel()
         {
             this.isSubmit = false
+        },
+        clickBack()
+        {
+            this.updateLeft = 'left: 0px;'
+            this.editLeft = 'left: ' + (window.innerWidth + 1000) + 'px;'
         },
     },
     created()

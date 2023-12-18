@@ -87,6 +87,8 @@ export default
         date: '时间',
         edit: '编辑笔记',
         editFile: '编辑文件',
+        downloadFile: '下载文件',
+        checkFile: '查看文件',
     },
     resources:
     {

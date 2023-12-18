@@ -341,7 +341,7 @@ export default
         },
         removeFile()
         {
-            
+            this.input.md = ''
         },
         handleExceed()
         {

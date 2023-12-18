@@ -19,3 +19,8 @@ export function getNameById(params)
 {
     return get("/files/getNameById",params)
 }
+
+export function getFilesNameList(params)
+{
+    return get("/files/getFilesNameList",params)
+}

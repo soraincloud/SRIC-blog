@@ -28,6 +28,12 @@ public class filesController
         return service.getAllFiles();
     }
 
+    @GetMapping("/getFilesNameList")
+    public List<files> getFilesNameList()
+    {
+        return service.getFilesNameList();
+    }
+
     @PostMapping("/addFile")
     public void addFile(@RequestParam MultipartFile file)
     {

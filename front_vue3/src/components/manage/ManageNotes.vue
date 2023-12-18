@@ -227,7 +227,7 @@
                                         </el-form-item>
                                     </el-col>
                                 </el-row>
-                                <el-form-item :label="label.md">
+                                <el-form-item :label="label.md" prop="md">
                                     <el-upload
                                     v-model:file-list="fileList"
                                     action

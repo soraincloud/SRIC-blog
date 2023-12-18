@@ -87,6 +87,8 @@ export default
         date: 'date',
         edit: 'edit note',
         editFile: 'edit file',
+        downloadFile: 'download file',
+        checkFile: 'check file',
     },
     resources:
     {

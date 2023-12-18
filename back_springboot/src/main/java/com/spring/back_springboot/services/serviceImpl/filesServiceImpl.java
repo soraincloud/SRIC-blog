@@ -29,6 +29,12 @@ public class filesServiceImpl implements filesService
     }
 
     @Override
+    public List<files> getFilesNameList()
+    {
+        return mapper.getFilesNameList();
+    }
+
+    @Override
     public void AddFile(files files)
     {
         mapper.AddFile(files);

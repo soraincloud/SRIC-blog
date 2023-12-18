@@ -169,7 +169,7 @@
                                 {{ $t('common.cancel') }}
                             </el-button>
                             <el-button class="manageNotes-el-button" type="warning" plain @click="clickEditFile()">
-                                {{ $t('notes.editFile') }}
+                                {{ $t('notes.checkFile') }}
                             </el-button>
                         </div>
                     </el-col>
@@ -259,8 +259,19 @@
                                         </el-form-item>
                                     </el-col>
                                 </el-row>
-                                <el-form-item :label="label.file">
-                                    <p style="color: #ff8f8f;">{{ input.file }}</p>
+                                <el-form-item :label="label.file" prop="file">
+                                    <el-select
+                                    v-model="input.file"
+                                    clearable
+                                    >
+                                        <el-option
+                                        v-for="(item,i) in files"
+                                        :key="i"
+                                        :label="item.name"
+                                        :value="item.id"
+                                        >
+                                        </el-option>
+                                    </el-select>
                                 </el-form-item>
                                 <el-form-item>
                                     <el-button v-if="isSubmit == false" @click="clickSubmit()" type="danger"
@@ -288,7 +299,17 @@
         </el-card>
 
         <el-card class="ManageNotes-el-card" :style="[bodyHeight,editLeft]">
-
+            <el-affix :offset="100">
+                <el-button @click="clickBack()" type="warning" class="manageTime-submit-button" style="margin-left:10px;" plain>
+                    <el-icon class="SafetyPage-back-icon-style"><ArrowLeftBold /></el-icon>
+                    {{ $t("common.back") }}
+                </el-button>
+            </el-affix>
+            <el-scrollbar :height="updateBodyHeight">
+                <el-card class="common-with-back-el-card-style">
+                    <v-md-editor v-model="markdownText" mode="preview"></v-md-editor>
+                </el-card>
+            </el-scrollbar>
         </el-card>
     </div>
 </el-scrollbar>
