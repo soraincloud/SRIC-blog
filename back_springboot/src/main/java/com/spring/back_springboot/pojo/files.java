@@ -9,4 +9,5 @@ public class files
     private String file;
     private String name;
     private String type;
+    private String markdownText;
 }

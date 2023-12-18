@@ -1,4 +1,4 @@
-import { get,postFile } from "@/axios/axios"
+import { get,post,postFile } from "@/axios/axios"
 
 export function addFile(params)
 {
@@ -6,9 +6,13 @@ export function addFile(params)
 }
 
 export function getMd(params)
-
 {
     return get("/files/getMd",params)
+}
+
+export function setMd(params)
+{
+    return post("/files/setMd",params)
 }
 
 export function getNameById(params)

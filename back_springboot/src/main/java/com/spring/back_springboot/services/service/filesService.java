@@ -11,5 +11,6 @@ public interface filesService
     void AddFile(files files);
     files saveFile(MultipartFile files);
     String readMd(String direc);
+    void writeMd(files files);
     files getFileById(int id);
 }

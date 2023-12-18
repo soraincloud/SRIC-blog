@@ -87,6 +87,23 @@ public class filesServiceImpl implements filesService
     }
 
     @Override
+    public void writeMd(files files)
+    {
+        String dir = System.getProperty("user.dir");
+        dir += "\\files";
+        File saveDir = new File(dir);
+
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(saveDir + "/" + files.getFile());
+            fileOutputStream.write(files.getMarkdownText().getBytes());
+            fileOutputStream.flush();
+            fileOutputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public files getFileById(int id)
     {
         return mapper.getFileById(id);

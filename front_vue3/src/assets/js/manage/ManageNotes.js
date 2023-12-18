@@ -1,6 +1,6 @@
 import { getAllNotesCategory,getNotesList,getNoteListByCategory,deleteNoteById,getNotesByText,addNote,updateNote } from '@/axios/api/notesApi'
 import { getAllUsername } from '@/axios/api/userApi'
-import { addFile,getNameById,getMd } from '@/axios/api/filesApi'
+import { addFile,getNameById,getMd,setMd } from '@/axios/api/filesApi'
 import { useDark } from '@vueuse/core'
 import i18n from '@/language'
 
@@ -314,7 +314,11 @@ export default
         },
         clickEditApply()
         {
-
+            var _this = this
+            setMd({ id: this.input.md,markdownText: this.markdownText }).then(function(resp){
+                _this.$message.success({message: t('message.applySuccess'),})
+            })
+            this.isEditSubmit = false
         },
         clickEditCancel()
         {

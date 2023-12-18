@@ -42,6 +42,14 @@ public class filesController
         return service.readMd(dir);
     }
 
+    @PostMapping("/setMd")
+    public void setMd(@RequestBody files files)
+    {
+        files file = service.getFileById(files.getId());
+        file.setMarkdownText(files.getMarkdownText());
+        service.writeMd(file);
+    }
+
     @GetMapping("/getNameById")
     public String getNameById(int fid)
     {
