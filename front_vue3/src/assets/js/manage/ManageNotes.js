@@ -352,7 +352,7 @@ export default
             if(file.type != "" || file.type != null || file.type != undefined)
             {
                 if ((file.size / 1024 / 1024) > 10) {
-                    this.$message.error({message: "big",})
+                    this.$message.error({message: t('message.bigFile'),})
                     return false;
                 }
             }
@@ -362,7 +362,7 @@ export default
             }
             else
             {
-                this.$message.error({message: "格式",})
+                this.$message.error({message: t('message.typeFile'),})
                 return false;
             }
         },

@@ -7,11 +7,20 @@
     <el-row>
         <el-col :span="12">
             <div class="PersonalIndex-avater-div-style" :style="paddingTop">
-                <el-avatar
-                    :src="require('@/assets/webp/avatar/' + avatar)"
-                    :size="150"
-                    fit="scale-down"
-                ></el-avatar>
+                <el-upload
+                v-model:file-list="fileList"
+                action
+                accept=".jpg,.jpeg,.png"
+                :on-exceed="handleExceed"
+                :before-upload="beforeUpload"
+                :show-file-list="false"
+                >
+                    <el-avatar
+                        :src="require('@/assets/webp/avatar/' + avatar)"
+                        :size="150"
+                        fit="scale-down"
+                    ></el-avatar>
+                </el-upload>
                 <p class="PersonalIndex-name-style">{{ username }}</p>
                 <el-tag
                     v-for="(item, i) in tags"
@@ -160,6 +169,20 @@
                 </el-row>
             </span>
         </template>
+    </el-dialog>
+
+    <el-dialog
+    v-model="imageDialogVisible"
+    width="50%"
+    >
+        <div style="height:100px;">
+            <vueCropper
+            ref="cropper"
+            :img="option.img"
+            :outputSize="option.size"
+            :outputType="option.outputType"
+            ></vueCropper>
+        </div>
     </el-dialog>
 </template>
 

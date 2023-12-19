@@ -1,10 +1,13 @@
 import i18n from '@/language'
 import { getTagByToken,updateNameByToken,updateMarkByToken,getUserByToken } from '@/axios/api/userApi'
+import 'vue-cropper/dist/index.css'
+import { VueCropper }  from "vue-cropper";
 
 const { t } = i18n.global
 export default
 {
     name: 'RersonalIndex',
+    components: { VueCropper },
     data()
     {
         return{
@@ -23,6 +26,15 @@ export default
             usernameInput: '',
             markInput: '',
             bottomData: 'bottom: -256px',
+            imageDialogVisible: false,
+            option:
+            {
+                img: '',
+                size: '',
+                outputType: '',
+            },
+            fileList: [],
+            fileType: [ "jpg","jpeg","png" ],
         }
     },
     methods:
@@ -96,6 +108,29 @@ export default
             }
             this.submitDialog = ''
             this.submitDialogVisible = false
+        },
+        handleExceed()
+        {
+            this.$message.error({message: t('message.deleteSuccess'),})
+        },
+        beforeUpload(file)
+        {
+            if(file.type != "" || file.type != null || file.type != undefined)
+            {
+                if ((file.size / 1024 / 1024) > 10) 
+                {
+                    this.$message.error({message: t('message.bigFile'),})
+                    return false;
+                }
+            }
+            if(this.fileType.includes(file.name.replace(/.+\./, "").toLowerCase())){}
+            else
+            {
+                this.$message.error({message: t('message.typeFile'),})
+                return false;
+            }
+
+            console.log(this.fileList)
         },
     },
     mounted()

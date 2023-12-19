@@ -34,6 +34,8 @@ export default
         notNullError: '不有空空',
         notDefaultChange: '无能改改本有配文',
         nullFile: '没看有文片',
+        bigFile: '文片太大',
+        typeFile: '文片式子错了',
     },
     menu:
     {

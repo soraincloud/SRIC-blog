@@ -34,6 +34,8 @@ export default
         notNullError: '不能为空',
         notDefaultChange: '无法更改默认配置',
         nullFile: '未找到文件',
+        bigFile: '文件过大',
+        typeFile: '文件格式错误',
     },
     menu:
     {

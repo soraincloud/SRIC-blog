@@ -34,6 +34,8 @@ export default
         notNullError: 'not null',
         notDefaultChange: 'could not change default configuration',
         nullFile: 'files not found',
+        bigFile: 'file size is too large',
+        typeFile: 'wrong file type',
     },
     menu:
     {
