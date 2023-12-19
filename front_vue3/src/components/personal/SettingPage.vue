@@ -146,7 +146,9 @@
         width="30%"
         style="font-weight: bold"
     >
-        <span>{{ $t("setting.reallyChange") }}</span>
+        <h2>{{ $t("setting.reallyChange") }}</h2>
+        <span v-if="submitDialog == 0">{{ $t("message.pleaseOfferPassword") }}</span>
+        <el-input v-if="submitDialog == 0" style="margin-top: 10px;" v-model="password" type="password" show-password></el-input>
         <template #footer>
             <span class="dialog-footer">
                 <el-row>

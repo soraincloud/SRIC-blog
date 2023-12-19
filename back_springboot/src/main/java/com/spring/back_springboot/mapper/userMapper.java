@@ -20,6 +20,9 @@ public interface userMapper
     @Update(value="UPDATE USER SET USERNAME = #{username} WHERE ID = #{id}")
     void updateNameById(@Param(value = "username") String username, @Param(value = "id") int id);
 
+    @Update(value = "UPDATE USER SET PASSWORD = #{password} WHERE ID = #{id}")
+    void updatePasswordById(@Param(value = "password") String password, @Param(value = "id") int id);
+
     @Update(value="UPDATE USER SET MARK = #{mark} WHERE ID = #{id}")
     void updateMarkById(@Param(value = "mark")String mark,@Param(value = "id") int id);
 

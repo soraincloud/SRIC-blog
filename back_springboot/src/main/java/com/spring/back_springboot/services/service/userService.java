@@ -9,6 +9,7 @@ public interface userService
     user getUserById(int id);
     user getUserByName(String username);
     void updateNameById(String username, int id);
+    void updatePasswordById(String password,int id);
     void updateMarkById(String mark,int id);
     void updateAvatarById(int avatar,int id);
     int getUserCount();

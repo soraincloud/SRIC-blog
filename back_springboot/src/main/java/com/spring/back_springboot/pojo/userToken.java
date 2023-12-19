@@ -10,4 +10,6 @@ public class userToken
     private int avatar;
     private String mark;
     private int status;
+    private String password;
+    private String newPassword;
 }

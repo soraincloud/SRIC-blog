@@ -57,14 +57,23 @@ public class userController
     @PostMapping("/updateNameByToken")
     public code updateNameByToken(@RequestBody userToken userToken)
     {
-        user getUser = service.getUserByName(userToken.getUsername());
-        if(getUser != null)
+        int id = Integer.parseInt(StpUtil.getLoginIdByToken(userToken.getTokenValue()).toString());
+        user u = service.getUserById(id);
+        if(u.getPassword().equals(userToken.getPassword()))//密码正确
+        {
+            user getUser = service.getUserByName(userToken.getUsername());
+            if(getUser != null)//用户名重复
+            {
+                return new code(401);
+            }
+            service.updateNameById(userToken.getUsername(),id);//修改用户名
+            service.updatePasswordById(userToken.getNewPassword(),id);//修改密码
+            return new code(200);
+        }
+        else//密码错误
         {
             return new code(400);
         }
-        int id = Integer.parseInt(StpUtil.getLoginIdByToken(userToken.getTokenValue()).toString());
-        service.updateNameById(userToken.getUsername(),id);
-        return new code(200);
     }
 
     @PostMapping("/updateMarkByToken")

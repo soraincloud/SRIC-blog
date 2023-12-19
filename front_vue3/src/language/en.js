@@ -36,6 +36,7 @@ export default
         nullFile: 'files not found',
         bigFile: 'file size is too large',
         typeFile: 'wrong file type',
+        pleaseOfferPassword: 'please offer your password',
     },
     menu:
     {

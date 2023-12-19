@@ -1,4 +1,5 @@
 import i18n from '@/language'
+import md5 from "js-md5"
 import { getTagByToken,updateNameByToken,updateMarkByToken,updateAvatarByToken,getUserByToken } from '@/axios/api/userApi'
 import { addFile,getAvatarById } from '@/axios/api/filesApi';
 import { dataURLtoFile } from "@/assets/js/tools/base64ToFile";
@@ -38,6 +39,7 @@ export default
             fileList: [],
             fileType: [ "jpg","jpeg","png" ],
             uploadFileName: '',
+            password: '',
         }
     },
     methods:
@@ -88,16 +90,20 @@ export default
             var _this = this
             if(this.submitDialog == 0)
             {
-                updateNameByToken({ username: this.usernameInput,tokenValue: this.tokenValue }).then(function(resp){
+                updateNameByToken({ username: this.usernameInput,tokenValue: this.tokenValue,password: md5( this.username + this.password),newPassword: md5( this.usernameInput + this.password) }).then(function(resp){
                     if(resp.data.code == 200)
                     {
                         _this.username = _this.usernameInput
                         _this.$message.success({message: t('setting.changesuccess'),})
                         _this.usernameInput = ''
                     }
-                    if(resp.data.code == 400)
+                    if(resp.data.code == 401)
                     {
                         _this.$message.warning({message: t('setting.failChange'),})
+                    }
+                    if(resp.data.code == 400)
+                    {
+                        _this.$message.error({message: t('loginmessage.wrong'),})
                     }
                 })
             }

@@ -36,6 +36,7 @@ export default
         nullFile: '没看有文片',
         bigFile: '文片太大',
         typeFile: '文片式子错了',
+        pleaseOfferPassword: '请给给你的密文来看看是不是你',
     },
     menu:
     {

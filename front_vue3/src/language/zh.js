@@ -36,6 +36,7 @@ export default
         nullFile: '未找到文件',
         bigFile: '文件过大',
         typeFile: '文件格式错误',
+        pleaseOfferPassword: '请提供你的密码以验证身份',
     },
     menu:
     {
@@ -123,7 +124,7 @@ export default
     loginmessage:
     {
         success: '登录成功 欢迎回来喵 ~',
-        wrong: '密码错误 戳啦 戳啦 戳啦 awa',
+        wrong: '密码错误 awa',
         none: '查无此人 是不是账户填错了 qwq',
         error: 'error 你是不是乱改东西了(凶)',
         quit: '退出登录啦 ~',
@@ -132,8 +133,8 @@ export default
     {
         changesuccess: '修改完成',
         reallyChange: '真的要修改吗?',
-        notNull: '名字不能是空空的！',
-        failChange: '已经有人叫这个啦！',
+        notNull: '用户名不能为空',
+        failChange: '用户名被占用',
         settingTitle: '设 置',
         safetyTitle: '安 全',
         password: '密码',

@@ -33,6 +33,12 @@ public class userServiceImpl implements userService
     }
 
     @Override
+    public void updatePasswordById(String password,int id)
+    {
+        mapper.updatePasswordById(password,id);
+    }
+
+    @Override
     public void updateMarkById(String mark,int id)
     {
         mapper.updateMarkById(mark,id);
