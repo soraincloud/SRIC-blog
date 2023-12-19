@@ -30,6 +30,7 @@
                     type="danger"
                     size="small"
                     class="PersonalIndex-el-tag-style"
+                    closable
                 >
                     {{ item.content }}
                 </el-tag>
