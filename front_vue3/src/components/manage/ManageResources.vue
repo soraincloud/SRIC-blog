@@ -328,4 +328,5 @@ export default manageresources;
 @import "@/assets/css/notes/NotesCard.css";
 @import "@/assets/css/manage/ManageTime.css";
 @import "@/assets/css/common/NavMenu.css";
+@import "@/assets/css/notes/NotesShow.css";
 </style>
