@@ -1,5 +1,7 @@
 import i18n from '@/language'
-import { getTagByToken,updateNameByToken,updateMarkByToken,getUserByToken } from '@/axios/api/userApi'
+import { getTagByToken,updateNameByToken,updateMarkByToken,updateAvatarByToken,getUserByToken } from '@/axios/api/userApi'
+import { addFile,getAvatarById } from '@/axios/api/filesApi';
+import { dataURLtoFile } from "@/assets/js/tools/base64ToFile";
 import 'vue-cropper/dist/index.css'
 import { VueCropper }  from "vue-cropper";
 
@@ -12,7 +14,7 @@ export default
     {
         return{
             gameWarma: require('@/assets/webp/background/gameWarma.webp'),
-            avatar: 'head-main.webp',
+            avatar: require('@/assets/webp/avatar/head-main.webp'),
             username: this.$store.getters.getUsername,
             tags: this.$store.getters.getTags,
             mark: this.$store.getters.getMark,
@@ -30,11 +32,12 @@ export default
             option:
             {
                 img: '',
-                size: '',
-                outputType: '',
+                size: 0.1,
+                outputType: 'webp',
             },
             fileList: [],
             fileType: [ "jpg","jpeg","png" ],
+            uploadFileName: '',
         }
     },
     methods:
@@ -129,8 +132,51 @@ export default
                 this.$message.error({message: t('message.typeFile'),})
                 return false;
             }
-
-            console.log(this.fileList)
+        },
+        uploadFile(params)
+        {
+            let file = params.file
+            const name = params.file.name
+            this.uploadFileName = name.substring(0, name.lastIndexOf("."))
+            let reader = new FileReader()
+            reader.readAsDataURL(file)
+            var _this = this
+            reader.onload = function(e)
+            {
+                _this.option.img = e.target.result
+                _this.imageDialogVisible = true
+            }
+        },
+        clickApply()
+        {
+            this.$refs.cropper.getCropData(data => {
+                let fileName = this.uploadFileName + ".webp"
+                let file = dataURLtoFile(data,fileName)
+                var form = new FormData()
+                form.append("file",file)
+                var _this = this
+                addFile(form).then(function(resp){
+                    _this.imageDialogVisible = false
+                    _this.changeAvatarForUser(resp.data)
+                })
+            })
+        },
+        changeAvatarForUser(id)
+        {
+            var _this = this
+            updateAvatarByToken({ avatar: id,tokenValue: this.tokenValue }).then(function(resp){
+                _this.$message.success({message: t('setting.changesuccess'),})
+            })
+        },
+        getAvatar(id)
+        {
+            if(id != '')
+            {
+                var _this = this
+                getAvatarById({ id: id, }).then(function(resp){
+                    _this.avatar = resp.data
+                })
+            }
         },
     },
     mounted()
@@ -150,8 +196,8 @@ export default
                     if (resp && resp.status === 200)
                     {
                         _this.username = resp.data.username
-                        _this.avatar = resp.data.avatar
                         _this.mark = resp.data.mark
+                        _this.getAvatar(resp.data.avatar)
                     }
                 })
                 getTagByToken({ tokenValue: this.tokenValue }).then(function(resp){
@@ -163,7 +209,7 @@ export default
             }
             else
             {
-                this.avatar = this.$store.getters.getAvatar
+                this.getAvatar(this.$store.getters.getAvatar)
             }
         }
         this.usernameHoder = t('login.usernamehoder')

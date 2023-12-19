@@ -20,6 +20,11 @@ export function updateMarkByToken(params)
     return post('/user/updateMarkByToken',params)
 }
 
+export function updateAvatarByToken(params)
+{
+    return post('/user/updateAvatarByToken',params)
+}
+
 export function login(params)
 {
     return post('/user/login',params)

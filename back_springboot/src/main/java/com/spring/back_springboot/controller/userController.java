@@ -68,10 +68,18 @@ public class userController
     }
 
     @PostMapping("/updateMarkByToken")
-    public code UpdateMarkByToken(@RequestBody userToken userToken)
+    public code updateMarkByToken(@RequestBody userToken userToken)
     {
         int id = Integer.parseInt(StpUtil.getLoginIdByToken(userToken.getTokenValue()).toString());
         service.updateMarkById(userToken.getMark(),id);
+        return new code(200);
+    }
+
+    @PostMapping("/updateAvatarByToken")
+    public code updateAvatarByToken(@RequestBody userToken userToken)
+    {
+        int id = Integer.parseInt(StpUtil.getLoginIdByToken(userToken.getTokenValue()).toString());
+        service.updateAvatarById(userToken.getAvatar(),id);
         return new code(200);
     }
 

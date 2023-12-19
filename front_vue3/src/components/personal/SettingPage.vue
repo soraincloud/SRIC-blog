@@ -14,9 +14,10 @@
                 :on-exceed="handleExceed"
                 :before-upload="beforeUpload"
                 :show-file-list="false"
+                :http-request="uploadFile"
                 >
                     <el-avatar
-                        :src="require('@/assets/webp/avatar/' + avatar)"
+                        :src="avatar"
                         :size="150"
                         fit="scale-down"
                     ></el-avatar>
@@ -175,14 +176,21 @@
     v-model="imageDialogVisible"
     width="50%"
     >
-        <div style="height:100px;">
+        <div style="height:300px;">
             <vueCropper
             ref="cropper"
             :img="option.img"
             :outputSize="option.size"
             :outputType="option.outputType"
+            :canScale="false"
+            :autoCrop="true"
+            :fixed="true"
+            :canMove="false"
             ></vueCropper>
         </div>
+        <el-button @click="clickApply()" style="margin-top:10px;" type="danger" plain>
+            {{ $t("common.apply") }}
+        </el-button>
     </el-dialog>
 </template>
 

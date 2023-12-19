@@ -23,6 +23,9 @@ public interface userMapper
     @Update(value="UPDATE USER SET MARK = #{mark} WHERE ID = #{id}")
     void updateMarkById(@Param(value = "mark")String mark,@Param(value = "id") int id);
 
+    @Update(value = "UPDATE USER SET AVATAR = #{avatar} WHERE ID = #{id}")
+    void updateAvatarById(@Param(value = "avatar")int avatar,@Param(value = "id") int id);
+
     @Select(value="SELECT COUNT(*) FROM USER")
     int getUserCount();
 

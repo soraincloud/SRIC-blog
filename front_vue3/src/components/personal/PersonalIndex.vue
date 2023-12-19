@@ -36,7 +36,7 @@
         </el-affix>
     </div>
     <div class="PersonalIndex-avater-div-style" :style="paddingTop">
-        <el-avatar :src="require('@/assets/webp/avatar/' + avatar)" :size="150" fit="scale-down"></el-avatar>
+        <el-avatar :src="avatar" :size="150" fit="scale-down"></el-avatar>
         <p class="PersonalIndex-name-style">{{ username }}</p>
         <el-tag
         v-for="(item,i) in tags"

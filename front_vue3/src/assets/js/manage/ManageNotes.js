@@ -336,7 +336,7 @@ export default
             form.append("file",file)
             var _this = this
             addFile(form).then(function(resp){
-
+                _this.input.md = resp.data
             })
         },
         removeFile()

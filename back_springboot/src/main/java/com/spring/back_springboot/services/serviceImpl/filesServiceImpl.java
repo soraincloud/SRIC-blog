@@ -8,13 +8,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
+
+import static com.spring.back_springboot.tools.tools.imageToBase64;
 
 @Service
 public class filesServiceImpl implements filesService
@@ -35,9 +39,10 @@ public class filesServiceImpl implements filesService
     }
 
     @Override
-    public void AddFile(files files)
+    public int AddFile(files files)
     {
         mapper.AddFile(files);
+        return files.getId();
     }
 
     @Override
@@ -113,5 +118,17 @@ public class filesServiceImpl implements filesService
     public files getFileById(int id)
     {
         return mapper.getFileById(id);
+    }
+
+    @Override
+    public String getAvatarById(int id)
+    {
+        files files = mapper.getFileById(id);
+        String dir = System.getProperty("user.dir");
+        dir += "\\files\\";
+        dir += files.getFile();
+        String base64Str = "data:image/webp;base64,";
+        base64Str += imageToBase64(dir);
+        return base64Str;
     }
 }

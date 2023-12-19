@@ -9,9 +9,11 @@ public interface filesService
 {
     List<files> getAllFiles();
     List<files> getFilesNameList();
-    void AddFile(files files);
+    int AddFile(files files);
     files saveFile(MultipartFile files);
     String readMd(String direc);
     void writeMd(files files);
     files getFileById(int id);
+
+    String getAvatarById(int id);
 }

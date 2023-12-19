@@ -24,3 +24,8 @@ export function getFilesNameList(params)
 {
     return get("/files/getFilesNameList",params)
 }
+
+export function getAvatarById(params)
+{
+    return get('/files/getAvatarById',params)
+}

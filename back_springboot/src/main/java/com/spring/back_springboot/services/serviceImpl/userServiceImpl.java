@@ -39,6 +39,12 @@ public class userServiceImpl implements userService
     }
 
     @Override
+    public void updateAvatarById(int avatar,int id)
+    {
+        mapper.updateAvatarById(avatar,id);
+    }
+
+    @Override
     public int getUserCount()
     {
         return mapper.getUserCount();

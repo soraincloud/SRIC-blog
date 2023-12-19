@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : test-connect
+ Source Server         : mysql
  Source Server Type    : MySQL
  Source Server Version : 80035
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 18/12/2023 10:26:54
+ Date: 20/12/2023 02:40:54
 */
 
 SET NAMES utf8mb4;
@@ -62,6 +62,7 @@ INSERT INTO `files` VALUES (7, '2023-12-15-15-38-10-4057.md', 'VUE004.md', 'md')
 INSERT INTO `files` VALUES (8, '2023-12-15-15-38-14-8395.md', 'VUE005.md', 'md');
 INSERT INTO `files` VALUES (9, '2023-12-15-15-38-21-9804.md', 'COOK001.md', 'md');
 INSERT INTO `files` VALUES (10, '2023-12-15-15-38-26-9469.md', 'COOK002.md', 'md');
+INSERT INTO `files` VALUES (11, '2023-12-20-02-38-05-4267.webp', '  (3).webp', 'webp');
 
 -- ----------------------------
 -- Table structure for index-about
@@ -128,7 +129,7 @@ CREATE TABLE `index-time`  (
   `type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '外圈颜色',
   `color` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '内部颜色',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 43 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '主页活动时间轴' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 44 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '主页活动时间轴' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of index-time
@@ -265,12 +266,12 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 916);
-INSERT INTO `page-visited` VALUES (2, 'index', 206);
+INSERT INTO `page-visited` VALUES (1, 'main', 932);
+INSERT INTO `page-visited` VALUES (2, 'index', 209);
 INSERT INTO `page-visited` VALUES (3, 'notes', 123);
 INSERT INTO `page-visited` VALUES (4, 'resources', 86);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 51);
+INSERT INTO `page-visited` VALUES (6, 'personal', 68);
 INSERT INTO `page-visited` VALUES (7, 'function', 20);
 
 -- ----------------------------
@@ -351,7 +352,7 @@ CREATE TABLE `user`  (
   `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
   `username` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '用户名',
   `password` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '密码',
-  `avatar` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'head-main.webp' COMMENT '头像',
+  `avatar` int UNSIGNED NULL DEFAULT NULL COMMENT '头像',
   `phonenumber` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '电话号码',
   `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '邮箱',
   `mark` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NULL' COMMENT '个人描述',
@@ -362,7 +363,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'SRIC', 'abe4618871b8413bdfb1777f1db128b6', 'head-main.webp', '11451419198', '114514@qq.com', 'SORAINCLOUD YEAH！！！', 1);
-INSERT INTO `user` VALUES (2, 'homo', '46cdf9fce44f17b47ef33cd4d9bd99f4', 'head-main.webp', '11451419198', '1919810@homo.com', '114514', 0);
+INSERT INTO `user` VALUES (1, 'SRIC', 'abe4618871b8413bdfb1777f1db128b6', 11, '11451419198', '114514@qq.com', 'SORAINCLOUD YEAH！！！', 1);
+INSERT INTO `user` VALUES (2, 'homo', '46cdf9fce44f17b47ef33cd4d9bd99f4', NULL, '11451419198', '1919810@homo.com', '114514', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

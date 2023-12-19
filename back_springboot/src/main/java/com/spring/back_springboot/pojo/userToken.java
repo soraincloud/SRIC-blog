@@ -7,7 +7,7 @@ public class userToken
 {
     private String tokenValue;
     private String username;
-    private String avatar;
+    private int avatar;
     private String mark;
     private int status;
 }

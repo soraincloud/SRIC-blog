@@ -35,10 +35,10 @@ public class filesController
     }
 
     @PostMapping("/addFile")
-    public void addFile(@RequestParam MultipartFile file)
+    public int addFile(@RequestParam MultipartFile file)
     {
         files files = service.saveFile(file);
-        service.AddFile(files);
+        return service.AddFile(files);
     }
 
     @GetMapping("/getMd")
@@ -60,5 +60,11 @@ public class filesController
     public String getNameById(int fid)
     {
         return service.getFileById(fid).getName();
+    }
+
+    @GetMapping("/getAvatarById")
+    public String getAvatarById(int id)
+    {
+        return service.getAvatarById(id);
     }
 }

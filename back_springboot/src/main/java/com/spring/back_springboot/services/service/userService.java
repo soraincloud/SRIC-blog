@@ -10,6 +10,7 @@ public interface userService
     user getUserByName(String username);
     void updateNameById(String username, int id);
     void updateMarkById(String mark,int id);
+    void updateAvatarById(int avatar,int id);
     int getUserCount();
     List<String> getAllUsername();
 }

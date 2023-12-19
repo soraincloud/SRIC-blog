@@ -1,6 +1,7 @@
 import i18n from '@/language'
 import { getTagByToken,getUserByToken } from '@/axios/api/userApi'
 import { visitPage } from '@/axios/api/visitApi'
+import { getAvatarById } from '@/axios/api/filesApi'
 
 const { t } = i18n.global
 export default
@@ -10,7 +11,7 @@ export default
     {
         return{
             game: require('@/assets/webp/background/game.webp'),
-            avatar: 'head-main.webp',
+            avatar: require('@/assets/webp/avatar/head-main.webp'),
             username: '',
             paddingTop: "padding-top:" + ((window.innerHeight - 360) / 2) + "px;",
             tags: [],
@@ -36,6 +37,16 @@ export default
             this.leftData = 'left: -500px'
             setTimeout( () => { this.$router.push('/Signup') },256)//延迟跳转 播放动画
         },
+        getAvatar(id)
+        {
+            if(id != '')
+            {
+                var _this = this
+                getAvatarById({ id: id, }).then(function(resp){
+                    _this.avatar = resp.data
+                })
+            }
+        },
     },
     mounted()
     {
@@ -51,7 +62,7 @@ export default
             var _this = this
             getUserByToken({ tokenValue: this.tokenValue }).then(function(resp){
                     _this.username = resp.data.username
-                    _this.avatar = resp.data.avatar
+                    _this.getAvatar(resp.data.avatar)
                     _this.mark = resp.data.mark
                     _this.$store.commit('setUsername',resp.data.username)
                     _this.$store.commit('setAvatar',resp.data.avatar)
