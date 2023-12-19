@@ -65,14 +65,17 @@ export default
                 else if(resp.data.code == 400)
                 {
                     _this.$message.error({message: t('loginmessage.wrong'),})
+                    _this.isShow = false
                 }
                 else if(resp.data.code == 401)
                 {
                     _this.$message.warning({message: t('loginmessage.none'),})
+                    _this.isShow = false
                 }
                 else
                 {
                     _this.$message.error({message: t('loginmessage.error'),})
+                    _this.isShow = false
                 }
             })
         },
