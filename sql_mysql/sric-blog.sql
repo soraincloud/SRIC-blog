@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : test-connect
+ Source Server         : mysql
  Source Server Type    : MySQL
  Source Server Version : 80035
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 20/12/2023 10:29:12
+ Date: 21/12/2023 01:27:41
 */
 
 SET NAMES utf8mb4;
@@ -47,7 +47,7 @@ CREATE TABLE `files`  (
   `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '名称',
   `type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '文件格式',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of files
@@ -200,9 +200,10 @@ CREATE TABLE `manage-navlist`  (
 INSERT INTO `manage-navlist` VALUES (1, 'manageHome', '', 'HomeFilled', '主页管理', 'manage home', '主面管管');
 INSERT INTO `manage-navlist` VALUES (2, 'manageTime', '', 'InfoFilled', '日志管理', 'manage log', '时表管管');
 INSERT INTO `manage-navlist` VALUES (3, 'manageNotesCategory', '', 'List', '笔记分类', 'notes category', '记纸类类');
-INSERT INTO `manage-navlist` VALUES (4, 'manageNotes', '', 'Checked', '笔记管理', 'manage notes', '记纸管管');
+INSERT INTO `manage-navlist` VALUES (4, 'manageNotes', '', 'EditPen', '笔记管理', 'manage notes', '记纸管管');
 INSERT INTO `manage-navlist` VALUES (5, 'manageResourcesCategory', '', 'List', '资源分类', 'resources category', '材源类类');
-INSERT INTO `manage-navlist` VALUES (6, 'manageResources', '', 'Checked', '资源管理', 'manage resources', '材源管管');
+INSERT INTO `manage-navlist` VALUES (6, 'manageResources', '', 'MessageBox', '资源管理', 'manage resources', '材源管管');
+INSERT INTO `manage-navlist` VALUES (7, 'manageFiles', '', 'Folder', '文件管理', 'manage files', '文片管管');
 
 -- ----------------------------
 -- Table structure for notes
@@ -267,12 +268,12 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 932);
-INSERT INTO `page-visited` VALUES (2, 'index', 209);
+INSERT INTO `page-visited` VALUES (1, 'main', 948);
+INSERT INTO `page-visited` VALUES (2, 'index', 211);
 INSERT INTO `page-visited` VALUES (3, 'notes', 123);
 INSERT INTO `page-visited` VALUES (4, 'resources', 86);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 70);
+INSERT INTO `page-visited` VALUES (6, 'personal', 72);
 INSERT INTO `page-visited` VALUES (7, 'function', 20);
 
 -- ----------------------------

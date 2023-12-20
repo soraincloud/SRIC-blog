@@ -11,6 +11,9 @@ public interface filesMapper
     @Select(value = "SELECT * FROM FILES")
     List<files> getAllFiles();
 
+    @Select(value = "SELECT * FROM FILES WHERE name LIKE concat('%',#{text},'%')")
+    List<files> getFilesByText(@Param(value = "text")String text);
+
     @Select(value = "SELECT id,name FROM FILES")
     List<files> getFilesNameList();
 

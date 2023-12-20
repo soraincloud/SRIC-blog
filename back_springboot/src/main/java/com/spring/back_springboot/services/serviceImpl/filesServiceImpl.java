@@ -3,6 +3,7 @@ package com.spring.back_springboot.services.serviceImpl;
 import com.spring.back_springboot.mapper.filesMapper;
 import com.spring.back_springboot.pojo.files;
 import com.spring.back_springboot.services.service.filesService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -29,7 +30,21 @@ public class filesServiceImpl implements filesService
     @Override
     public List<files> getAllFiles()
     {
-        return mapper.getAllFiles();
+        List<files> fileList;
+        fileList = mapper.getAllFiles();
+        for(int i = 0;i < fileList.size();i++)
+        {
+            String file =  fileList.get(i).getFile();
+            String date = file.substring(0,10);
+            fileList.get(i).setFile(date);
+        }
+        return fileList;
+    }
+
+    @Override
+    public List<files> getFilesByText(String text)
+    {
+        return mapper.getFilesByText(text);
     }
 
     @Override

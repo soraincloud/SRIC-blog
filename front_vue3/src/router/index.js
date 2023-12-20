@@ -123,6 +123,11 @@ const routes =
         path: '/manageResources',
         component: () => import('@/components/manage/ManageResources'),
       },
+      {
+        name: 'manageFiles',
+        path: '/manageFiles',
+        component: () => import('@/components/manage/ManageFiles'),
+      }
     ]
   },
 ]

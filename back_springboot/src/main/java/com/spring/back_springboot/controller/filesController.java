@@ -28,6 +28,12 @@ public class filesController
         return service.getAllFiles();
     }
 
+    @GetMapping("/getFilesByText")
+    public List<files> getFilesByText(String text)
+    {
+        return service.getFilesByText(text);
+    }
+
     @GetMapping("/getFilesNameList")
     public List<files> getFilesNameList()
     {

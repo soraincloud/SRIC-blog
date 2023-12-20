@@ -1,5 +1,15 @@
 import { get,post,postFile } from "@/axios/axios"
 
+export function getAllFiles(params)
+{
+    return get("/files/getAllFiles",params)
+}
+
+export function getFilesByText(params)
+{
+    return get("/files/getFilesByText",params)
+}
+
 export function addFile(params)
 {
     return postFile("/files/addFile",params)
