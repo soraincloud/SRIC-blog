@@ -45,6 +45,15 @@ export default
     {
         this.getFiles()
     },
+    mounted()
+    {
+        window.onresize = () => 
+        {
+            this.bodyHeight = "height:" + (window.innerHeight - 80) + "px;"
+            this.outDivHeight = 'height: ' + (window.innerHeight) + 'px;'
+            this.scrollCardHeight = (window.innerHeight - 150)
+        }
+    },
     watch:
     {
         '$i18n.locale'(newValue)

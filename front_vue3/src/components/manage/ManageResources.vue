@@ -4,7 +4,7 @@
         <el-card class="ManageNotes-el-card" :style="[bodyHeight,showLeft]">
             <el-row>
                 <el-col :span="8">
-                    <el-scrollbar>
+                    <el-scrollbar :height="updateBodyHeight">
                     <el-card class="NotesAside-el-card-style" @mouseover="mouseOver(0)" @mouseleave="mouseLeave(0)" :style="back0">
                         <h1 class="common-text-style" style="margin-top: 64px">{{ $t('notes.head') }}</h1>
                         <el-divider class="common-el-divider-style" />

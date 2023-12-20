@@ -9,6 +9,7 @@
             :default-active="defaultActive"
             :collapse="isCollapse"
         >
+        <el-scrollbar :height="scrollHeight">
             <el-menu-item @click="clickChange()" class="ManageMenu-menu-text-style">
                 <el-icon class="ManageMenu-el-icon">
                     <component :is="buttonIcon"></component>
@@ -26,6 +27,7 @@
                 </el-icon>
                 <template #title>{{ item.navItem }}</template>
             </el-menu-item>
+        </el-scrollbar>
         </el-menu>
     </div>
 </template>

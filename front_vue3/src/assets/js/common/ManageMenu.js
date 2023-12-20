@@ -20,7 +20,8 @@ export default
                     icon: 'Menu',
                 },
             ],
-            language: localStorage.getItem('language')
+            language: localStorage.getItem('language'),
+            scrollHeight: window.innerHeight,
         }
     },
     methods:
@@ -62,6 +63,12 @@ export default
                 }
                 _this.navList.push(resp.data[i])
             }
+        })
+    },
+    mounted()
+    {
+        window.addEventListener("resize", () => {
+            this.scrollHeight = window.innerHeight
         })
     },
     watch:
