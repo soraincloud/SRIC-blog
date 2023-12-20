@@ -127,7 +127,12 @@ const routes =
         name: 'manageFiles',
         path: '/manageFiles',
         component: () => import('@/components/manage/ManageFiles'),
-      }
+      },
+      {
+        name: 'manageUser',
+        path: '/manageUser',
+        component: () => import('@/components/manage/ManageUser'),
+      },
     ]
   },
 ]

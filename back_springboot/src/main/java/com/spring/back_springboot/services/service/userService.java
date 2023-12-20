@@ -14,4 +14,6 @@ public interface userService
     void updateAvatarById(int avatar,int id);
     int getUserCount();
     List<String> getAllUsername();
+    List<user> getAllUserData();
+    List<user> getUserListByName(String username);
 }

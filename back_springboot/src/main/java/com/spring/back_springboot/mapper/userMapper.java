@@ -34,4 +34,10 @@ public interface userMapper
 
     @Select(value="SELECT USERNAME FROM USER")
     List<String> getAllUsername();
+
+    @Select(value = "SELECT USERNAME,AVATAR,MARK,STATUS FROM USER")
+    List<user> getAllUserData();
+
+    @Select(value = "SELECT * FROM USER WHERE USERNAME LIKE concat('%',#{username},'%')")
+    List<user> getUserListByName(@Param(value = "username") String username);
 }

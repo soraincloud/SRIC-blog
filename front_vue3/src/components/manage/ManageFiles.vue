@@ -1,7 +1,7 @@
 <template>
-    <el-scrollbar :height="bodyHeight" v-loading="loading" element-loading-text="Loading . . .">
-        <div class="ManageIndex-out-div">
-            <el-card class="ManageIndex-el-card">
+<el-scrollbar v-loading="loading" element-loading-text="Loading . . .">
+    <div class="ManageIndex-out-div" :style="outDivHeight">
+        <el-card class="ManageNotes-el-card" :style="bodyHeight">
                 <el-row>
                     <el-col :span="16">
                         <el-input
@@ -34,7 +34,7 @@
                     :key="i"
                     class="common-with-back-el-card-style"
                     >
-                        <h1>{{ item.name }}</h1>
+                        <span class="manageFiles-name-text">{{ item.name }}</span>
                         <el-tag
                             checked
                             size="small"
@@ -61,7 +61,9 @@ export default managefiles;
 </script>
 
 <style scope>
+@import "@/assets/css/manage/ManageFiles.css";
 @import "@/assets/css/manage/ManageIndex.css";
 @import '@/assets/css/common.css';
 @import "@/assets/css/notes/NotesCard.css";
+@import "@/assets/css/manage/ManageNotes.css";
 </style>

@@ -1,4 +1,4 @@
-import { getAllFiles,getFilesByText } from '@/axios/api/filesApi'
+import { getAllUserData,getUserListByName } from '@/axios/api/userApi'
 import i18n from '@/language'
 
 const { t } = i18n.global
@@ -13,37 +13,37 @@ export default
             outDivHeight: 'height: ' + (window.innerHeight) + 'px;',
             scrollCardHeight: (window.innerHeight - 150),
             placeholderText: t('common.search'),
-            files: [],
+            user: [],
             search: '',
         }
     },
     methods:
     {
-        getFiles()
+        getUserList()
         {
             var _this = this
-            getAllFiles().then(function(resp){
-                _this.files = resp.data
+            getAllUserData().then(function(resp){
+                _this.user = resp.data
                 _this.loading = false
             })
         },
         clickSearch()
         {
             var _this = this
-            getFilesByText({ text: this.search }).then(function(resp){
-                _this.files = resp.data
+            getUserListByName({ username: this.search }).then(function(resp){
+                _this.user = resp.data
             })
         },
         clickRefresh()
         {
             this.loading = true
             this.search = ''
-            this.getFiles()
+            this.getUserList()
         },
     },
     created()
     {
-        this.getFiles()
+        this.getUserList()
     },
     watch:
     {

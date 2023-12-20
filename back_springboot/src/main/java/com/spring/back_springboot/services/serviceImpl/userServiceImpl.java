@@ -61,4 +61,16 @@ public class userServiceImpl implements userService
     {
         return mapper.getAllUsername();
     }
+
+    @Override
+    public List<user> getAllUserData()
+    {
+        return mapper.getAllUserData();
+    }
+
+    @Override
+    public List<user> getUserListByName(String username)
+    {
+        return mapper.getUserListByName(username);
+    }
 }

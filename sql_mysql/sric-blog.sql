@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 21/12/2023 01:27:41
+ Date: 21/12/2023 02:46:52
 */
 
 SET NAMES utf8mb4;
@@ -204,6 +204,7 @@ INSERT INTO `manage-navlist` VALUES (4, 'manageNotes', '', 'EditPen', '笔记管
 INSERT INTO `manage-navlist` VALUES (5, 'manageResourcesCategory', '', 'List', '资源分类', 'resources category', '材源类类');
 INSERT INTO `manage-navlist` VALUES (6, 'manageResources', '', 'MessageBox', '资源管理', 'manage resources', '材源管管');
 INSERT INTO `manage-navlist` VALUES (7, 'manageFiles', '', 'Folder', '文件管理', 'manage files', '文片管管');
+INSERT INTO `manage-navlist` VALUES (8, 'manageUser', '', 'UserFilled', '用户管理', 'manage user', '用人管管');
 
 -- ----------------------------
 -- Table structure for notes
@@ -268,12 +269,12 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 948);
-INSERT INTO `page-visited` VALUES (2, 'index', 211);
+INSERT INTO `page-visited` VALUES (1, 'main', 955);
+INSERT INTO `page-visited` VALUES (2, 'index', 213);
 INSERT INTO `page-visited` VALUES (3, 'notes', 123);
 INSERT INTO `page-visited` VALUES (4, 'resources', 86);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 72);
+INSERT INTO `page-visited` VALUES (6, 'personal', 75);
 INSERT INTO `page-visited` VALUES (7, 'function', 20);
 
 -- ----------------------------
@@ -345,6 +346,9 @@ INSERT INTO `tag` VALUES (3, 1, 'qwq');
 INSERT INTO `tag` VALUES (4, 1, 'awa');
 INSERT INTO `tag` VALUES (5, 2, 'homo');
 INSERT INTO `tag` VALUES (6, 2, '114514');
+INSERT INTO `tag` VALUES (7, 3, 'ADMIN');
+INSERT INTO `tag` VALUES (8, 3, 'admin');
+INSERT INTO `tag` VALUES (9, 3, 'root');
 
 -- ----------------------------
 -- Table structure for user
@@ -367,5 +371,6 @@ CREATE TABLE `user`  (
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'SRIC', 'abe4618871b8413bdfb1777f1db128b6', 11, '11451419198', '114514@qq.com', 'SORAINCLOUD YEAH！！！', 1);
 INSERT INTO `user` VALUES (2, 'homo', '46cdf9fce44f17b47ef33cd4d9bd99f4', 12, '11451419198', '1919810@homo.com', '114514', 0);
+INSERT INTO `user` VALUES (3, 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72', NULL, '12312341234', '123456@gmail.com', 'NULL', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -37,3 +37,8 @@
 {
     width: 100%;
 }
+
+.ManageNotes-el-card .common-with-back-el-card-style .el-card__body
+{
+    background: rgba(255,255,255,0);
+}

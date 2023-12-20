@@ -218,6 +218,7 @@ export default
                     if(resp.data.code == 200)
                     {
                         _this.$message.success({message: t('message.addSuccess'),})
+                        _this.tagInput = ''
                         _this.getTags()
                     }
                     if(resp.data.code == 400)

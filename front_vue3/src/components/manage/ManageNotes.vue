@@ -1,5 +1,5 @@
 <template>
-<el-scrollbar>
+<el-scrollbar v-loading="loading" element-loading-text="Loading . . .">
     <div class="ManageIndex-out-div" :style="outDivHeight">
         <el-card class="ManageNotes-el-card" :style="[bodyHeight,showLeft]">
             <el-row>

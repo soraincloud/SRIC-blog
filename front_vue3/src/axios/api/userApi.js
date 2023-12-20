@@ -44,3 +44,13 @@ export function addTagByToken(params)
 {
     return post('/user/addTagByToken',params)
 }
+
+export function getAllUserData(params)
+{
+    return get('/user/getAllUserData',params)
+}
+
+export function getUserListByName(params)
+{
+    return get('/user/getUserListByName',params)
+}
