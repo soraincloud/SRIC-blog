@@ -29,6 +29,7 @@ export default
     },
     message:
     {
+        addSuccess: '写加成力',
         applySuccess: '上交成力',
         deleteSuccess: '删没成力',
         notNullError: '不有空空',
@@ -145,6 +146,8 @@ export default
         changePhone: '订圣剑',
         changeMail: '订发盒',
         back: '退饭',
+        addTag: '写加标签',
+        lessThanFive: '标签不会大比5片',
     },
     functions:
     {

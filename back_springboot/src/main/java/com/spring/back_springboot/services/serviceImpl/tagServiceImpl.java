@@ -19,4 +19,16 @@ public class tagServiceImpl implements tagService
     {
         return mapper.getTagByUid(uid);
     }
+
+    @Override
+    public void deleteTagById(int id)
+    {
+        mapper.deleteTagById(id);
+    }
+
+    @Override
+    public void addTagById(tag tag)
+    {
+        mapper.addTagById(tag);
+    }
 }

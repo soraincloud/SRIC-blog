@@ -31,6 +31,7 @@
                     size="small"
                     class="PersonalIndex-el-tag-style"
                     closable
+                    @close="handleClose(i)"
                 >
                     {{ item.content }}
                 </el-tag>
@@ -69,6 +70,23 @@
                             <template #append>
                                 <el-button @click="clickMessageSubmit">
                                     {{ $t("login.submit") }}
+                                </el-button>
+                            </template>
+                        </el-input>
+                    </div>
+                    <div class="SettingPage-input-div-style">
+                        <el-input
+                            v-model="tagInput"
+                            maxlength="10"
+                            :placeholder="tagHoder"
+                            type="text"
+                            class="SettingPage-el-input-style"
+                            clearable
+                        >
+                            <template #append>
+                                <el-button @click="clickTagAdd">
+                                    <el-icon style="margin-right:10px;"><Plus /></el-icon>
+                                    {{ $t("common.add") }}
                                 </el-button>
                             </template>
                         </el-input>

@@ -29,6 +29,7 @@ export default
     },
     message:
     {
+        addSuccess: '添加成功',
         applySuccess: '提交成功',
         deleteSuccess: '删除成功',
         notNullError: '不能为空',
@@ -146,6 +147,8 @@ export default
         changePhone: '绑手机',
         changeMail: '绑邮箱',
         back: '返回',
+        addTag: '添加标签',
+        lessThanFive: '标签不能多于5个',
     },
     functions:
     {

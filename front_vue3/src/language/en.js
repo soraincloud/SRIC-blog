@@ -29,6 +29,7 @@ export default
     },
     message:
     {
+        addSuccess: 'add success',
         applySuccess: 'apply success',
         deleteSuccess: 'delete success',
         notNullError: 'not null',
@@ -145,6 +146,8 @@ export default
         changePhone: 'bind',
         changeMail: 'bind',
         back: 'back',
+        addTag: 'add tags',
+        lessThanFive: 'cannot be more than 5 tags',
     },
     functions:
     {

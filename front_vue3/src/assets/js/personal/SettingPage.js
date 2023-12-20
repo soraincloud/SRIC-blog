@@ -1,6 +1,6 @@
 import i18n from '@/language'
 import md5 from "js-md5"
-import { getTagByToken,updateNameByToken,updateMarkByToken,updateAvatarByToken,getUserByToken } from '@/axios/api/userApi'
+import { getTagByToken,updateNameByToken,updateMarkByToken,updateAvatarByToken,getUserByToken,deleteTagById,addTagByToken } from '@/axios/api/userApi'
 import { addFile,getAvatarById } from '@/axios/api/filesApi';
 import { dataURLtoFile } from "@/assets/js/tools/base64ToFile";
 import 'vue-cropper/dist/index.css'
@@ -40,6 +40,8 @@ export default
             fileType: [ "jpg","jpeg","png" ],
             uploadFileName: '',
             password: '',
+            tagInput: '',
+            tagHoder: t('setting.addTag'),
         }
     },
     methods:
@@ -185,6 +187,46 @@ export default
                 })
             }
         },
+        handleClose(i)
+        {
+            console.log(this.tags[i].id)
+            var _this = this
+            deleteTagById({ id: this.tags[i].id }).then(function(resp){
+                _this.getTags()
+            })
+        },
+        getTags()
+        {
+            var _this = this
+            getTagByToken({ tokenValue: this.tokenValue }).then(function(resp){
+                if (resp && resp.status === 200)
+                {
+                    _this.tags = resp.data
+                }
+            })
+        },
+        clickTagAdd()
+        {
+            if(this.tagInput == "")
+            {
+                this.$message.error({message: t('message.notNullError'),})
+            }
+            else
+            {
+                var _this = this
+                addTagByToken({ tokenValue: this.tokenValue, mark: this.tagInput }).then(function(resp){
+                    if(resp.data.code == 200)
+                    {
+                        _this.$message.success({message: t('message.addSuccess'),})
+                        _this.getTags()
+                    }
+                    if(resp.data.code == 400)
+                    {
+                        _this.$message.error({message: t('setting.lessThanFive')})
+                    }
+                })
+            }
+        },
     },
     mounted()
     {
@@ -205,12 +247,7 @@ export default
                         _this.username = resp.data.username
                         _this.mark = resp.data.mark
                         _this.getAvatar(resp.data.avatar)
-                    }
-                })
-                getTagByToken({ tokenValue: this.tokenValue }).then(function(resp){
-                    if (resp && resp.status === 200)
-                    {
-                        _this.tags = resp.data
+                        _this.getTags()
                     }
                 })
             }
@@ -229,6 +266,7 @@ export default
         {
             this.usernameHoder = t('login.usernamehoder')
             this.messageHoder = t('login.messagehoder')
+            this.tagHoder = t('setting.addTag')
         }
     },
 }

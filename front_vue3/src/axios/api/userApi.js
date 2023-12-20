@@ -34,3 +34,13 @@ export function getAllUsername(params)
 {
     return get('/user/getAllUsername',params)
 }
+
+export function deleteTagById(params)
+{
+    return post('/user/deleteTagById',params)
+}
+
+export function addTagByToken(params)
+{
+    return post('/user/addTagByToken',params)
+}
