@@ -34,7 +34,21 @@
                         :key="i"
                         class="common-with-back-el-card-style"
                         >
-                        <span>{{ item.username }}</span>
+                        <el-row>
+                            <el-col :span="6">
+                                <span>{{ item.username }}</span>
+                            </el-col>
+                            <el-col :span="6">
+
+                            </el-col>
+                            <el-col :span="6">
+                                <span>{{ item.mark }}</span>
+                            </el-col>
+                            <el-col :span="6">
+                                <span>{{ item.status }}</span>
+                            </el-col>
+                        </el-row>
+                        
                         </el-card>
                     </el-scrollbar>
                 </el-card>

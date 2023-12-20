@@ -50,6 +50,7 @@
                         :placeholder="usernameHoder"
                         type="text"
                         class="SettingPage-el-input-style"
+                        show-word-limit
                         clearable
                     >
                         <template #append>
@@ -65,6 +66,7 @@
                             :placeholder="messageHoder"
                             type="text"
                             class="SettingPage-el-input-style"
+                            show-word-limit
                             clearable
                         >
                             <template #append>
@@ -81,6 +83,7 @@
                             :placeholder="tagHoder"
                             type="text"
                             class="SettingPage-el-input-style"
+                            show-word-limit
                             clearable
                         >
                             <template #append>
