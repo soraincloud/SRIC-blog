@@ -172,6 +172,7 @@ export default
             var _this = this
             updateAvatarByToken({ avatar: id,tokenValue: this.tokenValue }).then(function(resp){
                 _this.$message.success({message: t('setting.changesuccess'),})
+                _this.getAvatar(id)
             })
         },
         getAvatar(id)
