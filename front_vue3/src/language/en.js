@@ -183,4 +183,11 @@ export default
         head: 'edit title',
         about: 'edit card',
     },
+    user:
+    {
+        avatar: 'avatar',
+        username: 'username',
+        mark: 'mark',
+        status: 'manage permissions',
+    },
 }

@@ -1,7 +1,7 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : mysql
+ Source Server         : test-connect
  Source Server Type    : MySQL
  Source Server Version : 80035
  Source Host           : localhost:3306
@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 21/12/2023 02:46:52
+ Date: 21/12/2023 16:01:01
 */
 
 SET NAMES utf8mb4;
@@ -192,7 +192,7 @@ CREATE TABLE `manage-navlist`  (
   `en` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '英文文字',
   `warma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '沃沃文字',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '管理页面动态菜单' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '管理页面动态菜单' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of manage-navlist
@@ -269,7 +269,7 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 955);
+INSERT INTO `page-visited` VALUES (1, 'main', 977);
 INSERT INTO `page-visited` VALUES (2, 'index', 213);
 INSERT INTO `page-visited` VALUES (3, 'notes', 123);
 INSERT INTO `page-visited` VALUES (4, 'resources', 86);
@@ -335,7 +335,7 @@ CREATE TABLE `tag`  (
   `uid` int UNSIGNED NOT NULL COMMENT '对应用户ID',
   `content` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '内容',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '用户标签' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '用户标签' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tag
@@ -364,13 +364,15 @@ CREATE TABLE `user`  (
   `mark` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NULL' COMMENT '个人描述',
   `status` int UNSIGNED NOT NULL DEFAULT 0 COMMENT '权限',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '用户' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '用户' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'SRIC', 'abe4618871b8413bdfb1777f1db128b6', 11, '11451419198', '114514@qq.com', 'SORAINCLOUD YEAH！！！', 1);
-INSERT INTO `user` VALUES (2, 'homo', '46cdf9fce44f17b47ef33cd4d9bd99f4', 12, '11451419198', '1919810@homo.com', '114514', 0);
+INSERT INTO `user` VALUES (2, 'homo', '46cdf9fce44f17b47ef33cd4d9bd99f4', 12, '11451419198', '1919810@homo.com', '114514', 1);
 INSERT INTO `user` VALUES (3, 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72', NULL, '12312341234', '123456@gmail.com', 'NULL', 0);
+INSERT INTO `user` VALUES (4, '12345123451234512345', '162a41a33fadb37e6abd662ce4adeeeb', NULL, '12345123451', '12345@test.com', 'NULL', 0);
+INSERT INTO `user` VALUES (5, 'test', '05a671c66aefea124cc08b76ea6d30bb', NULL, '11122223333', 'test@gmail.com', 'NULL', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;

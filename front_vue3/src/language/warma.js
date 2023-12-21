@@ -183,4 +183,11 @@ export default
         head: '编改头题',
         about: '编改卡容',
     },
+    user:
+    {
+        avatar: '头脑',
+        username: '用人名',
+        mark: '写东西',
+        status: '管管看看权力',
+    },
 }

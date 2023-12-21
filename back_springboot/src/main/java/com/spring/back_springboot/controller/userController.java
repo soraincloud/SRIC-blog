@@ -110,4 +110,10 @@ public class userController
     {
         return service.getUserListByName(username);
     }
+
+    @PostMapping("/changeStatus")
+    public void changeStatus(@RequestBody user user)
+    {
+        service.updateStatus(user);
+    }
 }

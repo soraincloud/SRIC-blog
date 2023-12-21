@@ -184,4 +184,11 @@ export default
         head: '编辑标题',
         about: '编辑卡片',
     },
+    user:
+    {
+        avatar: '头像',
+        username: '用户名',
+        mark: '签名',
+        status: '管理访问权限',
+    },
 }

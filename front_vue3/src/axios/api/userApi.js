@@ -54,3 +54,8 @@ export function getUserListByName(params)
 {
     return get('/user/getUserListByName',params)
 }
+
+export function changeStatus(params)
+{
+    return post('/user/changeStatus',params)
+}

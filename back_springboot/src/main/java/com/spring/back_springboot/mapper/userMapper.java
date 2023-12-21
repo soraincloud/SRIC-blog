@@ -40,4 +40,7 @@ public interface userMapper
 
     @Select(value = "SELECT * FROM USER WHERE USERNAME LIKE concat('%',#{username},'%')")
     List<user> getUserListByName(@Param(value = "username") String username);
+
+    @Update(value = "UPDATE USER SET STATUS = #{status} WHERE USERNAME = #{username}")
+    void updateStatus(user user);
 }

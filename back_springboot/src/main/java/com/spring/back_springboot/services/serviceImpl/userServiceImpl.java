@@ -1,6 +1,8 @@
 package com.spring.back_springboot.services.serviceImpl;
 
+import com.spring.back_springboot.mapper.filesMapper;
 import com.spring.back_springboot.mapper.userMapper;
+import com.spring.back_springboot.pojo.files;
 import com.spring.back_springboot.pojo.user;
 import com.spring.back_springboot.services.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +10,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static com.spring.back_springboot.tools.tools.imageToBase64;
+
 @Service
 public class userServiceImpl implements userService
 {
     @Autowired
     userMapper mapper;
+
+    @Autowired
+    filesMapper filesMapper;
 
     @Override
     public user getUserById(int id)
@@ -65,12 +72,49 @@ public class userServiceImpl implements userService
     @Override
     public List<user> getAllUserData()
     {
-        return mapper.getAllUserData();
+        List<user> userList = mapper.getAllUserData();
+        userList = getAvatarForListAndAddBool(userList);
+        return userList;
     }
 
     @Override
     public List<user> getUserListByName(String username)
     {
-        return mapper.getUserListByName(username);
+        List<user> userList = mapper.getUserListByName(username);
+        userList = getAvatarForListAndAddBool(userList);
+        return userList;
+    }
+
+    public List<user> getAvatarForListAndAddBool(List<user> userList)
+    {
+        for(int i = 0;i < userList.size();i++)
+        {
+            int avatar = userList.get(i).getAvatar();
+            if(avatar != 0)
+            {
+                files files = filesMapper.getFileById(avatar);
+                String dir = System.getProperty("user.dir");
+                dir += "\\files\\";
+                dir += files.getFile();
+                String base64Str = "data:image/webp;base64,";
+                base64Str += imageToBase64(dir);
+                userList.get(i).setAvatarBase64(base64Str);
+            }
+            if(userList.get(i).getStatus() == 0)
+            {
+                userList.get(i).setStatusBool(false);
+            }
+            else
+            {
+                userList.get(i).setStatusBool(true);
+            }
+        }
+        return userList;
+    }
+
+    @Override
+    public void updateStatus(user user)
+    {
+        mapper.updateStatus(user);
     }
 }

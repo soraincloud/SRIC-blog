@@ -10,10 +10,12 @@ public class user
     private String username;
     private String password;
     private int avatar;
+    private String avatarBase64;
     private String phonenumber;
     private String email;
     private String mark;
     private int status;
+    private boolean statusBool;
 
     public void markPhoneNumber()
     {

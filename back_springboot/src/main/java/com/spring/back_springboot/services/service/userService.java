@@ -16,4 +16,5 @@ public interface userService
     List<String> getAllUsername();
     List<user> getAllUserData();
     List<user> getUserListByName(String username);
+    void updateStatus(user user);
 }

@@ -1,0 +1,27 @@
+.manageUser-p-text
+{
+    overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.manageUser-el-card-style
+{
+    margin-top: 10px;
+    background: rgba(255,140,140,0.64)
+}
+
+.manageUser-el-card-style .el-card__body
+{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.manageUser-el-switch
+{
+    margin-top: 10px;
+    margin-left: 20px;
+    --el-switch-on-color: #ffafaf;
+}
