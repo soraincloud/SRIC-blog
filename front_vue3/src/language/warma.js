@@ -38,6 +38,8 @@ export default
         bigFile: '文片太大',
         typeFile: '文片式子错了',
         pleaseOfferPassword: '请给给你的密文来看看是不是你',
+        noPermission: '没受权有',
+        errorCode: '错错 坏码回',
     },
     menu:
     {

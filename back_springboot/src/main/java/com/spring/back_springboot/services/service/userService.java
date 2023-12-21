@@ -1,6 +1,7 @@
 package com.spring.back_springboot.services.service;
 
 import com.spring.back_springboot.pojo.user;
+import com.spring.back_springboot.result.code;
 
 import java.util.List;
 
@@ -17,4 +18,5 @@ public interface userService
     List<user> getAllUserData();
     List<user> getUserListByName(String username);
     void updateStatus(user user);
+    code visitManage(String tokenValue);
 }

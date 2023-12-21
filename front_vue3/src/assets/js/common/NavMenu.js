@@ -1,4 +1,5 @@
 import { useDark, useToggle } from '@vueuse/core'
+import { visitManage } from '@/axios/api/userApi'
 import i18n from '@/language'
 
 const { t } = i18n.global
@@ -90,7 +91,30 @@ export default
         },
         switchSetting()
         {
-            this.$router.push('/manageIndex')
+            let tokenValue = localStorage.getItem('tokenValue')
+            if(tokenValue == null)
+            {
+                this.$message.error({message: t('message.noPermission'),})
+            }
+            else
+            {
+                var _this = this
+                visitManage({ tokenValue: tokenValue }).then(function(resp){
+                    if(resp.data.code == 200)
+                    {
+                        this.$router.push('/manageIndex')
+                    }
+                    else if(resp.data.code == 400)
+                    {
+                        this.$message.error({message: t('message.noPermission'),})
+                    }
+                    else
+                    {
+                        this.$message.error({message: t('message.errorCode'),})
+                    }
+                })
+            }
+            
         },
     },
     mounted()

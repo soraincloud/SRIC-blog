@@ -38,6 +38,8 @@ export default
         bigFile: 'file size is too large',
         typeFile: 'wrong file type',
         pleaseOfferPassword: 'please offer your password',
+        noPermission: 'no permission',
+        errorCode: 'error code',
     },
     menu:
     {

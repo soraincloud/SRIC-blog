@@ -116,4 +116,10 @@ public class userController
     {
         service.updateStatus(user);
     }
+
+    @GetMapping("/visitManage")
+    public code visitManage(String tokenValue)
+    {
+        return service.visitManage(tokenValue);
+    }
 }

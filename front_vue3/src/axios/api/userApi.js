@@ -59,3 +59,8 @@ export function changeStatus(params)
 {
     return post('/user/changeStatus',params)
 }
+
+export function visitManage(params)
+{
+    return get('/user/visitManage',params)
+}

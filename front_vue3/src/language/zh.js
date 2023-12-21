@@ -38,6 +38,8 @@ export default
         bigFile: '文件过大',
         typeFile: '文件格式错误',
         pleaseOfferPassword: '请提供你的密码以验证身份',
+        noPermission: '没有权限',
+        errorCode: '错误的返回码',
     },
     menu:
     {

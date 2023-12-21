@@ -46,14 +46,14 @@ axios.interceptors.response.use(resp => {
     }
 })
 
-// axios.interceptors.request.use(
-// config => {
-//     if(config.url !== "/user/login")
-//     {
-//         config.headers.token = localStorage.getItem('tokenValue')
-//     }
-//     return config
-// },
-// error =>{
-//     return Promise.reject(error)
-// })
+axios.interceptors.request.use(
+config => {
+    if(config.url !== "/user/login")
+    {
+        config.headers.token = localStorage.getItem('tokenValue')
+    }
+    return config
+},
+error =>{
+    return Promise.reject(error)
+})

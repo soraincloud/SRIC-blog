@@ -43,4 +43,7 @@ public interface userMapper
 
     @Update(value = "UPDATE USER SET STATUS = #{status} WHERE USERNAME = #{username}")
     void updateStatus(user user);
+
+    @Select(value = "SELECT STATUS FORM USER WHERE ID = #{id}")
+    int getStatusById(@Param(value = "id") int id);
 }

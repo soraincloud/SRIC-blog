@@ -1,9 +1,11 @@
 package com.spring.back_springboot.services.serviceImpl;
 
+import cn.dev33.satoken.stp.StpUtil;
 import com.spring.back_springboot.mapper.filesMapper;
 import com.spring.back_springboot.mapper.userMapper;
 import com.spring.back_springboot.pojo.files;
 import com.spring.back_springboot.pojo.user;
+import com.spring.back_springboot.result.code;
 import com.spring.back_springboot.services.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -116,5 +118,20 @@ public class userServiceImpl implements userService
     public void updateStatus(user user)
     {
         mapper.updateStatus(user);
+    }
+
+    @Override
+    public code visitManage(String tokenValue)
+    {
+        int id = Integer.parseInt(StpUtil.getLoginIdByToken(tokenValue).toString());
+        int status = mapper.getStatusById(id);
+        if(status == 1)
+        {
+            return new code(200);
+        }
+        else
+        {
+            return new code(400);
+        }
     }
 }
