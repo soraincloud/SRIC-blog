@@ -102,15 +102,15 @@ export default
                 visitManage({ tokenValue: tokenValue }).then(function(resp){
                     if(resp.data.code == 200)
                     {
-                        this.$router.push('/manageIndex')
+                        _this.$router.push('/manageIndex')
                     }
                     else if(resp.data.code == 400)
                     {
-                        this.$message.error({message: t('message.noPermission'),})
+                        _this.$message.error({message: t('message.noPermission'),})
                     }
                     else
                     {
-                        this.$message.error({message: t('message.errorCode'),})
+                        _this.$message.error({message: t('message.errorCode'),})
                     }
                 })
             }
