@@ -6,7 +6,6 @@ import com.spring.back_springboot.pojo.userToken;
 import com.spring.back_springboot.result.code;
 import com.spring.back_springboot.result.login;
 import com.spring.back_springboot.services.service.userService;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

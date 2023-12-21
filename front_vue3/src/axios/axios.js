@@ -35,15 +35,21 @@ export function postFile(url,params)
     })
 }
 
-axios.interceptors.response.use(resp => {
+axios.interceptors.response.use(
+function(resp)
+{
     if(resp.status == 200)
     {
         return Promise.resolve(resp)
     }
     else
     {
-        return Promise.reject(resp.data.code)
+        return Promise.reject(resp)
     }
+},
+function(error)
+{
+
 })
 
 axios.interceptors.request.use(
