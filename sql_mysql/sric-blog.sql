@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 21/12/2023 16:01:01
+ Date: 22/12/2023 12:39:18
 */
 
 SET NAMES utf8mb4;
@@ -26,7 +26,7 @@ CREATE TABLE `dict_el_color_type`  (
   `label` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '显示文字',
   `value` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NULL DEFAULT NULL COMMENT '值',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '字典-element提供的颜色' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of dict_el_color_type
@@ -47,7 +47,7 @@ CREATE TABLE `files`  (
   `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '名称',
   `type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '文件格式',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '文件' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of files
@@ -269,12 +269,12 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 977);
-INSERT INTO `page-visited` VALUES (2, 'index', 213);
-INSERT INTO `page-visited` VALUES (3, 'notes', 123);
-INSERT INTO `page-visited` VALUES (4, 'resources', 86);
+INSERT INTO `page-visited` VALUES (1, 'main', 1019);
+INSERT INTO `page-visited` VALUES (2, 'index', 224);
+INSERT INTO `page-visited` VALUES (3, 'notes', 124);
+INSERT INTO `page-visited` VALUES (4, 'resources', 87);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 75);
+INSERT INTO `page-visited` VALUES (6, 'personal', 132);
 INSERT INTO `page-visited` VALUES (7, 'function', 20);
 
 -- ----------------------------
@@ -327,6 +327,23 @@ INSERT INTO `resources-category` VALUES (1, 'markdown', 'EditPen');
 INSERT INTO `resources-category` VALUES (2, 'png', 'Picture');
 
 -- ----------------------------
+-- Table structure for status
+-- ----------------------------
+DROP TABLE IF EXISTS `status`;
+CREATE TABLE `status`  (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `status` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '角色',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '角色' ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of status
+-- ----------------------------
+INSERT INTO `status` VALUES (1, 'superadmin');
+INSERT INTO `status` VALUES (2, 'admin');
+INSERT INTO `status` VALUES (3, 'user');
+
+-- ----------------------------
 -- Table structure for tag
 -- ----------------------------
 DROP TABLE IF EXISTS `tag`;
@@ -362,7 +379,7 @@ CREATE TABLE `user`  (
   `phonenumber` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '电话号码',
   `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL COMMENT '邮箱',
   `mark` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NULL' COMMENT '个人描述',
-  `status` int UNSIGNED NOT NULL DEFAULT 0 COMMENT '权限',
+  `status` int UNSIGNED NOT NULL DEFAULT 3 COMMENT '权限',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '用户' ROW_FORMAT = DYNAMIC;
 
@@ -371,8 +388,8 @@ CREATE TABLE `user`  (
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'SRIC', 'abe4618871b8413bdfb1777f1db128b6', 11, '11451419198', '114514@qq.com', 'SORAINCLOUD YEAH！！！', 1);
 INSERT INTO `user` VALUES (2, 'homo', '46cdf9fce44f17b47ef33cd4d9bd99f4', 12, '11451419198', '1919810@homo.com', '114514', 1);
-INSERT INTO `user` VALUES (3, 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72', NULL, '12312341234', '123456@gmail.com', 'NULL', 0);
-INSERT INTO `user` VALUES (4, '12345123451234512345', '162a41a33fadb37e6abd662ce4adeeeb', NULL, '12345123451', '12345@test.com', 'NULL', 0);
-INSERT INTO `user` VALUES (5, 'test', '05a671c66aefea124cc08b76ea6d30bb', NULL, '11122223333', 'test@gmail.com', 'NULL', 0);
+INSERT INTO `user` VALUES (3, 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72', NULL, '12312341234', '123456@gmail.com', 'NULL', 2);
+INSERT INTO `user` VALUES (4, '12345123451234512345', '162a41a33fadb37e6abd662ce4adeeeb', NULL, '12345123451', '12345@test.com', 'NULL', 3);
+INSERT INTO `user` VALUES (5, 'test', '05a671c66aefea124cc08b76ea6d30bb', NULL, '11122223333', 'test@gmail.com', 'NULL', 3);
 
 SET FOREIGN_KEY_CHECKS = 1;
