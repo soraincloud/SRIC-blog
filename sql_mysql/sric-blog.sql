@@ -11,7 +11,7 @@
  Target Server Version : 80035
  File Encoding         : 65001
 
- Date: 22/12/2023 12:39:18
+ Date: 22/12/2023 15:58:26
 */
 
 SET NAMES utf8mb4;
@@ -64,6 +64,7 @@ INSERT INTO `files` VALUES (9, '2023-12-15-15-38-21-9804.md', 'COOK001.md', 'md'
 INSERT INTO `files` VALUES (10, '2023-12-15-15-38-26-9469.md', 'COOK002.md', 'md');
 INSERT INTO `files` VALUES (11, '2023-12-20-02-38-05-4267.webp', '  (3).webp', 'webp');
 INSERT INTO `files` VALUES (12, '2023-12-20-10-28-26-1062.webp', '  (2).webp', 'webp');
+INSERT INTO `files` VALUES (13, '2023-12-22-14-42-09-9609.webp', '  (1).webp', 'webp');
 
 -- ----------------------------
 -- Table structure for index-about
@@ -205,6 +206,7 @@ INSERT INTO `manage-navlist` VALUES (5, 'manageResourcesCategory', '', 'List', '
 INSERT INTO `manage-navlist` VALUES (6, 'manageResources', '', 'MessageBox', '资源管理', 'manage resources', '材源管管');
 INSERT INTO `manage-navlist` VALUES (7, 'manageFiles', '', 'Folder', '文件管理', 'manage files', '文片管管');
 INSERT INTO `manage-navlist` VALUES (8, 'manageUser', '', 'UserFilled', '用户管理', 'manage user', '用人管管');
+INSERT INTO `manage-navlist` VALUES (9, 'managePermission', '', 'Unlock', '权限管理', 'manage permission', '用权管管');
 
 -- ----------------------------
 -- Table structure for notes
@@ -226,7 +228,7 @@ CREATE TABLE `notes`  (
 -- Records of notes
 -- ----------------------------
 INSERT INTO `notes` VALUES (1, 'NULL TYTLE', 'NO DESCRIPTION', -1, 1, 31, 'SRIC', '2023-12-05');
-INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 3, 2, 9, 'SRIC', '2023-12-05');
+INSERT INTO `notes` VALUES (2, '后端四层架构', 'SPRINGBOOT 与 MYBATIS 后端四层架构的主要构建方法 （一种）', 3, 2, 10, 'SRIC', '2023-12-05');
 INSERT INTO `notes` VALUES (3, '二叉树', '这是一篇关于二叉树的笔记，非常的基础，如果你忘记了关于二叉树的内容，可以瞅瞅', 1, 3, 2, 'SRIC', '2023-12-05');
 INSERT INTO `notes` VALUES (4, 'vue3项目的创建', '@vuecli对vue3项目的创建与依赖的引入', 2, 4, 1, 'SRIC', '2023-12-05');
 INSERT INTO `notes` VALUES (5, 'vue-axios', 'VUE中前后端数据传输axios', 2, 5, 0, 'SRIC', '2023-12-05');
@@ -269,13 +271,56 @@ CREATE TABLE `page-visited`  (
 -- ----------------------------
 -- Records of page-visited
 -- ----------------------------
-INSERT INTO `page-visited` VALUES (1, 'main', 1019);
-INSERT INTO `page-visited` VALUES (2, 'index', 224);
-INSERT INTO `page-visited` VALUES (3, 'notes', 124);
-INSERT INTO `page-visited` VALUES (4, 'resources', 87);
+INSERT INTO `page-visited` VALUES (1, 'main', 1026);
+INSERT INTO `page-visited` VALUES (2, 'index', 227);
+INSERT INTO `page-visited` VALUES (3, 'notes', 125);
+INSERT INTO `page-visited` VALUES (4, 'resources', 89);
 INSERT INTO `page-visited` VALUES (5, 'forum', 10);
-INSERT INTO `page-visited` VALUES (6, 'personal', 132);
-INSERT INTO `page-visited` VALUES (7, 'function', 20);
+INSERT INTO `page-visited` VALUES (6, 'personal', 137);
+INSERT INTO `page-visited` VALUES (7, 'function', 21);
+
+-- ----------------------------
+-- Table structure for permission
+-- ----------------------------
+DROP TABLE IF EXISTS `permission`;
+CREATE TABLE `permission`  (
+  `id` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `sid` int UNSIGNED NOT NULL COMMENT '对应角色ID',
+  `nid` int UNSIGNED NOT NULL COMMENT '对应菜单ID',
+  `permission` tinyint UNSIGNED NOT NULL COMMENT '是否拥有权限',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of permission
+-- ----------------------------
+INSERT INTO `permission` VALUES (1, 1, 1, 1);
+INSERT INTO `permission` VALUES (2, 1, 2, 1);
+INSERT INTO `permission` VALUES (3, 1, 3, 1);
+INSERT INTO `permission` VALUES (4, 1, 4, 1);
+INSERT INTO `permission` VALUES (5, 1, 5, 1);
+INSERT INTO `permission` VALUES (6, 1, 6, 1);
+INSERT INTO `permission` VALUES (7, 1, 7, 1);
+INSERT INTO `permission` VALUES (8, 1, 8, 1);
+INSERT INTO `permission` VALUES (9, 1, 9, 1);
+INSERT INTO `permission` VALUES (10, 2, 1, 1);
+INSERT INTO `permission` VALUES (11, 2, 2, 1);
+INSERT INTO `permission` VALUES (12, 2, 3, 1);
+INSERT INTO `permission` VALUES (13, 2, 4, 1);
+INSERT INTO `permission` VALUES (14, 2, 5, 1);
+INSERT INTO `permission` VALUES (15, 2, 6, 1);
+INSERT INTO `permission` VALUES (16, 2, 7, 1);
+INSERT INTO `permission` VALUES (17, 2, 8, 1);
+INSERT INTO `permission` VALUES (18, 2, 9, 1);
+INSERT INTO `permission` VALUES (19, 3, 1, 0);
+INSERT INTO `permission` VALUES (20, 3, 2, 0);
+INSERT INTO `permission` VALUES (21, 3, 3, 0);
+INSERT INTO `permission` VALUES (22, 3, 4, 0);
+INSERT INTO `permission` VALUES (23, 3, 5, 0);
+INSERT INTO `permission` VALUES (24, 3, 6, 0);
+INSERT INTO `permission` VALUES (25, 3, 7, 0);
+INSERT INTO `permission` VALUES (26, 3, 8, 0);
+INSERT INTO `permission` VALUES (27, 3, 9, 0);
 
 -- ----------------------------
 -- Table structure for resources
@@ -298,7 +343,7 @@ CREATE TABLE `resources`  (
 -- ----------------------------
 -- Records of resources
 -- ----------------------------
-INSERT INTO `resources` VALUES (1, 'C001.md', '二叉树文档的md文件', 1, 3, 95, 'markdown', 0, 'SRIC', '2023-12-05');
+INSERT INTO `resources` VALUES (1, 'C001.md', '二叉树文档的md文件', 1, 3, 96, 'markdown', 0, 'SRIC', '2023-12-05');
 INSERT INTO `resources` VALUES (2, 'NULL.md', '为未分类的笔记提供默认显示的md文件', -1, 1, 12, 'NULL', 0, 'SRIC', '2023-12-05');
 INSERT INTO `resources` VALUES (3, 'COOK001.md', '红烧肉文档的md文件', 1, 9, 1, 'markdown', 0, 'SRIC', '2023-12-05');
 INSERT INTO `resources` VALUES (4, 'COOK002.md', '番茄牛腩文档的md文件', 1, 10, 0, 'markdown', 0, 'SRIC', '2023-12-05');
@@ -381,12 +426,12 @@ CREATE TABLE `user`  (
   `mark` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL DEFAULT 'NULL' COMMENT '个人描述',
   `status` int UNSIGNED NOT NULL DEFAULT 3 COMMENT '权限',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '用户' ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci COMMENT = '用户' ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'SRIC', 'abe4618871b8413bdfb1777f1db128b6', 11, '11451419198', '114514@qq.com', 'SORAINCLOUD YEAH！！！', 1);
+INSERT INTO `user` VALUES (1, 'SRIC', 'abe4618871b8413bdfb1777f1db128b6', 13, '11451419198', '114514@qq.com', 'SORAINCLOUD YEAH！！！', 1);
 INSERT INTO `user` VALUES (2, 'homo', '46cdf9fce44f17b47ef33cd4d9bd99f4', 12, '11451419198', '1919810@homo.com', '114514', 1);
 INSERT INTO `user` VALUES (3, 'admin', 'f6fdffe48c908deb0f4c3bd36c032e72', NULL, '12312341234', '123456@gmail.com', 'NULL', 2);
 INSERT INTO `user` VALUES (4, '12345123451234512345', '162a41a33fadb37e6abd662ce4adeeeb', NULL, '12345123451', '12345@test.com', 'NULL', 3);
