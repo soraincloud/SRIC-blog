@@ -133,6 +133,11 @@ const routes =
         path: '/manageUser',
         component: () => import('@/components/manage/ManageUser'),
       },
+      {
+        name: 'managePermission',
+        path: '/managePermission',
+        component: () => import('@/components/manage/ManagePermission'),
+      },
     ]
   },
 ]

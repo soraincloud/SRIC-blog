@@ -17,7 +17,7 @@ export default
                     id: 0,
                     name: 'manageIndex',
                     navItem: '后台管理',
-                    icon: 'Menu',
+                    icon: 'PieChart',
                 },
             ],
             language: localStorage.getItem('language'),
