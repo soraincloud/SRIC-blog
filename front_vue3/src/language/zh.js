@@ -40,6 +40,8 @@ export default
         pleaseOfferPassword: '请提供你的密码以验证身份',
         noPermission: '没有权限',
         errorCode: '错误的返回码',
+        loginTimeout: '登录失效',
+        loginTimeoutMessage: '登录信息已过期,请重新登录',
     },
     menu:
     {

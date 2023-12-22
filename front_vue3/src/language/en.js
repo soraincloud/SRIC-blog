@@ -40,6 +40,8 @@ export default
         pleaseOfferPassword: 'please offer your password',
         noPermission: 'no permission',
         errorCode: 'error code',
+        loginTimeout: 'login is invalid',
+        loginTimeoutMessage: 'login information has expired, please login again',
     },
     menu:
     {

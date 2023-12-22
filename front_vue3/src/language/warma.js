@@ -40,6 +40,8 @@ export default
         pleaseOfferPassword: '请给给你的密文来看看是不是你',
         noPermission: '没受权有',
         errorCode: '错错 坏码回',
+        loginTimeout: '录上失时',
+        loginTimeoutMessage: '录上说息已到时,要重来录上',
     },
     menu:
     {

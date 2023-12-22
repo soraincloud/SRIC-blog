@@ -1,5 +1,9 @@
+import { ElNotification } from 'element-plus'
 import axios from 'axios'
 import qs from 'qs'
+import i18n from '@/language'
+
+const { t } = i18n.global
 
 axios.defaults.baseURL = 'http://localhost:8443/api'
 
@@ -40,6 +44,15 @@ function(resp)
 {
     if(resp.status == 200)
     {
+        if(resp.data.code == 401)
+        {
+            localStorage.removeItem('tokenValue')
+            ElNotification({
+                title: t('message.loginTimeout'),
+                message: t('message.loginTimeoutMessage'),
+                duration: 0,
+            })
+        }
         return Promise.resolve(resp)
     }
     else

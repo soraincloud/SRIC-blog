@@ -22,6 +22,7 @@ public class intercept implements HandlerInterceptor
             Object loginId = StpUtil.getLoginIdByToken(tokenValue);
             if(loginId == null)//token过期
             {
+                response.getWriter().write("{ \"code\": 401 }");
                 return false;
             }
         }

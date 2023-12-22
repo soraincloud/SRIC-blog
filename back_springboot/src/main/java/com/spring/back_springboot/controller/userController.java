@@ -38,7 +38,7 @@ public class userController
         user u = service.getUserByName(user.getUsername()); //根据用户名查询
         if(u == null) //用户名不存在
         {
-            return new login(401,null);
+            return new login(406,null);
         }
         else //用户名存在
         {

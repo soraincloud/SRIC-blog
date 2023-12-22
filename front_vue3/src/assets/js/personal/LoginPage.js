@@ -67,7 +67,7 @@ export default
                     _this.isShow = false
                     _this.$message.error({message: t('loginmessage.wrong'),})
                 }
-                else if(resp.data.code == 401)
+                else if(resp.data.code == 406)
                 {
                     _this.isShow = false
                     _this.$message.warning({message: t('loginmessage.none'),})
