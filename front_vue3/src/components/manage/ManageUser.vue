@@ -61,11 +61,19 @@
                                 <p class="manageUser-p-text">{{ item.mark }}</p>
                             </el-col>
                             <el-col :span="4">
-                                <el-switch
-                                v-model="item.statusBool"
-                                class="manageUser-el-switch"
+                                <el-select
+                                v-model="user[i].status"
                                 @change="statusChange(i)"
-                                ></el-switch>
+                                class="manageUser-el-select"
+                                >
+                                    <el-option
+                                    v-for="(item,i) in status"
+                                    :key="i"
+                                    :label="item.status"
+                                    :value="item.id"
+                                    >
+                                    </el-option>
+                                </el-select>
                             </el-col>
                         </el-row>
                     </el-card>

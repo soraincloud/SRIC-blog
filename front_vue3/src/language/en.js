@@ -32,6 +32,7 @@ export default
         addSuccess: 'add success',
         applySuccess: 'apply success',
         deleteSuccess: 'delete success',
+        changeSuccess: 'change success',
         notNullError: 'not null',
         notDefaultChange: 'could not change default configuration',
         nullFile: 'files not found',
@@ -192,6 +193,6 @@ export default
         avatar: 'avatar',
         username: 'username',
         mark: 'mark',
-        status: 'manage permissions',
+        status: 'status',
     },
 }

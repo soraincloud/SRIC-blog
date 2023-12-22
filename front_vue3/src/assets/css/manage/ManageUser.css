@@ -19,9 +19,13 @@
     padding-bottom: 0px;
 }
 
-.manageUser-el-switch
+.manageUser-el-select
 {
     margin-top: 10px;
-    margin-left: 20px;
-    --el-switch-on-color: #ffafaf;
+    --el-select-input-focus-border-color: #ff8f8f;
+}
+
+.manageUser-el-select .el-select-dropdown__item.selected
+{
+    color: #ff8f8f;
 }

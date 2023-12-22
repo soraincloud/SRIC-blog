@@ -1,4 +1,4 @@
-import { getAllUserData,getUserListByName,changeStatus } from '@/axios/api/userApi'
+import { getAllUserData,getUserListByName,changeStatus,getAllStatus } from '@/axios/api/userApi'
 import i18n from '@/language'
 
 const { t } = i18n.global
@@ -15,6 +15,7 @@ export default
             placeholderText: t('common.search'),
             user: [],
             search: '',
+            status: [],
         }
     },
     methods:
@@ -34,6 +35,13 @@ export default
                 _this.loading = false
             })
         },
+        getStatus()
+        {
+            var _this = this
+            getAllStatus().then(function(resp){
+                _this.status = resp.data
+            })
+        },
         clickSearch()
         {
             var _this = this
@@ -49,19 +57,15 @@ export default
         },
         statusChange(i)
         {
-            if(this.user[i].statusBool == true)
-            {
-                this.user[i].status = 1
-            }
-            else
-            {
-                this.user[i].status = 0
-            }
-            changeStatus({ username: this.user[i].username,status: this.user[i].status }).then()
+            var _this = this
+            changeStatus({ username: this.user[i].username,status: this.user[i].status }).then(function(resp){
+                _this.$message.success({message: t('message.changeSuccess'),})
+            })
         },
     },
     created()
     {
+        this.getStatus()
         this.getUserList()
     },
     mounted()

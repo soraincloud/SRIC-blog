@@ -75,7 +75,7 @@ public class userServiceImpl implements userService
     public List<user> getAllUserData()
     {
         List<user> userList = mapper.getAllUserData();
-        userList = getAvatarForListAndAddBool(userList);
+        userList = getAvatarForList(userList);
         return userList;
     }
 
@@ -83,11 +83,11 @@ public class userServiceImpl implements userService
     public List<user> getUserListByName(String username)
     {
         List<user> userList = mapper.getUserListByName(username);
-        userList = getAvatarForListAndAddBool(userList);
+        userList = getAvatarForList(userList);
         return userList;
     }
 
-    public List<user> getAvatarForListAndAddBool(List<user> userList)
+    public List<user> getAvatarForList(List<user> userList)
     {
         for(int i = 0;i < userList.size();i++)
         {
@@ -101,14 +101,6 @@ public class userServiceImpl implements userService
                 String base64Str = "data:image/webp;base64,";
                 base64Str += imageToBase64(dir);
                 userList.get(i).setAvatarBase64(base64Str);
-            }
-            if(userList.get(i).getStatus() == 0)
-            {
-                userList.get(i).setStatusBool(false);
-            }
-            else
-            {
-                userList.get(i).setStatusBool(true);
             }
         }
         return userList;
@@ -125,7 +117,7 @@ public class userServiceImpl implements userService
     {
         int id = Integer.parseInt(StpUtil.getLoginIdByToken(tokenValue).toString());
         int status = mapper.getStatusById(id);
-        if(status == 1)
+        if(status == 1 || status == 2)
         {
             return new code(200);
         }

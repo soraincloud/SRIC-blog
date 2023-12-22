@@ -32,6 +32,7 @@ export default
         addSuccess: '写加成力',
         applySuccess: '上交成力',
         deleteSuccess: '删没成力',
+        changeSuccess: '改改成力',
         notNullError: '不有空空',
         notDefaultChange: '无能改改本有配文',
         nullFile: '没看有文片',
@@ -192,6 +193,6 @@ export default
         avatar: '头脑',
         username: '用人名',
         mark: '写东西',
-        status: '管管看看权力',
+        status: '权人',
     },
 }

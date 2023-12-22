@@ -15,7 +15,6 @@ public class user
     private String email;
     private String mark;
     private int status;
-    private boolean statusBool;
 
     public void markPhoneNumber()
     {

@@ -64,3 +64,9 @@ export function visitManage(params)
 {
     return get('/user/visitManage',params)
 }
+
+export function getAllStatus(params)
+
+{
+    return get('/user/getAllStatus',params)
+}

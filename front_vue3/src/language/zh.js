@@ -32,6 +32,7 @@ export default
         addSuccess: '添加成功',
         applySuccess: '提交成功',
         deleteSuccess: '删除成功',
+        changeSuccess: '修改成功',
         notNullError: '不能为空',
         notDefaultChange: '无法更改默认配置',
         nullFile: '未找到文件',
@@ -193,6 +194,6 @@ export default
         avatar: '头像',
         username: '用户名',
         mark: '签名',
-        status: '管理访问权限',
+        status: '角色',
     },
 }
